@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const SidebarLayout: React.FC = ({ children }) => {
   return (
@@ -61,7 +61,7 @@ const SidebarLayout: React.FC = ({ children }) => {
       </div>
       <div className="lg:pl-[19.5rem]">{children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default SidebarLayout
+export default SidebarLayout;
