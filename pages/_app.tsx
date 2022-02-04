@@ -1,13 +1,16 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
+import SidebarLayout from "../layouts/SidebarLayout";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class" defaultTheme="light">
-      <Component {...pageProps} />
+      <SidebarLayout>
+        <Component {...pageProps} />
+      </SidebarLayout>
     </ThemeProvider>
   );
 }
 
-export default MyApp;
+export default App;
