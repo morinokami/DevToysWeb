@@ -5,7 +5,7 @@ import SidebarLayout from "../layouts/SidebarLayout";
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light">
+    <ThemeProvider attribute="class">
       <SidebarLayout>
         <Component {...pageProps} />
       </SidebarLayout>
