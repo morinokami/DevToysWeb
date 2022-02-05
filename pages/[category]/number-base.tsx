@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 
+import MainLayout from "../../layouts/MainLayout";
+
 const NumberBase: NextPage = () => {
-  return <div>Number base</div>;
+  return <MainLayout title="Number base"></MainLayout>;
 };
 
 export default NumberBase;

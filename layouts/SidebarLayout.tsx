@@ -23,6 +23,9 @@ const SidebarLayout: React.FC = ({ children }) => {
               )}
             </li>
           ))}
+          <li>
+            <NavCategory title="Settings" href="/settings" />
+          </li>
         </ul>
       </div>
       <div className="h-full pt-4 lg:pl-64">{children}</div>

@@ -47,7 +47,7 @@ export const nav = [
     ],
   },
   {
-    title: "formatters",
+    title: "Formatters",
     href: "/formatters",
     items: [
       {

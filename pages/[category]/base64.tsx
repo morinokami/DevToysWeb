@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 
+import MainLayout from "../../layouts/MainLayout";
+
 const Base64: NextPage = () => {
-  return <div>Base 64</div>;
+  return <MainLayout title="Base 64"></MainLayout>;
 };
 
 export default Base64;

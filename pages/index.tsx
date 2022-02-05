@@ -1,22 +1,34 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import { useTheme } from "next-themes";
+
+import NavCard from "../components/NavCard";
+import { nav } from "../data/nav";
+import MainLayout from "../layouts/MainLayout";
 
 const Home: NextPage = () => {
-  const { theme, setTheme } = useTheme();
+  const navItems = nav
+    .map(({ items }) => items)
+    .reduce((acc, curr) => acc.concat(curr), []);
+  navItems.sort((a, b) => a.title.localeCompare(b.title));
+  navItems.push({
+    title: "Settings",
+    href: "/settings",
+    desc: "Customize DevToysWeb look & feel",
+  });
+
   return (
     <div>
-      <Head>
-        <title>DevToysWeb</title>
-      </Head>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <button
-        aria-label="Toggle Dark Mode"
-        type="button"
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      >
-        toggle
-      </button>
+      <MainLayout>
+        <h1>All tools</h1>
+        <div className="flex h-full flex-row flex-wrap">
+          {navItems.map(({ title, href, desc }) => {
+            return (
+              <div key={title}>
+                <NavCard title={title} href={href} desc={desc} />
+              </div>
+            );
+          })}
+        </div>
+      </MainLayout>
     </div>
   );
 };

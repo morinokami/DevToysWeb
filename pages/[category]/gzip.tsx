@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 
+import MainLayout from "../../layouts/MainLayout";
+
 const GZip: NextPage = () => {
-  return <div>GZip</div>;
+  return <MainLayout title="GZip"></MainLayout>;
 };
 
 export default GZip;

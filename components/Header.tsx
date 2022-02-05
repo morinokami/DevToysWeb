@@ -10,7 +10,7 @@ const Header: React.VFC = () => {
             <FaBars />
           </button>
           <Link href="/">
-            <a>DevToys</a>
+            <a>DevToysWeb</a>
           </Link>
         </div>
         <button>

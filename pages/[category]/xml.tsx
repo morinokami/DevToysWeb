@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 
+import MainLayout from "../../layouts/MainLayout";
+
 const Xml: NextPage = () => {
-  return <div>XML</div>;
+  return <MainLayout title="XML"></MainLayout>;
 };
 
 export default Xml;

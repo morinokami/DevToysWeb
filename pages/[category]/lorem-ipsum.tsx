@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 
+import MainLayout from "../../layouts/MainLayout";
+
 const LoremIpsum: NextPage = () => {
-  return <div>Lorem Ipsum</div>;
+  return <MainLayout title="Lorem Ipsum"></MainLayout>;
 };
 
 export default LoremIpsum;

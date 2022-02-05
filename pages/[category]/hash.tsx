@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 
+import MainLayout from "../../layouts/MainLayout";
+
 const Hash: NextPage = () => {
-  return <div>Hash</div>;
+  return <MainLayout title="Hash"></MainLayout>;
 };
 
 export default Hash;
