@@ -15,6 +15,9 @@ module.exports = {
           5: "#171717",
         },
       },
+      fontFamily: {
+        sans: ["IBM Plex Sans", 'sans-serif'],
+      },
     },
   },
   plugins: [],
