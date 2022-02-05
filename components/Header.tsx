@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: React.VFC<HeaderProps> = ({ setNavIsOpen }) => {
   return (
-    <div className="sticky top-0 z-20 flex h-8 w-full items-center bg-pink-500 px-4">
+    <div className="sticky top-0 z-20 flex h-8 w-full items-center bg-gray-100 px-4 dark:bg-dark-5">
       <nav className="flex w-full flex-row justify-between">
         <div className="flex items-center">
           <button className="mr-2 lg:hidden" onClick={() => setNavIsOpen(true)}>
