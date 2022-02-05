@@ -5,9 +5,10 @@ import { nav } from "../data/nav";
 import MainLayout from "../layouts/MainLayout";
 
 const Home: NextPage = () => {
-  const navItems = nav
-    .map(({ items }) => items)
-    .reduce((acc, curr) => acc.concat(curr), []);
+  const navItems =
+    nav
+      .map(({ items }) => items)
+      .reduce((acc, curr) => acc?.concat(curr ?? []), []) ?? [];
   navItems.sort((a, b) => a.title.localeCompare(b.title));
   navItems.push({
     title: "Settings",

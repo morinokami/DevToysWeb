@@ -9,22 +9,18 @@ const SidebarLayout: React.FC = ({ children }) => {
     <div className="mx-auto px-4">
       <div className="fixed inset-0 hidden w-64 overflow-y-auto bg-gray-50 px-4 pt-10 dark:bg-black lg:block">
         <ul>
-          {nav.map(({ title, href, items }) => (
-            <li key={title}>
-              <NavCategory title={title} href={href} />
-              {items && (
-                <ul>
-                  {items.map(({ title, href }) => (
-                    <li key={title}>
-                      <NavItem title={title} href={href} />
-                    </li>
-                  ))}
-                </ul>
-              )}
+          {nav.map((category) => (
+            <li key={category.title}>
+              <NavCategory category={category} />
             </li>
           ))}
           <li>
-            <NavCategory title="Settings" href="/settings" />
+            <NavCategory
+              category={{
+                title: "Settings",
+                href: "/settings",
+              }}
+            />
           </li>
         </ul>
       </div>

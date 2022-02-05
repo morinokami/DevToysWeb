@@ -1,4 +1,18 @@
-export const nav = [
+export type Nav = NavCategory[];
+
+export type NavCategory = {
+  title: string;
+  href: string;
+  items?: NavItem[];
+};
+
+export type NavItem = {
+  title: string;
+  href: string;
+  desc: string;
+};
+
+export const nav: Nav = [
   {
     title: "Converters",
     href: "/converters",
