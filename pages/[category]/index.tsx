@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
+import NavCard from "../../components/NavCard";
 import { nav } from "../../data/nav";
 
 const Category: NextPage = () => {
@@ -10,15 +10,15 @@ const Category: NextPage = () => {
   const navItems = nav.find(({ href }) => href === path)?.items ?? [];
 
   return (
-    <>
-      {navItems.map(({ title, href }) => {
+    <div className="flex h-full flex-row flex-wrap">
+      {navItems.map(({ title, href, desc }) => {
         return (
           <div key={title}>
-            <Link href={href}>{title}</Link>
+            <NavCard title={title} href={href} desc={desc} />
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

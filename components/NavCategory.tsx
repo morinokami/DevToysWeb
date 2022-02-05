@@ -5,7 +5,7 @@ interface NavCategoryProps {
   href: string;
 }
 
-const NavCategory: React.FC<NavCategoryProps> = ({ title, href }) => {
+const NavCategory: React.VFC<NavCategoryProps> = ({ title, href }) => {
   return (
     <div className="pt-2">
       <Link href={href}>{title}</Link>

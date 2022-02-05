@@ -5,7 +5,7 @@ interface NavItemProps {
   href: string;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ title, href }) => {
+const NavItem: React.VFC<NavItemProps> = ({ title, href }) => {
   return (
     <div className="pt-2 pl-4">
       <Link href={href}>{title}</Link>
