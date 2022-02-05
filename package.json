@@ -9,6 +9,7 @@
     "format": "prettier --write '**/*.{js,ts,tsx}'"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
     "next": "12.0.10",
     "next-themes": "^0.0.15",
     "react": "17.0.2",
