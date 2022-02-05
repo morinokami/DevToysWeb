@@ -7,7 +7,7 @@ import { nav } from "../data/nav";
 const SidebarLayout: React.FC = ({ children }) => {
   return (
     <div className="mx-auto px-4">
-      <div className="fixed inset-0 right-auto z-20 hidden w-[19.5rem] overflow-y-auto bg-gray-50 px-4 pt-2 dark:bg-black lg:block">
+      <div className="fixed inset-0 top-8 hidden w-64 overflow-y-auto bg-gray-50 px-4 pt-2 dark:bg-black lg:block">
         <ul>
           {nav.map(({ title, href, items }) => (
             <li key={title}>
@@ -25,7 +25,7 @@ const SidebarLayout: React.FC = ({ children }) => {
           ))}
         </ul>
       </div>
-      <div className="h-full pt-4 lg:pl-[19.5rem]">{children}</div>
+      <div className="h-full pt-4 lg:pl-64">{children}</div>
     </div>
   );
 };
