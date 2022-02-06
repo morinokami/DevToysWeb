@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: { max: "768px" },
+        xs: { max: "640px" },
+      },
       colors: {
         dark: {
           2: "#383838",
@@ -16,7 +20,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["IBM Plex Sans", 'sans-serif'],
+        sans: ["IBM Plex Sans", "sans-serif"],
       },
     },
   },
