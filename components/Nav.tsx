@@ -19,13 +19,16 @@ const _Nav: React.VFC<NavProps> = ({ nav }) => {
           }}
         />
       </li>
-      <Spacer y={2} />
+      <Spacer y={6} />
       <Divider />
-      <Spacer y={2} />
+      <Spacer y={6} />
       {nav.map((category) => (
-        <li key={category.title}>
-          <NavCategory category={category} />
-        </li>
+        <>
+          <li key={category.title}>
+            <NavCategory category={category} />
+          </li>
+          <Spacer y={6} />
+        </>
       ))}
       <li>
         <NavCategory
