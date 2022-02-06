@@ -2,13 +2,18 @@ import Link from "next/link";
 
 interface NavRowProps {
   href: string;
+  selected: boolean;
 }
 
-const NavRow: React.FC<NavRowProps> = ({ href, children }) => {
+const NavRow: React.FC<NavRowProps> = ({ href, selected, children }) => {
   return (
     <Link href={href}>
       <a>
-        <div className="flex items-center rounded p-2 pl-0 hover:bg-gray-200 hover:dark:bg-dark-3">
+        <div
+          className={`flex items-center rounded p-2 pl-0 hover:bg-gray-200 hover:dark:bg-dark-3 ${
+            selected ? "bg-gray-200 dark:bg-dark-3" : ""
+          }`}
+        >
           {children}
         </div>
       </a>

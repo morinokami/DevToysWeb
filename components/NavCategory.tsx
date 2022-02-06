@@ -33,7 +33,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
 
   return (
     <div className="px-2">
-      <NavRow href={category.href}>
+      <NavRow href={category.href} selected={router.asPath === category.href}>
         <SelectionIndicator selected={router.asPath === category.href} />
         {/* TODO: update */}
         {category.icon ? <category.icon /> : <IconBeerMini />}
@@ -57,7 +57,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
             <React.Fragment key={item.title}>
               <Spacer y={6} />
               <li>
-                <NavRow href={item.href}>
+                <NavRow href={item.href} selected={router.asPath === item.href}>
                   <Spacer x={28} />
                   <SelectionIndicator selected={router.asPath === item.href} />
                   {/* TODO: update */}
