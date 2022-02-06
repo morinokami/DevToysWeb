@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 
 import { AngleDown, AngleUp, IconBeerMini } from "../data/icon";
 import { NavCategory } from "../data/nav";
 import NavRow from "./NavRow";
 import Spacer from "./Spacer";
+
+interface SelectionIndicatorProps {
+  selected: boolean;
+}
+
+const SelectionIndicator: React.VFC<SelectionIndicatorProps> = ({
+  selected,
+}) => {
+  return selected ? (
+    <>
+      <div className="h-4 border-l-[3px] border-blue-500 dark:border-l-2" />
+      <Spacer x={8} />
+    </>
+  ) : (
+    <Spacer x={10} />
+  );
+};
 
 interface NavCategoryProps {
   category: NavCategory;
@@ -11,10 +29,12 @@ interface NavCategoryProps {
 
 const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className="px-2">
       <NavRow href={category.href}>
+        <SelectionIndicator selected={router.asPath === category.href} />
         <IconBeerMini />
         <Spacer x={14} />
         <div className="grow">{category.title}</div>
@@ -33,17 +53,18 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
       {isOpen && category.items && (
         <ul>
           {category.items.map(({ title, href }) => (
-            <>
+            <React.Fragment key={title}>
               <Spacer y={6} />
-              <li key={title}>
+              <li>
                 <NavRow href={href}>
                   <Spacer x={28} />
+                  <SelectionIndicator selected={router.asPath === href} />
                   <IconBeerMini />
                   <Spacer x={14} />
                   <div className="grow">{title}</div>
                 </NavRow>
               </li>
-            </>
+            </React.Fragment>
           ))}
         </ul>
       )}

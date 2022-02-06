@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Nav } from "../data/nav";
 import Divider from "./Divider";
 import NavCategory from "./NavCategory";
@@ -23,12 +25,12 @@ const _Nav: React.VFC<NavProps> = ({ nav }) => {
       <Divider />
       <Spacer y={6} />
       {nav.map((category) => (
-        <>
-          <li key={category.title}>
+        <React.Fragment key={category.title}>
+          <li>
             <NavCategory category={category} />
           </li>
           <Spacer y={6} />
-        </>
+        </React.Fragment>
       ))}
       <li>
         <NavCategory
