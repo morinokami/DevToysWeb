@@ -14,11 +14,9 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
   return (
     <>
       <div className="flex pt-2">
-        <div className="grow">
-          <Link href={category.href}>
-            <a>{category.title}</a>
-          </Link>
-        </div>
+        <Link href={category.href}>
+          <a className="block grow">{category.title}</a>
+        </Link>
         {category.items && (
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "-" : "+"}
