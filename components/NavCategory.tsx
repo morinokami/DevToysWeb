@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-import { IconBeerMini } from "../data/icon";
+import { AngleDown, AngleUp, IconBeerMini } from "../data/icon";
 import { NavCategory } from "../data/nav";
 import NavRow from "./NavRow";
 import Spacer from "./Spacer";
-
 interface NavCategoryProps {
   category: NavCategory;
 }
@@ -20,12 +19,13 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
         <div className="grow">{category.title}</div>
         {category.items && (
           <button
+            className="p-1 hover:dark:bg-dark-2"
             onClick={(e) => {
               e.preventDefault();
               setIsOpen(!isOpen);
             }}
           >
-            {isOpen ? "-" : "+"}
+            {isOpen ? <AngleDown /> : <AngleUp />}
           </button>
         )}
       </NavRow>
