@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState } from "react";
 
 import { NavCategory } from "../data/nav";
@@ -14,9 +13,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
   return (
     <>
       <div className="flex pt-2">
-        <Link href={category.href}>
-          <a className="block grow">{category.title}</a>
-        </Link>
+        <NavItem title={category.title} href={category.href} />
         {category.items && (
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "-" : "+"}
@@ -26,7 +23,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
       {isOpen && category.items && (
         <ul>
           {category.items.map(({ title, href }) => (
-            <li key={title}>
+            <li key={title} className="flex pt-2 pl-4">
               <NavItem title={title} href={href} />
             </li>
           ))}
