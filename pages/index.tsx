@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
-import NavCard from "../components/NavCard";
 import { nav } from "../data/nav";
+import CardLayout from "../layouts/CardLayout";
 import MainLayout from "../layouts/MainLayout";
 
 const Home: NextPage = () => {
@@ -20,15 +20,7 @@ const Home: NextPage = () => {
     <div>
       <MainLayout>
         <h1 className="text-lg">All tools</h1>
-        <div className="flex h-full flex-row flex-wrap">
-          {navItems.map(({ title, href, desc }) => {
-            return (
-              <div key={title}>
-                <NavCard title={title} href={href} desc={desc} />
-              </div>
-            );
-          })}
-        </div>
+        <CardLayout navItems={navItems} />
       </MainLayout>
     </div>
   );

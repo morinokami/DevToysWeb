@@ -12,8 +12,8 @@ const NavCard: React.VFC<NavCardProps> = ({ title, href, desc }) => {
   return (
     <Link href={href}>
       <a>
-        <div className="my-3 mr-4 h-72 w-36 rounded border p-3 hover:cursor-pointer hover:bg-slate-50 dark:border-none dark:bg-dark-3 hover:dark:bg-slate-500">
-          <div className="m-5 mb-8 flex h-20 w-20 items-center justify-center dark:bg-dark-2">
+        <div className="h-72 w-36 rounded border p-3 hover:cursor-pointer hover:bg-slate-50 dark:border-none dark:bg-dark-3 hover:dark:bg-slate-500">
+          <div className="m-5 mb-8 flex h-20 w-20 items-center justify-center rounded dark:bg-dark-2">
             <IconBeer />
           </div>
           <div>
