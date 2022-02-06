@@ -23,6 +23,7 @@ const SidebarLayout: React.FC<SidebarLayoutProps> = ({
       <Dialog
         as="div"
         open={navIsOpen}
+        unmount={false}
         onClose={() => setNavIsOpen(false)}
         className="fixed inset-0 z-50 overflow-y-auto lg:hidden"
       >

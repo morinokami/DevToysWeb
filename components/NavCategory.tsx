@@ -16,10 +16,10 @@ const SelectionIndicator: React.VFC<SelectionIndicatorProps> = ({
   return selected ? (
     <>
       <div className="h-4 border-l-[3px] border-blue-500 dark:border-l-2" />
-      <Spacer x={8} />
+      <Spacer x={12} />
     </>
   ) : (
-    <Spacer x={10} />
+    <Spacer x={14} />
   );
 };
 
