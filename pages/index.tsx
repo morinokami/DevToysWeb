@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <MainLayout>
-        <h1>All tools</h1>
+        <h1 className="text-lg">All tools</h1>
         <div className="flex h-full flex-row flex-wrap">
           {navItems.map(({ title, href, desc }) => {
             return (

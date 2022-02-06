@@ -37,7 +37,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
         <SelectionIndicator selected={router.asPath === category.href} />
         <IconBeerMini />
         <Spacer x={14} />
-        <div className="grow translate-y-0.5 text-sm">{category.title}</div>
+        <div className="grow translate-y-px text-sm">{category.title}</div>
         {category.items && (
           <button
             className="p-1 hover:bg-gray-300 hover:dark:bg-dark-2"
@@ -61,7 +61,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
                   <SelectionIndicator selected={router.asPath === href} />
                   <IconBeerMini />
                   <Spacer x={14} />
-                  <div className="grow translate-y-0.5 text-sm">{title}</div>
+                  <div className="grow translate-y-px text-sm">{title}</div>
                 </NavRow>
               </li>
             </React.Fragment>

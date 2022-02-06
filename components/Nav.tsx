@@ -13,6 +13,7 @@ interface NavProps {
 const _Nav: React.VFC<NavProps> = ({ nav }) => {
   return (
     <ul>
+      <Spacer y={6} />
       <li>
         <NavCategory
           category={{

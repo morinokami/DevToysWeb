@@ -13,7 +13,7 @@ const Header: React.VFC<HeaderProps> = ({ setNavIsOpen }) => {
           <button className="mr-2 lg:hidden" onClick={() => setNavIsOpen(true)}>
             <FaBars />
           </button>
-          <div className="translate-y-0.5">DevToysWeb</div>
+          <div className="translate-y-px">DevToysWeb</div>
         </div>
         <Link href="https://github.com/morinokami/DevToysWeb">
           <a>

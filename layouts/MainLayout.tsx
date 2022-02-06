@@ -10,7 +10,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
       <Head>
         <title>{title ? `${title} - DevToysWeb` : "DevToysWeb"}</title>
       </Head>
-      {title ?? <h1>{title}</h1>}
+      {title ? <h1 className="text-lg">{title}</h1> : null}
       {children}
     </>
   );
