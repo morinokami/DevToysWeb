@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+import { IconBeerMini } from "../data/icon";
 import { NavCategory } from "../data/nav";
-import NavItem from "./NavItem";
+import NavRow from "./NavRow";
+import Spacer from "./Spacer";
 
 interface NavCategoryProps {
   category: NavCategory;
@@ -11,25 +13,37 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <div className="flex pt-2">
-        <NavItem title={category.title} href={category.href} />
+    <div className="px-2">
+      <NavRow href={category.href}>
+        <IconBeerMini />
+        <Spacer x={14} />
+        <div className="grow">{category.title}</div>
         {category.items && (
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(!isOpen);
+            }}
+          >
             {isOpen ? "-" : "+"}
           </button>
         )}
-      </div>
+      </NavRow>
       {isOpen && category.items && (
         <ul>
           {category.items.map(({ title, href }) => (
-            <li key={title} className="flex pt-2 pl-4">
-              <NavItem title={title} href={href} />
+            <li key={title}>
+              <NavRow href={href}>
+                <Spacer x={28} />
+                <IconBeerMini />
+                <Spacer x={14} />
+                <div className="grow">{title}</div>
+              </NavRow>
             </li>
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 };
 
