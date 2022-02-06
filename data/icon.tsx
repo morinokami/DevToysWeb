@@ -14,6 +14,11 @@ import {
 } from "react-icons/vsc";
 
 const ICON_SIZE_SMALL = "14";
+const ICON_SIZE_LARGE = "54";
+
+export interface IconProps {
+  large?: boolean;
+}
 
 export const IconBeerMini: React.VFC = () => {
   return (
@@ -31,35 +36,52 @@ export const IconBeer: React.VFC = () => {
   );
 };
 
+// TODO: Fix duplicated code
 // Sidebar Icons
 
-export const IconChevronUp: React.VFC = () => {
+export const IconChevronUp: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscChevronUp />
     </IconContext.Provider>
   );
 };
 
-export const IconChevronDown: React.VFC = () => {
+export const IconChevronDown: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscChevronDown />
     </IconContext.Provider>
   );
 };
 
-export const IconAllTools: React.VFC = () => {
+export const IconAllTools: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscHome />
     </IconContext.Provider>
   );
 };
 
-export const IconSettings: React.VFC = () => {
+export const IconSettings: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscSettingsGear />
     </IconContext.Provider>
   );
@@ -67,9 +89,13 @@ export const IconSettings: React.VFC = () => {
 
 // Converters
 
-export const IconConverters: React.VFC = () => {
+export const IconConverters: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <MdTransform />
     </IconContext.Provider>
   );
@@ -77,33 +103,47 @@ export const IconConverters: React.VFC = () => {
 
 // Encoders / Decoders
 
-export const IconEncodersDecoders: React.VFC = () => {
+export const IconEncodersDecoders: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscFileBinary />
     </IconContext.Provider>
   );
 };
 
-export const IconHtml: React.VFC = () => {
+export const IconHtml: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <FaHtml5 />
     </IconContext.Provider>
   );
 };
 
-export const IconUrl: React.VFC = () => {
+export const IconUrl: React.VFC<IconProps> = ({ large } = { large: false }) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <MdOutlineLink />
     </IconContext.Provider>
   );
 };
 
-export const IconGZip: React.VFC = () => {
+export const IconGZip: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <BsFileZip />
     </IconContext.Provider>
   );
@@ -111,33 +151,45 @@ export const IconGZip: React.VFC = () => {
 
 // Formatters
 
-export const IconFormatters: React.VFC = () => {
+export const IconFormatters: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <BsTextIndentLeft />
     </IconContext.Provider>
   );
 };
 
-export const IconJson: React.VFC = () => {
+export const IconJson: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscJson />
     </IconContext.Provider>
   );
 };
 
-export const IconSql: React.VFC = () => {
+export const IconSql: React.VFC<IconProps> = ({ large } = { large: false }) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscDatabase />
     </IconContext.Provider>
   );
 };
 
-export const IconXml: React.VFC = () => {
+export const IconXml: React.VFC<IconProps> = ({ large } = { large: false }) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <VscCode />
     </IconContext.Provider>
   );
@@ -145,9 +197,13 @@ export const IconXml: React.VFC = () => {
 
 // Generators
 
-export const IconHash: React.VFC = () => {
+export const IconHash: React.VFC<IconProps> = (
+  { large } = { large: false }
+) => {
   return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
+    <IconContext.Provider
+      value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
+    >
       <MdFingerprint />
     </IconContext.Provider>
   );

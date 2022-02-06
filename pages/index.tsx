@@ -12,6 +12,7 @@ const Home: NextPage = () => {
   navItems.sort((a, b) => a.title.localeCompare(b.title));
   navItems.push({
     title: "Settings",
+    longTitle: "Settings",
     href: "/settings",
     desc: "Customize DevToysWeb look & feel",
   });
