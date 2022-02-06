@@ -15,11 +15,11 @@ const SidebarLayout: React.FC<SidebarLayoutProps> = ({
   children,
 }) => {
   return (
-    <div className="px-4b mx-auto">
-      <div className="fixed inset-0 hidden w-64 overflow-y-auto bg-gray-100 pt-10 dark:bg-dark-5 lg:block">
+    <>
+      <div className="fixed inset-0 hidden w-64 overflow-y-auto bg-gray-100 pt-12 dark:bg-dark-5 lg:block">
         <Nav nav={nav} setNavIsOpen={setNavIsOpen} />
       </div>
-      <div className="pt-8 lg:pl-72 lg:pr-8">{children}</div>
+      <div className="px-8 pt-8 lg:pl-72 lg:pr-8">{children}</div>
       <Dialog
         as="div"
         open={navIsOpen}
@@ -32,7 +32,7 @@ const SidebarLayout: React.FC<SidebarLayoutProps> = ({
           <Nav nav={nav} setNavIsOpen={setNavIsOpen} />
         </div>
       </Dialog>
-    </div>
+    </>
   );
 };
 
