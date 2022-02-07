@@ -3,9 +3,10 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import Button from "../../components/Button";
+import Configuration from "../../components/Configuration";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer from "../../components/Spacer";
-import { IconCopy } from "../../data/icon";
+import { IconBeerMini, IconCopy } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
 const NumberBase: NextPage = () => {
@@ -18,6 +19,19 @@ const NumberBase: NextPage = () => {
 
   return (
     <MainLayout title="Number Base Converter">
+      <div>
+        <SectionHeader title="Configuration" />
+        <Configuration icon={IconBeerMini} title="Format number">
+          On
+        </Configuration>
+        <Configuration
+          icon={IconBeerMini}
+          title="Input type"
+          subtitle="Select which Input type you want to use"
+        >
+          Select
+        </Configuration>
+      </div>
       <div>
         <SectionHeader title="Input" />
         <Spacer y={5} />
