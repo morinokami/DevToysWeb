@@ -3,6 +3,8 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import Button from "../../components/Button";
+import SectionHeader from "../../components/SectionHeader";
+import Spacer from "../../components/Spacer";
 import { IconCopy } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
@@ -17,47 +19,42 @@ const NumberBase: NextPage = () => {
   return (
     <MainLayout title="Number Base Converter">
       <div>
-        <label>
-          Input
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </label>
+        <SectionHeader title="Input" />
+        <Spacer y={5} />
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
       </div>
       <div>
-        <label>
-          Hexadecimal
-          <input type="text" value={hex} readOnly />
-        </label>
+        <SectionHeader title="Hexadecimal" />
+        <Spacer y={5} />
+        <input type="text" value={hex} readOnly />
         <CopyToClipboard text={hex}>
           <Button icon={IconCopy} />
         </CopyToClipboard>
       </div>
       <div>
-        <label>
-          Decimal
-          <input type="text" value={decimal} readOnly />
-        </label>
+        <SectionHeader title="Decimal" />
+        <Spacer y={5} />
+        <input type="text" value={decimal} readOnly />
         <CopyToClipboard text={decimal.toString()}>
           <Button icon={IconCopy} />
         </CopyToClipboard>
       </div>
       <div>
-        <label>
-          Octal
-          <input type="text" value={octal} readOnly />
-        </label>
+        <SectionHeader title="Octal" />
+        <Spacer y={5} />
+        <input type="text" value={octal} readOnly />
         <CopyToClipboard text={octal}>
           <Button icon={IconCopy} />
         </CopyToClipboard>
       </div>
       <div>
-        <label>
-          Binary
-          <input type="text" value={binary} readOnly />
-        </label>
+        <SectionHeader title="Binary" />
+        <Spacer y={5} />
+        <input type="text" value={binary} readOnly />
         <CopyToClipboard text={binary}>
           <Button icon={IconCopy} />
         </CopyToClipboard>
