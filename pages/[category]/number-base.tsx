@@ -2,6 +2,8 @@ import { NextPage } from "next";
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import Button from "../../components/Button";
+import { IconCopy } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
 const NumberBase: NextPage = () => {
@@ -30,7 +32,7 @@ const NumberBase: NextPage = () => {
           <input type="text" value={hex} readOnly />
         </label>
         <CopyToClipboard text={hex}>
-          <button>Copy</button>
+          <Button icon={IconCopy} />
         </CopyToClipboard>
       </div>
       <div>
@@ -39,7 +41,7 @@ const NumberBase: NextPage = () => {
           <input type="text" value={decimal} readOnly />
         </label>
         <CopyToClipboard text={decimal.toString()}>
-          <button>Copy</button>
+          <Button icon={IconCopy} />
         </CopyToClipboard>
       </div>
       <div>
@@ -48,7 +50,7 @@ const NumberBase: NextPage = () => {
           <input type="text" value={octal} readOnly />
         </label>
         <CopyToClipboard text={octal}>
-          <button>Copy</button>
+          <Button icon={IconCopy} />
         </CopyToClipboard>
       </div>
       <div>
@@ -57,7 +59,7 @@ const NumberBase: NextPage = () => {
           <input type="text" value={binary} readOnly />
         </label>
         <CopyToClipboard text={binary}>
-          <button>Copy</button>
+          <Button icon={IconCopy} />
         </CopyToClipboard>
       </div>
     </MainLayout>

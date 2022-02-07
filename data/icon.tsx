@@ -6,6 +6,7 @@ import {
   VscChevronDown,
   VscChevronUp,
   VscCode,
+  VscCopy,
   VscDatabase,
   VscFileBinary,
   VscHome,
@@ -32,6 +33,14 @@ export const IconBeer: React.VFC = () => {
   return (
     <IconContext.Provider value={{ size: "54" }}>
       <FaBeer />
+    </IconContext.Provider>
+  );
+};
+
+export const IconCopy: React.VFC = () => {
+  return (
+    <IconContext.Provider value={{ size: "20" }}>
+      <VscCopy />
     </IconContext.Provider>
   );
 };
