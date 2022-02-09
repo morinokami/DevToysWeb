@@ -8,6 +8,7 @@ import Button from "../../components/Button";
 import Configuration from "../../components/Configuration";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer from "../../components/Spacer";
+import Toggle from "../../components/Toggle";
 import { IconBeerMini, IconCopy } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
@@ -50,21 +51,7 @@ const NumberBase: NextPage = () => {
         <SectionHeader title="Configuration" />
         <Spacer y={6} />
         <Configuration icon={IconBeerMini} title="Format number">
-          <Switch
-            checked={format}
-            onChange={setFormat}
-            className={`${
-              format ? "bg-blue-500" : "border-2 bg-dark-5"
-            } relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ease-in-out`}
-          >
-            <span className="sr-only">Format the result</span>
-            <span
-              aria-hidden="true"
-              className={`${
-                format ? "translate-x-7" : "translate-x-1"
-              } inline-block h-3 w-3 transform rounded-full bg-white transition duration-200 ease-in-out`}
-            />
-          </Switch>
+          <Toggle on={format} onChange={setFormat} desc="Format the result" />
         </Configuration>
         <Spacer y={6} />
         <Configuration
