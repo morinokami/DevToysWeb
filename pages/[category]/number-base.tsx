@@ -6,6 +6,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import Button from "../../components/Button";
 import Configuration from "../../components/Configuration";
+import Input from "../../components/Input";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer from "../../components/Spacer";
 import Toggle from "../../components/Toggle";
@@ -117,78 +118,47 @@ const NumberBase: NextPage = () => {
       <div>
         <SectionHeader title="Input" />
         <Spacer y={6} />
-        <div className="flex items-center">
-          <input
-            className="grow rounded border-b-2 bg-gray-200 px-3 py-1 focus:outline-none dark:border-gray-500 dark:bg-dark-3 focus:dark:border-blue-500  focus:dark:bg-dark-5"
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </div>
+        <Input value={input} onChange={setInput} />
       </div>
       <Spacer y={12} />
       <div>
         <SectionHeader title="Hexadecimal" />
         <Spacer y={6} />
-        <div className="flex items-center">
-          <input
-            className="mr-2 grow rounded border-b-2 bg-gray-200 px-3 py-1 focus:outline-none dark:border-gray-500 dark:bg-dark-3 focus:dark:border-blue-500  focus:dark:bg-dark-5"
-            type="text"
-            value={hex}
-            readOnly
-          />
+        <Input value={hex}>
           <CopyToClipboard text={hex}>
             <Button icon={IconCopy} />
           </CopyToClipboard>
-        </div>
+        </Input>
       </div>
       <Spacer y={12} />
       <div>
         <SectionHeader title="Decimal" />
         <Spacer y={6} />
-        <div className="flex items-center">
-          <input
-            className="mr-2 grow rounded border-b-2 bg-gray-200 px-3 py-1 focus:outline-none dark:border-gray-500 dark:bg-dark-3 focus:dark:border-blue-500  focus:dark:bg-dark-5"
-            type="text"
-            value={decimal}
-            readOnly
-          />
-          <CopyToClipboard text={decimal.toString()}>
+        <Input value={decimal.toString()}>
+          <CopyToClipboard text={hex}>
             <Button icon={IconCopy} />
           </CopyToClipboard>
-        </div>
+        </Input>
       </div>
       <Spacer y={12} />
       <div>
         <SectionHeader title="Octal" />
         <Spacer y={6} />
-        <div className="flex items-center">
-          <input
-            className="mr-2 grow rounded border-b-2 bg-gray-200 px-3 py-1 focus:outline-none dark:border-gray-500 dark:bg-dark-3 focus:dark:border-blue-500  focus:dark:bg-dark-5"
-            type="text"
-            value={octal}
-            readOnly
-          />
-          <CopyToClipboard text={octal}>
+        <Input value={octal}>
+          <CopyToClipboard text={hex}>
             <Button icon={IconCopy} />
           </CopyToClipboard>
-        </div>
+        </Input>
       </div>
       <Spacer y={12} />
       <div>
         <SectionHeader title="Binary" />
         <Spacer y={6} />
-        <div className="flex items-center">
-          <input
-            className="mr-2 grow rounded border-b-2 bg-gray-200 px-3 py-1 focus:outline-none dark:border-gray-500 dark:bg-dark-3 focus:dark:border-blue-500  focus:dark:bg-dark-5"
-            type="text"
-            value={binary}
-            readOnly
-          />
-          <CopyToClipboard text={binary}>
+        <Input value={binary}>
+          <CopyToClipboard text={hex}>
             <Button icon={IconCopy} />
           </CopyToClipboard>
-        </div>
+        </Input>
       </div>
     </MainLayout>
   );
