@@ -11,15 +11,13 @@ const Configuration: React.FC<ConfigurationProps> = ({
   children,
 }) => {
   return (
-    <div className="flex items-center bg-gray-200 dark:bg-dark-3">
-      <div>
+    <div className="flex h-16 items-center bg-gray-200 px-4 dark:bg-dark-3">
+      <div className="pr-4">
         <Icon />
       </div>
       <div className="ml-2 grow">
         <div className="text-sm">{title}</div>
-        {subtitle && (
-          <div className="pt-1 text-xs text-gray-400">{subtitle}</div>
-        )}
+        {subtitle && <div className="text-xs text-gray-400">{subtitle}</div>}
       </div>
       <div>{children}</div>
     </div>
