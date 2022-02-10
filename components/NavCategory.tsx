@@ -4,24 +4,8 @@ import React, { useState } from "react";
 import { IconBeerMini, IconChevronDown, IconChevronUp } from "../data/icon";
 import { NavCategory } from "../data/nav";
 import NavRow from "./NavRow";
+import SelectionIndicator from "./SelectionIndicator";
 import Spacer from "./Spacer";
-
-interface SelectionIndicatorProps {
-  selected: boolean;
-}
-
-const SelectionIndicator: React.VFC<SelectionIndicatorProps> = ({
-  selected,
-}) => {
-  return selected ? (
-    <>
-      <div className="h-4 border-l-[3px] border-blue-500 dark:border-l-2" />
-      <Spacer x={12} />
-    </>
-  ) : (
-    <Spacer x={14} />
-  );
-};
 
 interface NavCategoryProps {
   category: NavCategory;
@@ -41,7 +25,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
         <div className="grow translate-y-px text-sm">{category.title}</div>
         {category.items && (
           <button
-            className="p-1 hover:bg-gray-300 hover:dark:bg-dark-2"
+            className="p-1"
             onClick={(e) => {
               e.preventDefault();
               setIsOpen(!isOpen);

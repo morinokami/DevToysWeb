@@ -17,7 +17,7 @@ const Toggle: React.VFC<ToggleProps> = ({ on, onChange, desc }) => {
         checked={on}
         onChange={onChange}
         className={`${
-          on ? "bg-blue-500" : "border-2 bg-dark-5"
+          on ? "bg-blue-500" : "border-2 bg-dark-50"
         } relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ease-in-out`}
       >
         <span className="sr-only">{desc}</span>

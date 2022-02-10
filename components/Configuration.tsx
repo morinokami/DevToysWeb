@@ -11,7 +11,7 @@ const Configuration: React.FC<ConfigurationProps> = ({
   children,
 }) => {
   return (
-    <div className="flex h-16 items-center bg-gray-200 px-4 dark:bg-dark-3">
+    <div className="flex h-16 items-center bg-gray-200 px-4 dark:bg-dark-30">
       <div className="pr-4">
         <Icon />
       </div>

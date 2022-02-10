@@ -60,7 +60,9 @@ const NumberBase: NextPage = () => {
           title="Input type"
           subtitle="Select which Input type you want to use"
         >
-          <Select options={bases} value={base} onChange={setBase} />
+          <div className="w-36">
+            <Select options={bases} value={base} onChange={setBase} />
+          </div>
         </Configuration>
       </div>
       <Spacer y={24} />
