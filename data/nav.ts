@@ -21,7 +21,7 @@ export type NavCategory = {
   href: string;
   // TODO: update
   icon?: React.VFC;
-  items: NavItem[];
+  items?: NavItem[];
 };
 
 export type NavItem = {
@@ -156,9 +156,8 @@ export const nav: Nav = [
 
 export const getTitle = (path: string): string => {
   const category = nav.find(({ href }) => path.startsWith(href));
-  console.log(path, category);
   if (category) {
-    return category.items.find(({ href }) => href === path)?.longTitle ?? "";
+    return category.items?.find(({ href }) => href === path)?.longTitle ?? "";
   }
   return "";
 };
