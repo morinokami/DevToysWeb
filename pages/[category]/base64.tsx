@@ -17,21 +17,27 @@ const modes = [{ name: "Encode" }, { name: "Decode" }];
 // https://stackoverflow.com/a/30106551/8448791
 
 const encode = (str: string) => {
-  return window.btoa(
-    encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => {
-      return String.fromCharCode(parseInt(p1, 16));
-    })
-  );
+  if (typeof window !== "undefined") {
+    return window.btoa(
+      encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => {
+        return String.fromCharCode(parseInt(p1, 16));
+      })
+    );
+  }
+  return "";
 };
 
 const decode = (str: string) => {
-  return decodeURIComponent(
-    Array.prototype.map
-      .call(window.atob(str), (c) => {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
+  if (typeof window !== "undefined") {
+    return decodeURIComponent(
+      Array.prototype.map
+        .call(window.atob(str), (c) => {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
+  }
+  return "";
 };
 
 const Base64: NextPage = () => {
