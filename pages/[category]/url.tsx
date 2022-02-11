@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import Button from "../../components/Button";
+import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
@@ -9,7 +9,7 @@ import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
-import { IconBeerMini, IconDelete } from "../../data/icon";
+import { IconBeerMini } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
 const modes = [{ name: "Encode" }, { name: "Decode" }];
@@ -43,13 +43,9 @@ const Url: NextPage = () => {
       <div>
         <SectionHeader title="Input">
           <div className="flex">
-            <PasteButton onClick={setInput} />
+            <PasteButton setter={setInput} />
             <Spacer x={6} />
-            <Button
-              icon={IconDelete}
-              title="Clear"
-              onClick={() => setInput("")}
-            />
+            <ClearButton setter={setInput} />
           </div>
         </SectionHeader>
         <Spacer y={6} />
