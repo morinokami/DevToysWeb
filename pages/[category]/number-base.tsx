@@ -77,7 +77,7 @@ const NumberBase: NextPage = () => {
         <Spacer y={6} />
         <Input value={hex}>
           <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} />
+            <Button icon={IconCopy} title="Copy" />
           </CopyToClipboard>
         </Input>
       </div>
@@ -87,7 +87,7 @@ const NumberBase: NextPage = () => {
         <Spacer y={6} />
         <Input value={decimal.toString()}>
           <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} />
+            <Button icon={IconCopy} title="Copy" />
           </CopyToClipboard>
         </Input>
       </div>
@@ -97,7 +97,7 @@ const NumberBase: NextPage = () => {
         <Spacer y={6} />
         <Input value={octal}>
           <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} />
+            <Button icon={IconCopy} title="Copy" />
           </CopyToClipboard>
         </Input>
       </div>
@@ -107,7 +107,7 @@ const NumberBase: NextPage = () => {
         <Spacer y={6} />
         <Input value={binary}>
           <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} />
+            <Button icon={IconCopy} title="Copy" />
           </CopyToClipboard>
         </Input>
       </div>

@@ -46,7 +46,11 @@ const Url: NextPage = () => {
               <Button icon={IconCopy} />
             </CopyToClipboard>
             <Spacer x={6} />
-            <Button icon={IconDelete} onClick={() => setInput("")} />
+            <Button
+              icon={IconDelete}
+              title="Clear"
+              onClick={() => setInput("")}
+            />
           </div>
         </SectionHeader>
         <Spacer y={6} />
@@ -56,7 +60,7 @@ const Url: NextPage = () => {
       <div>
         <SectionHeader title="Output">
           <CopyToClipboard text={output}>
-            <Button icon={IconCopy} />
+            <Button icon={IconCopy} text="Copy" />
           </CopyToClipboard>
         </SectionHeader>
         <Spacer y={6} />
