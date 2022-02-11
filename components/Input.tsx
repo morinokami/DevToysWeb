@@ -14,6 +14,7 @@ const Input: React.FC<InputProps> = ({ value, onChange, children }) => {
         value={value}
         onChange={(e) => (onChange ? onChange(e.target.value) : null)}
         readOnly={onChange ? false : true}
+        spellCheck={false}
       />
       {children ? <Spacer x={8} /> : null}
       {children}

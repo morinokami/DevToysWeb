@@ -26,7 +26,7 @@ const Select = <T extends {}>({ options, value, onChange }: SelectProps<T>) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded border bg-light-30 py-1 text-sm dark:border-none dark:bg-dark-35">
+          <Listbox.Options className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded border bg-light-30 py-1 text-sm dark:border-none dark:bg-dark-35">
             {options.map((option, optionIdx) => (
               <Listbox.Option
                 key={optionIdx}
