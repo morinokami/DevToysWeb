@@ -11,7 +11,7 @@ const NavCard: React.VFC<NavCardProps> = ({ navItem }) => {
   return (
     <Link href={navItem.href}>
       <a>
-        <div className="h-72 w-36 rounded border p-3 hover:cursor-pointer hover:bg-slate-50 dark:border-none dark:bg-dark-30 hover:dark:bg-slate-500">
+        <div className="h-72 w-36 rounded border border-gray-200 bg-light-10 p-3 hover:cursor-pointer hover:border-gray-300 dark:border-dark-30 dark:bg-dark-30 dark:hover:border dark:hover:border-dark-20">
           <div className="m-5 mb-8 flex h-20 w-20 items-center justify-center rounded dark:bg-dark-20">
             {/* TODO: update */}
             {navItem.icon ? <navItem.icon large={true} /> : <IconBeer />}

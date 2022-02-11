@@ -19,6 +19,12 @@ module.exports = {
           40: "#242424",
           50: "#171717",
         },
+        light: {
+          10: "#ffffff",
+          20: "#fafafa",
+          30: "#f4f4f4",
+          40: "#e8e8e8",
+        },
       },
       fontFamily: {
         sans: ["IBM Plex Sans", "sans-serif"],

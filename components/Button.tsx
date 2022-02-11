@@ -7,7 +7,7 @@ interface ButtonProps {
 const Button: React.VFC<ButtonProps> = ({ icon: Icon, text, onClick }) => {
   return (
     <button
-      className="rounded bg-gray-100 py-2 px-3 hover:bg-gray-200 dark:bg-dark-30 dark:hover:bg-dark-20"
+      className="hover:bg-light-10 rounded border border-gray-200 bg-light-20 py-2 px-3 dark:border-none dark:bg-dark-30 hover:dark:bg-dark-20"
       onClick={onClick}
     >
       <div className="flex items-center">

@@ -14,7 +14,7 @@ const Select: React.VFC<SelectProps> = ({ options, value, onChange }) => {
   return (
     <Listbox value={value} onChange={onChange}>
       <div className="relative">
-        <Listbox.Button className="relative w-full cursor-pointer rounded bg-white py-2 pl-3 pr-10 text-left text-sm dark:bg-dark-20">
+        <Listbox.Button className="relative w-full cursor-pointer rounded border bg-white py-2 pl-3 pr-10 text-left text-sm dark:border-none dark:bg-dark-20">
           <span className="block truncate">{value.name}</span>
           <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <IconChevronDown />
@@ -26,13 +26,13 @@ const Select: React.VFC<SelectProps> = ({ options, value, onChange }) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded bg-white py-1 text-sm dark:bg-dark-35">
+          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded border bg-light-30 py-1 text-sm dark:border-none dark:bg-dark-35">
             {options.map((option, optionIdx) => (
               <Listbox.Option
                 key={optionIdx}
                 className={({ selected }) =>
-                  `${selected ? "dark:bg-dark-20" : ""}
-                          relative mx-2 flex cursor-pointer select-none items-center rounded py-2 hover:dark:bg-dark-20`
+                  `${selected ? "bg-light-40 dark:bg-dark-20" : ""}
+                          relative mx-2 flex cursor-pointer select-none items-center rounded py-2 hover:bg-light-40 hover:dark:bg-dark-20`
                 }
                 value={option}
               >
