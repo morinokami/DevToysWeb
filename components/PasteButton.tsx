@@ -2,10 +2,10 @@ import { IconPaste } from "../data/icon";
 import Button from "./Button";
 
 interface PasteButtonProps {
-  onClick: (text: string) => void;
+  setter: (text: string) => void;
 }
 
-const PasteButton: React.VFC<PasteButtonProps> = ({ onClick }) => {
+const PasteButton: React.VFC<PasteButtonProps> = ({ setter: onClick }) => {
   return (
     <Button
       icon={IconPaste}

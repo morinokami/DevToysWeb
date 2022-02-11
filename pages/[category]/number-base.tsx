@@ -100,7 +100,7 @@ const NumberBase: NextPage = () => {
       <Spacer y={24} />
       <div>
         <SectionHeader title="Input">
-          <PasteButton onClick={setInput} />
+          <PasteButton setter={setInput} />
         </SectionHeader>
         <Spacer y={6} />
         <Input value={input} onChange={setInput} />
