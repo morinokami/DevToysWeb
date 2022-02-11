@@ -1,5 +1,6 @@
 import { escape, unescape } from "html-escaper";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 import ClearButton from "../../components/ClearButton";
@@ -11,17 +12,20 @@ import Spacer from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
+import { getTitle } from "../../data/nav";
 import MainLayout from "../../layouts/MainLayout";
 
 const Html: NextPage = () => {
+  const router = useRouter();
+  const title = getTitle(router.asPath);
+
   const [input, setInput] = useState("");
   const [encode, setEncode] = useState(true);
 
   const output = encode ? escape(input) : unescape(input);
 
   return (
-    // TODO: Do not hardcode the title
-    <MainLayout title="HTML Encoder / Decoder">
+    <MainLayout title={title}>
       <div>
         <SectionHeader title="Configuration" />
         <Spacer y={6} />

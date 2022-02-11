@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import React from "react";
 import { useState } from "react";
 
@@ -12,6 +13,7 @@ import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
+import { getTitle } from "../../data/nav";
 import MainLayout from "../../layouts/MainLayout";
 
 type BaseName = "Binary" | "Octal" | "Decimal" | "Hexadecimal";
@@ -66,6 +68,9 @@ const isValidInput = (str: string, base: BaseName) => {
 };
 
 const NumberBase: NextPage = () => {
+  const router = useRouter();
+  const title = getTitle(router.asPath);
+
   const [input, setInput] = useState("");
   const [format, setFormat] = useState(true);
   const [base, setBase] = useState(bases[2]);
@@ -79,7 +84,7 @@ const NumberBase: NextPage = () => {
   const hex = valid ? inputNumber.toString(16) : "";
 
   return (
-    <MainLayout title="Number Base Converter">
+    <MainLayout title={title}>
       <div>
         <SectionHeader title="Configuration" />
         <Spacer y={6} />

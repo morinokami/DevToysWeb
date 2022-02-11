@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 import ClearButton from "../../components/ClearButton";
@@ -10,6 +11,7 @@ import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import { IconBeerMini } from "../../data/icon";
+import { getTitle } from "../../data/nav";
 import MainLayout from "../../layouts/MainLayout";
 
 const modes = [{ name: "Encode" }, { name: "Decode" }];
@@ -41,13 +43,16 @@ const decode = (str: string) => {
 };
 
 const Base64: NextPage = () => {
+  const router = useRouter();
+  const title = getTitle(router.asPath);
+
   const [input, setInput] = useState("");
   const [mode, setMode] = useState(modes[0]);
 
   const output = mode.name === "Encode" ? encode(input) : decode(input);
 
   return (
-    <MainLayout title="Base 64 Encoder / Decoder">
+    <MainLayout title={title}>
       <div>
         <SectionHeader title="Configuration" />
         <Spacer y={6} />
