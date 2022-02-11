@@ -4,11 +4,12 @@ import CopyToClipboard from "react-copy-to-clipboard";
 
 import Button from "../../components/Button";
 import Configuration from "../../components/Configuration";
+import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
-import { IconBeerMini, IconCopy, IconDelete } from "../../data/icon";
+import { IconBeerMini, IconCopy, IconDelete, IconPaste } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
 const modes = [{ name: "Encode" }, { name: "Decode" }];
@@ -42,9 +43,7 @@ const Url: NextPage = () => {
       <div>
         <SectionHeader title="Input">
           <div className="flex">
-            <CopyToClipboard text={input}>
-              <Button icon={IconCopy} />
-            </CopyToClipboard>
+            <PasteButton onClick={setInput} />
             <Spacer x={6} />
             <Button
               icon={IconDelete}

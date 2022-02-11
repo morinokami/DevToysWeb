@@ -2,6 +2,7 @@ import { IconContext } from "react-icons";
 import { BsFileZip, BsTextIndentLeft } from "react-icons/bs";
 import { FaBeer, FaHtml5 } from "react-icons/fa";
 import {
+  MdContentPaste,
   MdDelete,
   MdFingerprint,
   MdOutlineLink,
@@ -55,6 +56,7 @@ const generateIconMedium = (Icon: React.VFC) => {
   return IconMedium;
 };
 export const IconCopy = generateIconMedium(VscCopy);
+export const IconPaste = generateIconMedium(MdContentPaste);
 export const IconDelete = generateIconMedium(MdDelete);
 
 // Sidebar Icons
