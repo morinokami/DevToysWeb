@@ -12,6 +12,8 @@ const TextArea: React.VFC<TextAreaProps> = ({ value, onChange, rows }) => {
         rows={rows ?? 10}
         value={value}
         onChange={(e) => (onChange ? onChange(e.target.value) : null)}
+        readOnly={!onChange}
+        spellCheck={false}
       />
     </div>
   );
