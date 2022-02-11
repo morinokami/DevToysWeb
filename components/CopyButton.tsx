@@ -1,5 +1,3 @@
-import CopyToClipboard from "react-copy-to-clipboard";
-
 import { IconCopy } from "../data/icon";
 import Button from "./Button";
 
@@ -10,13 +8,20 @@ interface CopyButtonProps {
 
 const CopyButton: React.VFC<CopyButtonProps> = ({ text, showTitle }) => {
   return (
-    <CopyToClipboard text={text}>
-      <Button
-        icon={IconCopy}
-        {...(showTitle && { title: "Copy" })}
-        {...(!showTitle && { text: "Copy" })}
-      />
-    </CopyToClipboard>
+    <Button
+      icon={IconCopy}
+      {...(!showTitle && { text: "Copy" })}
+      {...(showTitle && { title: "Copy" })}
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (e) {
+          if (e instanceof DOMException) {
+            window.alert(e.message);
+          }
+        }
+      }}
+    />
   );
 };
 
