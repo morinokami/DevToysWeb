@@ -1,7 +1,12 @@
 import { IconContext } from "react-icons";
 import { BsFileZip, BsTextIndentLeft } from "react-icons/bs";
 import { FaBeer, FaHtml5 } from "react-icons/fa";
-import { MdFingerprint, MdOutlineLink, MdTransform } from "react-icons/md";
+import {
+  MdDelete,
+  MdFingerprint,
+  MdOutlineLink,
+  MdTransform,
+} from "react-icons/md";
 import {
   VscChevronDown,
   VscChevronUp,
@@ -41,6 +46,14 @@ export const IconCopy: React.VFC = () => {
   return (
     <IconContext.Provider value={{ size: "20" }}>
       <VscCopy />
+    </IconContext.Provider>
+  );
+};
+
+export const IconDelete: React.VFC = () => {
+  return (
+    <IconContext.Provider value={{ size: "20" }}>
+      <MdDelete />
     </IconContext.Provider>
   );
 };

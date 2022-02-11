@@ -4,11 +4,11 @@ import CopyToClipboard from "react-copy-to-clipboard";
 
 import Button from "../../components/Button";
 import Configuration from "../../components/Configuration";
-import Input from "../../components/Input";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
-import { IconBeerMini, IconCopy } from "../../data/icon";
+import TextArea from "../../components/TextArea";
+import { IconBeerMini, IconCopy, IconDelete } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
 const modes = [{ name: "Encode" }, { name: "Decode" }];
@@ -41,12 +41,16 @@ const Url: NextPage = () => {
       <Spacer y={24} />
       <div>
         <SectionHeader title="Input">
-          <CopyToClipboard text={input}>
-            <Button icon={IconCopy} />
-          </CopyToClipboard>
+          <div className="flex">
+            <CopyToClipboard text={input}>
+              <Button icon={IconCopy} />
+            </CopyToClipboard>
+            <Spacer x={6} />
+            <Button icon={IconDelete} onClick={() => setInput("")} />
+          </div>
         </SectionHeader>
         <Spacer y={6} />
-        <Input value={input} onChange={setInput} />
+        <TextArea value={input} onChange={setInput} />
       </div>
       <Spacer y={12} />
       <div>
@@ -56,7 +60,7 @@ const Url: NextPage = () => {
           </CopyToClipboard>
         </SectionHeader>
         <Spacer y={6} />
-        <Input value={output} />
+        <TextArea value={output} />
       </div>
     </MainLayout>
   );
