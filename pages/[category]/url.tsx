@@ -1,15 +1,15 @@
 import { NextPage } from "next";
 import { useState } from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
 
 import Button from "../../components/Button";
 import Configuration from "../../components/Configuration";
+import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
-import { IconBeerMini, IconCopy, IconDelete, IconPaste } from "../../data/icon";
+import { IconBeerMini, IconDelete } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
 const modes = [{ name: "Encode" }, { name: "Decode" }];
@@ -58,9 +58,7 @@ const Url: NextPage = () => {
       <Spacer y={12} />
       <div>
         <SectionHeader title="Output">
-          <CopyToClipboard text={output}>
-            <Button icon={IconCopy} text="Copy" />
-          </CopyToClipboard>
+          <CopyButton text={output} />
         </SectionHeader>
         <Spacer y={6} />
         <TextArea value={output} />

@@ -1,17 +1,17 @@
 import { NextPage } from "next";
 import React from "react";
 import { useState } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import Button from "../../components/Button";
 import Configuration from "../../components/Configuration";
+import CopyButton from "../../components/CopyButton";
 import ErrorMessage from "../../components/ErrorMessage";
 import Input from "../../components/Input";
+import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import Toggle from "../../components/Toggle";
-import { IconBeerMini, IconCopy } from "../../data/icon";
+import { IconBeerMini } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
 type BaseName = "Binary" | "Octal" | "Decimal" | "Hexadecimal";
@@ -99,7 +99,9 @@ const NumberBase: NextPage = () => {
       </div>
       <Spacer y={24} />
       <div>
-        <SectionHeader title="Input" />
+        <SectionHeader title="Input">
+          <PasteButton onClick={setInput} />
+        </SectionHeader>
         <Spacer y={6} />
         <Input value={input} onChange={setInput} />
         <Spacer y={6} />
@@ -114,9 +116,7 @@ const NumberBase: NextPage = () => {
         <SectionHeader title="Hexadecimal" />
         <Spacer y={6} />
         <Input value={hex}>
-          <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} title="Copy" />
-          </CopyToClipboard>
+          <CopyButton text={hex} showTitle={true} />
         </Input>
       </div>
       <Spacer y={12} />
@@ -124,9 +124,7 @@ const NumberBase: NextPage = () => {
         <SectionHeader title="Decimal" />
         <Spacer y={6} />
         <Input value={decimal}>
-          <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} title="Copy" />
-          </CopyToClipboard>
+          <CopyButton text={decimal} showTitle={true} />
         </Input>
       </div>
       <Spacer y={12} />
@@ -134,9 +132,7 @@ const NumberBase: NextPage = () => {
         <SectionHeader title="Octal" />
         <Spacer y={6} />
         <Input value={octal}>
-          <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} title="Copy" />
-          </CopyToClipboard>
+          <CopyButton text={octal} showTitle={true} />
         </Input>
       </div>
       <Spacer y={12} />
@@ -144,9 +140,7 @@ const NumberBase: NextPage = () => {
         <SectionHeader title="Binary" />
         <Spacer y={6} />
         <Input value={binary}>
-          <CopyToClipboard text={hex}>
-            <Button icon={IconCopy} title="Copy" />
-          </CopyToClipboard>
+          <CopyButton text={binary} showTitle={true} />
         </Input>
       </div>
     </MainLayout>
