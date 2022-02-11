@@ -4,13 +4,13 @@ import React from "react";
 import { IconChevronDown } from "../data/icon";
 import SelectionIndicator from "./SelectionIndicator";
 
-interface SelectProps {
-  options: { name: string }[];
-  value: { name: string };
-  onChange: (value: { name: string }) => void;
+interface SelectProps<T> {
+  options: { name: T }[];
+  value: { name: T };
+  onChange: (value: { name: T }) => void;
 }
 
-const Select: React.VFC<SelectProps> = ({ options, value, onChange }) => {
+const Select = <T extends {}>({ options, value, onChange }: SelectProps<T>) => {
   return (
     <Listbox value={value} onChange={onChange}>
       <div className="relative">

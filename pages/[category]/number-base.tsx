@@ -5,6 +5,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import Button from "../../components/Button";
 import Configuration from "../../components/Configuration";
+import ErrorMessage from "../../components/ErrorMessage";
 import Input from "../../components/Input";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
@@ -13,7 +14,9 @@ import Toggle from "../../components/Toggle";
 import { IconBeerMini, IconCopy } from "../../data/icon";
 import MainLayout from "../../layouts/MainLayout";
 
-const bases = [
+type BaseName = "Binary" | "Octal" | "Decimal" | "Hexadecimal";
+
+const bases: { name: BaseName }[] = [
   { name: "Octal" },
   { name: "Binary" },
   { name: "Decimal" },
@@ -36,15 +39,44 @@ const isBinaryString = (str: string) => {
   return /^[01]+$/.test(str);
 };
 
+const getBase = (base: BaseName) => {
+  switch (base) {
+    case "Binary":
+      return 2;
+    case "Octal":
+      return 8;
+    case "Decimal":
+      return 10;
+    case "Hexadecimal":
+      return 16;
+  }
+};
+
+const isValidInput = (str: string, base: BaseName) => {
+  switch (base) {
+    case "Binary":
+      return isBinaryString(str);
+    case "Octal":
+      return isOctalString(str);
+    case "Decimal":
+      return isIntegerString(str);
+    case "Hexadecimal":
+      return isHexString(str);
+  }
+};
+
 const NumberBase: NextPage = () => {
   const [input, setInput] = useState("");
   const [format, setFormat] = useState(true);
   const [base, setBase] = useState(bases[2]);
 
-  const decimal = Number(input);
-  const hex = Number(input).toString(16);
-  const octal = Number(input).toString(8);
-  const binary = Number(input).toString(2);
+  // TODO: Number.MAX_SAFE_INTEGER
+  const valid = isValidInput(input, base.name);
+  const inputNumber = valid ? parseInt(input, getBase(base.name)) : NaN;
+  const binary = valid ? inputNumber.toString(2) : "";
+  const octal = valid ? inputNumber.toString(8) : "";
+  const decimal = valid ? inputNumber.toString(10) : "";
+  const hex = valid ? inputNumber.toString(16) : "";
 
   return (
     <MainLayout title="Number Base Converter">
@@ -70,6 +102,12 @@ const NumberBase: NextPage = () => {
         <SectionHeader title="Input" />
         <Spacer y={6} />
         <Input value={input} onChange={setInput} />
+        <Spacer y={6} />
+        {input.length > 0 && !valid && (
+          <ErrorMessage
+            message={`The current value isn't a valid ${base.name}`}
+          />
+        )}
       </div>
       <Spacer y={12} />
       <div>
@@ -85,7 +123,7 @@ const NumberBase: NextPage = () => {
       <div>
         <SectionHeader title="Decimal" />
         <Spacer y={6} />
-        <Input value={decimal.toString()}>
+        <Input value={decimal}>
           <CopyToClipboard text={hex}>
             <Button icon={IconCopy} title="Copy" />
           </CopyToClipboard>
