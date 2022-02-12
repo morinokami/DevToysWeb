@@ -19,9 +19,7 @@ const Toggle: React.VFC<ToggleProps> = ({
 }) => {
   return (
     <div className="flex items-center">
-      <p className="translate-y-[2px]">
-        {on ? onText ?? "On" : offText ?? "Off"}
-      </p>
+      <p className="text-sm">{on ? onText ?? "On" : offText ?? "Off"}</p>
       <Spacer x={12} />
       <Switch
         checked={on}

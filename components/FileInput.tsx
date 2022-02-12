@@ -5,11 +5,11 @@ import Button from "./Button";
 
 interface FileInputProps {
   // TODO: Accept files other than text
-  setter: (text: string) => void;
+  onFileRead: (value: string) => void;
   accept?: string;
 }
 
-const FileInput: React.VFC<FileInputProps> = ({ setter, accept }) => {
+const FileInput: React.VFC<FileInputProps> = ({ onFileRead, accept }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onClick = () => {
@@ -22,7 +22,7 @@ const FileInput: React.VFC<FileInputProps> = ({ setter, accept }) => {
       reader.onload = (e: ProgressEvent<FileReader>) => {
         const result = e.target?.result;
         if (result && typeof result === "string") {
-          setter(result);
+          onFileRead(result);
         }
       };
       reader.readAsText(e.target.files[0]);

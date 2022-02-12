@@ -47,9 +47,9 @@ const Url: NextPage = () => {
       <div>
         <SectionHeader title="Input">
           <div className="flex">
-            <PasteButton setter={setInput} />
+            <PasteButton onClick={setInput} />
             <Spacer x={6} />
-            <ClearButton setter={setInput} />
+            <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
         <Spacer y={6} />
