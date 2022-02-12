@@ -11,6 +11,7 @@ import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
+import TextButton from "../../components/TextButton";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
 import { getTitle } from "../../data/nav";
@@ -57,23 +58,25 @@ const Uuid: NextPage = () => {
       <div>
         <SectionHeader title="Generate" />
         <Spacer y={6} />
-        {/* TODO: Use Button component */}
-        <button
-          onClick={() => {
-            const generatedUuids = [];
-            for (let i = 0; i < count; i++) {
-              let uuid = version.name === "1" ? uuidv1() : uuidv4();
-              uuid = !hyphens ? uuid.replace(/-/g, "") : uuid;
-              uuid = !uppercase ? uuid.toLowerCase() : uuid.toUpperCase();
-              generatedUuids.push(uuid);
-            }
-            setUuids([...uuids, ...generatedUuids]);
-          }}
-        >
-          Generate UUID(s)
-        </button>
-        x{/* TODO: Create a new component */}
-        <NumberInput value={count} onChange={setCount} min={1} max={10000} />
+        <div className="flex items-center">
+          <TextButton
+            text="Generate UUID(s)"
+            onClick={() => {
+              const generatedUuids = [];
+              for (let i = 0; i < count; i++) {
+                let uuid = version.name === "1" ? uuidv1() : uuidv4();
+                uuid = !hyphens ? uuid.replace(/-/g, "") : uuid;
+                uuid = !uppercase ? uuid.toLowerCase() : uuid.toUpperCase();
+                generatedUuids.push(uuid);
+              }
+              setUuids([...uuids, ...generatedUuids]);
+            }}
+          />
+          <Spacer x={12} />
+          x
+          <Spacer x={12} />
+          <NumberInput value={count} onChange={setCount} min={1} max={10000} />
+        </div>
       </div>
       <Spacer y={24} />
       <div>
