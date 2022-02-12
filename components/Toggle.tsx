@@ -6,12 +6,22 @@ interface ToggleProps {
   on: boolean;
   onChange: (on: boolean) => void;
   desc?: string;
+  onText?: string;
+  offText?: string;
 }
 
-const Toggle: React.VFC<ToggleProps> = ({ on, onChange, desc }) => {
+const Toggle: React.VFC<ToggleProps> = ({
+  on,
+  onChange,
+  desc,
+  onText,
+  offText,
+}) => {
   return (
     <div className="flex items-center">
-      <p className="translate-y-[2px]">{on ? "On" : "Off"}</p>
+      <p className="translate-y-[2px]">
+        {on ? onText ?? "On" : offText ?? "Off"}
+      </p>
       <Spacer x={12} />
       <Switch
         checked={on}

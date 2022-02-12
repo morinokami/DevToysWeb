@@ -34,7 +34,13 @@ const Html: NextPage = () => {
           title="Conversion"
           subtitle="Select which conversion mode you want to use"
         >
-          <Toggle on={encode} onChange={setEncode} desc="Encode / Decode" />
+          <Toggle
+            on={encode}
+            onChange={setEncode}
+            desc="Encode the input"
+            onText="Encode"
+            offText="Decode"
+          />
         </Configuration>
       </div>
       <Spacer y={24} />

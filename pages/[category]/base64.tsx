@@ -7,14 +7,12 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
-import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
+import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
 import { getTitle } from "../../data/nav";
 import MainLayout from "../../layouts/MainLayout";
-
-const modes = [{ name: "Encode" }, { name: "Decode" }];
 
 // https://stackoverflow.com/a/30106551/8448791
 
@@ -48,9 +46,9 @@ const Base64: NextPage = () => {
   const title = getTitle(router.asPath);
 
   const [input, setInput] = useState("");
-  const [mode, setMode] = useState(modes[0]);
+  const [doEncode, setDoEncode] = useState(true);
 
-  const output = mode.name === "Encode" ? encode(input) : decode(input);
+  const output = doEncode ? encode(input) : decode(input);
 
   return (
     <MainLayout title={title}>
@@ -62,9 +60,13 @@ const Base64: NextPage = () => {
           title="Conversion"
           subtitle="Select which conversion mode you want to use"
         >
-          <div className="w-28">
-            <Select options={modes} value={mode} onChange={setMode} />
-          </div>
+          <Toggle
+            on={doEncode}
+            onChange={setDoEncode}
+            desc="Encode the input"
+            onText="Encode"
+            offText="Decode"
+          />
         </Configuration>
       </div>
       <Spacer y={24} />
