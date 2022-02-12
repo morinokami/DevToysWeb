@@ -9,6 +9,7 @@ import {
   MdTransform,
 } from "react-icons/md";
 import {
+  VscCaseSensitive,
   VscChevronDown,
   VscChevronUp,
   VscCode,
@@ -60,6 +61,7 @@ export const IconCopy = generateIconMedium(VscCopy);
 export const IconPaste = generateIconMedium(MdContentPaste);
 export const IconDelete = generateIconMedium(MdDelete);
 export const IconUpload = generateIconMedium(VscFile);
+export const IconCase = generateIconMedium(VscCaseSensitive);
 
 // Sidebar Icons
 
