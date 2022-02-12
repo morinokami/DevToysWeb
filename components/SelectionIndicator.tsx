@@ -9,7 +9,7 @@ const SelectionIndicator: React.VFC<SelectionIndicatorProps> = ({
 }) => {
   return selected ? (
     <>
-      <div className="dark:border-l-3 h-4 border-l-[3px] border-blue-400" />
+      <div className="dark:border-l-3 h-4 border-l-[3px] border-blue-30" />
       <Spacer x={12} />
     </>
   ) : (

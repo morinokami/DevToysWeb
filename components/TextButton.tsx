@@ -7,7 +7,7 @@ const TextButton: React.VFC<TextButtonProps> = ({ text, onClick }) => {
   return (
     // TODO: Update color
     <button
-      className="rounded bg-blue-600 py-2 px-3 hover:bg-blue-500"
+      className="rounded bg-blue-30 py-2 px-3 hover:bg-blue-20"
       onClick={onClick}
     >
       <div className="flex items-center">

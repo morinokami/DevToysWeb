@@ -25,7 +25,7 @@ const Toggle: React.VFC<ToggleProps> = ({
         checked={on}
         onChange={onChange}
         className={`${
-          on ? "bg-blue-500" : "border-2 bg-dark-50"
+          on ? "bg-blue-30" : "border border-dark-10 bg-dark-50"
         } relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ease-in-out`}
       >
         <span className="sr-only">{desc}</span>
@@ -33,7 +33,7 @@ const Toggle: React.VFC<ToggleProps> = ({
           aria-hidden="true"
           className={`${
             on ? "translate-x-7" : "translate-x-1"
-          } inline-block h-3 w-3 transform rounded-full bg-white transition duration-200 ease-in-out`}
+          } inline-block h-3 w-3 transform rounded-full bg-light-40 transition duration-200 ease-in-out`}
         />
       </Switch>
     </div>
