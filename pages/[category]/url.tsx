@@ -25,25 +25,25 @@ const Url: NextPage = () => {
   return (
     <MainLayout title={t.url.title}>
       <div>
-        <SectionHeader title="Configuration" />
+        <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration
           icon={IconBeerMini}
-          title="Input type"
-          subtitle="Select which conversion mode you want to use"
+          title={t.url.conversionTitle}
+          subtitle={t.url.conversionSubtitle}
         >
           <Toggle
             on={encode}
             onChange={setEncode}
-            desc="Encode the input"
-            onText="Encode"
-            offText="Decode"
+            desc={t.url.encodeDesc}
+            onText={t.url.encodeText}
+            offText={t.url.decodeText}
           />
         </Configuration>
       </div>
       <VSpacerL />
       <div>
-        <SectionHeader title="Input">
+        <SectionHeader title={t.common.inputTitle}>
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
@@ -55,7 +55,7 @@ const Url: NextPage = () => {
       </div>
       <VSpacerM />
       <div>
-        <SectionHeader title="Output">
+        <SectionHeader title={t.common.outputTitle}>
           <CopyButton text={output} />
         </SectionHeader>
         <VSpacerS />
