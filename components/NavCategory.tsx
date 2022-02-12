@@ -17,7 +17,11 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
 
   return (
     <div className="px-2">
-      <NavRow href={category.href} selected={router.asPath === category.href}>
+      <NavRow
+        href={category.href}
+        selected={router.asPath === category.href}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <SelectionIndicator selected={router.asPath === category.href} />
         {/* TODO: update */}
         {category.icon ? <category.icon /> : <IconBeerMini />}

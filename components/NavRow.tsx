@@ -3,9 +3,15 @@ import Link from "next/link";
 interface NavRowProps {
   href: string;
   selected: boolean;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const NavRow: React.FC<NavRowProps> = ({ href, selected, children }) => {
+const NavRow: React.FC<NavRowProps> = ({
+  href,
+  selected,
+  onClick,
+  children,
+}) => {
   return (
     <Link href={href}>
       <a>
@@ -13,6 +19,7 @@ const NavRow: React.FC<NavRowProps> = ({ href, selected, children }) => {
           className={`flex items-center rounded p-2 pl-0 hover:bg-light-40 hover:dark:bg-dark-30 ${
             selected ? "bg-light-40 dark:bg-dark-30" : ""
           }`}
+          onClick={onClick}
         >
           {children}
         </div>
