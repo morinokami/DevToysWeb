@@ -4,9 +4,7 @@ import { IconAllTools, IconSettings } from "../data/icon";
 import { Nav } from "../data/locales/types";
 import Divider from "./Divider";
 import NavCategory from "./NavCategory";
-import Spacer from "./Spacer";
-
-const SPACE = 6;
+import { VSpacerS } from "./Spacer";
 
 interface NavProps {
   nav: Nav;
@@ -16,7 +14,7 @@ interface NavProps {
 const _Nav: React.VFC<NavProps> = ({ nav }) => {
   return (
     <ul>
-      <Spacer y={SPACE} />
+      <VSpacerS />
       <li>
         <NavCategory
           category={{
@@ -26,15 +24,15 @@ const _Nav: React.VFC<NavProps> = ({ nav }) => {
           }}
         />
       </li>
-      <Spacer y={SPACE} />
+      <VSpacerS />
       <Divider />
-      <Spacer y={SPACE} />
+      <VSpacerS />
       {nav.map((category) => (
         <React.Fragment key={category.title}>
           <li>
             <NavCategory category={category} />
           </li>
-          <Spacer y={SPACE} />
+          <VSpacerS />
         </React.Fragment>
       ))}
       <li>
