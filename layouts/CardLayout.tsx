@@ -1,5 +1,5 @@
 import NavCard from "../components/NavCard";
-import Spacer from "../components/Spacer";
+import { VSpacerL, VSpacerM } from "../components/Spacer";
 import { NavItem } from "../data/nav";
 
 interface CardLayoutProps {
@@ -10,7 +10,7 @@ const CardLayout: React.VFC<CardLayoutProps> = ({ navItems }) => {
   return (
     <>
       <div className="md:hidden">
-        <Spacer y={12} />
+        <VSpacerM />
       </div>
       <div className="sm:grid sm:grid-cols-3 sm:gap-y-4 md:flex md:flex-wrap md:justify-start xs:grid-cols-2">
         {navItems.map((navItem) => {
@@ -25,7 +25,7 @@ const CardLayout: React.VFC<CardLayoutProps> = ({ navItems }) => {
         })}
       </div>
       <div className="md:hidden">
-        <Spacer y={24} />
+        <VSpacerL />
       </div>
     </>
   );

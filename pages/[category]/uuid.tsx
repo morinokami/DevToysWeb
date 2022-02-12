@@ -9,7 +9,7 @@ import CopyButton from "../../components/CopyButton";
 import NumberInput from "../../components/NumberInput";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
-import Spacer from "../../components/Spacer";
+import Spacer, { VSpacerL, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import TextButton from "../../components/TextButton";
 import Toggle from "../../components/Toggle";
@@ -35,15 +35,15 @@ const Uuid: NextPage = () => {
     <MainLayout title={title}>
       <div>
         <SectionHeader title="Configuration" />
-        <Spacer y={6} />
+        <VSpacerS />
         <Configuration icon={IconBeerMini} title="Hyphens">
           <Toggle on={hyphens} onChange={setHyphens} desc="Use hyphens" />
         </Configuration>
-        <Spacer y={6} />
+        <VSpacerS />
         <Configuration icon={IconBeerMini} title="Uppercase">
           <Toggle on={uppercase} onChange={setUppercase} desc="Use uppercase" />
         </Configuration>
-        <Spacer y={6} />
+        <VSpacerS />
         <Configuration
           icon={IconBeerMini}
           title="UUID version"
@@ -54,10 +54,10 @@ const Uuid: NextPage = () => {
           </div>
         </Configuration>
       </div>
-      <Spacer y={24} />
+      <VSpacerL />
       <div>
         <SectionHeader title="Generate" />
-        <Spacer y={6} />
+        <VSpacerS />
         <div className="flex items-center">
           <TextButton
             text="Generate UUID(s)"
@@ -78,7 +78,7 @@ const Uuid: NextPage = () => {
           <NumberInput value={count} onChange={setCount} min={1} max={10000} />
         </div>
       </div>
-      <Spacer y={24} />
+      <VSpacerL />
       <div>
         <SectionHeader title="Output">
           <div className="flex">
@@ -87,7 +87,7 @@ const Uuid: NextPage = () => {
             <ClearButton onClick={() => setUuids([])} />
           </div>
         </SectionHeader>
-        <Spacer y={6} />
+        <VSpacerS />
         <TextArea value={output} />
       </div>
     </MainLayout>

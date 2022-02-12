@@ -10,7 +10,7 @@ import Input from "../../components/Input";
 import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
-import Spacer from "../../components/Spacer";
+import { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
 import { getTitle } from "../../data/nav";
@@ -87,11 +87,11 @@ const NumberBase: NextPage = () => {
     <MainLayout title={title}>
       <div>
         <SectionHeader title="Configuration" />
-        <Spacer y={6} />
+        <VSpacerS />
         <Configuration icon={IconBeerMini} title="Format number">
           <Toggle on={format} onChange={setFormat} desc="Format the result" />
         </Configuration>
-        <Spacer y={6} />
+        <VSpacerS />
         <Configuration
           icon={IconBeerMini}
           title="Input type"
@@ -102,48 +102,48 @@ const NumberBase: NextPage = () => {
           </div>
         </Configuration>
       </div>
-      <Spacer y={24} />
+      <VSpacerL />
       <div>
         <SectionHeader title="Input">
           <PasteButton onClick={setInput} />
         </SectionHeader>
-        <Spacer y={6} />
+        <VSpacerS />
         <Input value={input} onChange={setInput} />
-        <Spacer y={6} />
+        <VSpacerS />
         {input.length > 0 && !valid && (
           <ErrorMessage
             message={`The current value isn't a valid ${base.name}`}
           />
         )}
       </div>
-      <Spacer y={12} />
+      <VSpacerM />
       <div>
         <SectionHeader title="Hexadecimal" />
-        <Spacer y={6} />
+        <VSpacerS />
         <Input value={hex}>
           <CopyButton text={hex} showTitle={true} />
         </Input>
       </div>
-      <Spacer y={12} />
+      <VSpacerM />
       <div>
         <SectionHeader title="Decimal" />
-        <Spacer y={6} />
+        <VSpacerS />
         <Input value={decimal}>
           <CopyButton text={decimal} showTitle={true} />
         </Input>
       </div>
-      <Spacer y={12} />
+      <VSpacerM />
       <div>
         <SectionHeader title="Octal" />
-        <Spacer y={6} />
+        <VSpacerS />
         <Input value={octal}>
           <CopyButton text={octal} showTitle={true} />
         </Input>
       </div>
-      <Spacer y={12} />
+      <VSpacerM />
       <div>
         <SectionHeader title="Binary" />
-        <Spacer y={6} />
+        <VSpacerS />
         <Input value={binary}>
           <CopyButton text={binary} showTitle={true} />
         </Input>

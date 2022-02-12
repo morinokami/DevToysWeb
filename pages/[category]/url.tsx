@@ -7,7 +7,7 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
-import Spacer from "../../components/Spacer";
+import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
@@ -28,7 +28,7 @@ const Url: NextPage = () => {
     <MainLayout title={title}>
       <div>
         <SectionHeader title="Configuration" />
-        <Spacer y={6} />
+        <VSpacerS />
         <Configuration
           icon={IconBeerMini}
           title="Input type"
@@ -43,7 +43,7 @@ const Url: NextPage = () => {
           />
         </Configuration>
       </div>
-      <Spacer y={24} />
+      <VSpacerL />
       <div>
         <SectionHeader title="Input">
           <div className="flex">
@@ -52,15 +52,15 @@ const Url: NextPage = () => {
             <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
-        <Spacer y={6} />
+        <VSpacerS />
         <TextArea value={input} onChange={setInput} />
       </div>
-      <Spacer y={12} />
+      <VSpacerM />
       <div>
         <SectionHeader title="Output">
           <CopyButton text={output} />
         </SectionHeader>
-        <Spacer y={6} />
+        <VSpacerS />
         <TextArea value={output} />
       </div>
     </MainLayout>

@@ -5,7 +5,7 @@ import { IconBeerMini, IconChevronDown, IconChevronUp } from "../data/icon";
 import { NavCategory } from "../data/nav";
 import NavRow from "./NavRow";
 import SelectionIndicator from "./SelectionIndicator";
-import Spacer from "./Spacer";
+import Spacer, { VSpacerS } from "./Spacer";
 
 interface NavCategoryProps {
   category: NavCategory;
@@ -43,7 +43,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
         <ul>
           {category.items.map((item) => (
             <React.Fragment key={item.title}>
-              <Spacer y={6} />
+              <VSpacerS />
               <li>
                 <NavRow href={item.href} selected={router.asPath === item.href}>
                   <Spacer x={28} />
