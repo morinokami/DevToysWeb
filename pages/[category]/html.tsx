@@ -6,6 +6,7 @@ import { useState } from "react";
 import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
+import FileInput from "../../components/FileInput";
 import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer from "../../components/Spacer";
@@ -48,6 +49,8 @@ const Html: NextPage = () => {
         <SectionHeader title="Input">
           <div className="flex">
             <PasteButton setter={setInput} />
+            <Spacer x={6} />
+            <FileInput setter={setInput} accept=".htm,.html" />
             <Spacer x={6} />
             <ClearButton setter={setInput} />
           </div>

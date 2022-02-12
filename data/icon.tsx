@@ -14,6 +14,7 @@ import {
   VscCode,
   VscCopy,
   VscDatabase,
+  VscFile,
   VscFileBinary,
   VscHome,
   VscJson,
@@ -58,6 +59,7 @@ const generateIconMedium = (Icon: React.VFC) => {
 export const IconCopy = generateIconMedium(VscCopy);
 export const IconPaste = generateIconMedium(MdContentPaste);
 export const IconDelete = generateIconMedium(MdDelete);
+export const IconUpload = generateIconMedium(VscFile);
 
 // Sidebar Icons
 
