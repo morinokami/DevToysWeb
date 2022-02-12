@@ -6,6 +6,7 @@ import { v1 as uuidv1, v4 as uuidv4 } from "uuid";
 import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
+import NumberInput from "../../components/NumberInput";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import Spacer from "../../components/Spacer";
@@ -72,11 +73,7 @@ const Uuid: NextPage = () => {
           Generate UUID(s)
         </button>
         x{/* TODO: Create a new component */}
-        <input
-          type="number"
-          value={count}
-          onChange={(e) => setCount(Number(e.target.value))}
-        />
+        <NumberInput value={count} onChange={setCount} min={1} max={10000} />
       </div>
       <Spacer y={24} />
       <div>
