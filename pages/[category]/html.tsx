@@ -48,11 +48,11 @@ const Html: NextPage = () => {
       <div>
         <SectionHeader title="Input">
           <div className="flex">
-            <PasteButton setter={setInput} />
+            <PasteButton onClick={setInput} />
             <Spacer x={6} />
-            <FileInput setter={setInput} accept=".htm,.html" />
+            <FileInput onFileRead={setInput} accept=".htm,.html" />
             <Spacer x={6} />
-            <ClearButton setter={setInput} />
+            <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
         <Spacer y={6} />

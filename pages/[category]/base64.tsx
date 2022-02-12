@@ -73,13 +73,13 @@ const Base64: NextPage = () => {
       <div>
         <SectionHeader title="Input">
           <div className="flex">
-            <PasteButton setter={setInput} />
+            <PasteButton onClick={(text) => setInput(text)} />
             <Spacer x={6} />
-            <ClearButton setter={setInput} />
+            <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
         <Spacer y={6} />
-        <TextArea value={input} onChange={setInput} rows={7} />
+        <TextArea value={input} onChange={setInput} />
       </div>
       <Spacer y={12} />
       <div>
@@ -87,7 +87,7 @@ const Base64: NextPage = () => {
           <CopyButton text={output} />
         </SectionHeader>
         <Spacer y={6} />
-        <TextArea value={output} rows={7} />
+        <TextArea value={output} />
       </div>
     </MainLayout>
   );

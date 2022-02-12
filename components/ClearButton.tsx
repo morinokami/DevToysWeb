@@ -2,11 +2,11 @@ import { IconDelete } from "../data/icon";
 import Button from "./Button";
 
 interface ClearButtonProps {
-  setter: (text: string) => void;
+  onClick: () => void;
 }
 
-const ClearButton: React.VFC<ClearButtonProps> = ({ setter }) => {
-  return <Button icon={IconDelete} title="Clear" onClick={() => setter("")} />;
+const ClearButton: React.VFC<ClearButtonProps> = ({ onClick }) => {
+  return <Button icon={IconDelete} title="Clear" onClick={onClick} />;
 };
 
 export default ClearButton;
