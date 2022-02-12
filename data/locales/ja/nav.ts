@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   IconConverters,
   IconEncodersDecoders,
@@ -8,114 +6,97 @@ import {
   IconHash,
   IconHtml,
   IconJson,
-  IconProps,
   IconSql,
   IconUrl,
   IconXml,
-} from "./icon";
+} from "../../icon";
+import { Nav } from "../types";
 
-export type Nav = NavCategory[];
-
-export type NavCategory = {
-  title: string;
-  href: string;
-  // TODO: update
-  icon?: React.VFC;
-  items?: NavItem[];
-};
-
-export type NavItem = {
-  title: string;
-  longTitle: string;
-  href: string;
-  // TODO: update
-  icon?: React.VFC<IconProps>;
-  desc: string;
-};
+const localePath = "/ja";
 
 export const nav: Nav = [
   {
     title: "Converters",
-    href: "/converters",
+    href: `${localePath}/converters`,
     icon: IconConverters,
     items: [
       {
         title: "JSON <> YAML",
         longTitle: "JSON <> YAML Converter",
-        href: "/converters/json-yaml",
+        href: `${localePath}/converters/json-yaml`,
         desc: "Convert JSON data to YAML and vice versa",
       },
       {
         title: "Number Base",
         longTitle: "Number Base Converter",
-        href: "/converters/number-base",
+        href: `${localePath}/converters/number-base`,
         desc: "Convert numbers from one base to another",
       },
     ],
   },
   {
     title: "Encoders / Decoders",
-    href: "/encoders-decoders",
+    href: `${localePath}/encoders-decoders`,
     icon: IconEncodersDecoders,
     items: [
       {
         title: "HTML",
         longTitle: "HTML Encoder / Decoder",
-        href: "/encoders-decoders/html",
+        href: `${localePath}/encoders-decoders/html`,
         icon: IconHtml,
         desc: "Encode or decode all the applicable characters to their corresponding HTML entities",
       },
       {
         title: "URL",
         longTitle: "URL Encoder / Decoder",
-        href: "/encoders-decoders/url",
+        href: `${localePath}/encoders-decoders/url`,
         icon: IconUrl,
         desc: "Encode or decode all the applicable characters to their corresponding URL entities",
       },
       {
         title: "Base 64",
         longTitle: "Base 64 Encoder / Decoder",
-        href: "/encoders-decoders/base64",
+        href: `${localePath}/encoders-decoders/base64`,
         desc: "Encode and decode Base64 data",
       },
       {
         title: "GZip",
         longTitle: "GZip Compress / Decompress",
-        href: "/encoders-decoders/gzip",
+        href: `${localePath}/encoders-decoders/gzip`,
         icon: IconGZip,
         desc: "Compress or decompress strings",
       },
       {
         title: "JWT Decoder",
         longTitle: "JWT Decoder",
-        href: "/encoders-decoders/jwt-decoder",
+        href: `${localePath}/encoders-decoders/jwt-decoder`,
         desc: "Decode a JWT header, payload and signature",
       },
     ],
   },
   {
     title: "Formatters",
-    href: "/formatters",
+    href: `${localePath}/formatters`,
     icon: IconFormatters,
     items: [
       {
         title: "JSON",
         longTitle: "JSON Formatter",
-        href: "/formatters/json",
+        href: `${localePath}/formatters/json`,
         icon: IconJson,
         desc: "Indent or minify JSON data",
       },
       {
         title: "SQL",
         longTitle: "SQL Formatter",
-        href: "/formatters/sql",
+        href: `${localePath}/formatters/sql`,
         icon: IconSql,
         desc: "Indent SQL queries",
       },
       {
         title: "XML",
         longTitle: "XML Formatter",
-        href: "/formatters/xml",
+        href: `${localePath}/formatters/xml`,
         icon: IconXml,
         desc: "Indent or minify XML data",
       },
@@ -123,41 +104,46 @@ export const nav: Nav = [
   },
   {
     title: "Generators",
-    href: "/generators",
+    href: `${localePath}/generators`,
     items: [
       {
         title: "Hash",
         longTitle: "Hash Generator",
-        href: "/generators/hash",
+        href: `${localePath}/generators/hash`,
         icon: IconHash,
         desc: "Calculate MD5, SHA1, SHA256 and SHA512 hash from text data",
       },
       {
         title: "UUID",
         longTitle: "UUID Generator",
-        href: "/generators/uuid",
+        href: `${localePath}/generators/uuid`,
         desc: "Generate UUIDs version 1 and 4",
       },
       {
         title: "Lorem Ipsum",
         longTitle: "Lorem Ipsum Generator",
-        href: "/generators/lorem-ipsum",
+        href: `${localePath}/generators/lorem-ipsum`,
         desc: "Generate Lorem Ipsum placeholder text",
       },
       {
         title: "Checksum",
         longTitle: "Checksum",
-        href: "/generators/checksum",
+        href: `${localePath}/generators/checksum`,
         desc: "Generate an hash with CheckSum based on a file",
       },
     ],
   },
 ];
 
-export const getTitle = (path: string): string => {
-  const category = nav.find(({ href }) => path.startsWith(href));
+export const getTitle = (pathWithoutLocale: string): string => {
+  const category = nav.find(({ href }) =>
+    `${localePath}${pathWithoutLocale}`.startsWith(href)
+  );
   if (category) {
-    return category.items?.find(({ href }) => href === path)?.longTitle ?? "";
+    return (
+      category.items?.find(({ href }) => href === pathWithoutLocale)
+        ?.longTitle ?? ""
+    );
   }
   return "";
 };

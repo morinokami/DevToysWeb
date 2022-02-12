@@ -1,6 +1,5 @@
 import { escape, unescape } from "html-escaper";
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 import ClearButton from "../../components/ClearButton";
@@ -13,12 +12,11 @@ import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
-import { getTitle } from "../../data/nav";
+import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
 const Html: NextPage = () => {
-  const router = useRouter();
-  const title = getTitle(router.asPath);
+  const { t } = useLocale();
 
   const [input, setInput] = useState("");
   const [encode, setEncode] = useState(true);
@@ -26,27 +24,27 @@ const Html: NextPage = () => {
   const output = encode ? escape(input) : unescape(input);
 
   return (
-    <MainLayout title={title}>
+    <MainLayout title={t.html.title}>
       <div>
-        <SectionHeader title="Configuration" />
+        <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration
           icon={IconBeerMini}
-          title="Conversion"
-          subtitle="Select which conversion mode you want to use"
+          title={t.html.conversionTitle}
+          subtitle={t.html.conversionSubtitle}
         >
           <Toggle
             on={encode}
             onChange={setEncode}
-            desc="Encode the input"
-            onText="Encode"
-            offText="Decode"
+            desc={t.html.encodeDesc}
+            onText={t.html.encodeText}
+            offText={t.html.decodeText}
           />
         </Configuration>
       </div>
       <VSpacerL />
       <div>
-        <SectionHeader title="Input">
+        <SectionHeader title={t.common.inputTitle}>
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
@@ -60,7 +58,7 @@ const Html: NextPage = () => {
       </div>
       <VSpacerM />
       <div>
-        <SectionHeader title="Output">
+        <SectionHeader title={t.common.outputTitle}>
           <CopyButton text={output} />
         </SectionHeader>
         <VSpacerS />

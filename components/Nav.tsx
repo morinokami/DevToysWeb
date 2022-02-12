@@ -1,7 +1,7 @@
 import React from "react";
 
 import { IconAllTools, IconSettings } from "../data/icon";
-import { Nav } from "../data/nav";
+import { Nav } from "../data/locales/types";
 import Divider from "./Divider";
 import NavCategory from "./NavCategory";
 import Spacer from "./Spacer";

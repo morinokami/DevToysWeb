@@ -2,7 +2,7 @@ import { Dialog } from "@headlessui/react";
 import React from "react";
 
 import Nav from "../components/Nav";
-import { nav } from "../data/nav";
+import { useLocale } from "../hooks/useLocale";
 
 interface SidebarLayoutProps {
   navIsOpen: boolean;
@@ -14,6 +14,7 @@ const SidebarLayout: React.FC<SidebarLayoutProps> = ({
   setNavIsOpen,
   children,
 }) => {
+  const { nav } = useLocale();
   return (
     <>
       <div className="fixed inset-0 hidden w-64 overflow-y-auto bg-light-30 pt-12 dark:bg-dark-50 lg:block">

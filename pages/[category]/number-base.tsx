@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import React from "react";
 import { useState } from "react";
 
@@ -13,7 +12,7 @@ import Select from "../../components/Select";
 import { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
-import { getTitle } from "../../data/nav";
+import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
 type BaseName = "Binary" | "Octal" | "Decimal" | "Hexadecimal";
@@ -68,8 +67,7 @@ const isValidInput = (str: string, base: BaseName) => {
 };
 
 const NumberBase: NextPage = () => {
-  const router = useRouter();
-  const title = getTitle(router.asPath);
+  const { t } = useLocale();
 
   const [input, setInput] = useState("");
   const [format, setFormat] = useState(true);
@@ -84,18 +82,25 @@ const NumberBase: NextPage = () => {
   const hex = valid ? inputNumber.toString(16) : "";
 
   return (
-    <MainLayout title={title}>
+    <MainLayout title={t.numberBase.title}>
       <div>
-        <SectionHeader title="Configuration" />
+        <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title="Format number">
-          <Toggle on={format} onChange={setFormat} desc="Format the result" />
+        <Configuration
+          icon={IconBeerMini}
+          title={t.numberBase.formatNumberTitle}
+        >
+          <Toggle
+            on={format}
+            onChange={setFormat}
+            desc={t.numberBase.formatNumberDesc}
+          />
         </Configuration>
         <VSpacerS />
         <Configuration
           icon={IconBeerMini}
-          title="Input type"
-          subtitle="Select which Input type you want to use"
+          title={t.numberBase.inputTypeTitle}
+          subtitle={t.numberBase.inputTypeSubtitle}
         >
           <div className="w-36">
             <Select options={bases} value={base} onChange={setBase} />
@@ -104,7 +109,7 @@ const NumberBase: NextPage = () => {
       </div>
       <VSpacerL />
       <div>
-        <SectionHeader title="Input">
+        <SectionHeader title={t.common.inputTitle}>
           <PasteButton onClick={setInput} />
         </SectionHeader>
         <VSpacerS />
@@ -118,7 +123,7 @@ const NumberBase: NextPage = () => {
       </div>
       <VSpacerM />
       <div>
-        <SectionHeader title="Hexadecimal" />
+        <SectionHeader title={t.numberBase.hexTitle} />
         <VSpacerS />
         <Input value={hex}>
           <CopyButton text={hex} showTitle={true} />
@@ -126,7 +131,7 @@ const NumberBase: NextPage = () => {
       </div>
       <VSpacerM />
       <div>
-        <SectionHeader title="Decimal" />
+        <SectionHeader title={t.numberBase.decimalTitle} />
         <VSpacerS />
         <Input value={decimal}>
           <CopyButton text={decimal} showTitle={true} />
@@ -134,7 +139,7 @@ const NumberBase: NextPage = () => {
       </div>
       <VSpacerM />
       <div>
-        <SectionHeader title="Octal" />
+        <SectionHeader title={t.numberBase.octalTitle} />
         <VSpacerS />
         <Input value={octal}>
           <CopyButton text={octal} showTitle={true} />
@@ -142,7 +147,7 @@ const NumberBase: NextPage = () => {
       </div>
       <VSpacerM />
       <div>
-        <SectionHeader title="Binary" />
+        <SectionHeader title={t.numberBase.binaryTitle} />
         <VSpacerS />
         <Input value={binary}>
           <CopyButton text={binary} showTitle={true} />

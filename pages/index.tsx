@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 
-import { nav } from "../data/nav";
+import { useLocale } from "../hooks/useLocale";
 import CardLayout from "../layouts/CardLayout";
 import MainLayout from "../layouts/MainLayout";
 
 const Home: NextPage = () => {
+  const { nav } = useLocale();
   const navItems =
     nav
       .map(({ items }) => items)

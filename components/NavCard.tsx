@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { IconBeer } from "../data/icon";
-import { NavItem } from "../data/nav";
+import { NavItem } from "../data/locales/types";
 
 interface NavCardProps {
   navItem: NavItem;
