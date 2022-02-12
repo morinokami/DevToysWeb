@@ -8,8 +8,9 @@ import MainLayout from "../../layouts/MainLayout";
 const Category: NextPage = () => {
   const { nav } = useLocale();
   const router = useRouter();
-  const path = router.asPath;
-  const category = nav.find(({ href }) => href === path);
+  const { asPath: path, locale } = router;
+  const localePath = locale === "en" ? "" : `/${locale}`;
+  const category = nav.find(({ href }) => href === `${localePath}${path}`);
   const title = category?.title;
   const navItems = category?.items ?? [];
 

@@ -12,7 +12,7 @@ import {
 } from "../../icon";
 import { Nav } from "../types";
 
-const localePath = "";
+const localePath = "/ja";
 
 export const nav: Nav = [
   {
