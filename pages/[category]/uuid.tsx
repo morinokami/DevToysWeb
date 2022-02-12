@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { v1 as uuidv1, v4 as uuidv4 } from "uuid";
 
@@ -14,14 +13,13 @@ import TextArea from "../../components/TextArea";
 import TextButton from "../../components/TextButton";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
-import { getTitle } from "../../data/nav";
+import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
 const versions = [{ name: "1" }, { name: "4 (GUID)" }];
 
 const Uuid: NextPage = () => {
-  const router = useRouter();
-  const title = getTitle(router.asPath);
+  const { t } = useLocale();
 
   const [hyphens, setHyphens] = useState(true);
   const [uppercase, setUppercase] = useState(false);
@@ -32,7 +30,7 @@ const Uuid: NextPage = () => {
   const output = uuids.join("\n");
 
   return (
-    <MainLayout title={title}>
+    <MainLayout title={t.uuid.title}>
       <div>
         <SectionHeader title="Configuration" />
         <VSpacerS />

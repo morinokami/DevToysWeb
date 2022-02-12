@@ -1,6 +1,6 @@
 import NavCard from "../components/NavCard";
 import { VSpacerL, VSpacerM } from "../components/Spacer";
-import { NavItem } from "../data/nav";
+import { NavItem } from "../data/locales/types";
 
 interface CardLayoutProps {
   navItems: NavItem[];

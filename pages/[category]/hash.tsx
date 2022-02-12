@@ -3,7 +3,6 @@ import sha1 from "crypto-js/sha1";
 import sha256 from "crypto-js/sha256";
 import sha512 from "crypto-js/sha512";
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 import ClearButton from "../../components/ClearButton";
@@ -16,12 +15,11 @@ import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
-import { getTitle } from "../../data/nav";
+import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
 const Hash: NextPage = () => {
-  const router = useRouter();
-  const title = getTitle(router.asPath);
+  const { t } = useLocale();
 
   const [input, setInput] = useState("");
   const [uppercase, setUppercase] = useState(false);
@@ -44,18 +42,22 @@ const Hash: NextPage = () => {
   const sha512Output = hash(input, sha512, uppercase);
 
   return (
-    <MainLayout title={title}>
+    <MainLayout title={t.hash.title}>
       <div>
-        <SectionHeader title="Configuration" />
+        <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title="Uppercase">
-          <Toggle on={uppercase} onChange={setUppercase} desc="Use uppercase" />
+        <Configuration icon={IconBeerMini} title={t.hash.uppercaseTitle}>
+          <Toggle
+            on={uppercase}
+            onChange={setUppercase}
+            desc={t.hash.uppercaseDesc}
+          />
         </Configuration>
       </div>
 
       <VSpacerL />
       <div>
-        <SectionHeader title="Input">
+        <SectionHeader title={t.common.inputTitle}>
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
@@ -68,7 +70,7 @@ const Hash: NextPage = () => {
 
       <VSpacerM />
       <div>
-        <SectionHeader title="MD5" />
+        <SectionHeader title={t.hash.md5Title} />
         <VSpacerS />
         <Input value={md5Output}>
           <CopyButton text={md5Output} showTitle={true} />
@@ -77,7 +79,7 @@ const Hash: NextPage = () => {
 
       <VSpacerM />
       <div>
-        <SectionHeader title="SHA1" />
+        <SectionHeader title={t.hash.sha1Title} />
         <VSpacerS />
         <Input value={sha1Output}>
           <CopyButton text={sha1Output} showTitle={true} />
@@ -86,7 +88,7 @@ const Hash: NextPage = () => {
 
       <VSpacerM />
       <div>
-        <SectionHeader title="SHA256" />
+        <SectionHeader title={t.hash.sha256Title} />
         <VSpacerS />
         <Input value={sha256Output}>
           <CopyButton text={sha256Output} showTitle={true} />
@@ -95,7 +97,7 @@ const Hash: NextPage = () => {
 
       <VSpacerM />
       <div>
-        <SectionHeader title="sha512" />
+        <SectionHeader title={t.hash.sha512Title} />
         <VSpacerS />
         <Input value={sha512Output}>
           <CopyButton text={sha512Output} showTitle={true} />

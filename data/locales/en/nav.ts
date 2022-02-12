@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   IconConverters,
   IconEncodersDecoders,
@@ -8,30 +6,11 @@ import {
   IconHash,
   IconHtml,
   IconJson,
-  IconProps,
   IconSql,
   IconUrl,
   IconXml,
-} from "./icon";
-
-export type Nav = NavCategory[];
-
-export type NavCategory = {
-  title: string;
-  href: string;
-  // TODO: update
-  icon?: React.VFC;
-  items?: NavItem[];
-};
-
-export type NavItem = {
-  title: string;
-  longTitle: string;
-  href: string;
-  // TODO: update
-  icon?: React.VFC<IconProps>;
-  desc: string;
-};
+} from "../../icon";
+import { Nav } from "../types";
 
 export const nav: Nav = [
   {

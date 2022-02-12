@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 import ClearButton from "../../components/ClearButton";
@@ -11,7 +10,7 @@ import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
-import { getTitle } from "../../data/nav";
+import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
 // https://stackoverflow.com/a/30106551/8448791
@@ -42,8 +41,7 @@ const decode = (str: string) => {
 };
 
 const Base64: NextPage = () => {
-  const router = useRouter();
-  const title = getTitle(router.asPath);
+  const { t } = useLocale();
 
   const [input, setInput] = useState("");
   const [doEncode, setDoEncode] = useState(true);
@@ -51,27 +49,27 @@ const Base64: NextPage = () => {
   const output = doEncode ? encode(input) : decode(input);
 
   return (
-    <MainLayout title={title}>
+    <MainLayout title={t.base64.title}>
       <div>
-        <SectionHeader title="Configuration" />
+        <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration
           icon={IconBeerMini}
-          title="Conversion"
-          subtitle="Select which conversion mode you want to use"
+          title={t.base64.conversionTitle}
+          subtitle={t.base64.conversionSubtitle}
         >
           <Toggle
             on={doEncode}
             onChange={setDoEncode}
-            desc="Encode the input"
-            onText="Encode"
-            offText="Decode"
+            desc={t.base64.encodeDesc}
+            onText={t.base64.encodeText}
+            offText={t.base64.decodeText}
           />
         </Configuration>
       </div>
       <VSpacerL />
       <div>
-        <SectionHeader title="Input">
+        <SectionHeader title={t.common.inputTitle}>
           <div className="flex">
             <PasteButton onClick={(text) => setInput(text)} />
             <Spacer x={6} />
@@ -83,7 +81,7 @@ const Base64: NextPage = () => {
       </div>
       <VSpacerM />
       <div>
-        <SectionHeader title="Output">
+        <SectionHeader title={t.common.outputTitle}>
           <CopyButton text={output} />
         </SectionHeader>
         <VSpacerS />

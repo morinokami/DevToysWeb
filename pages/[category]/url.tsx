@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 import ClearButton from "../../components/ClearButton";
@@ -11,12 +10,11 @@ import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
-import { getTitle } from "../../data/nav";
+import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
 const Url: NextPage = () => {
-  const router = useRouter();
-  const title = getTitle(router.asPath);
+  const { t } = useLocale();
 
   const [input, setInput] = useState("");
   const [encode, setEncode] = useState(true);
@@ -25,7 +23,7 @@ const Url: NextPage = () => {
   const output = encode ? encodeURIComponent(input) : decodeURIComponent(input);
 
   return (
-    <MainLayout title={title}>
+    <MainLayout title={t.url.title}>
       <div>
         <SectionHeader title="Configuration" />
         <VSpacerS />
