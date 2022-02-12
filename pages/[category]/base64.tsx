@@ -30,7 +30,7 @@ const encode = (str: string) => {
 };
 
 const decode = (str: string) => {
-  if (typeof window !== "undefined") {
+  try {
     return decodeURIComponent(
       Array.prototype.map
         .call(window.atob(str), (c) => {
@@ -38,8 +38,9 @@ const decode = (str: string) => {
         })
         .join("")
     );
+  } catch {
+    return "";
   }
-  return "";
 };
 
 const Base64: NextPage = () => {
