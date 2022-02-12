@@ -29,14 +29,8 @@ const encode = (str: string) => {
   return "";
 };
 
-const isBase64 = (str: string) => {
-  const base64Regex =
-    /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
-  return base64Regex.test(str);
-};
-
 const decode = (str: string) => {
-  if (typeof window !== "undefined" && isBase64(str)) {
+  try {
     return decodeURIComponent(
       Array.prototype.map
         .call(window.atob(str), (c) => {
@@ -44,8 +38,9 @@ const decode = (str: string) => {
         })
         .join("")
     );
+  } catch {
+    return "";
   }
-  return "";
 };
 
 const Base64: NextPage = () => {
