@@ -31,6 +31,18 @@ export const t = {
     encodeText: "Encode",
     decodeText: "Decode",
   },
+  loremIpsum: {
+    title: getTitle("/generators/lorem-ipsum"),
+    typeTitle: "Type",
+    typeSubtitle: "Generate words, sentences or paragraphs of Lorem Ipsum",
+    lengthTitle: "Length",
+    lengthSubtitle: "Number of words, sentences or paragraphs to generate",
+    typeOptions: [
+      { name: "Words", value: "words" },
+      { name: "Sentences", value: "sentences" },
+      { name: "Paragraphs", value: "paragraphs" },
+    ],
+  },
   numberBase: {
     title: getTitle("/converters/number-base"),
     formatNumberTitle: "Format number",
