@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write '**/*.{js,ts,tsx}'"
+    "format": "prettier --write '**/*.{js,ts,tsx}'",
+    "postinstall": "rm -rf public/vs && mv node_modules/monaco-editor/min/vs public"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.3",
@@ -15,6 +16,7 @@
     "html-escaper": "^3.0.3",
     "jwt-decode": "^3.1.2",
     "lorem-ipsum": "^2.0.4",
+    "monaco-editor": "^0.32.1",
     "next": "12.0.10",
     "next-themes": "^0.0.15",
     "react": "17.0.2",

@@ -1,4 +1,5 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# https://github.com/suren-atoyan/monaco-react/issues/12
+public/vs
 
 # dependencies
 /node_modules

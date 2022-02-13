@@ -1,5 +1,7 @@
-import Editor from "@monaco-editor/react";
+import Editor, { loader } from "@monaco-editor/react";
 import { useTheme } from "next-themes";
+
+loader.config({ paths: { vs: "/vs" } });
 
 interface CodeEditorProps {
   height: string;
