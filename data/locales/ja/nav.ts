@@ -1,4 +1,5 @@
 import {
+  IconAllTools,
   IconConverters,
   IconEncodersDecoders,
   IconFormatters,
@@ -6,6 +7,7 @@ import {
   IconHash,
   IconHtml,
   IconJson,
+  IconSettings,
   IconSql,
   IconUrl,
   IconXml,
@@ -15,6 +17,11 @@ import { Nav } from "../types";
 const localePath = "/ja";
 
 export const nav: Nav = [
+  {
+    title: "All tools",
+    href: `${localePath}/`,
+    icon: IconAllTools,
+  },
   {
     title: "Converters",
     href: `${localePath}/converters`,
@@ -133,12 +140,22 @@ export const nav: Nav = [
       },
     ],
   },
+  {
+    title: "設定",
+    href: `${localePath}/settings`,
+    icon: IconSettings,
+    desc: "Customize DevToysWeb look & feel",
+  },
 ];
 
 export const getTitle = (pathWithoutLocale: string): string => {
-  const category = nav.find(({ href }) =>
-    `${localePath}${pathWithoutLocale}`.startsWith(href)
-  );
+  if (pathWithoutLocale === "/settings") {
+    const settings = nav[nav.length - 1];
+    return settings.title;
+  }
+  const category = nav
+    .slice(1)
+    .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
   if (category) {
     return (
       category.items?.find(({ href }) => href === pathWithoutLocale)

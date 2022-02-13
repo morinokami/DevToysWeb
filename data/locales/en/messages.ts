@@ -42,6 +42,11 @@ export const t = {
     octalTitle: "Octal",
     binaryTitle: "Binary",
   },
+  settings: {
+    title: getTitle("/settings"),
+    lightTitle: "Light",
+    darkTitle: "Dark",
+  },
   url: {
     title: getTitle("/encoders-decoders/url"),
     conversionTitle: "Conversion",

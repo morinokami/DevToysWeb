@@ -1,6 +1,5 @@
 import React from "react";
 
-import { IconAllTools, IconSettings } from "../data/icon";
 import { Nav } from "../data/locales/types";
 import Divider from "./Divider";
 import NavCategory from "./NavCategory";
@@ -12,22 +11,17 @@ interface NavProps {
 }
 
 const _Nav: React.VFC<NavProps> = ({ nav }) => {
+  const home = nav[0];
   return (
     <ul>
       <VSpacerS />
       <li>
-        <NavCategory
-          category={{
-            title: "All tools",
-            href: "/",
-            icon: IconAllTools,
-          }}
-        />
+        <NavCategory category={home} />
       </li>
       <VSpacerS />
       <Divider />
       <VSpacerS />
-      {nav.map((category) => (
+      {nav.slice(1).map((category) => (
         <React.Fragment key={category.title}>
           <li>
             <NavCategory category={category} />
@@ -35,15 +29,6 @@ const _Nav: React.VFC<NavProps> = ({ nav }) => {
           <VSpacerS />
         </React.Fragment>
       ))}
-      <li>
-        <NavCategory
-          category={{
-            title: "Settings",
-            href: "/settings",
-            icon: IconSettings,
-          }}
-        />
-      </li>
     </ul>
   );
 };

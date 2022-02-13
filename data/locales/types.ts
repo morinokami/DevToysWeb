@@ -8,6 +8,7 @@ export type NavCategory = {
   // TODO: update
   icon?: React.VFC;
   items?: NavItem[];
+  desc?: string;
 };
 
 export type NavItem = {

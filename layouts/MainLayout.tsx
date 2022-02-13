@@ -12,7 +12,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
       <Head>
         <title>{title ? `${title} - DevToysWeb` : "DevToysWeb"}</title>
       </Head>
-      {title ? <h1 className="text-lg">{title}</h1> : null}
+      {/* TODO: Use t */}
+      <h1 className="text-lg">{title ?? "All tools"}</h1>
       <VSpacerL />
       {children}
     </>
