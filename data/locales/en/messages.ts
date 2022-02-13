@@ -31,6 +31,21 @@ export const t = {
     encodeText: "Encode",
     decodeText: "Decode",
   },
+  json: {
+    title: getTitle("/formatters/json"),
+    indentTitle: "Indentation",
+    indentOptions: [
+      { name: "2 spaces", value: "2-spaces" },
+      { name: "4 spaces", value: "4-spaces" },
+      { name: "1 tab", value: "1-tab" },
+      { name: "minified", value: "minified" },
+    ],
+  },
+  jwtDecoder: {
+    title: getTitle("/encoders-decoders/jwt-decoder"),
+    headerTitle: "Header",
+    payloadTitle: "Payload",
+  },
   loremIpsum: {
     title: getTitle("/generators/lorem-ipsum"),
     typeTitle: "Type",
