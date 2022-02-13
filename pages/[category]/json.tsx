@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useTheme } from "next-themes";
 import { useState } from "react";
 
 import CodeEditor from "../../components/CodeEditor";
@@ -37,7 +36,6 @@ const format = (value: string, indentType: string) => {
 
 const Json: NextPage = () => {
   const { t } = useLocale();
-  const { theme } = useTheme();
 
   const [input, setInput] = useState("");
   const [indent, setIndent] = useState(t.json.indentOptions[0]);
@@ -68,13 +66,11 @@ const Json: NextPage = () => {
             value={input}
             onChange={(value) => setInput(value ?? "")}
             language="json"
-            theme={theme}
           />
           <CodeEditor
             height="50vh"
             value={output}
             language="json"
-            theme={theme}
             readOnly={true}
           />
         </div>

@@ -41,6 +41,11 @@ export const t = {
       { name: "minified", value: "minified" },
     ],
   },
+  jwtDecoder: {
+    title: getTitle("/encoders-decoders/jwt-decoder"),
+    headerTitle: "Header",
+    payloadTitle: "Payload",
+  },
   loremIpsum: {
     title: getTitle("/generators/lorem-ipsum"),
     typeTitle: "Type",
