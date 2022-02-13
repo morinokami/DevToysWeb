@@ -1,16 +1,62 @@
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 
+import Configuration from "../components/Configuration";
+import SectionContainer from "../components/SectionContainer";
+import Select from "../components/Select";
+import { VSpacerS } from "../components/Spacer";
+import { IconBeerMini } from "../data/icon";
 import { useLocale } from "../hooks/useLocale";
 import MainLayout from "../layouts/MainLayout";
 
 const Settings: NextPage = () => {
-  const { t } = useLocale();
-  const { setTheme } = useTheme();
+  const { t, locale } = useLocale();
+  const { theme, setTheme } = useTheme();
+  const router = useRouter();
+
+  const { languageOptions, themeOptions } = t.settings;
+  // TODO: Handle undefined cases
+  const language = languageOptions.find((l) => l.value === locale);
+  const currentTheme = themeOptions.find((t) => t.value === theme);
+
   return (
     <MainLayout title={t.settings.title}>
-      <button onClick={() => setTheme("light")}>{t.settings.lightTitle}</button>
-      <button onClick={() => setTheme("dark")}>{t.settings.darkTitle}</button>
+      <SectionContainer>
+        <Configuration icon={IconBeerMini} title={t.settings.languageTitle}>
+          <div className="w-36">
+            {language && (
+              <Select
+                options={languageOptions}
+                value={language}
+                onChange={(l) => {
+                  router.push("/", "/", { locale: l.value });
+                }}
+              />
+            )}
+          </div>
+        </Configuration>
+      </SectionContainer>
+      <VSpacerS />
+      {currentTheme && (
+        <SectionContainer>
+          <Configuration
+            icon={IconBeerMini}
+            title={t.settings.themeTitle}
+            subtitle={t.settings.themeSubtitle}
+          >
+            <div className="w-36">
+              <Select
+                options={themeOptions}
+                value={currentTheme}
+                onChange={(t) => {
+                  setTheme(t.value);
+                }}
+              />
+            </div>
+          </Configuration>
+        </SectionContainer>
+      )}
     </MainLayout>
   );
 };

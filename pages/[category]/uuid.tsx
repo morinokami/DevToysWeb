@@ -17,16 +17,26 @@ import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
-const versions = [{ name: "1" }, { name: "4 (GUID)" }];
-
 const Uuid: NextPage = () => {
   const { t } = useLocale();
+  const { versionOptions } = t.uuid;
 
   const [hyphens, setHyphens] = useState(true);
   const [uppercase, setUppercase] = useState(false);
-  const [version, setVersion] = useState(versions[1]);
+  const [version, setVersion] = useState(versionOptions[1]);
   const [count, setCount] = useState(1);
   const [uuids, setUuids] = useState<string[]>([]);
+
+  const generate = () => {
+    const generated = [];
+    for (let i = 0; i < count; i++) {
+      let uuid = version.name === "1" ? uuidv1() : uuidv4();
+      uuid = !hyphens ? uuid.replace(/-/g, "") : uuid;
+      uuid = !uppercase ? uuid.toLowerCase() : uuid.toUpperCase();
+      generated.push(uuid);
+    }
+    setUuids([...uuids, ...generated]);
+  };
 
   const output = uuids.join("\n");
 
@@ -57,7 +67,11 @@ const Uuid: NextPage = () => {
           subtitle={t.uuid.uuidVersionSubtitle}
         >
           <div className="w-28">
-            <Select options={versions} value={version} onChange={setVersion} />
+            <Select
+              options={versionOptions}
+              value={version}
+              onChange={setVersion}
+            />
           </div>
         </Configuration>
       </SectionContainer>
@@ -67,19 +81,7 @@ const Uuid: NextPage = () => {
         <SectionHeader title={t.uuid.generateTitle} />
         <VSpacerS />
         <div className="flex items-center">
-          <TextButton
-            text={t.uuid.generateButtonText}
-            onClick={() => {
-              const generatedUuids = [];
-              for (let i = 0; i < count; i++) {
-                let uuid = version.name === "1" ? uuidv1() : uuidv4();
-                uuid = !hyphens ? uuid.replace(/-/g, "") : uuid;
-                uuid = !uppercase ? uuid.toLowerCase() : uuid.toUpperCase();
-                generatedUuids.push(uuid);
-              }
-              setUuids([...uuids, ...generatedUuids]);
-            }}
-          />
+          <TextButton text={t.uuid.generateButtonText} onClick={generate} />
           <Spacer x={12} />
           x
           <Spacer x={12} />

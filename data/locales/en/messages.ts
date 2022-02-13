@@ -41,9 +41,26 @@ export const t = {
     decimalTitle: "Decimal",
     octalTitle: "Octal",
     binaryTitle: "Binary",
+    baseOptions: [
+      { name: "Octal", value: "octal" },
+      { name: "Binary", value: "binary" },
+      { name: "Decimal", value: "decimal" },
+      { name: "Hexadecimal", value: "hexadecimal" },
+    ],
   },
   settings: {
     title: getTitle("/settings"),
+    languageTitle: "Language",
+    languageOptions: [
+      { name: "English", value: "en" },
+      { name: "Japanese", value: "ja" },
+    ],
+    themeTitle: "App Theme",
+    themeSubtitle: "Select which app theme to display",
+    themeOptions: [
+      { name: "Light", value: "light" },
+      { name: "Dark", value: "dark" },
+    ],
     lightTitle: "Light",
     darkTitle: "Dark",
   },
@@ -65,5 +82,9 @@ export const t = {
     uuidVersionSubtitle: "Choose the version of UUID to generate",
     generateTitle: "Generate",
     generateButtonText: "Generate UUID(s)",
+    versionOptions: [
+      { name: "1", value: 1 },
+      { name: "4 (GUID)", value: 4 },
+    ],
   },
 };

@@ -16,15 +16,6 @@ import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
-type BaseName = "Binary" | "Octal" | "Decimal" | "Hexadecimal";
-
-const bases: { name: BaseName }[] = [
-  { name: "Octal" },
-  { name: "Binary" },
-  { name: "Decimal" },
-  { name: "Hexadecimal" },
-];
-
 const isIntegerString = (str: string) => {
   return /^[0-9]+$/.test(str);
 };
@@ -41,42 +32,46 @@ const isBinaryString = (str: string) => {
   return /^[01]+$/.test(str);
 };
 
-const getBase = (base: BaseName) => {
+const getBase = (base: string) => {
   switch (base) {
-    case "Binary":
+    case "binary":
       return 2;
-    case "Octal":
+    case "octal":
       return 8;
-    case "Decimal":
+    case "decimal":
       return 10;
-    case "Hexadecimal":
+    case "hexadecimal":
       return 16;
   }
+  return undefined;
 };
 
-const isValidInput = (str: string, base: BaseName) => {
+const isValidInput = (str: string, base: string) => {
   switch (base) {
-    case "Binary":
+    case "binary":
       return isBinaryString(str);
-    case "Octal":
+    case "octal":
       return isOctalString(str);
-    case "Decimal":
+    case "decimal":
       return isIntegerString(str);
-    case "Hexadecimal":
+    case "hexadecimal":
       return isHexString(str);
   }
+  return false;
 };
 
 const NumberBase: NextPage = () => {
   const { t } = useLocale();
+  const { baseOptions } = t.numberBase;
 
   const [input, setInput] = useState("");
   const [format, setFormat] = useState(true);
-  const [base, setBase] = useState(bases[2]);
+  const [base, setBase] = useState(baseOptions[2]);
 
   // TODO: Number.MAX_SAFE_INTEGER
-  const valid = isValidInput(input, base.name);
-  const inputNumber = valid ? parseInt(input, getBase(base.name)) : NaN;
+  // TODO: Use format
+  const valid = isValidInput(input, base.value);
+  const inputNumber = valid ? parseInt(input, getBase(base.value)) : NaN;
   const binary = valid ? inputNumber.toString(2) : "";
   const octal = valid ? inputNumber.toString(8) : "";
   const decimal = valid ? inputNumber.toString(10) : "";
@@ -104,7 +99,7 @@ const NumberBase: NextPage = () => {
           subtitle={t.numberBase.inputTypeSubtitle}
         >
           <div className="w-36">
-            <Select options={bases} value={base} onChange={setBase} />
+            <Select options={baseOptions} value={base} onChange={setBase} />
           </div>
         </Configuration>
       </SectionContainer>
@@ -118,6 +113,7 @@ const NumberBase: NextPage = () => {
         <Input value={input} onChange={setInput} />
         <VSpacerS />
         {input.length > 0 && !valid && (
+          // TODO: Move to locales
           <ErrorMessage
             message={`The current value isn't a valid ${base.name}`}
           />
