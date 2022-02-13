@@ -10,6 +10,7 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import Input from "../../components/Input";
 import PasteButton from "../../components/PasteButton";
+import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
@@ -43,7 +44,7 @@ const Hash: NextPage = () => {
 
   return (
     <MainLayout title={t.hash.title}>
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration icon={IconBeerMini} title={t.hash.uppercaseTitle}>
@@ -53,10 +54,10 @@ const Hash: NextPage = () => {
             desc={t.hash.uppercaseDesc}
           />
         </Configuration>
-      </div>
+      </SectionContainer>
 
       <VSpacerL />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.common.inputTitle}>
           <div className="flex">
             <PasteButton onClick={setInput} />
@@ -66,43 +67,43 @@ const Hash: NextPage = () => {
         </SectionHeader>
         <VSpacerS />
         <TextArea value={input} onChange={setInput} rows={5} />
-      </div>
+      </SectionContainer>
 
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.hash.md5Title} />
         <VSpacerS />
         <Input value={md5Output}>
           <CopyButton text={md5Output} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
 
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.hash.sha1Title} />
         <VSpacerS />
         <Input value={sha1Output}>
           <CopyButton text={sha1Output} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
 
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.hash.sha256Title} />
         <VSpacerS />
         <Input value={sha256Output}>
           <CopyButton text={sha256Output} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
 
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.hash.sha512Title} />
         <VSpacerS />
         <Input value={sha512Output}>
           <CopyButton text={sha512Output} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
     </MainLayout>
   );
 };

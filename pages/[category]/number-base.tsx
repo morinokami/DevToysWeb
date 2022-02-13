@@ -7,6 +7,7 @@ import CopyButton from "../../components/CopyButton";
 import ErrorMessage from "../../components/ErrorMessage";
 import Input from "../../components/Input";
 import PasteButton from "../../components/PasteButton";
+import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
@@ -83,7 +84,7 @@ const NumberBase: NextPage = () => {
 
   return (
     <MainLayout title={t.numberBase.title}>
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration
@@ -106,9 +107,10 @@ const NumberBase: NextPage = () => {
             <Select options={bases} value={base} onChange={setBase} />
           </div>
         </Configuration>
-      </div>
+      </SectionContainer>
+
       <VSpacerL />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.common.inputTitle}>
           <PasteButton onClick={setInput} />
         </SectionHeader>
@@ -120,39 +122,43 @@ const NumberBase: NextPage = () => {
             message={`The current value isn't a valid ${base.name}`}
           />
         )}
-      </div>
+      </SectionContainer>
+
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.numberBase.hexTitle} />
         <VSpacerS />
         <Input value={hex}>
           <CopyButton text={hex} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
+
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.numberBase.decimalTitle} />
         <VSpacerS />
         <Input value={decimal}>
           <CopyButton text={decimal} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
+
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.numberBase.octalTitle} />
         <VSpacerS />
         <Input value={octal}>
           <CopyButton text={octal} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
+
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.numberBase.binaryTitle} />
         <VSpacerS />
         <Input value={binary}>
           <CopyButton text={binary} showTitle={true} />
         </Input>
-      </div>
+      </SectionContainer>
     </MainLayout>
   );
 };

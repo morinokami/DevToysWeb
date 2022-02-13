@@ -7,6 +7,7 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import FileInput from "../../components/FileInput";
 import PasteButton from "../../components/PasteButton";
+import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
@@ -25,7 +26,7 @@ const Html: NextPage = () => {
 
   return (
     <MainLayout title={t.html.title}>
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration
@@ -41,9 +42,10 @@ const Html: NextPage = () => {
             offText={t.html.decodeText}
           />
         </Configuration>
-      </div>
+      </SectionContainer>
+
       <VSpacerL />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.common.inputTitle}>
           <div className="flex">
             <PasteButton onClick={setInput} />
@@ -55,15 +57,16 @@ const Html: NextPage = () => {
         </SectionHeader>
         <VSpacerS />
         <TextArea value={input} onChange={setInput} />
-      </div>
+      </SectionContainer>
+
       <VSpacerM />
-      <div>
+      <SectionContainer>
         <SectionHeader title={t.common.outputTitle}>
           <CopyButton text={output} />
         </SectionHeader>
         <VSpacerS />
         <TextArea value={output} />
-      </div>
+      </SectionContainer>
     </MainLayout>
   );
 };
