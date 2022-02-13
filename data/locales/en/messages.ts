@@ -43,6 +43,7 @@ export const t = {
   },
   jwtDecoder: {
     title: getTitle("/encoders-decoders/jwt-decoder"),
+    jwtTokenTitle: "JWT Token",
     headerTitle: "Header",
     payloadTitle: "Payload",
   },

@@ -33,7 +33,7 @@ const JwtDecoder: NextPage = () => {
   return (
     <MainLayout title={t.jwtDecoder.title}>
       <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+        <SectionHeader title={t.jwtDecoder.jwtTokenTitle}>
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
