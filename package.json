@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.4.3",
     "crypto-js": "^4.1.1",
     "html-escaper": "^3.0.3",
+    "lorem-ipsum": "^2.0.4",
     "next": "12.0.10",
     "next-themes": "^0.0.15",
     "react": "17.0.2",
