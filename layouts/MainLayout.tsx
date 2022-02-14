@@ -12,10 +12,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
       <Head>
         <title>{title ? `${title} - DevToysWeb` : "DevToysWeb"}</title>
       </Head>
-      {/* TODO: Use t */}
-      <h1 className="text-lg">{title ?? "All tools"}</h1>
-      <VSpacerL />
-      {children}
+      <div className="flex h-full flex-col">
+        {/* TODO: Use t */}
+        <h1 className="text-lg">{title ?? "All tools"}</h1>
+        <VSpacerL />
+        <div className="flex grow flex-col">{children}</div>
+      </div>
     </>
   );
 };
