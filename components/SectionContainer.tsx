@@ -1,7 +1,12 @@
-interface SectionContainerProps {}
+interface SectionContainerProps {
+  className?: string;
+}
 
-const SectionContainer: React.FC<SectionContainerProps> = ({ children }) => {
-  return <div>{children}</div>;
+const SectionContainer: React.FC<SectionContainerProps> = ({
+  className,
+  children,
+}) => {
+  return <div {...{ className }}>{children}</div>;
 };
 
 export default SectionContainer;
