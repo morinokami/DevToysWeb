@@ -16,7 +16,6 @@ const Settings: NextPage = () => {
   const router = useRouter();
 
   const { languageOptions, themeOptions } = t.settings;
-  // TODO: Handle undefined cases
   const language = languageOptions.find((l) => l.value === locale);
   const currentTheme = themeOptions.find((t) => t.value === theme);
 
@@ -38,25 +37,23 @@ const Settings: NextPage = () => {
         </Configuration>
       </SectionContainer>
       <VSpacerS />
-      {currentTheme && (
-        <SectionContainer>
-          <Configuration
-            icon={IconBeerMini}
-            title={t.settings.themeTitle}
-            subtitle={t.settings.themeSubtitle}
-          >
-            <div className="w-36">
-              <Select
-                options={themeOptions}
-                value={currentTheme}
-                onChange={(t) => {
-                  setTheme(t.value);
-                }}
-              />
-            </div>
-          </Configuration>
-        </SectionContainer>
-      )}
+      <SectionContainer>
+        <Configuration
+          icon={IconBeerMini}
+          title={t.settings.themeTitle}
+          subtitle={t.settings.themeSubtitle}
+        >
+          <div className="w-36">
+            <Select
+              options={themeOptions}
+              value={currentTheme || themeOptions[0]}
+              onChange={(t) => {
+                setTheme(t.value);
+              }}
+            />
+          </div>
+        </Configuration>
+      </SectionContainer>
     </MainLayout>
   );
 };
