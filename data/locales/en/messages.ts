@@ -41,6 +41,9 @@ export const t = {
       { name: "minified", value: "minified" },
     ],
   },
+  jsonYaml: {
+    title: getTitle("/converters/json-yaml"),
+  },
   jwtDecoder: {
     title: getTitle("/encoders-decoders/jwt-decoder"),
     jwtTokenTitle: "JWT Token",
