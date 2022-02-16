@@ -10,7 +10,11 @@ interface SelectProps<T> {
   onChange: (value: { name: string; value: T }) => void;
 }
 
-const Select = <T extends {}>({ options, value, onChange }: SelectProps<T>) => {
+const Select = <T extends unknown>({
+  options,
+  value,
+  onChange,
+}: SelectProps<T>) => {
   return (
     <Listbox value={value} onChange={onChange}>
       <div className="relative">
