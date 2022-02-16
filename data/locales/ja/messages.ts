@@ -1,3 +1,5 @@
+import { FormatOptions } from "sql-formatter";
+
 import { getTitle } from "./nav";
 
 export const t = {
@@ -94,6 +96,27 @@ export const t = {
     ],
     lightTitle: "Light",
     darkTitle: "Dark",
+  },
+  sql: {
+    title: getTitle("/formatters/sql"),
+    languageTitle: "Language",
+    languageOptions: [
+      { name: "Db2", value: "db2" },
+      { name: "MariaDB", value: "mariadb" },
+      { name: "MySQL", value: "mysql" },
+      { name: "N1QL", value: "n1ql" },
+      { name: "PL/SQL", value: "plsql" },
+      { name: "PostgreSQL", value: "postgresql" },
+      { name: "AmazonRedshift", value: "redshift" },
+      { name: "Spark SQL", value: "spark" },
+      { name: "Standard SQL", value: "sql" },
+      { name: "Transact-SQL", value: "tsql" },
+    ] as { name: string; value: FormatOptions["language"] }[],
+    indentTitle: "Indentation",
+    indentOptions: [
+      { name: "2 spaces", value: "2-spaces" },
+      { name: "4 spaces", value: "4-spaces" },
+    ],
   },
   url: {
     title: getTitle("/encoders-decoders/url"),
