@@ -37,7 +37,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           <VSpacerS />
           <div className="grow">
             <CodeEditor
-              height="95%"
+              height="98%"
               value={input}
               onChange={(value) => setInput(value ?? "")}
               language={inputLanguage}
@@ -58,7 +58,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           <VSpacerS />
           <div className="grow">
             <CodeEditor
-              height="95%"
+              height="98%"
               value={output}
               language={outputLanguage}
               readOnly={true}
