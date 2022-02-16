@@ -7,6 +7,7 @@ export const t = {
     configTitle: "Configuration",
     inputTitle: "Input",
     outputTitle: "Output",
+    previewTitle: "Preview",
   },
   base64: {
     title: getTitle("/encoders-decoders/base64"),
@@ -62,6 +63,15 @@ export const t = {
       { name: "Words", value: "words" },
       { name: "Sentences", value: "sentences" },
       { name: "Paragraphs", value: "paragraphs" },
+    ],
+  },
+  markdownPreview: {
+    title: getTitle("/text/markdown-preview"),
+    themeTitle: "Theme",
+    themeSubtitle: "Select which theme to use to preview the Markdown",
+    themeOptions: [
+      { name: "Light", value: "light" },
+      { name: "Dark", value: "dark" },
     ],
   },
   numberBase: {

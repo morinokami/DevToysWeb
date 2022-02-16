@@ -141,6 +141,18 @@ export const nav: Nav = [
     ],
   },
   {
+    title: "Text",
+    href: `${localePath}/text`,
+    items: [
+      {
+        title: "Markdown Preview",
+        longTitle: "Markdown Preview",
+        href: `${localePath}/text/markdown-preview`,
+        desc: "Preview a Markdown document with a GitHub-like render",
+      },
+    ],
+  },
+  {
     title: "設定",
     href: `${localePath}/settings`,
     icon: IconSettings,

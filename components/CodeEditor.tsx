@@ -6,7 +6,7 @@ loader.config({ paths: { vs: "/vs" } });
 interface CodeEditorProps {
   height: string;
   value: string;
-  language: "json" | "sql" | "xml" | "yaml";
+  language: "json" | "sql" | "xml" | "yaml" | "markdown";
   onChange?: (value: string | undefined) => void;
   readOnly?: boolean;
 }

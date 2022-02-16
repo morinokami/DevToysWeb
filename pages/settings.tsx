@@ -43,7 +43,7 @@ const Settings: NextPage = () => {
           title={t.settings.themeTitle}
           subtitle={t.settings.themeSubtitle}
         >
-          <div className="w-36">
+          <div className="w-24">
             <Select
               options={themeOptions}
               value={currentTheme || themeOptions[0]}

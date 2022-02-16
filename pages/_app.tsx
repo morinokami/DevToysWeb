@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/github-markdown.css";
 import "react-reflex/styles.css";
 
 import type { AppProps } from "next/app";
