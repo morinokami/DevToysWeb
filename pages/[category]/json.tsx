@@ -13,25 +13,15 @@ import MainLayout from "../../layouts/MainLayout";
 import { formatJson } from "../../lib/format";
 
 const format = (value: string, indentType: string) => {
-  try {
-    let indent: string | undefined;
-    switch (indentType) {
-      case "2-spaces":
-        indent = "  ";
-        break;
-      case "4-spaces":
-        indent = "    ";
-        break;
-      case "1-tab":
-        indent = "\t";
-        break;
-      default:
-        indent = undefined;
-        break;
-    }
-    return formatJson(value, indent);
-  } catch {
-    return "";
+  switch (indentType) {
+    case "2-spaces":
+      return formatJson(value, "  ");
+    case "4-spaces":
+      return formatJson(value, "    ");
+    case "1-tab":
+      return formatJson(value, "\t");
+    default:
+      return formatJson(value);
   }
 };
 

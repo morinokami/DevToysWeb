@@ -35,5 +35,10 @@ describe("format", () => {
 \t"baz": "qux"
 }`);
     });
+
+    it("returns empty string if input is not valid json", () => {
+      const formatted = formatJson('{ "foo": "bar" "baz": "qux" }');
+      expect(formatted).toBe("");
+    });
   });
 });
