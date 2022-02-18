@@ -10,6 +10,7 @@ import SplitEditor from "../../components/SplitEditor";
 import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
+import { formatJson } from "../../lib/format";
 
 const format = (value: string, indentType: string) => {
   try {
@@ -28,7 +29,7 @@ const format = (value: string, indentType: string) => {
         indent = undefined;
         break;
     }
-    return JSON.stringify(JSON.parse(value), null, indent);
+    return formatJson(value, indent);
   } catch {
     return "";
   }

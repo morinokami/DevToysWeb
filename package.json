@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "jest --watch",
     "lint": "next lint",
     "format": "prettier --write '**/*.{js,ts,tsx}'",
     "postinstall": "rm -rf public/vs node_modules/monaco-editor && npm install monaco-editor --force --no-save && mv node_modules/monaco-editor/min/vs public"
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@types/crypto-js": "^4.1.0",
     "@types/html-escaper": "^3.0.0",
+    "@types/jest": "^27.4.0",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "17.0.18",
     "@types/react": "17.0.39",
@@ -37,6 +39,7 @@
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "jest": "^27.5.1",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
