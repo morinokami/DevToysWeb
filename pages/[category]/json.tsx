@@ -7,7 +7,7 @@ import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import { VSpacerM, VSpacerS } from "../../components/Spacer";
 import SplitEditor from "../../components/SplitEditor";
-import { IconBeerMini } from "../../data/icon";
+import { IconIndentation } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { formatJson } from "../../lib/format";
@@ -38,7 +38,7 @@ const Json: NextPage = () => {
       <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title={t.json.indentTitle}>
+        <Configuration icon={IconIndentation} title={t.json.indentTitle}>
           <div className="w-28">
             <Select
               options={t.json.indentOptions}

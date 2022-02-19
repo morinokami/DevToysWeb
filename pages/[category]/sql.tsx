@@ -8,7 +8,7 @@ import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import { VSpacerM, VSpacerS } from "../../components/Spacer";
 import SplitEditor from "../../components/SplitEditor";
-import { IconBeerMini } from "../../data/icon";
+import { IconBeerMini, IconIndentation } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
@@ -57,7 +57,7 @@ const Sql: NextPage = () => {
           </div>
         </Configuration>
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title={t.sql.indentTitle}>
+        <Configuration icon={IconIndentation} title={t.sql.indentTitle}>
           <div className="w-28">
             <Select
               options={t.sql.indentOptions}

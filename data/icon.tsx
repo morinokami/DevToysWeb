@@ -6,6 +6,7 @@ import {
   MdDelete,
   MdFingerprint,
   MdOutlineLink,
+  MdSpaceBar,
   MdTransform,
 } from "react-icons/md";
 import {
@@ -62,6 +63,7 @@ export const IconPaste = generateIconMedium(MdContentPaste);
 export const IconDelete = generateIconMedium(MdDelete);
 export const IconUpload = generateIconMedium(VscFile);
 export const IconCase = generateIconMedium(VscCaseSensitive);
+export const IconIndentation = generateIconMedium(MdSpaceBar);
 
 // Sidebar Icons
 
