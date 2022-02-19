@@ -12,7 +12,7 @@ import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import Toggle from "../../components/Toggle";
-import { IconBeerMini } from "../../data/icon";
+import { IconCase, IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { convertRadix, isValidNumber } from "../../lib/convert";
@@ -38,10 +38,7 @@ const NumberBase: NextPage = () => {
       <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
-        <Configuration
-          icon={IconBeerMini}
-          title={t.numberBase.formatNumberTitle}
-        >
+        <Configuration icon={IconCase} title={t.numberBase.formatNumberTitle}>
           <Toggle
             on={format}
             onChange={setFormat}
@@ -50,7 +47,7 @@ const NumberBase: NextPage = () => {
         </Configuration>
         <VSpacerS />
         <Configuration
-          icon={IconBeerMini}
+          icon={IconConversion}
           title={t.numberBase.inputTypeTitle}
           subtitle={t.numberBase.inputTypeSubtitle}
         >
