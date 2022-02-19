@@ -1,7 +1,68 @@
-import { convertRadix, isValidNumber } from "../../lib/convert";
+import { convertRadix, isValidNumber, toJson, toYaml } from "../../lib/convert";
 
 describe("convert", () => {
-  describe("number base", () => {
+  describe("JSON <> YAML", () => {
+    describe("toYaml", () => {
+      it("converts JSON to YAML", () => {
+        const json = `{
+          "foo": "bar",
+          "baz": "qux"
+        }`;
+        const yaml = toYaml(json, 2);
+        expect(yaml).toBe("foo: bar\nbaz: qux\n");
+      });
+
+      it("converts JSON to YAML with 2-space indent", () => {
+        const json = `{
+          "foo": [
+            1,
+            2
+          ]
+        }`;
+        const yaml = toYaml(json, 2);
+        expect(yaml).toBe(`foo:\n  - 1\n  - 2\n`);
+      });
+
+      it("returns an empty string if the input is not a valid JSON", () => {
+        const yaml = toYaml('{ "foo": "bar" "baz": "qux" }', 2);
+        expect(yaml).toBe("");
+      });
+    });
+
+    describe("toJson", () => {
+      it("converts YAML to JSON", () => {
+        const yaml = `foo: bar
+baz: qux
+`;
+        const json = toJson(yaml, 2);
+        expect(json).toBe(`{
+  "foo": "bar",
+  "baz": "qux"
+}`);
+      });
+
+      it("converts YAML to JSON with 2-space indent", () => {
+        const yaml = `foo:
+  - 1
+  - 2
+`;
+        const json = toJson(yaml, 2);
+        expect(json).toBe(`{
+  "foo": [
+    1,
+    2
+  ]
+}`);
+      });
+
+      it("returns an empty string if the input is not a valid YAML", () => {
+        const json = toJson("foo: bar baz: qux", 2);
+        expect(json).toBe("");
+      });
+    });
+  });
+
+  describe("Number Base", () => {
     describe("isValidNumber", () => {
       it("returns true for a decimal string", () => {
         expect(isValidNumber("123", 10)).toBe(true);
@@ -101,7 +162,7 @@ describe("convert", () => {
         expect(convertRadix("7b", 16, 16)).toBe("7b");
       });
 
-      it("returns empty string if an invalid number given", () => {
+      it("returns an empty string if an invalid number given", () => {
         expect(convertRadix("abc", 10, 10)).toBe("");
       });
     });

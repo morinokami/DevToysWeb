@@ -7,7 +7,7 @@ describe("format", () => {
       "baz": "qux"
     }`);
 
-    it("minifies output", () => {
+    it("minifies the output", () => {
       const formatted = formatJson(JSON.stringify(json));
       expect(formatted).toBe('{"foo":"bar","baz":"qux"}');
     });
@@ -36,7 +36,7 @@ describe("format", () => {
 }`);
     });
 
-    it("returns empty string if input is not valid json", () => {
+    it("returns an empty string if the input is not a valid json", () => {
       const formatted = formatJson('{ "foo": "bar" "baz": "qux" }');
       expect(formatted).toBe("");
     });

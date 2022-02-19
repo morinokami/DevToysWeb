@@ -1,3 +1,25 @@
+import yaml from "js-yaml";
+
+// JSON <> YAML
+
+export const toYaml = (value: string, indent: number) => {
+  try {
+    return yaml.dump(JSON.parse(value), { indent });
+  } catch {
+    return "";
+  }
+};
+
+export const toJson = (value: string, indent: number) => {
+  try {
+    return JSON.stringify(yaml.load(value), null, indent);
+  } catch {
+    return "";
+  }
+};
+
+// Nuber Base
+
 const isDecimalString = (value: string) => {
   return /^\d+$/.test(value);
 };
