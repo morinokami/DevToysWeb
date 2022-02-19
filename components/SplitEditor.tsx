@@ -37,7 +37,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           <VSpacerS />
           <div className="grow">
             <CodeEditor
-              height="95%"
+              height="98%"
               value={input}
               onChange={(value) => setInput(value ?? "")}
               language={inputLanguage}
@@ -46,7 +46,12 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
         </div>
       </ReflexElement>
       <ReflexSplitter
-        style={{ width: "10px", border: "none", background: "transparent" }}
+        style={{
+          width: "10px",
+          border: "none",
+          background: "transparent",
+          height: "98%",
+        }}
       />
       <ReflexElement minSize={200}>
         <div className="flex h-full flex-col">
@@ -58,7 +63,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           <VSpacerS />
           <div className="grow">
             <CodeEditor
-              height="95%"
+              height="98%"
               value={output}
               language={outputLanguage}
               readOnly={true}

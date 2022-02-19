@@ -7,30 +7,21 @@ import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
 import { VSpacerM, VSpacerS } from "../../components/Spacer";
 import SplitEditor from "../../components/SplitEditor";
-import { IconBeerMini } from "../../data/icon";
+import { IconIndentation } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
+import { formatJson } from "../../lib/format";
 
 const format = (value: string, indentType: string) => {
-  try {
-    let indent: string | undefined;
-    switch (indentType) {
-      case "2-spaces":
-        indent = "  ";
-        break;
-      case "4-spaces":
-        indent = "    ";
-        break;
-      case "1-tab":
-        indent = "\t";
-        break;
-      default:
-        indent = undefined;
-        break;
-    }
-    return JSON.stringify(JSON.parse(value), null, indent);
-  } catch {
-    return "";
+  switch (indentType) {
+    case "2-spaces":
+      return formatJson(value, "  ");
+    case "4-spaces":
+      return formatJson(value, "    ");
+    case "1-tab":
+      return formatJson(value, "\t");
+    default:
+      return formatJson(value);
   }
 };
 
@@ -47,7 +38,7 @@ const Json: NextPage = () => {
       <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title={t.json.indentTitle}>
+        <Configuration icon={IconIndentation} title={t.json.indentTitle}>
           <div className="w-28">
             <Select
               options={t.json.indentOptions}

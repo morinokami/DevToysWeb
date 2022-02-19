@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { useState } from "react";
-import { v1 as uuidv1, v4 as uuidv4 } from "uuid";
 
 import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
@@ -13,15 +12,16 @@ import Spacer, { VSpacerL, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import TextButton from "../../components/TextButton";
 import Toggle from "../../components/Toggle";
-import { IconBeerMini } from "../../data/icon";
+import { IconCase, IconHyphen, IconVersion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
+import { generateUuid } from "../../lib/generate";
 
 const Uuid: NextPage = () => {
   const { t } = useLocale();
   const { versionOptions } = t.uuid;
 
-  const [hyphens, setHyphens] = useState(true);
+  const [hyphenate, setHyphenate] = useState(true);
   const [uppercase, setUppercase] = useState(false);
   const [version, setVersion] = useState(versionOptions[1]);
   const [count, setCount] = useState(1);
@@ -30,9 +30,7 @@ const Uuid: NextPage = () => {
   const generate = () => {
     const generated = [];
     for (let i = 0; i < count; i++) {
-      let uuid = version.name === "1" ? uuidv1() : uuidv4();
-      uuid = !hyphens ? uuid.replace(/-/g, "") : uuid;
-      uuid = !uppercase ? uuid.toLowerCase() : uuid.toUpperCase();
+      const uuid = generateUuid(version.value, hyphenate, uppercase);
       generated.push(uuid);
     }
     setUuids([...uuids, ...generated]);
@@ -45,15 +43,15 @@ const Uuid: NextPage = () => {
       <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title={t.uuid.hyphenateTitle}>
+        <Configuration icon={IconHyphen} title={t.uuid.hyphenateTitle}>
           <Toggle
-            on={hyphens}
-            onChange={setHyphens}
+            on={hyphenate}
+            onChange={setHyphenate}
             desc={t.uuid.hyphenateDesc}
           />
         </Configuration>
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title={t.uuid.uppercaseTitle}>
+        <Configuration icon={IconCase} title={t.uuid.uppercaseTitle}>
           <Toggle
             on={uppercase}
             onChange={setUppercase}
@@ -62,7 +60,7 @@ const Uuid: NextPage = () => {
         </Configuration>
         <VSpacerS />
         <Configuration
-          icon={IconBeerMini}
+          icon={IconVersion}
           title={t.uuid.uuidVersionTitle}
           subtitle={t.uuid.uuidVersionSubtitle}
         >
