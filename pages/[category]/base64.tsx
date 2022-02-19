@@ -10,7 +10,7 @@ import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
-import { IconBeerMini } from "../../data/icon";
+import { IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
@@ -55,7 +55,7 @@ const Base64: NextPage = () => {
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration
-          icon={IconBeerMini}
+          icon={IconConversion}
           title={t.base64.conversionTitle}
           subtitle={t.base64.conversionSubtitle}
         >

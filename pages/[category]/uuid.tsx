@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { useState } from "react";
-import { v1 as uuidv1, v4 as uuidv4 } from "uuid";
 
 import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
@@ -13,7 +12,7 @@ import Spacer, { VSpacerL, VSpacerS } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import TextButton from "../../components/TextButton";
 import Toggle from "../../components/Toggle";
-import { IconBeerMini } from "../../data/icon";
+import { IconCase, IconHyphen, IconVersion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { generateUuid } from "../../lib/generate";
@@ -44,7 +43,7 @@ const Uuid: NextPage = () => {
       <SectionContainer>
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title={t.uuid.hyphenateTitle}>
+        <Configuration icon={IconHyphen} title={t.uuid.hyphenateTitle}>
           <Toggle
             on={hyphenate}
             onChange={setHyphenate}
@@ -52,7 +51,7 @@ const Uuid: NextPage = () => {
           />
         </Configuration>
         <VSpacerS />
-        <Configuration icon={IconBeerMini} title={t.uuid.uppercaseTitle}>
+        <Configuration icon={IconCase} title={t.uuid.uppercaseTitle}>
           <Toggle
             on={uppercase}
             onChange={setUppercase}
@@ -61,7 +60,7 @@ const Uuid: NextPage = () => {
         </Configuration>
         <VSpacerS />
         <Configuration
-          icon={IconBeerMini}
+          icon={IconVersion}
           title={t.uuid.uuidVersionTitle}
           subtitle={t.uuid.uuidVersionSubtitle}
         >
