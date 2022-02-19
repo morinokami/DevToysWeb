@@ -1,4 +1,3 @@
-import yaml from "js-yaml";
 import { NextPage } from "next";
 import { useState } from "react";
 
@@ -8,22 +7,7 @@ import { VSpacerM, VSpacerS } from "../../components/Spacer";
 import SplitEditor from "../../components/SplitEditor";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
-
-const toYaml = (json: string, indent: number) => {
-  try {
-    return yaml.dump(JSON.parse(json), { indent });
-  } catch {
-    return "";
-  }
-};
-
-const toJson = (value: string, indent: number) => {
-  try {
-    return JSON.stringify(yaml.load(value), null, indent);
-  } catch {
-    return "";
-  }
-};
+import { toYaml } from "../../lib/convert";
 
 const JsonYaml: NextPage = () => {
   const { t } = useLocale();

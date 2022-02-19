@@ -5,10 +5,13 @@ import {
   MdContentPaste,
   MdDelete,
   MdFingerprint,
+  MdHorizontalRule,
   MdOutlineLink,
+  MdSpaceBar,
   MdTransform,
 } from "react-icons/md";
 import {
+  VscArrowSwap,
   VscCaseSensitive,
   VscChevronDown,
   VscChevronUp,
@@ -19,6 +22,7 @@ import {
   VscFileBinary,
   VscHome,
   VscJson,
+  VscSettings,
   VscSettingsGear,
 } from "react-icons/vsc";
 
@@ -62,6 +66,11 @@ export const IconPaste = generateIconMedium(MdContentPaste);
 export const IconDelete = generateIconMedium(MdDelete);
 export const IconUpload = generateIconMedium(VscFile);
 export const IconCase = generateIconMedium(VscCaseSensitive);
+export const IconIndentation = generateIconMedium(MdSpaceBar);
+export const IconLanguage = generateIconMedium(VscCode);
+export const IconHyphen = generateIconMedium(MdHorizontalRule);
+export const IconConversion = generateIconMedium(VscArrowSwap);
+export const IconVersion = generateIconMedium(VscSettings);
 
 // Sidebar Icons
 
