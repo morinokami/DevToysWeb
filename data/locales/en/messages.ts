@@ -75,10 +75,10 @@ export const t = {
     octalTitle: "Octal",
     binaryTitle: "Binary",
     baseOptions: [
-      { name: "Octal", value: "octal" },
-      { name: "Binary", value: "binary" },
-      { name: "Decimal", value: "decimal" },
-      { name: "Hexadecimal", value: "hexadecimal" },
+      { name: "Octal", value: 8 },
+      { name: "Binary", value: 2 },
+      { name: "Decimal", value: 10 },
+      { name: "Hexadecimal", value: 16 },
     ],
   },
   settings: {

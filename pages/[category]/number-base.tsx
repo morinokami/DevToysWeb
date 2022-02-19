@@ -15,50 +15,7 @@ import Toggle from "../../components/Toggle";
 import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
-
-const isIntegerString = (str: string) => {
-  return /^[0-9]+$/.test(str);
-};
-
-const isHexString = (str: string) => {
-  return /^[0-9a-f]+$/i.test(str);
-};
-
-const isOctalString = (str: string) => {
-  return /^[0-7]+$/.test(str);
-};
-
-const isBinaryString = (str: string) => {
-  return /^[01]+$/.test(str);
-};
-
-const getBase = (base: string) => {
-  switch (base) {
-    case "binary":
-      return 2;
-    case "octal":
-      return 8;
-    case "decimal":
-      return 10;
-    case "hexadecimal":
-      return 16;
-  }
-  return undefined;
-};
-
-const isValidInput = (str: string, base: string) => {
-  switch (base) {
-    case "binary":
-      return isBinaryString(str);
-    case "octal":
-      return isOctalString(str);
-    case "decimal":
-      return isIntegerString(str);
-    case "hexadecimal":
-      return isHexString(str);
-  }
-  return false;
-};
+import { convertRadix, isValidNumber } from "../../lib/convert";
 
 const NumberBase: NextPage = () => {
   const { t } = useLocale();
@@ -70,12 +27,11 @@ const NumberBase: NextPage = () => {
 
   // TODO: Number.MAX_SAFE_INTEGER
   // TODO: Use format
-  const valid = isValidInput(input, base.value);
-  const inputNumber = valid ? parseInt(input, getBase(base.value)) : NaN;
-  const binary = valid ? inputNumber.toString(2) : "";
-  const octal = valid ? inputNumber.toString(8) : "";
-  const decimal = valid ? inputNumber.toString(10) : "";
-  const hex = valid ? inputNumber.toString(16) : "";
+  const valid = isValidNumber(input, base.value);
+  const decimal = convertRadix(input, base.value, 10);
+  const binary = convertRadix(input, base.value, 2);
+  const octal = convertRadix(input, base.value, 8);
+  const hex = convertRadix(input, base.value, 16);
 
   return (
     <MainLayout title={t.numberBase.title}>
