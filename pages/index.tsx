@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 
+import { IconSettings } from "../data/icon";
 import { useLocale } from "../hooks/useLocale";
 import CardLayout from "../layouts/CardLayout";
 import MainLayout from "../layouts/MainLayout";
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
     title: settings.title,
     longTitle: settings.title,
     href: settings.href,
+    icon: IconSettings,
     desc: settings.desc ?? "",
   });
 
