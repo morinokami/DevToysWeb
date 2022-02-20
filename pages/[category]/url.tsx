@@ -13,6 +13,7 @@ import Toggle from "../../components/Toggle";
 import { IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
+import { decodeUrl, encodeUrl } from "../../lib/encode-decode";
 
 const Url: NextPage = () => {
   const { t } = useLocale();
@@ -20,8 +21,7 @@ const Url: NextPage = () => {
   const [input, setInput] = useState("");
   const [encode, setEncode] = useState(true);
 
-  // TODO: Handle invalid input
-  const output = encode ? encodeURIComponent(input) : decodeURIComponent(input);
+  const output = encode ? encodeUrl(input) : decodeUrl(input);
 
   return (
     <MainLayout title={t.url.title}>
