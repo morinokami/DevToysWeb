@@ -1,4 +1,4 @@
-import { formatJson } from "../../lib/format";
+import { formatJson, formatXml } from "../../lib/format";
 
 describe("format", () => {
   describe("Json", () => {
@@ -10,28 +10,28 @@ describe("format", () => {
 
       it("minifies the output", () => {
         const formatted = formatJson(JSON.stringify(json));
-        expect(formatted).toBe('{"foo":"bar","baz":"qux"}');
+        expect(formatted).toEqual('{"foo":"bar","baz":"qux"}');
       });
 
-      it("formats with 2-space indent", () => {
+      it("formats the output with 2-space indent", () => {
         const formatted = formatJson(JSON.stringify(json), "  ");
-        expect(formatted).toBe(`{
+        expect(formatted).toEqual(`{
   "foo": "bar",
   "baz": "qux"
 }`);
       });
 
-      it("formats with 4-space indent", () => {
+      it("formats the output with 4-space indent", () => {
         const formatted = formatJson(JSON.stringify(json), "    ");
-        expect(formatted).toBe(`{
+        expect(formatted).toEqual(`{
     "foo": "bar",
     "baz": "qux"
 }`);
       });
 
-      it("formats with tab", () => {
+      it("formats the output with tab", () => {
         const formatted = formatJson(JSON.stringify(json), "\t");
-        expect(formatted).toBe(`{
+        expect(formatted).toEqual(`{
 \t"foo": "bar",
 \t"baz": "qux"
 }`);
@@ -39,7 +39,40 @@ describe("format", () => {
 
       it("returns an empty string if the input is not a valid json", () => {
         const formatted = formatJson('{ "foo": "bar" "baz": "qux" }');
-        expect(formatted).toBe("");
+        expect(formatted).toEqual("");
+      });
+    });
+  });
+
+  describe("XML", () => {
+    describe("formatXml", () => {
+      it("formats the output with 2-space indent", () => {
+        const formatted = formatXml(
+          '<root><content><p xml:space="preserve">This is <b>some</b> content.</content></p>',
+          "  "
+        );
+        expect(formatted).toEqual(`<root>
+  <content>
+    <p xml:space="preserve">This is <b>some</b> content.</p>
+  </content>
+</root>`);
+      });
+
+      it("formats the output with 4-space indent", () => {
+        const formatted = formatXml(
+          '<root><content><p xml:space="preserve">This is <b>some</b> content.</content></p>',
+          "    "
+        );
+        expect(formatted).toEqual(`<root>
+    <content>
+        <p xml:space="preserve">This is <b>some</b> content.</p>
+    </content>
+</root>`);
+      });
+
+      it("returns an empty string if the input is an empty string", () => {
+        const formatted = formatXml("", "  ");
+        expect(formatted).toEqual("");
       });
     });
   });

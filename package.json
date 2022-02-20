@@ -27,7 +27,8 @@
     "react-icons": "^4.3.1",
     "react-reflex": "^4.0.6",
     "sql-formatter": "^4.0.2",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "xml-formatter": "^2.6.1"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.0",

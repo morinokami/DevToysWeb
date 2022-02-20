@@ -141,4 +141,12 @@ export const t = {
       { name: "4 (GUID)", value: 4 },
     ],
   },
+  xml: {
+    title: getTitle("/formatters/xml"),
+    indentTitle: "Indentation",
+    indentOptions: [
+      { name: "2 spaces", value: "  " },
+      { name: "4 spaces", value: "    " },
+    ],
+  },
 };
