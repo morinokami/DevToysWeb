@@ -37,10 +37,10 @@ export const t = {
     title: getTitle("/formatters/json"),
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: "2-spaces" },
-      { name: "4 spaces", value: "4-spaces" },
-      { name: "1 tab", value: "1-tab" },
-      { name: "minified", value: "minified" },
+      { name: "2 spaces", value: "  " },
+      { name: "4 spaces", value: "    " },
+      { name: "1 tab", value: "\t" },
+      { name: "minified", value: undefined },
     ],
   },
   jsonYaml: {
@@ -114,8 +114,8 @@ export const t = {
     ] as { name: string; value: FormatOptions["language"] }[],
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: "2-spaces" },
-      { name: "4 spaces", value: "4-spaces" },
+      { name: "2 spaces", value: "  " },
+      { name: "4 spaces", value: "    " },
     ],
   },
   url: {

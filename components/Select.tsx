@@ -5,8 +5,8 @@ import { IconChevronDown } from "../data/icon";
 import SelectionIndicator from "./SelectionIndicator";
 
 interface SelectProps<T> {
-  options: { name: string; value: T }[];
-  value: { name: string; value: T };
+  options: { name: string; value?: T }[];
+  value: { name: string; value?: T };
   onChange: (value: { name: string; value: T }) => void;
 }
 

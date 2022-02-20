@@ -1,4 +1,4 @@
-import { formatJson, formatXml } from "../../lib/format";
+import { formatJson, formatSql, formatXml } from "../../lib/format";
 
 describe("format", () => {
   describe("Json", () => {
@@ -44,6 +44,43 @@ describe("format", () => {
     });
   });
 
+  describe("SQL", () => {
+    describe("formatSql", () => {
+      it("formats the output with 2-space indent", () => {
+        const formatted = formatSql(
+          "SELECT * FROM users WHERE id = 1;",
+          "sql",
+          "  "
+        );
+        expect(formatted).toEqual(`SELECT
+  *
+FROM
+  users
+WHERE
+  id = 1;`);
+      });
+
+      it("formats the output with 4-space indent", () => {
+        const formatted = formatSql(
+          "SELECT * FROM users WHERE id = 1;",
+          "sql",
+          "    "
+        );
+        expect(formatted).toEqual(`SELECT
+    *
+FROM
+    users
+WHERE
+    id = 1;`);
+      });
+
+      it("returns an empty string if the input is also an empty string", () => {
+        const formatted = formatSql("", "sql", "  ");
+        expect(formatted).toEqual("");
+      });
+    });
+  });
+
   describe("XML", () => {
     describe("formatXml", () => {
       it("formats the output with 2-space indent", () => {
@@ -70,7 +107,7 @@ describe("format", () => {
 </root>`);
       });
 
-      it("returns an empty string if the input is an empty string", () => {
+      it("returns an empty string if the input is also an empty string", () => {
         const formatted = formatXml("", "  ");
         expect(formatted).toEqual("");
       });
