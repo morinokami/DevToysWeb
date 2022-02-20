@@ -32,6 +32,7 @@ export const nav: Nav = [
         title: "JSON <> YAML",
         longTitle: "JSON <> YAML Converter",
         href: `${localePath}/converters/json-yaml`,
+        icon: IconConverters,
         desc: "Convert JSON data to YAML and vice versa",
       },
       {
