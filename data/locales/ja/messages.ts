@@ -37,10 +37,10 @@ export const t = {
     title: getTitle("/formatters/json"),
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: "2-spaces" },
-      { name: "4 spaces", value: "4-spaces" },
-      { name: "1 tab", value: "1-tab" },
-      { name: "minified", value: "minified" },
+      { name: "2 spaces", value: "  " },
+      { name: "4 spaces", value: "    " },
+      { name: "1 tab", value: "\t" },
+      { name: "minified", value: undefined },
     ],
   },
   jsonYaml: {
@@ -114,8 +114,8 @@ export const t = {
     ] as { name: string; value: FormatOptions["language"] }[],
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: "2-spaces" },
-      { name: "4 spaces", value: "4-spaces" },
+      { name: "2 spaces", value: "  " },
+      { name: "4 spaces", value: "    " },
     ],
   },
   url: {
@@ -139,6 +139,14 @@ export const t = {
     versionOptions: [
       { name: "1", value: 1 },
       { name: "4 (GUID)", value: 4 },
+    ],
+  },
+  xml: {
+    title: getTitle("/formatters/xml"),
+    indentTitle: "Indentation",
+    indentOptions: [
+      { name: "2 spaces", value: "  " },
+      { name: "4 spaces", value: "    " },
     ],
   },
 };

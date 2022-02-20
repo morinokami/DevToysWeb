@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { useState } from "react";
-import { format, FormatOptions } from "sql-formatter";
 
 import Configuration from "../../components/Configuration";
 import SectionContainer from "../../components/SectionContainer";
@@ -11,27 +10,7 @@ import SplitEditor from "../../components/SplitEditor";
 import { IconIndentation, IconLanguage } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
-
-const formatSql = (
-  value: string,
-  language: FormatOptions["language"],
-  indentType: string
-) => {
-  try {
-    let indent: string | undefined;
-    switch (indentType) {
-      case "2-spaces":
-        indent = "  ";
-        break;
-      case "4-spaces":
-        indent = "    ";
-        break;
-    }
-    return format(value, { indent, language });
-  } catch {
-    return "";
-  }
-};
+import { formatSql } from "../../lib/format";
 
 const Sql: NextPage = () => {
   const { t } = useLocale();
