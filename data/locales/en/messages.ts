@@ -7,6 +7,10 @@ export const t = {
     configTitle: "Configuration",
     inputTitle: "Input",
     outputTitle: "Output",
+    copyTitle: "Copy",
+    pasteTitle: "Paste",
+    clearTitle: "Clear",
+    openFiletitle: "Load a file",
   },
   base64: {
     title: getTitle("/encoders-decoders/base64"),
@@ -15,6 +19,9 @@ export const t = {
     encodeDesc: "Encode the input",
     encodeText: "Encode",
     decodeText: "Decode",
+  },
+  checksum: {
+    title: getTitle("/generators/checksum"),
   },
   hash: {
     title: getTitle("/generators/hash"),
@@ -86,7 +93,7 @@ export const t = {
     languageTitle: "Language",
     languageOptions: [
       { name: "English", value: "en" },
-      { name: "Japanese", value: "ja" },
+      { name: "日本語", value: "ja" },
     ],
     themeTitle: "App Theme",
     themeSubtitle: "Select which app theme to display",
@@ -94,8 +101,6 @@ export const t = {
       { name: "Light", value: "light" },
       { name: "Dark", value: "dark" },
     ],
-    lightTitle: "Light",
-    darkTitle: "Dark",
   },
   sql: {
     title: getTitle("/formatters/sql"),

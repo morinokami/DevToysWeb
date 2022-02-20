@@ -26,7 +26,7 @@ const Json: NextPage = () => {
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration icon={IconIndentation} title={t.json.indentTitle}>
-          <div className="w-28">
+          <div className="w-32">
             <Select
               options={t.json.indentOptions}
               value={indent}

@@ -161,8 +161,9 @@ export const getTitle = (pathWithoutLocale: string): string => {
     .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
   if (category) {
     return (
-      category.items?.find(({ href }) => href === pathWithoutLocale)
-        ?.longTitle ?? ""
+      category.items?.find(
+        ({ href }) => href === `${localePath}${pathWithoutLocale}`
+      )?.longTitle ?? ""
     );
   }
   return "";

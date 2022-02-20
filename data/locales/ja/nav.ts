@@ -19,124 +19,124 @@ const localePath = "/ja";
 
 export const nav: Nav = [
   {
-    title: "All tools",
+    title: "すべてのツール",
     href: `${localePath}/`,
     icon: IconAllTools,
   },
   {
-    title: "Converters",
+    title: "変換",
     href: `${localePath}/converters`,
     icon: IconConverters,
     items: [
       {
         title: "JSON <> YAML",
-        longTitle: "JSON <> YAML Converter",
+        longTitle: "JSON <> YAML 変換",
         href: `${localePath}/converters/json-yaml`,
-        desc: "Convert JSON data to YAML and vice versa",
+        desc: "JSON と YAML を相互に変換する",
       },
       {
-        title: "Number Base",
-        longTitle: "Number Base Converter",
+        title: "基数",
+        longTitle: "基数変換",
         href: `${localePath}/converters/number-base`,
         icon: IconNumberBase,
-        desc: "Convert numbers from one base to another",
+        desc: "ある基数から別の基数に数値を変換する",
       },
     ],
   },
   {
-    title: "Encoders / Decoders",
+    title: "エンコーダ / デコーダ",
     href: `${localePath}/encoders-decoders`,
     icon: IconEncodersDecoders,
     items: [
       {
         title: "HTML",
-        longTitle: "HTML Encoder / Decoder",
+        longTitle: "HTML エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/html`,
         icon: IconHtml,
         desc: "Encode or decode all the applicable characters to their corresponding HTML entities",
       },
       {
         title: "URL",
-        longTitle: "URL Encoder / Decoder",
+        longTitle: "URL エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/url`,
         icon: IconUrl,
         desc: "Encode or decode all the applicable characters to their corresponding URL entities",
       },
       {
         title: "Base 64",
-        longTitle: "Base 64 Encoder / Decoder",
+        longTitle: "Base 64 エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/base64`,
-        desc: "Encode and decode Base64 data",
+        desc: "Base64 のデータをエンコード、デコードする",
       },
       {
         title: "GZip",
-        longTitle: "GZip Compress / Decompress",
+        longTitle: "GZip 圧縮 / 展開",
         href: `${localePath}/encoders-decoders/gzip`,
         icon: IconGZip,
-        desc: "Compress or decompress strings",
+        desc: "文字列を圧縮、展開する",
       },
       {
-        title: "JWT Decoder",
-        longTitle: "JWT Decoder",
+        title: "JWT デコーダ",
+        longTitle: "JWT デコーダ",
         href: `${localePath}/encoders-decoders/jwt-decoder`,
-        desc: "Decode a JWT header, payload and signature",
+        desc: "JWT ヘッダー、ペイロード、署名をデコードする",
       },
     ],
   },
   {
-    title: "Formatters",
+    title: "フォーマッタ",
     href: `${localePath}/formatters`,
     icon: IconFormatters,
     items: [
       {
         title: "JSON",
-        longTitle: "JSON Formatter",
+        longTitle: "JSON フォーマッタ",
         href: `${localePath}/formatters/json`,
         icon: IconJson,
-        desc: "Indent or minify JSON data",
+        desc: "JSON データをインデントまたはミニファイする",
       },
       {
         title: "SQL",
-        longTitle: "SQL Formatter",
+        longTitle: "SQL フォーマッタ",
         href: `${localePath}/formatters/sql`,
         icon: IconSql,
-        desc: "Indent SQL queries",
+        desc: "SQL クエリをインデントする",
       },
       {
         title: "XML",
-        longTitle: "XML Formatter",
+        longTitle: "XML フォーマッタ",
         href: `${localePath}/formatters/xml`,
         icon: IconXml,
-        desc: "Indent or minify XML data",
+        desc: "XML データをインデントまたはミニファイする",
       },
     ],
   },
   {
-    title: "Generators",
+    title: "生成",
     href: `${localePath}/generators`,
     items: [
       {
-        title: "Hash",
-        longTitle: "Hash Generator",
+        title: "ハッシュ",
+        longTitle: "ハッシュ生成",
         href: `${localePath}/generators/hash`,
         icon: IconHash,
-        desc: "Calculate MD5, SHA1, SHA256 and SHA512 hash from text data",
+        desc: "テキストデータから MD5、SHA1、SHA256、SHA512 のハッシュを計算する",
       },
       {
         title: "UUID",
-        longTitle: "UUID Generator",
+        longTitle: "UUID 生成",
         href: `${localePath}/generators/uuid`,
-        desc: "Generate UUIDs version 1 and 4",
+        desc: "バージョン 1、4 の UUID を生成する",
       },
       {
         title: "Lorem Ipsum",
-        longTitle: "Lorem Ipsum Generator",
+        longTitle: "Lorem Ipsum 生成",
         href: `${localePath}/generators/lorem-ipsum`,
-        desc: "Generate Lorem Ipsum placeholder text",
+        desc: "Lorem Ipsum テキストを生成する",
       },
       {
-        title: "Checksum",
-        longTitle: "Checksum",
+        title: "チェックサム",
+        longTitle: "チェックサム",
         href: `${localePath}/generators/checksum`,
         desc: "Generate an hash with CheckSum based on a file",
       },
@@ -160,8 +160,9 @@ export const getTitle = (pathWithoutLocale: string): string => {
     .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
   if (category) {
     return (
-      category.items?.find(({ href }) => href === pathWithoutLocale)
-        ?.longTitle ?? ""
+      category.items?.find(
+        ({ href }) => href === `${localePath}${pathWithoutLocale}`
+      )?.longTitle ?? ""
     );
   }
   return "";

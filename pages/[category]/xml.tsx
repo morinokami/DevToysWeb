@@ -26,7 +26,7 @@ const Xml: NextPage = () => {
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration icon={IconIndentation} title={t.xml.indentTitle}>
-          <div className="w-28">
+          <div className="w-32">
             <Select
               options={t.xml.indentOptions}
               value={indent}

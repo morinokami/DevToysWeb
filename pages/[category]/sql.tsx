@@ -37,7 +37,7 @@ const Sql: NextPage = () => {
         </Configuration>
         <VSpacerS />
         <Configuration icon={IconIndentation} title={t.sql.indentTitle}>
-          <div className="w-28">
+          <div className="w-32">
             <Select
               options={t.sql.indentOptions}
               value={indent}
