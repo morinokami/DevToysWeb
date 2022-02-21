@@ -10,6 +10,7 @@ import {
   MdSpaceBar,
   MdTransform,
 } from "react-icons/md";
+import { SiJsonwebtokens } from "react-icons/si";
 import {
   VscArrowSwap,
   VscCaseSensitive,
@@ -103,6 +104,7 @@ export const IconEncodersDecoders = generateIcon(VscFileBinary);
 export const IconHtml = generateIcon(FaHtml5);
 export const IconUrl = generateIcon(MdOutlineLink);
 export const IconGZip = generateIcon(BsFileZip);
+export const IconJWT = generateIcon(SiJsonwebtokens);
 
 // Formatters
 
