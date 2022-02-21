@@ -23,6 +23,14 @@ export const t = {
   checksum: {
     title: getTitle("/generators/checksum"),
   },
+  gzip: {
+    title: getTitle("/encoders-decoders/gzip"),
+    compressTitle: "GZip Compress/Decompress",
+    compressDesc:
+      "Select whether the input should be compressed or decompressed",
+    compressText: "Compress",
+    decompressText: "Decompress",
+  },
   hash: {
     title: getTitle("/generators/hash"),
     uppercaseTitle: "Uppercase",
