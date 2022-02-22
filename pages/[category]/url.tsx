@@ -45,7 +45,7 @@ const Url: NextPage = () => {
 
       <VSpacerL />
       <SectionContainer>
-        <SectionHeader title={t.common.inputTitle}>
+        <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
@@ -53,16 +53,16 @@ const Url: NextPage = () => {
           </div>
         </SectionHeader>
         <VSpacerS />
-        <TextArea value={input} onChange={setInput} />
+        <TextArea id="input" value={input} onChange={setInput} />
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+        <SectionHeader title={t.common.outputTitle} label="output">
           <CopyButton text={output} />
         </SectionHeader>
         <VSpacerS />
-        <TextArea value={output} />
+        <TextArea id="output" value={output} />
       </SectionContainer>
     </MainLayout>
   );

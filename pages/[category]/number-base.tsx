@@ -59,11 +59,11 @@ const NumberBase: NextPage = () => {
 
       <VSpacerL />
       <SectionContainer>
-        <SectionHeader title={t.common.inputTitle}>
+        <SectionHeader title={t.common.inputTitle} label="input">
           <PasteButton onClick={setInput} />
         </SectionHeader>
         <VSpacerS />
-        <Input value={input} onChange={setInput} />
+        <Input id="input" value={input} onChange={setInput} />
         <VSpacerS />
         {input.length > 0 && !valid && (
           // TODO: Move to locales
@@ -75,36 +75,36 @@ const NumberBase: NextPage = () => {
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.numberBase.hexTitle} />
+        <SectionHeader title={t.numberBase.hexTitle} label="hex" />
         <VSpacerS />
-        <Input value={hex}>
+        <Input id="hex" value={hex}>
           <CopyButton text={hex} showTitle={true} />
         </Input>
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.numberBase.decimalTitle} />
+        <SectionHeader title={t.numberBase.decimalTitle} label="decimal" />
         <VSpacerS />
-        <Input value={decimal}>
+        <Input id="decimal" value={decimal}>
           <CopyButton text={decimal} showTitle={true} />
         </Input>
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.numberBase.octalTitle} />
+        <SectionHeader title={t.numberBase.octalTitle} label="octal" />
         <VSpacerS />
-        <Input value={octal}>
+        <Input id="octal" value={octal}>
           <CopyButton text={octal} showTitle={true} />
         </Input>
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.numberBase.binaryTitle} />
+        <SectionHeader title={t.numberBase.binaryTitle} label="binary" />
         <VSpacerS />
-        <Input value={binary}>
+        <Input id="binary" value={binary}>
           <CopyButton text={binary} showTitle={true} />
         </Input>
       </SectionContainer>

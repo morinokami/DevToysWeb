@@ -76,7 +76,7 @@ const Lorem: NextPage = () => {
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+        <SectionHeader title={t.common.outputTitle} label="output">
           <div className="flex">
             <CopyButton text={output} />
             <Spacer x={6} />
@@ -84,7 +84,7 @@ const Lorem: NextPage = () => {
           </div>
         </SectionHeader>
         <VSpacerS />
-        <TextArea value={output} rows={20} />
+        <TextArea id="output" value={output} rows={20} />
       </SectionContainer>
     </MainLayout>
   );
