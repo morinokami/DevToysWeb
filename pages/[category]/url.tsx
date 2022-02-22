@@ -13,6 +13,7 @@ import Toggle from "../../components/Toggle";
 import { IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
+import { decodeUrl, encodeUrl } from "../../lib/encode-decode";
 
 const Url: NextPage = () => {
   const { t } = useLocale();
@@ -20,8 +21,7 @@ const Url: NextPage = () => {
   const [input, setInput] = useState("");
   const [encode, setEncode] = useState(true);
 
-  // TODO: Handle invalid input
-  const output = encode ? encodeURIComponent(input) : decodeURIComponent(input);
+  const output = encode ? encodeUrl(input) : decodeUrl(input);
 
   return (
     <MainLayout title={t.url.title}>
@@ -45,7 +45,7 @@ const Url: NextPage = () => {
 
       <VSpacerL />
       <SectionContainer>
-        <SectionHeader title={t.common.inputTitle}>
+        <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
@@ -53,16 +53,16 @@ const Url: NextPage = () => {
           </div>
         </SectionHeader>
         <VSpacerS />
-        <TextArea value={input} onChange={setInput} />
+        <TextArea id="input" value={input} onChange={setInput} />
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+        <SectionHeader title={t.common.outputTitle} label="output">
           <CopyButton text={output} />
         </SectionHeader>
         <VSpacerS />
-        <TextArea value={output} />
+        <TextArea id="output" value={output} />
       </SectionContainer>
     </MainLayout>
   );

@@ -12,26 +12,13 @@ import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { formatJson } from "../../lib/format";
 
-const format = (value: string, indentType: string) => {
-  switch (indentType) {
-    case "2-spaces":
-      return formatJson(value, "  ");
-    case "4-spaces":
-      return formatJson(value, "    ");
-    case "1-tab":
-      return formatJson(value, "\t");
-    default:
-      return formatJson(value);
-  }
-};
-
 const Json: NextPage = () => {
   const { t } = useLocale();
 
   const [input, setInput] = useState("");
   const [indent, setIndent] = useState(t.json.indentOptions[0]);
 
-  const output = format(input, indent.value);
+  const output = formatJson(input, indent.value);
 
   return (
     <MainLayout title={t.json.title}>
@@ -39,7 +26,7 @@ const Json: NextPage = () => {
         <SectionHeader title={t.common.configTitle} />
         <VSpacerS />
         <Configuration icon={IconIndentation} title={t.json.indentTitle}>
-          <div className="w-28">
+          <div className="w-32">
             <Select
               options={t.json.indentOptions}
               value={indent}

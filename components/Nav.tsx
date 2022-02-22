@@ -14,19 +14,19 @@ const _Nav: React.VFC<NavProps> = ({ nav }) => {
   const home = nav[0];
   return (
     <ul>
-      <VSpacerS />
       <li>
+        <VSpacerS />
         <NavCategory category={home} />
+        <VSpacerS />
+        <Divider />
+        <VSpacerS />
       </li>
-      <VSpacerS />
-      <Divider />
-      <VSpacerS />
       {nav.slice(1).map((category) => (
         <React.Fragment key={category.title}>
           <li>
             <NavCategory category={category} />
+            <VSpacerS />
           </li>
-          <VSpacerS />
         </React.Fragment>
       ))}
     </ul>

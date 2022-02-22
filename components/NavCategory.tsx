@@ -38,6 +38,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
               e.preventDefault();
               setIsOpen(!isOpen);
             }}
+            aria-label={isOpen ? "Collapse" : "Expand"}
           >
             {isOpen ? <IconChevronDown /> : <IconChevronUp />}
           </button>

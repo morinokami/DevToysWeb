@@ -89,7 +89,7 @@ const Uuid: NextPage = () => {
 
       <VSpacerL />
       <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+        <SectionHeader title={t.common.outputTitle} label="output">
           <div className="flex">
             <CopyButton text={output} />
             <Spacer x={6} />
@@ -97,7 +97,7 @@ const Uuid: NextPage = () => {
           </div>
         </SectionHeader>
         <VSpacerS />
-        <TextArea value={output} />
+        <TextArea id="output" value={output} />
       </SectionContainer>
     </MainLayout>
   );

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 import { IconUpload } from "../data/icon";
+import { useLocale } from "../hooks/useLocale";
 import Button from "./Button";
 
 interface FileInputProps {
@@ -10,6 +11,8 @@ interface FileInputProps {
 }
 
 const FileInput: React.VFC<FileInputProps> = ({ onFileRead, accept }) => {
+  const { t } = useLocale();
+
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onClick = () => {
@@ -39,7 +42,11 @@ const FileInput: React.VFC<FileInputProps> = ({ onFileRead, accept }) => {
         hidden
         {...(accept ? { accept } : {})}
       />
-      <Button icon={IconUpload} title="Load a file" onClick={onClick} />
+      <Button
+        icon={IconUpload}
+        title={t.common.openFiletitle}
+        onClick={onClick}
+      />
     </>
   );
 };

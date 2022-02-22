@@ -10,6 +10,7 @@ import {
   MdSpaceBar,
   MdTransform,
 } from "react-icons/md";
+import { SiJsonwebtokens } from "react-icons/si";
 import {
   VscArrowSwap,
   VscCaseSensitive,
@@ -24,6 +25,7 @@ import {
   VscJson,
   VscSettings,
   VscSettingsGear,
+  VscSymbolNumeric,
 } from "react-icons/vsc";
 
 const ICON_SIZE_SMALL = "14";
@@ -75,7 +77,7 @@ export const IconVersion = generateIconMedium(VscSettings);
 // Sidebar Icons
 
 const generateIcon = (Icon: React.VFC) => {
-  const IconMedium = ({ large }: IconProps = { large: false }) => {
+  const IconComponent = ({ large }: IconProps = { large: false }) => {
     return (
       <IconContext.Provider
         value={{ size: large ? ICON_SIZE_LARGE : ICON_SIZE_SMALL }}
@@ -84,7 +86,7 @@ const generateIcon = (Icon: React.VFC) => {
       </IconContext.Provider>
     );
   };
-  return IconMedium;
+  return IconComponent;
 };
 export const IconChevronUp = generateIcon(VscChevronUp);
 export const IconChevronDown = generateIcon(VscChevronDown);
@@ -94,6 +96,7 @@ export const IconSettings = generateIcon(VscSettingsGear);
 // Converters
 
 export const IconConverters = generateIcon(MdTransform);
+export const IconNumberBase = generateIcon(VscSymbolNumeric);
 
 // Encoders / Decoders
 
@@ -101,6 +104,7 @@ export const IconEncodersDecoders = generateIcon(VscFileBinary);
 export const IconHtml = generateIcon(FaHtml5);
 export const IconUrl = generateIcon(MdOutlineLink);
 export const IconGZip = generateIcon(BsFileZip);
+export const IconJWT = generateIcon(SiJsonwebtokens);
 
 // Formatters
 

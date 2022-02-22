@@ -58,7 +58,7 @@ const Hash: NextPage = () => {
 
       <VSpacerL />
       <SectionContainer>
-        <SectionHeader title={t.common.inputTitle}>
+        <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
@@ -66,41 +66,41 @@ const Hash: NextPage = () => {
           </div>
         </SectionHeader>
         <VSpacerS />
-        <TextArea value={input} onChange={setInput} rows={5} />
+        <TextArea id="input" value={input} onChange={setInput} rows={5} />
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.hash.md5Title} />
+        <SectionHeader title={t.hash.md5Title} label="md5" />
         <VSpacerS />
-        <Input value={md5Output}>
+        <Input id="md5" value={md5Output}>
           <CopyButton text={md5Output} showTitle={true} />
         </Input>
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.hash.sha1Title} />
+        <SectionHeader title={t.hash.sha1Title} label="sha1" />
         <VSpacerS />
-        <Input value={sha1Output}>
+        <Input id="sha1" value={sha1Output}>
           <CopyButton text={sha1Output} showTitle={true} />
         </Input>
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.hash.sha256Title} />
+        <SectionHeader title={t.hash.sha256Title} label="sha256" />
         <VSpacerS />
-        <Input value={sha256Output}>
+        <Input id="sha256" value={sha256Output}>
           <CopyButton text={sha256Output} showTitle={true} />
         </Input>
       </SectionContainer>
 
       <VSpacerM />
       <SectionContainer>
-        <SectionHeader title={t.hash.sha512Title} />
+        <SectionHeader title={t.hash.sha512Title} label="sha512" />
         <VSpacerS />
-        <Input value={sha512Output}>
+        <Input id="sha512" value={sha512Output}>
           <CopyButton text={sha512Output} showTitle={true} />
         </Input>
       </SectionContainer>
