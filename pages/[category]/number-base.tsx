@@ -2,11 +2,10 @@ import { NextPage } from "next";
 import React from "react";
 import { useState } from "react";
 
+import { CopyButton, PasteButton } from "../../components/button";
 import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
 import ErrorMessage from "../../components/ErrorMessage";
 import Input from "../../components/Input";
-import PasteButton from "../../components/PasteButton";
 import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionHeader from "../../components/SectionHeader";
 import SectionMain from "../../components/SectionMain";

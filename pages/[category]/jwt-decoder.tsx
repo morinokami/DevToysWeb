@@ -2,10 +2,8 @@ import jwt_decode from "jwt-decode";
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
+import { ClearButton, CopyButton, PasteButton } from "../../components/button";
 import CodeEditor from "../../components/CodeEditor";
-import CopyButton from "../../components/CopyButton";
-import PasteButton from "../../components/PasteButton";
 import SectionHeader from "../../components/SectionHeader";
 import SectionMain from "../../components/SectionMain";
 import Spacer, { VSpacerM } from "../../components/Spacer";

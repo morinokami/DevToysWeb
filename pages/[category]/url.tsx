@@ -1,10 +1,8 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
+import { ClearButton, CopyButton, PasteButton } from "../../components/button";
 import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
-import PasteButton from "../../components/PasteButton";
 import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionHeader from "../../components/SectionHeader";
 import SectionMain from "../../components/SectionMain";

@@ -1,9 +1,8 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
+import { ClearButton, CopyButton, TextButton } from "../../components/button";
 import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
 import NumberInput from "../../components/NumberInput";
 import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionHeader from "../../components/SectionHeader";
@@ -11,7 +10,6 @@ import SectionMain from "../../components/SectionMain";
 import Select from "../../components/Select";
 import Spacer, { VSpacerL } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
-import TextButton from "../../components/TextButton";
 import Toggle from "../../components/Toggle";
 import { IconCase, IconHyphen, IconVersion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";

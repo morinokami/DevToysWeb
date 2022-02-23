@@ -1,10 +1,8 @@
 import { ReflexContainer, ReflexElement, ReflexSplitter } from "react-reflex";
 
 import { t } from "../data/locales/en";
-import ClearButton from "./ClearButton";
+import { ClearButton, CopyButton, PasteButton } from "./button";
 import CodeEditor from "./CodeEditor";
-import CopyButton from "./CopyButton";
-import PasteButton from "./PasteButton";
 import SectionHeader from "./SectionHeader";
 import Spacer, { VSpacerS } from "./Spacer";
 

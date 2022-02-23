@@ -2,9 +2,8 @@ import { LoremIpsum } from "lorem-ipsum";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
+import { ClearButton, CopyButton } from "../../components/button";
 import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
 import NumberInput from "../../components/NumberInput";
 import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionHeader from "../../components/SectionHeader";
