@@ -1,9 +1,11 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import Configuration from "../../components/Configuration";
-import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionMain from "../../components/SectionMain";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionMain,
+} from "../../components/section";
 import Select from "../../components/Select";
 import { VSpacerM } from "../../components/Spacer";
 import SplitEditor from "../../components/SplitEditor";

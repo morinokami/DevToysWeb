@@ -3,11 +3,13 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 
 import { ClearButton, CopyButton } from "../../components/button";
-import Configuration from "../../components/Configuration";
 import NumberInput from "../../components/NumberInput";
-import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionHeader from "../../components/SectionHeader";
-import SectionMain from "../../components/SectionMain";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
 import Select from "../../components/Select";
 import Spacer, { VSpacerM } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";

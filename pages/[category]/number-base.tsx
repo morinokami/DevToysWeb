@@ -3,12 +3,14 @@ import React from "react";
 import { useState } from "react";
 
 import { CopyButton, PasteButton } from "../../components/button";
-import Configuration from "../../components/Configuration";
 import ErrorMessage from "../../components/ErrorMessage";
 import Input from "../../components/Input";
-import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionHeader from "../../components/SectionHeader";
-import SectionMain from "../../components/SectionMain";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
 import Select from "../../components/Select";
 import { VSpacerL, VSpacerM } from "../../components/Spacer";
 import Toggle from "../../components/Toggle";

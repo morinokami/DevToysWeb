@@ -1,7 +1,7 @@
 import React from "react";
 
+import { VSpacerS } from "../Spacer";
 import SectionContainer from "./SectionContainer";
-import { VSpacerS } from "./Spacer";
 
 interface SectionMainProps {
   className?: string;

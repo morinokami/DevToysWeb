@@ -6,11 +6,13 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import Configuration from "../../components/Configuration";
 import Input from "../../components/Input";
-import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionHeader from "../../components/SectionHeader";
-import SectionMain from "../../components/SectionMain";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
 import Spacer, { VSpacerL, VSpacerM } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";

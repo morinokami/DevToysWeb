@@ -1,8 +1,8 @@
 import React from "react";
 
+import { VSpacerS } from "../Spacer";
 import SectionContainer from "./SectionContainer";
 import SectionHeader from "./SectionHeader";
-import { VSpacerS } from "./Spacer";
 
 interface SectionConfigurationProps {
   title: string;

@@ -3,7 +3,7 @@ import { ReflexContainer, ReflexElement, ReflexSplitter } from "react-reflex";
 import { t } from "../data/locales/en";
 import { ClearButton, CopyButton, PasteButton } from "./button";
 import CodeEditor from "./CodeEditor";
-import SectionHeader from "./SectionHeader";
+import { SectionHeader } from "./section";
 import Spacer, { VSpacerS } from "./Spacer";
 
 interface SplitEditorProps {
