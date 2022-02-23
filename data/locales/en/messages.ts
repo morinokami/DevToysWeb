@@ -60,6 +60,17 @@ export const t = {
   },
   jsonYaml: {
     title: getTitle("/converters/json-yaml"),
+    conversionTitle: "Conversion",
+    conversionSubtitle: "Select which conversion mode you want to use",
+    conversionOptions: [
+      { name: "JSON to YAML", value: "json-to-yaml" },
+      { name: "YAML to JSON", value: "yaml-to-json" },
+    ],
+    indentTitle: "Indentation",
+    indentOptions: [
+      { name: "2 spaces", value: 2 },
+      { name: "4 spaces", value: 4 },
+    ],
   },
   jwtDecoder: {
     title: getTitle("/encoders-decoders/jwt-decoder"),
