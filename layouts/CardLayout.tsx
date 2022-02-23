@@ -1,4 +1,4 @@
-import NavCard from "../components/NavCard";
+import { NavCard } from "../components/nav";
 import { VSpacerL, VSpacerM } from "../components/Spacer";
 import { NavItem } from "../data/locales/types";
 
