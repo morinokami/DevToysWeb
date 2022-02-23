@@ -7,10 +7,10 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import NumberInput from "../../components/NumberInput";
 import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
+import SectionMain from "../../components/SectionMain";
 import Select from "../../components/Select";
-import Spacer, { VSpacerM, VSpacerS } from "../../components/Spacer";
+import Spacer, { VSpacerM } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
@@ -73,7 +73,7 @@ const Lorem: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.outputTitle} label="output">
           <div className="flex">
             <CopyButton text={output} />
@@ -81,9 +81,8 @@ const Lorem: NextPage = () => {
             <ClearButton onClick={() => setOutput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="output" value={output} rows={20} />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

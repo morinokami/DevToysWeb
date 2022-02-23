@@ -6,10 +6,10 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import NumberInput from "../../components/NumberInput";
 import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
+import SectionMain from "../../components/SectionMain";
 import Select from "../../components/Select";
-import Spacer, { VSpacerL, VSpacerS } from "../../components/Spacer";
+import Spacer, { VSpacerL } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import TextButton from "../../components/TextButton";
 import Toggle from "../../components/Toggle";
@@ -72,9 +72,8 @@ const Uuid: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.uuid.generateTitle} />
-        <VSpacerS />
         <div className="flex items-center">
           <TextButton text={t.uuid.generateButtonText} onClick={generate} />
           <Spacer x={12} />
@@ -82,10 +81,10 @@ const Uuid: NextPage = () => {
           <Spacer x={12} />
           <NumberInput value={count} onChange={setCount} min={1} max={10000} />
         </div>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerL />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.outputTitle} label="output">
           <div className="flex">
             <CopyButton text={output} />
@@ -93,9 +92,8 @@ const Uuid: NextPage = () => {
             <ClearButton onClick={() => setUuids([])} />
           </div>
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="output" value={output} />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

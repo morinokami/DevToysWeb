@@ -6,9 +6,9 @@ import ClearButton from "../../components/ClearButton";
 import CodeEditor from "../../components/CodeEditor";
 import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
-import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
-import Spacer, { VSpacerM, VSpacerS } from "../../components/Spacer";
+import SectionMain from "../../components/SectionMain";
+import Spacer, { VSpacerM } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -32,7 +32,7 @@ const JwtDecoder: NextPage = () => {
 
   return (
     <MainLayout title={t.jwtDecoder.title}>
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.jwtDecoder.jwtTokenTitle} label="jwt-token">
           <div className="flex">
             <PasteButton onClick={setInput} />
@@ -40,37 +40,34 @@ const JwtDecoder: NextPage = () => {
             <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="jwt-token" value={input} onChange={setInput} rows={5} />
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.jwtDecoder.headerTitle}>
           <CopyButton text={header} />
         </SectionHeader>
-        <VSpacerS />
         <CodeEditor
           height="250px"
           value={header}
           language="json"
           readOnly={true}
         />
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.jwtDecoder.payloadTitle}>
           <CopyButton text={payload} />
         </SectionHeader>
-        <VSpacerS />
         <CodeEditor
           height="250px"
           value={payload}
           language="json"
           readOnly={true}
         />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

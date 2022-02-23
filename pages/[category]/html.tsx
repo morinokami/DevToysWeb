@@ -8,9 +8,9 @@ import CopyButton from "../../components/CopyButton";
 import FileInput from "../../components/FileInput";
 import PasteButton from "../../components/PasteButton";
 import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
-import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
+import SectionMain from "../../components/SectionMain";
+import Spacer, { VSpacerL, VSpacerM } from "../../components/Spacer";
 import TextArea from "../../components/TextArea";
 import Toggle from "../../components/Toggle";
 import { IconConversion } from "../../data/icon";
@@ -44,7 +44,7 @@ const Html: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
@@ -54,18 +54,16 @@ const Html: NextPage = () => {
             <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="input" value={input} onChange={setInput} />
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.outputTitle} label="output">
           <CopyButton text={output} />
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="output" value={output} />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

@@ -3,10 +3,9 @@ import { useState } from "react";
 
 import Configuration from "../../components/Configuration";
 import SectionConfiguration from "../../components/SectionConfiguration";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
+import SectionMain from "../../components/SectionMain";
 import Select from "../../components/Select";
-import { VSpacerM, VSpacerS } from "../../components/Spacer";
+import { VSpacerM } from "../../components/Spacer";
 import SplitEditor from "../../components/SplitEditor";
 import { IconIndentation } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
@@ -36,7 +35,7 @@ const Json: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerM />
-      <SectionContainer className="grow">
+      <SectionMain className="grow">
         <SplitEditor
           input={input}
           setInput={setInput}
@@ -44,7 +43,7 @@ const Json: NextPage = () => {
           inputLanguage="json"
           outputLanguage="json"
         />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };
