@@ -1,10 +1,9 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import { VSpacerM, VSpacerS } from "../../components/Spacer";
-import SplitEditor from "../../components/SplitEditor";
+import { SplitEditor } from "../../components/io";
+import { SectionConfiguration, SectionMain } from "../../components/section";
+import { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { toYaml } from "../../lib/convert";
@@ -21,13 +20,10 @@ const JsonYaml: NextPage = () => {
 
   return (
     <MainLayout title={t.jsonYaml.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
-      </SectionContainer>
+      <SectionConfiguration title={t.common.configTitle}></SectionConfiguration>
 
       <VSpacerM />
-      <SectionContainer className="grow">
+      <SectionMain className="grow">
         <SplitEditor
           input={input}
           setInput={setInput}
@@ -35,7 +31,7 @@ const JsonYaml: NextPage = () => {
           inputLanguage="json"
           outputLanguage="yaml"
         />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

@@ -1,18 +1,19 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
-import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
-import PasteButton from "../../components/PasteButton";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
-import Toggle from "../../components/Toggle";
+import { ClearButton, CopyButton, PasteButton } from "../../components/button";
+import { TextArea, Toggle } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
+import Spacer, { VSpacerL, VSpacerM } from "../../components/Spacer";
 import { IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
+import { decodeUrl, encodeUrl } from "../../lib/encode-decode";
 
 const Url: NextPage = () => {
   const { t } = useLocale();
@@ -20,14 +21,11 @@ const Url: NextPage = () => {
   const [input, setInput] = useState("");
   const [encode, setEncode] = useState(true);
 
-  // TODO: Handle invalid input
-  const output = encode ? encodeURIComponent(input) : decodeURIComponent(input);
+  const output = encode ? encodeUrl(input) : decodeUrl(input);
 
   return (
     <MainLayout title={t.url.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconConversion}
           title={t.url.conversionTitle}
@@ -41,29 +39,27 @@ const Url: NextPage = () => {
             offText={t.url.decodeText}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
-        <SectionHeader title={t.common.inputTitle}>
+      <SectionMain>
+        <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
-        <TextArea value={input} onChange={setInput} />
-      </SectionContainer>
+        <TextArea id="input" value={input} onChange={setInput} />
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+      <SectionMain>
+        <SectionHeader title={t.common.outputTitle} label="output">
           <CopyButton text={output} />
         </SectionHeader>
-        <VSpacerS />
-        <TextArea value={output} />
-      </SectionContainer>
+        <TextArea id="output" value={output} />
+      </SectionMain>
     </MainLayout>
   );
 };

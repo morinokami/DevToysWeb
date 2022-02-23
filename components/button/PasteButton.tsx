@@ -1,4 +1,5 @@
-import { IconPaste } from "../data/icon";
+import { IconPaste } from "../../data/icon";
+import { useLocale } from "../../hooks/useLocale";
 import Button from "./Button";
 
 interface PasteButtonProps {
@@ -6,10 +7,12 @@ interface PasteButtonProps {
 }
 
 const PasteButton: React.VFC<PasteButtonProps> = ({ onClick }) => {
+  const { t } = useLocale();
+
   return (
     <Button
       icon={IconPaste}
-      text="Paste"
+      text={t.common.pasteTitle}
       onClick={async () => {
         try {
           const text = await navigator.clipboard.readText();

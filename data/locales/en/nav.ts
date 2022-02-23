@@ -7,6 +7,8 @@ import {
   IconHash,
   IconHtml,
   IconJson,
+  IconJWT,
+  IconNumberBase,
   IconSettings,
   IconSql,
   IconUrl,
@@ -31,12 +33,14 @@ export const nav: Nav = [
         title: "JSON <> YAML",
         longTitle: "JSON <> YAML Converter",
         href: `${localePath}/converters/json-yaml`,
+        icon: IconConverters,
         desc: "Convert JSON data to YAML and vice versa",
       },
       {
         title: "Number Base",
         longTitle: "Number Base Converter",
         href: `${localePath}/converters/number-base`,
+        icon: IconNumberBase,
         desc: "Convert numbers from one base to another",
       },
     ],
@@ -77,6 +81,7 @@ export const nav: Nav = [
         title: "JWT Decoder",
         longTitle: "JWT Decoder",
         href: `${localePath}/encoders-decoders/jwt-decoder`,
+        icon: IconJWT,
         desc: "Decode a JWT header, payload and signature",
       },
     ],
@@ -170,8 +175,9 @@ export const getTitle = (pathWithoutLocale: string): string => {
     .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
   if (category) {
     return (
-      category.items?.find(({ href }) => href === pathWithoutLocale)
-        ?.longTitle ?? ""
+      category.items?.find(
+        ({ href }) => href === `${localePath}${pathWithoutLocale}`
+      )?.longTitle ?? ""
     );
   }
   return "";

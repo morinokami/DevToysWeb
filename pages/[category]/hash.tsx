@@ -5,16 +5,15 @@ import sha512 from "crypto-js/sha512";
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
-import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
-import Input from "../../components/Input";
-import PasteButton from "../../components/PasteButton";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
-import Toggle from "../../components/Toggle";
+import { ClearButton, CopyButton, PasteButton } from "../../components/button";
+import { Input, TextArea, Toggle } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
+import Spacer, { VSpacerL, VSpacerM } from "../../components/Spacer";
 import { IconCase } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -44,9 +43,7 @@ const Hash: NextPage = () => {
 
   return (
     <MainLayout title={t.hash.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconCase} title={t.hash.uppercaseTitle}>
           <Toggle
             on={uppercase}
@@ -54,56 +51,51 @@ const Hash: NextPage = () => {
             desc={t.hash.uppercaseDesc}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
-        <SectionHeader title={t.common.inputTitle}>
+      <SectionMain>
+        <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
-        <TextArea value={input} onChange={setInput} rows={5} />
-      </SectionContainer>
+        <TextArea id="input" value={input} onChange={setInput} rows={5} />
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
-        <SectionHeader title={t.hash.md5Title} />
-        <VSpacerS />
-        <Input value={md5Output}>
+      <SectionMain>
+        <SectionHeader title={t.hash.md5Title} label="md5" />
+        <Input id="md5" value={md5Output}>
           <CopyButton text={md5Output} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
-        <SectionHeader title={t.hash.sha1Title} />
-        <VSpacerS />
-        <Input value={sha1Output}>
+      <SectionMain>
+        <SectionHeader title={t.hash.sha1Title} label="sha1" />
+        <Input id="sha1" value={sha1Output}>
           <CopyButton text={sha1Output} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
-        <SectionHeader title={t.hash.sha256Title} />
-        <VSpacerS />
-        <Input value={sha256Output}>
+      <SectionMain>
+        <SectionHeader title={t.hash.sha256Title} label="sha256" />
+        <Input id="sha256" value={sha256Output}>
           <CopyButton text={sha256Output} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
-        <SectionHeader title={t.hash.sha512Title} />
-        <VSpacerS />
-        <Input value={sha512Output}>
+      <SectionMain>
+        <SectionHeader title={t.hash.sha512Title} label="sha512" />
+        <Input id="sha512" value={sha512Output}>
           <CopyButton text={sha512Output} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

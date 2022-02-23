@@ -1,4 +1,5 @@
-import { IconCopy } from "../data/icon";
+import { IconCopy } from "../../data/icon";
+import { useLocale } from "../../hooks/useLocale";
 import Button from "./Button";
 
 interface CopyButtonProps {
@@ -7,11 +8,13 @@ interface CopyButtonProps {
 }
 
 const CopyButton: React.VFC<CopyButtonProps> = ({ text, showTitle }) => {
+  const { t } = useLocale();
+
   return (
     <Button
       icon={IconCopy}
-      {...(!showTitle && { text: "Copy" })}
-      {...(showTitle && { title: "Copy" })}
+      {...(!showTitle && { text: t.common.copyTitle })}
+      {...(showTitle && { title: t.common.copyTitle })}
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(text);

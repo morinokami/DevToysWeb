@@ -16,7 +16,10 @@ const Header: React.VFC<HeaderProps> = ({ setNavIsOpen }) => {
           <div className="translate-y-px">DevToysWeb</div>
         </div>
         <Link href="https://github.com/morinokami/DevToysWeb">
-          <a className="rounded p-2 hover:bg-light-40 hover:dark:bg-dark-30">
+          <a
+            className="rounded p-2 hover:bg-light-40 hover:dark:bg-dark-30"
+            aria-label="GitHub"
+          >
             <FaGithub />
           </a>
         </Link>

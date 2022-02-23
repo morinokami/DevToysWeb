@@ -1,7 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import React from "react";
 
-import Nav from "../components/Nav";
+import { Nav } from "../components/nav";
 import { useLocale } from "../hooks/useLocale";
 
 interface SidebarLayoutProps {

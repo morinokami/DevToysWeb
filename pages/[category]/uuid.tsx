@@ -1,17 +1,15 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
-import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
-import NumberInput from "../../components/NumberInput";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Select from "../../components/Select";
-import Spacer, { VSpacerL, VSpacerS } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
-import TextButton from "../../components/TextButton";
-import Toggle from "../../components/Toggle";
+import { ClearButton, CopyButton, TextButton } from "../../components/button";
+import { NumberInput, Select, TextArea, Toggle } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
+import Spacer, { VSpacerL } from "../../components/Spacer";
 import { IconCase, IconHyphen, IconVersion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -40,9 +38,7 @@ const Uuid: NextPage = () => {
 
   return (
     <MainLayout title={t.uuid.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconHyphen} title={t.uuid.hyphenateTitle}>
           <Toggle
             on={hyphenate}
@@ -50,7 +46,6 @@ const Uuid: NextPage = () => {
             desc={t.uuid.hyphenateDesc}
           />
         </Configuration>
-        <VSpacerS />
         <Configuration icon={IconCase} title={t.uuid.uppercaseTitle}>
           <Toggle
             on={uppercase}
@@ -58,7 +53,6 @@ const Uuid: NextPage = () => {
             desc={t.uuid.uppercaseDesc}
           />
         </Configuration>
-        <VSpacerS />
         <Configuration
           icon={IconVersion}
           title={t.uuid.uuidVersionTitle}
@@ -72,12 +66,11 @@ const Uuid: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.uuid.generateTitle} />
-        <VSpacerS />
         <div className="flex items-center">
           <TextButton text={t.uuid.generateButtonText} onClick={generate} />
           <Spacer x={12} />
@@ -85,20 +78,19 @@ const Uuid: NextPage = () => {
           <Spacer x={12} />
           <NumberInput value={count} onChange={setCount} min={1} max={10000} />
         </div>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerL />
-      <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+      <SectionMain>
+        <SectionHeader title={t.common.outputTitle} label="output">
           <div className="flex">
             <CopyButton text={output} />
             <Spacer x={6} />
             <ClearButton onClick={() => setUuids([])} />
           </div>
         </SectionHeader>
-        <VSpacerS />
-        <TextArea value={output} />
-      </SectionContainer>
+        <TextArea id="output" value={output} />
+      </SectionMain>
     </MainLayout>
   );
 };

@@ -15,6 +15,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.3",
     "@monaco-editor/react": "^4.3.1",
+    "byte-base64": "^1.1.0",
     "crypto-js": "^4.1.1",
     "html-escaper": "^3.0.3",
     "jwt-decode": "^3.1.2",
@@ -22,13 +23,15 @@
     "marked": "^4.0.12",
     "monaco-editor": "^0.32.1",
     "next": "12.1.0",
-    "next-themes": "^0.0.15",
+    "next-themes": "^0.1.1",
+    "pako": "^2.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "react-reflex": "^4.0.6",
     "sql-formatter": "^4.0.2",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "xml-formatter": "^2.6.1"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.0",
@@ -36,7 +39,8 @@
     "@types/jest": "^27.4.0",
     "@types/js-yaml": "^4.0.5",
     "@types/marked": "^4.0.2",
-    "@types/node": "17.0.18",
+    "@types/node": "17.0.19",
+    "@types/pako": "^1.0.3",
     "@types/react": "17.0.39",
     "@types/uuid": "^8.3.4",
     "autoprefixer": "^10.4.2",

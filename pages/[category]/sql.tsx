@@ -1,37 +1,17 @@
 import { NextPage } from "next";
 import { useState } from "react";
-import { format, FormatOptions } from "sql-formatter";
 
-import Configuration from "../../components/Configuration";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Select from "../../components/Select";
-import { VSpacerM, VSpacerS } from "../../components/Spacer";
-import SplitEditor from "../../components/SplitEditor";
+import { Select, SplitEditor } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionMain,
+} from "../../components/section";
+import { VSpacerM } from "../../components/Spacer";
 import { IconIndentation, IconLanguage } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
-
-const formatSql = (
-  value: string,
-  language: FormatOptions["language"],
-  indentType: string
-) => {
-  try {
-    let indent: string | undefined;
-    switch (indentType) {
-      case "2-spaces":
-        indent = "  ";
-        break;
-      case "4-spaces":
-        indent = "    ";
-        break;
-    }
-    return format(value, { indent, language });
-  } catch {
-    return "";
-  }
-};
+import { formatSql } from "../../lib/format";
 
 const Sql: NextPage = () => {
   const { t } = useLocale();
@@ -44,9 +24,7 @@ const Sql: NextPage = () => {
 
   return (
     <MainLayout title={t.sql.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconLanguage} title={t.sql.languageTitle}>
           <div className="w-40">
             <Select
@@ -56,9 +34,8 @@ const Sql: NextPage = () => {
             />
           </div>
         </Configuration>
-        <VSpacerS />
         <Configuration icon={IconIndentation} title={t.sql.indentTitle}>
-          <div className="w-28">
+          <div className="w-32">
             <Select
               options={t.sql.indentOptions}
               value={indent}
@@ -66,10 +43,10 @@ const Sql: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerM />
-      <SectionContainer className="grow">
+      <SectionMain className="grow">
         <SplitEditor
           input={input}
           setInput={setInput}
@@ -77,7 +54,7 @@ const Sql: NextPage = () => {
           inputLanguage="sql"
           outputLanguage="sql"
         />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

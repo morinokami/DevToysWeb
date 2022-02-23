@@ -1,6 +1,6 @@
 import { Switch } from "@headlessui/react";
 
-import Spacer from "./Spacer";
+import Spacer from "../Spacer";
 
 interface ToggleProps {
   on: boolean;

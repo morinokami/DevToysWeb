@@ -2,15 +2,15 @@ import { LoremIpsum } from "lorem-ipsum";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
-import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
-import NumberInput from "../../components/NumberInput";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Select from "../../components/Select";
-import Spacer, { VSpacerM, VSpacerS } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
+import { ClearButton, CopyButton } from "../../components/button";
+import { NumberInput, Select, TextArea } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
+import Spacer, { VSpacerM } from "../../components/Spacer";
 import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -43,9 +43,7 @@ const Lorem: NextPage = () => {
 
   return (
     <MainLayout title={t.loremIpsum.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconBeerMini}
           title={t.loremIpsum.typeTitle}
@@ -59,7 +57,6 @@ const Lorem: NextPage = () => {
             />
           </div>
         </Configuration>
-        <VSpacerS />
         <Configuration
           icon={IconBeerMini}
           title={t.loremIpsum.lengthTitle}
@@ -72,20 +69,19 @@ const Lorem: NextPage = () => {
             max={10000}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerM />
-      <SectionContainer>
-        <SectionHeader title={t.common.outputTitle}>
+      <SectionMain>
+        <SectionHeader title={t.common.outputTitle} label="output">
           <div className="flex">
             <CopyButton text={output} />
             <Spacer x={6} />
             <ClearButton onClick={() => setOutput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
-        <TextArea value={output} rows={20} />
-      </SectionContainer>
+        <TextArea id="output" value={output} rows={20} />
+      </SectionMain>
     </MainLayout>
   );
 };
