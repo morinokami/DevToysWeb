@@ -55,7 +55,7 @@ const Base64: NextPage = () => {
         <Configuration
           icon={IconConversion}
           title={t.base64.conversionTitle}
-          subtitle={t.base64.conversionSubtitle}
+          desc={t.base64.conversionSubtitle}
         >
           <Toggle
             on={doEncode}

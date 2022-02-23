@@ -29,7 +29,7 @@ const Url: NextPage = () => {
         <Configuration
           icon={IconConversion}
           title={t.url.conversionTitle}
-          subtitle={t.url.conversionSubtitle}
+          desc={t.url.conversionSubtitle}
         >
           <Toggle
             on={encode}

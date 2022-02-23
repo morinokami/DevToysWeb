@@ -47,7 +47,7 @@ const Lorem: NextPage = () => {
         <Configuration
           icon={IconBeerMini}
           title={t.loremIpsum.typeTitle}
-          subtitle={t.loremIpsum.typeSubtitle}
+          desc={t.loremIpsum.typeSubtitle}
         >
           <div className="w-32">
             <Select
@@ -60,7 +60,7 @@ const Lorem: NextPage = () => {
         <Configuration
           icon={IconBeerMini}
           title={t.loremIpsum.lengthTitle}
-          subtitle={t.loremIpsum.lengthSubtitle}
+          desc={t.loremIpsum.lengthSubtitle}
         >
           <NumberInput
             value={length}

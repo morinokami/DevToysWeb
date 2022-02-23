@@ -1,13 +1,13 @@
 interface ConfigurationProps {
   icon: React.VFC;
   title: string;
-  subtitle?: string;
+  desc?: string;
 }
 
 const Configuration: React.FC<ConfigurationProps> = ({
   icon: Icon,
   title,
-  subtitle,
+  desc,
   children,
 }) => {
   return (
@@ -16,8 +16,8 @@ const Configuration: React.FC<ConfigurationProps> = ({
         <Icon />
       </div>
       <div className="mx-2 grow">
-        <div className="text-sm">{title}</div>
-        {subtitle && <div className="text-xs text-dark-10">{subtitle}</div>}
+        <div className="text-sm sm:break-all">{title}</div>
+        {desc && <div className="text-xs text-dark-10 sm:hidden">{desc}</div>}
       </div>
       <div>{children}</div>
     </div>

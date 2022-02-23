@@ -29,7 +29,7 @@ const GZip: NextPage = () => {
         <Configuration
           icon={IconConversion}
           title={t.gzip.compressTitle}
-          subtitle={t.gzip.compressDesc}
+          desc={t.gzip.compressDesc}
         >
           <Toggle
             on={doCompress}
