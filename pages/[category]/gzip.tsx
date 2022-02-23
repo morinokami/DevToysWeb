@@ -5,6 +5,7 @@ import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
@@ -25,9 +26,7 @@ const GZip: NextPage = () => {
 
   return (
     <MainLayout title={t.gzip.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconConversion}
           title={t.gzip.compressTitle}
@@ -41,7 +40,7 @@ const GZip: NextPage = () => {
             offText={t.gzip.decompressText}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
       <SectionContainer>

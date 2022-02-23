@@ -10,6 +10,7 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import Input from "../../components/Input";
 import PasteButton from "../../components/PasteButton";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
@@ -44,9 +45,7 @@ const Hash: NextPage = () => {
 
   return (
     <MainLayout title={t.hash.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconCase} title={t.hash.uppercaseTitle}>
           <Toggle
             on={uppercase}
@@ -54,7 +53,7 @@ const Hash: NextPage = () => {
             desc={t.hash.uppercaseDesc}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
       <SectionContainer>

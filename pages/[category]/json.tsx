@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import Configuration from "../../components/Configuration";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
@@ -22,9 +23,7 @@ const Json: NextPage = () => {
 
   return (
     <MainLayout title={t.json.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconIndentation} title={t.json.indentTitle}>
           <div className="w-32">
             <Select
@@ -34,7 +33,7 @@ const Json: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerM />
       <SectionContainer className="grow">

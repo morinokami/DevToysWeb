@@ -6,6 +6,7 @@ import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import NumberInput from "../../components/NumberInput";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
@@ -43,9 +44,7 @@ const Lorem: NextPage = () => {
 
   return (
     <MainLayout title={t.loremIpsum.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconBeerMini}
           title={t.loremIpsum.typeTitle}
@@ -59,7 +58,6 @@ const Lorem: NextPage = () => {
             />
           </div>
         </Configuration>
-        <VSpacerS />
         <Configuration
           icon={IconBeerMini}
           title={t.loremIpsum.lengthTitle}
@@ -72,7 +70,7 @@ const Lorem: NextPage = () => {
             max={10000}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerM />
       <SectionContainer>

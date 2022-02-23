@@ -7,6 +7,7 @@ import CopyButton from "../../components/CopyButton";
 import ErrorMessage from "../../components/ErrorMessage";
 import Input from "../../components/Input";
 import PasteButton from "../../components/PasteButton";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
@@ -35,9 +36,7 @@ const NumberBase: NextPage = () => {
 
   return (
     <MainLayout title={t.numberBase.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconCase} title={t.numberBase.formatNumberTitle}>
           <Toggle
             on={format}
@@ -45,7 +44,6 @@ const NumberBase: NextPage = () => {
             desc={t.numberBase.formatNumberDesc}
           />
         </Configuration>
-        <VSpacerS />
         <Configuration
           icon={IconConversion}
           title={t.numberBase.inputTypeTitle}
@@ -55,7 +53,7 @@ const NumberBase: NextPage = () => {
             <Select options={baseOptions} value={base} onChange={setBase} />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
       <SectionContainer>

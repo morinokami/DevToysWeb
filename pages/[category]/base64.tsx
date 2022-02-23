@@ -5,6 +5,7 @@ import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
@@ -51,9 +52,7 @@ const Base64: NextPage = () => {
 
   return (
     <MainLayout title={t.base64.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconConversion}
           title={t.base64.conversionTitle}
@@ -67,7 +66,7 @@ const Base64: NextPage = () => {
             offText={t.base64.decodeText}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
       <SectionContainer>

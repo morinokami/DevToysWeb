@@ -5,6 +5,7 @@ import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import NumberInput from "../../components/NumberInput";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Select from "../../components/Select";
@@ -40,9 +41,7 @@ const Uuid: NextPage = () => {
 
   return (
     <MainLayout title={t.uuid.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconHyphen} title={t.uuid.hyphenateTitle}>
           <Toggle
             on={hyphenate}
@@ -50,7 +49,6 @@ const Uuid: NextPage = () => {
             desc={t.uuid.hyphenateDesc}
           />
         </Configuration>
-        <VSpacerS />
         <Configuration icon={IconCase} title={t.uuid.uppercaseTitle}>
           <Toggle
             on={uppercase}
@@ -58,7 +56,6 @@ const Uuid: NextPage = () => {
             desc={t.uuid.uppercaseDesc}
           />
         </Configuration>
-        <VSpacerS />
         <Configuration
           icon={IconVersion}
           title={t.uuid.uuidVersionTitle}
@@ -72,7 +69,7 @@ const Uuid: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
       <SectionContainer>

@@ -5,6 +5,7 @@ import ClearButton from "../../components/ClearButton";
 import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import PasteButton from "../../components/PasteButton";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
@@ -25,9 +26,7 @@ const Url: NextPage = () => {
 
   return (
     <MainLayout title={t.url.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconConversion}
           title={t.url.conversionTitle}
@@ -41,7 +40,7 @@ const Url: NextPage = () => {
             offText={t.url.decodeText}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
       <SectionContainer>

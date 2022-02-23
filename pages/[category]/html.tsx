@@ -7,6 +7,7 @@ import Configuration from "../../components/Configuration";
 import CopyButton from "../../components/CopyButton";
 import FileInput from "../../components/FileInput";
 import PasteButton from "../../components/PasteButton";
+import SectionConfiguration from "../../components/SectionConfiguration";
 import SectionContainer from "../../components/SectionContainer";
 import SectionHeader from "../../components/SectionHeader";
 import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
@@ -26,9 +27,7 @@ const Html: NextPage = () => {
 
   return (
     <MainLayout title={t.html.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconConversion}
           title={t.html.conversionTitle}
@@ -42,7 +41,7 @@ const Html: NextPage = () => {
             offText={t.html.decodeText}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
       <SectionContainer>
