@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-import { IconBeerMini, IconChevronDown, IconChevronUp } from "../data/icon";
-import { NavCategory } from "../data/locales/types";
+import { IconBeerMini, IconChevronDown, IconChevronUp } from "../../data/icon";
+import { NavCategory } from "../../data/locales/types";
+import SelectionIndicator from "../SelectionIndicator";
+import Spacer, { VSpacerS } from "../Spacer";
 import NavRow from "./NavRow";
-import SelectionIndicator from "./SelectionIndicator";
-import Spacer, { VSpacerS } from "./Spacer";
 
 interface NavCategoryProps {
   category: NavCategory;

@@ -1,8 +1,8 @@
 import { useRef } from "react";
 
-import { IconUpload } from "../data/icon";
-import { useLocale } from "../hooks/useLocale";
-import Button from "./Button";
+import { IconUpload } from "../../data/icon";
+import { useLocale } from "../../hooks/useLocale";
+import { Button } from "../button";
 
 interface FileInputProps {
   // TODO: Accept files other than text

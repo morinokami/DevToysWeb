@@ -2,16 +2,15 @@ import { escape, unescape } from "html-escaper";
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
-import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
-import FileInput from "../../components/FileInput";
-import PasteButton from "../../components/PasteButton";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
-import Toggle from "../../components/Toggle";
+import { ClearButton, CopyButton, PasteButton } from "../../components/button";
+import { FileInput, TextArea, Toggle } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
+import Spacer, { VSpacerL, VSpacerM } from "../../components/Spacer";
 import { IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -26,9 +25,7 @@ const Html: NextPage = () => {
 
   return (
     <MainLayout title={t.html.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconConversion}
           title={t.html.conversionTitle}
@@ -42,10 +39,10 @@ const Html: NextPage = () => {
             offText={t.html.decodeText}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
@@ -55,18 +52,16 @@ const Html: NextPage = () => {
             <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="input" value={input} onChange={setInput} />
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.outputTitle} label="output">
           <CopyButton text={output} />
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="output" value={output} />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

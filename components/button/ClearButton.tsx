@@ -1,5 +1,5 @@
-import { IconDelete } from "../data/icon";
-import { useLocale } from "../hooks/useLocale";
+import { IconDelete } from "../../data/icon";
+import { useLocale } from "../../hooks/useLocale";
 import Button from "./Button";
 
 interface ClearButtonProps {

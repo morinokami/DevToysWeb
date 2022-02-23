@@ -1,12 +1,13 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import Configuration from "../../components/Configuration";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Select from "../../components/Select";
-import { VSpacerM, VSpacerS } from "../../components/Spacer";
-import SplitEditor from "../../components/SplitEditor";
+import { Select, SplitEditor } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionMain,
+} from "../../components/section";
+import { VSpacerM } from "../../components/Spacer";
 import { IconIndentation } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -22,9 +23,7 @@ const Xml: NextPage = () => {
 
   return (
     <MainLayout title={t.xml.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconIndentation} title={t.xml.indentTitle}>
           <div className="w-32">
             <Select
@@ -34,10 +33,10 @@ const Xml: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerM />
-      <SectionContainer className="grow">
+      <SectionMain className="grow">
         <SplitEditor
           input={input}
           setInput={setInput}
@@ -45,7 +44,7 @@ const Xml: NextPage = () => {
           inputLanguage="xml"
           outputLanguage="xml"
         />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

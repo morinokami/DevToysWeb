@@ -2,9 +2,8 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 
-import Configuration from "../components/Configuration";
-import SectionContainer from "../components/SectionContainer";
-import Select from "../components/Select";
+import { Select } from "../components/io";
+import { Configuration, SectionMain } from "../components/section";
 import { VSpacerS } from "../components/Spacer";
 import { IconBeerMini } from "../data/icon";
 import { useLocale } from "../hooks/useLocale";
@@ -21,7 +20,7 @@ const Settings: NextPage = () => {
 
   return (
     <MainLayout title={t.settings.title}>
-      <SectionContainer>
+      <SectionMain>
         <Configuration icon={IconBeerMini} title={t.settings.languageTitle}>
           <div className="w-36">
             {language && (
@@ -35,9 +34,9 @@ const Settings: NextPage = () => {
             )}
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionMain>
       <VSpacerS />
-      <SectionContainer>
+      <SectionMain>
         <Configuration
           icon={IconBeerMini}
           title={t.settings.themeTitle}
@@ -53,7 +52,7 @@ const Settings: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

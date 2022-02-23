@@ -1,15 +1,15 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import ClearButton from "../../components/ClearButton";
-import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
-import PasteButton from "../../components/PasteButton";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Spacer, { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
-import Toggle from "../../components/Toggle";
+import { ClearButton, CopyButton, PasteButton } from "../../components/button";
+import { TextArea, Toggle } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
+import Spacer, { VSpacerL, VSpacerM } from "../../components/Spacer";
 import { IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -51,9 +51,7 @@ const Base64: NextPage = () => {
 
   return (
     <MainLayout title={t.base64.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconConversion}
           title={t.base64.conversionTitle}
@@ -67,10 +65,10 @@ const Base64: NextPage = () => {
             offText={t.base64.decodeText}
           />
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={(text) => setInput(text)} />
@@ -78,18 +76,16 @@ const Base64: NextPage = () => {
             <ClearButton onClick={() => setInput("")} />
           </div>
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="input" value={input} onChange={setInput} />
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.outputTitle} label="output">
           <CopyButton text={output} />
         </SectionHeader>
-        <VSpacerS />
         <TextArea id="output" value={output} />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

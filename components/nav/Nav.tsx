@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Nav } from "../data/locales/types";
+import { Nav } from "../../data/locales/types";
+import { VSpacerS } from "../Spacer";
 import Divider from "./Divider";
 import NavCategory from "./NavCategory";
-import { VSpacerS } from "./Spacer";
 
 interface NavProps {
   nav: Nav;

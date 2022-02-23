@@ -2,16 +2,16 @@ import { NextPage } from "next";
 import React from "react";
 import { useState } from "react";
 
-import Configuration from "../../components/Configuration";
-import CopyButton from "../../components/CopyButton";
+import { CopyButton, PasteButton } from "../../components/button";
 import ErrorMessage from "../../components/ErrorMessage";
-import Input from "../../components/Input";
-import PasteButton from "../../components/PasteButton";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Select from "../../components/Select";
-import { VSpacerL, VSpacerM, VSpacerS } from "../../components/Spacer";
-import Toggle from "../../components/Toggle";
+import { Input, Select, Toggle } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionHeader,
+  SectionMain,
+} from "../../components/section";
+import { VSpacerL, VSpacerM } from "../../components/Spacer";
 import { IconCase, IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -35,9 +35,7 @@ const NumberBase: NextPage = () => {
 
   return (
     <MainLayout title={t.numberBase.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration icon={IconCase} title={t.numberBase.formatNumberTitle}>
           <Toggle
             on={format}
@@ -45,7 +43,6 @@ const NumberBase: NextPage = () => {
             desc={t.numberBase.formatNumberDesc}
           />
         </Configuration>
-        <VSpacerS />
         <Configuration
           icon={IconConversion}
           title={t.numberBase.inputTypeTitle}
@@ -55,59 +52,53 @@ const NumberBase: NextPage = () => {
             <Select options={baseOptions} value={base} onChange={setBase} />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerL />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.common.inputTitle} label="input">
           <PasteButton onClick={setInput} />
         </SectionHeader>
-        <VSpacerS />
         <Input id="input" value={input} onChange={setInput} />
-        <VSpacerS />
         {input.length > 0 && !valid && (
           // TODO: Move to locales
           <ErrorMessage
             message={`The current value isn't a valid ${base.name}`}
           />
         )}
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.numberBase.hexTitle} label="hex" />
-        <VSpacerS />
         <Input id="hex" value={hex}>
           <CopyButton text={hex} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.numberBase.decimalTitle} label="decimal" />
-        <VSpacerS />
         <Input id="decimal" value={decimal}>
           <CopyButton text={decimal} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.numberBase.octalTitle} label="octal" />
-        <VSpacerS />
         <Input id="octal" value={octal}>
           <CopyButton text={octal} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
 
       <VSpacerM />
-      <SectionContainer>
+      <SectionMain>
         <SectionHeader title={t.numberBase.binaryTitle} label="binary" />
-        <VSpacerS />
         <Input id="binary" value={binary}>
           <CopyButton text={binary} showTitle={true} />
         </Input>
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };

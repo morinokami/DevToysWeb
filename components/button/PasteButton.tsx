@@ -1,5 +1,5 @@
-import { IconPaste } from "../data/icon";
-import { useLocale } from "../hooks/useLocale";
+import { IconPaste } from "../../data/icon";
+import { useLocale } from "../../hooks/useLocale";
 import Button from "./Button";
 
 interface PasteButtonProps {
