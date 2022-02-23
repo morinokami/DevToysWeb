@@ -2,12 +2,14 @@ import { marked } from "marked";
 import { NextPage } from "next";
 import { useState } from "react";
 
-import Configuration from "../../components/Configuration";
+import { Select } from "../../components/io";
 import MarkdownPreview from "../../components/MarkdownPreview";
-import SectionContainer from "../../components/SectionContainer";
-import SectionHeader from "../../components/SectionHeader";
-import Select from "../../components/Select";
-import { VSpacerM, VSpacerS } from "../../components/Spacer";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionMain,
+} from "../../components/section";
+import { VSpacerM } from "../../components/Spacer";
 import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -22,9 +24,7 @@ const MakrdownPreview: NextPage = () => {
 
   return (
     <MainLayout title={t.markdownPreview.title}>
-      <SectionContainer>
-        <SectionHeader title={t.common.configTitle} />
-        <VSpacerS />
+      <SectionConfiguration title={t.common.configTitle}>
         <Configuration
           icon={IconBeerMini}
           title={t.markdownPreview.themeTitle}
@@ -38,17 +38,17 @@ const MakrdownPreview: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionContainer>
+      </SectionConfiguration>
 
       <VSpacerM />
-      <SectionContainer className="grow">
+      <SectionMain className="grow">
         <MarkdownPreview
           input={input}
           setInput={setInput}
           output={output}
           theme={theme.value}
         />
-      </SectionContainer>
+      </SectionMain>
     </MainLayout>
   );
 };
