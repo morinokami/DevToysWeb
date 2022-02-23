@@ -1,4 +1,4 @@
-import Spacer from "./Spacer";
+import Spacer from "../Spacer";
 
 interface InputProps {
   value: string;

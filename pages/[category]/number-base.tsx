@@ -4,16 +4,14 @@ import { useState } from "react";
 
 import { CopyButton, PasteButton } from "../../components/button";
 import ErrorMessage from "../../components/ErrorMessage";
-import Input from "../../components/Input";
+import { Input, Select, Toggle } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
   SectionHeader,
   SectionMain,
 } from "../../components/section";
-import Select from "../../components/Select";
 import { VSpacerL, VSpacerM } from "../../components/Spacer";
-import Toggle from "../../components/Toggle";
 import { IconCase, IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";

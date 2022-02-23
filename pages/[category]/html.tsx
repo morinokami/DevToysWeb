@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import FileInput from "../../components/FileInput";
+import { FileInput, TextArea, Toggle } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
@@ -11,8 +11,6 @@ import {
   SectionMain,
 } from "../../components/section";
 import Spacer, { VSpacerL, VSpacerM } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
-import Toggle from "../../components/Toggle";
 import { IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";

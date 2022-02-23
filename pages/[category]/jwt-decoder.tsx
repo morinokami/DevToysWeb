@@ -3,10 +3,9 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import CodeEditor from "../../components/CodeEditor";
+import { CodeEditor, TextArea } from "../../components/io";
 import { SectionHeader, SectionMain } from "../../components/section";
 import Spacer, { VSpacerM } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 

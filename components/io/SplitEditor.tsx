@@ -1,10 +1,10 @@
 import { ReflexContainer, ReflexElement, ReflexSplitter } from "react-reflex";
 
-import { t } from "../data/locales/en";
-import { ClearButton, CopyButton, PasteButton } from "./button";
+import { t } from "../../data/locales/en";
+import { ClearButton, CopyButton, PasteButton } from "../button";
+import { SectionHeader } from "../section";
+import Spacer, { VSpacerS } from "../Spacer";
 import CodeEditor from "./CodeEditor";
-import { SectionHeader } from "./section";
-import Spacer, { VSpacerS } from "./Spacer";
 
 interface SplitEditorProps {
   input: string;

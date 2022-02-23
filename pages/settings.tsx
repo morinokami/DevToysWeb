@@ -2,8 +2,8 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 
+import { Select } from "../components/io";
 import { Configuration, SectionMain } from "../components/section";
-import Select from "../components/Select";
 import { VSpacerS } from "../components/Spacer";
 import { IconBeerMini } from "../data/icon";
 import { useLocale } from "../hooks/useLocale";

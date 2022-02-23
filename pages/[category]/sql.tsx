@@ -1,14 +1,13 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
+import { Select, SplitEditor } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
   SectionMain,
 } from "../../components/section";
-import Select from "../../components/Select";
 import { VSpacerM } from "../../components/Spacer";
-import SplitEditor from "../../components/SplitEditor";
 import { IconIndentation, IconLanguage } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";

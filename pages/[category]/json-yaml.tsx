@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
+import { SplitEditor } from "../../components/io";
 import { SectionConfiguration, SectionMain } from "../../components/section";
 import { VSpacerM } from "../../components/Spacer";
-import SplitEditor from "../../components/SplitEditor";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { toYaml } from "../../lib/convert";

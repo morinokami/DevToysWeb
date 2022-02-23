@@ -1,8 +1,8 @@
 import { Listbox, Transition } from "@headlessui/react";
 import React from "react";
 
-import { IconChevronDown } from "../data/icon";
-import SelectionIndicator from "./SelectionIndicator";
+import { IconChevronDown } from "../../data/icon";
+import SelectionIndicator from "../SelectionIndicator";
 
 interface SelectProps<T> {
   options: { name: string; value?: T }[];

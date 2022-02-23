@@ -3,16 +3,14 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 
 import { ClearButton, CopyButton } from "../../components/button";
-import NumberInput from "../../components/NumberInput";
+import { NumberInput, Select, TextArea } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
   SectionHeader,
   SectionMain,
 } from "../../components/section";
-import Select from "../../components/Select";
 import Spacer, { VSpacerM } from "../../components/Spacer";
-import TextArea from "../../components/TextArea";
 import { IconBeerMini } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
