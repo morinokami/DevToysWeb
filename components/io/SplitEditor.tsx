@@ -24,7 +24,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
 }) => {
   return (
     <ReflexContainer orientation="vertical">
-      <ReflexElement minSize={200}>
+      <ReflexElement minSize={300}>
         <div className="flex h-full flex-col">
           <SectionHeader title={t.common.inputTitle}>
             <div className="flex">
@@ -54,7 +54,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           height: "98%",
         }}
       />
-      <ReflexElement minSize={200}>
+      <ReflexElement minSize={300}>
         <div className="flex h-full flex-col">
           <SectionHeader title={t.common.outputTitle}>
             <div className="flex">
