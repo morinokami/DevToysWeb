@@ -5,14 +5,14 @@ import { ClearButton, CopyButton, PasteButton } from "../button";
 import { SectionHeader } from "../section";
 import Spacer, { VSpacerS } from "../Spacer";
 import { FileInput } from ".";
-import CodeEditor from "./CodeEditor";
+import CodeEditor, { LANGUAGE } from "./CodeEditor";
 
 interface SplitEditorProps {
   input: string;
   setInput: (value: string) => void;
   output: string;
-  inputLanguage: "json" | "sql" | "xml" | "yaml";
-  outputLanguage: "json" | "sql" | "xml" | "yaml";
+  inputLanguage: LANGUAGE;
+  outputLanguage: LANGUAGE;
 }
 
 const SplitEditor: React.VFC<SplitEditorProps> = ({
@@ -24,26 +24,24 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
 }) => {
   return (
     <ReflexContainer orientation="vertical">
-      <ReflexElement minSize={300}>
-        <div className="flex h-full flex-col">
-          <SectionHeader title={t.common.inputTitle}>
-            <div className="flex">
-              <PasteButton onClick={setInput} />
-              <Spacer x={6} />
-              <FileInput onFileRead={setInput} />
-              <Spacer x={6} />
-              <ClearButton onClick={() => setInput("")} />
-            </div>
-          </SectionHeader>
-          <VSpacerS />
-          <div className="grow">
-            <CodeEditor
-              height="98%"
-              value={input}
-              onChange={(value) => setInput(value ?? "")}
-              language={inputLanguage}
-            />
+      <ReflexElement className="flex h-full flex-col" minSize={300}>
+        <SectionHeader title={t.common.inputTitle}>
+          <div className="flex">
+            <PasteButton onClick={setInput} />
+            <Spacer x={6} />
+            <FileInput onFileRead={setInput} />
+            <Spacer x={6} />
+            <ClearButton onClick={() => setInput("")} />
           </div>
+        </SectionHeader>
+        <VSpacerS />
+        <div className="grow">
+          <CodeEditor
+            height="98%"
+            value={input}
+            onChange={(value) => setInput(value ?? "")}
+            language={inputLanguage}
+          />
         </div>
       </ReflexElement>
       <ReflexSplitter
@@ -54,22 +52,18 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           height: "98%",
         }}
       />
-      <ReflexElement minSize={300}>
-        <div className="flex h-full flex-col">
-          <SectionHeader title={t.common.outputTitle}>
-            <div className="flex">
-              <CopyButton text={output} />
-            </div>
-          </SectionHeader>
-          <VSpacerS />
-          <div className="grow">
-            <CodeEditor
-              height="98%"
-              value={output}
-              language={outputLanguage}
-              readOnly={true}
-            />
-          </div>
+      <ReflexElement className="flex h-full flex-col" minSize={300}>
+        <SectionHeader title={t.common.outputTitle}>
+          <CopyButton text={output} />
+        </SectionHeader>
+        <VSpacerS />
+        <div className="grow">
+          <CodeEditor
+            height="98%"
+            value={output}
+            language={outputLanguage}
+            readOnly={true}
+          />
         </div>
       </ReflexElement>
     </ReflexContainer>
