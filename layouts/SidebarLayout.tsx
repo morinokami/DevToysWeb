@@ -20,7 +20,7 @@ const SidebarLayout: React.FC<SidebarLayoutProps> = ({
       <div className="fixed inset-0 z-10 hidden w-64 overflow-y-auto bg-light-30 pt-12 dark:bg-dark-50 lg:block">
         <Nav nav={nav} setNavIsOpen={setNavIsOpen} />
       </div>
-      <div className="grow p-4 lg:p-8 lg:pl-72">{children}</div>
+      <div className="w-full grow p-4 lg:p-8 lg:pl-72">{children}</div>
       <Dialog
         as="div"
         open={navIsOpen}
