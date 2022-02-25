@@ -24,6 +24,7 @@ const CodeEditor: React.VFC<CodeEditorProps> = ({
 
   return (
     <Editor
+      className="border border-light-40 dark:border-none"
       height={height}
       defaultLanguage={language}
       defaultValue=""
