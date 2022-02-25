@@ -7,8 +7,11 @@ import {
   MdFingerprint,
   MdHorizontalRule,
   MdOutlineLink,
+  MdPrecisionManufacturing,
+  MdShortText,
   MdSpaceBar,
   MdTransform,
+  MdWater,
 } from "react-icons/md";
 import { SiJsonwebtokens } from "react-icons/si";
 import {
@@ -26,6 +29,7 @@ import {
   VscSettings,
   VscSettingsGear,
   VscSymbolNumeric,
+  VscTextSize,
 } from "react-icons/vsc";
 
 const ICON_SIZE_SMALL = "14";
@@ -103,6 +107,7 @@ export const IconNumberBase = generateIcon(VscSymbolNumeric);
 export const IconEncodersDecoders = generateIcon(VscFileBinary);
 export const IconHtml = generateIcon(FaHtml5);
 export const IconUrl = generateIcon(MdOutlineLink);
+export const IconBase64 = generateIcon(MdShortText);
 export const IconGZip = generateIcon(BsFileZip);
 export const IconJWT = generateIcon(SiJsonwebtokens);
 
@@ -115,4 +120,7 @@ export const IconXml = generateIcon(VscCode);
 
 // Generators
 
+export const IconGenerators = generateIcon(MdPrecisionManufacturing);
 export const IconHash = generateIcon(MdFingerprint);
+export const IconUuid = generateIcon(MdWater);
+export const IconLoremIpsum = generateIcon(VscTextSize);

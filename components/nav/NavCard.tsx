@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { IconBeer } from "../../data/icon";
 import { NavItem } from "../../data/locales/types";
 
 interface NavCardProps {
@@ -13,8 +12,7 @@ const NavCard: React.VFC<NavCardProps> = ({ navItem }) => {
       <a>
         <div className="h-72 w-36 rounded border border-light-40 bg-light-10 p-3 hover:cursor-pointer hover:border-gray-300 dark:border-dark-30 dark:bg-dark-30 dark:hover:border dark:hover:border-dark-20">
           <div className="m-5 mb-8 flex h-20 w-20 items-center justify-center rounded dark:bg-dark-20">
-            {/* TODO: update */}
-            {navItem.icon ? <navItem.icon large={true} /> : <IconBeer />}
+            <navItem.icon large={true} />
           </div>
           <div>
             <div className="text-sm">{navItem.longTitle}</div>

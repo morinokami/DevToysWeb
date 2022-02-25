@@ -1,17 +1,21 @@
 import {
   IconAllTools,
+  IconBase64,
   IconConverters,
   IconEncodersDecoders,
   IconFormatters,
+  IconGenerators,
   IconGZip,
   IconHash,
   IconHtml,
   IconJson,
   IconJWT,
+  IconLoremIpsum,
   IconNumberBase,
   IconSettings,
   IconSql,
   IconUrl,
+  IconUuid,
   IconXml,
 } from "../../icon";
 import { Nav } from "../types";
@@ -68,6 +72,7 @@ export const nav: Nav = [
         title: "Base 64",
         longTitle: "Base 64 Encoder / Decoder",
         href: `${localePath}/encoders-decoders/base64`,
+        icon: IconBase64,
         desc: "Encode and decode Base64 data",
       },
       {
@@ -117,6 +122,7 @@ export const nav: Nav = [
   {
     title: "Generators",
     href: `${localePath}/generators`,
+    icon: IconGenerators,
     items: [
       {
         title: "Hash",
@@ -129,12 +135,14 @@ export const nav: Nav = [
         title: "UUID",
         longTitle: "UUID Generator",
         href: `${localePath}/generators/uuid`,
+        icon: IconUuid,
         desc: "Generate UUIDs version 1 and 4",
       },
       {
         title: "Lorem Ipsum",
         longTitle: "Lorem Ipsum Generator",
         href: `${localePath}/generators/lorem-ipsum`,
+        icon: IconLoremIpsum,
         desc: "Generate Lorem Ipsum placeholder text",
       },
       // TODO: Do it later

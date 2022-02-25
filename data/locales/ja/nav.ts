@@ -1,17 +1,21 @@
 import {
   IconAllTools,
+  IconBase64,
   IconConverters,
   IconEncodersDecoders,
   IconFormatters,
+  IconGenerators,
   IconGZip,
   IconHash,
   IconHtml,
   IconJson,
   IconJWT,
+  IconLoremIpsum,
   IconNumberBase,
   IconSettings,
   IconSql,
   IconUrl,
+  IconUuid,
   IconXml,
 } from "../../icon";
 import { Nav } from "../types";
@@ -68,6 +72,7 @@ export const nav: Nav = [
         title: "Base 64",
         longTitle: "Base 64 エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/base64`,
+        icon: IconBase64,
         desc: "Base64 データをエンコード、デコードする",
       },
       {
@@ -117,6 +122,7 @@ export const nav: Nav = [
   {
     title: "生成",
     href: `${localePath}/generators`,
+    icon: IconGenerators,
     items: [
       {
         title: "ハッシュ",
@@ -129,12 +135,14 @@ export const nav: Nav = [
         title: "UUID",
         longTitle: "UUID 生成",
         href: `${localePath}/generators/uuid`,
+        icon: IconUuid,
         desc: "バージョン 1、4 の UUID を生成する",
       },
       {
         title: "Lorem Ipsum",
         longTitle: "Lorem Ipsum 生成",
         href: `${localePath}/generators/lorem-ipsum`,
+        icon: IconLoremIpsum,
         desc: "Lorem Ipsum テキストを生成する",
       },
       // {
