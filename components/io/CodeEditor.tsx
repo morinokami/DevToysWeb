@@ -3,10 +3,12 @@ import { useTheme } from "next-themes";
 
 loader.config({ paths: { vs: "/vs" } });
 
+export type LANGUAGE = "json" | "sql" | "xml" | "yaml" | "markdown";
+
 interface CodeEditorProps {
   height: string;
   value: string;
-  language: "json" | "sql" | "xml" | "yaml" | "markdown";
+  language: LANGUAGE;
   onChange?: (value: string | undefined) => void;
   readOnly?: boolean;
 }

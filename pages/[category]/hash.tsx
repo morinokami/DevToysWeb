@@ -6,7 +6,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import { Input, TextArea, Toggle } from "../../components/io";
+import { FileInput, Input, TextArea, Toggle } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
@@ -58,6 +58,8 @@ const Hash: NextPage = () => {
         <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
+            <Spacer x={6} />
+            <FileInput onFileRead={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>

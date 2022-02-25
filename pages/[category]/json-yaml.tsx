@@ -1,26 +1,56 @@
 import { NextPage } from "next";
 import { useState } from "react";
 
-import { SplitEditor } from "../../components/io";
-import { SectionConfiguration, SectionMain } from "../../components/section";
+import { Select, SplitEditor } from "../../components/io";
+import {
+  Configuration,
+  SectionConfiguration,
+  SectionMain,
+} from "../../components/section";
 import { VSpacerM } from "../../components/Spacer";
+import { IconConversion, IconIndentation } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
-import { toYaml } from "../../lib/convert";
+import { toJson, toYaml } from "../../lib/convert";
 
 const JsonYaml: NextPage = () => {
   const { t } = useLocale();
 
   const [input, setInput] = useState("");
-  // TODO: implemet
-  const [from, setFrom] = useState();
-  const [indent, setIndent] = useState();
+  const [conversion, setConversion] = useState(t.jsonYaml.conversionOptions[0]);
+  const [indent, setIndent] = useState(t.jsonYaml.indentOptions[0]);
 
-  const output = toYaml(input, 2);
+  const output =
+    conversion.value === "json-to-yaml"
+      ? toYaml(input, indent.value)
+      : toJson(input, indent.value);
 
   return (
     <MainLayout title={t.jsonYaml.title}>
-      <SectionConfiguration title={t.common.configTitle}></SectionConfiguration>
+      <SectionConfiguration title={t.common.configTitle}>
+        <Configuration
+          icon={IconConversion}
+          title={t.jsonYaml.conversionTitle}
+          desc={t.jsonYaml.conversionSubtitle}
+        >
+          <div className="w-36">
+            <Select
+              options={t.jsonYaml.conversionOptions}
+              value={conversion}
+              onChange={setConversion}
+            />
+          </div>
+        </Configuration>
+        <Configuration icon={IconIndentation} title={t.jsonYaml.indentTitle}>
+          <div className="w-28">
+            <Select
+              options={t.jsonYaml.indentOptions}
+              value={indent}
+              onChange={setIndent}
+            />
+          </div>
+        </Configuration>
+      </SectionConfiguration>
 
       <VSpacerM />
       <SectionMain className="grow">

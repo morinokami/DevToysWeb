@@ -5,7 +5,6 @@ import { useLocale } from "../../hooks/useLocale";
 import { Button } from "../button";
 
 interface FileInputProps {
-  // TODO: Accept files other than text
   onFileRead: (value: string) => void;
   accept?: string;
 }
