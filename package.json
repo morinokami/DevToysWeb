@@ -12,6 +12,9 @@
     "format": "prettier --write '**/*.{js,ts,tsx}'",
     "postinstall": "rimraf public/vs node_modules/monaco-editor && npm install monaco-editor --force --no-save && mv node_modules/monaco-editor/min/vs public"
   },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
   "dependencies": {
     "@headlessui/react": "^1.4.3",
     "@monaco-editor/react": "^4.3.1",
@@ -46,11 +49,13 @@
     "eslint-config-next": "12.1.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "jest": "^27.5.1",
+    "lint-staged": "^12.3.4",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
     "rimraf": "^3.0.2",
+    "simple-git-hooks": "^2.7.0",
     "tailwindcss": "^3.0.18",
     "typescript": "4.5.5"
   }
