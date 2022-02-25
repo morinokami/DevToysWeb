@@ -1,8 +1,8 @@
 {
-  "name": "next-pwa",
-  "short_name": "next-pwa",
+  "name": "DevToysWeb",
+  "short_name": "DevToysWeb",
+  "description": "A Swiss Army knife for developers on the web.",
   "display": "standalone",
-  "orientation": "portrait",
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
   "start_url": "/",
