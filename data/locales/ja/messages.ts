@@ -25,11 +25,10 @@ export const t = {
   },
   gzip: {
     title: getTitle("/encoders-decoders/gzip"),
-    compressTitle: "GZip Compress/Decompress",
-    compressDesc:
-      "Select whether the input should be compressed or decompressed",
-    compressText: "Compress",
-    decompressText: "Decompress",
+    compressTitle: "GZip 圧縮/展開",
+    compressDesc: "入力を圧縮するか、展開するか選択してください",
+    compressText: "圧縮",
+    decompressText: "展開",
   },
   hash: {
     title: getTitle("/generators/hash"),
@@ -60,16 +59,16 @@ export const t = {
   },
   jsonYaml: {
     title: getTitle("/converters/json-yaml"),
-    conversionTitle: "Conversion",
-    conversionSubtitle: "Select which conversion mode you want to use",
+    conversionTitle: "変換",
+    conversionSubtitle: "使用する変換方法を選択してください",
     conversionOptions: [
-      { name: "JSON to YAML", value: "json-to-yaml" },
-      { name: "YAML to JSON", value: "yaml-to-json" },
+      { name: "JSON から YAML", value: "json-to-yaml" },
+      { name: "YAML から JSON", value: "yaml-to-json" },
     ],
-    indentTitle: "Indentation",
+    indentTitle: "インデント",
     indentOptions: [
-      { name: "2 spaces", value: 2 },
-      { name: "4 spaces", value: 4 },
+      { name: "2 スペース", value: 2 },
+      { name: "4 スペース", value: 4 },
     ],
   },
   jwtDecoder: {

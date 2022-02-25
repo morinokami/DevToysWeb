@@ -33,6 +33,7 @@ export const nav: Nav = [
         title: "JSON <> YAML",
         longTitle: "JSON <> YAML 変換",
         href: `${localePath}/converters/json-yaml`,
+        icon: IconConverters,
         desc: "JSON と YAML を相互に変換する",
       },
       {
@@ -54,20 +55,20 @@ export const nav: Nav = [
         longTitle: "HTML エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/html`,
         icon: IconHtml,
-        desc: "Encode or decode all the applicable characters to their corresponding HTML entities",
+        desc: "文字を対応する HTML エンティティにエンコード、デコードする",
       },
       {
         title: "URL",
         longTitle: "URL エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/url`,
         icon: IconUrl,
-        desc: "Encode or decode all the applicable characters to their corresponding URL entities",
+        desc: "文字を対応する URL エンティティにエンコード、デコードする",
       },
       {
         title: "Base 64",
         longTitle: "Base 64 エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/base64`,
-        desc: "Base64 のデータをエンコード、デコードする",
+        desc: "Base64 データをエンコード、デコードする",
       },
       {
         title: "GZip",
@@ -136,19 +137,19 @@ export const nav: Nav = [
         href: `${localePath}/generators/lorem-ipsum`,
         desc: "Lorem Ipsum テキストを生成する",
       },
-      {
-        title: "チェックサム",
-        longTitle: "チェックサム",
-        href: `${localePath}/generators/checksum`,
-        desc: "Generate an hash with CheckSum based on a file",
-      },
+      // {
+      //   title: "チェックサム",
+      //   longTitle: "チェックサム",
+      //   href: `${localePath}/generators/checksum`,
+      //   desc: "Generate an hash with CheckSum based on a file",
+      // },
     ],
   },
   {
     title: "設定",
     href: `${localePath}/settings`,
     icon: IconSettings,
-    desc: "Customize DevToysWeb look & feel",
+    desc: "DevToysWeb の見た目や使い勝手をカスタマイズする",
   },
 ];
 

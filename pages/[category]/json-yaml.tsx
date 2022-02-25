@@ -33,7 +33,7 @@ const JsonYaml: NextPage = () => {
           title={t.jsonYaml.conversionTitle}
           desc={t.jsonYaml.conversionSubtitle}
         >
-          <div className="w-36">
+          <div className="w-40">
             <Select
               options={t.jsonYaml.conversionOptions}
               value={conversion}
@@ -42,7 +42,7 @@ const JsonYaml: NextPage = () => {
           </div>
         </Configuration>
         <Configuration icon={IconIndentation} title={t.jsonYaml.indentTitle}>
-          <div className="w-28">
+          <div className="w-32">
             <Select
               options={t.jsonYaml.indentOptions}
               value={indent}

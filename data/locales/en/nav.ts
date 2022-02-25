@@ -137,12 +137,13 @@ export const nav: Nav = [
         href: `${localePath}/generators/lorem-ipsum`,
         desc: "Generate Lorem Ipsum placeholder text",
       },
-      {
-        title: "Checksum",
-        longTitle: "Checksum",
-        href: `${localePath}/generators/checksum`,
-        desc: "Generate an hash with CheckSum based on a file",
-      },
+      // TODO: Do it later
+      // {
+      //   title: "Checksum",
+      //   longTitle: "Checksum",
+      //   href: `${localePath}/generators/checksum`,
+      //   desc: "Generate an hash with CheckSum based on a file",
+      // },
     ],
   },
   {
