@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import { CodeEditor, TextArea } from "../../components/io";
+import { CodeEditor, FileInput, TextArea } from "../../components/io";
 import { SectionHeader, SectionMain } from "../../components/section";
 import Spacer, { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
@@ -32,6 +32,8 @@ const JwtDecoder: NextPage = () => {
         <SectionHeader title={t.jwtDecoder.jwtTokenTitle} label="jwt-token">
           <div className="flex">
             <PasteButton onClick={setInput} />
+            <Spacer x={6} />
+            <FileInput onFileRead={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>

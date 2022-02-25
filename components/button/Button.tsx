@@ -13,7 +13,7 @@ const Button: React.VFC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className="rounded border border-gray-200 bg-light-20 py-2 px-3 hover:bg-light-10 dark:border-none dark:bg-dark-30 hover:dark:bg-dark-20"
+      className="rounded border border-light-40 bg-light-20 py-2 px-3 hover:bg-light-10 dark:border-none dark:bg-dark-30 hover:dark:bg-dark-20"
       title={title}
       onClick={onClick}
     >

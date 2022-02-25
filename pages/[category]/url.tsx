@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import { TextArea, Toggle } from "../../components/io";
+import { FileInput, TextArea, Toggle } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
@@ -29,7 +29,7 @@ const Url: NextPage = () => {
         <Configuration
           icon={IconConversion}
           title={t.url.conversionTitle}
-          subtitle={t.url.conversionSubtitle}
+          desc={t.url.conversionSubtitle}
         >
           <Toggle
             on={encode}
@@ -46,6 +46,8 @@ const Url: NextPage = () => {
         <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={setInput} />
+            <Spacer x={6} />
+            <FileInput onFileRead={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>

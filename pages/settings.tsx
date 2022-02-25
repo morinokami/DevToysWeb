@@ -40,7 +40,7 @@ const Settings: NextPage = () => {
         <Configuration
           icon={IconBeerMini}
           title={t.settings.themeTitle}
-          subtitle={t.settings.themeSubtitle}
+          desc={t.settings.themeSubtitle}
         >
           <div className="w-36">
             <Select

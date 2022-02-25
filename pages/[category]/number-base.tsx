@@ -46,7 +46,7 @@ const NumberBase: NextPage = () => {
         <Configuration
           icon={IconConversion}
           title={t.numberBase.inputTypeTitle}
-          subtitle={t.numberBase.inputTypeSubtitle}
+          desc={t.numberBase.inputTypeSubtitle}
         >
           <div className="w-36">
             <Select options={baseOptions} value={base} onChange={setBase} />

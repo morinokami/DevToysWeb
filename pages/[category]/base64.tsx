@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import { TextArea, Toggle } from "../../components/io";
+import { FileInput, TextArea, Toggle } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
@@ -55,7 +55,7 @@ const Base64: NextPage = () => {
         <Configuration
           icon={IconConversion}
           title={t.base64.conversionTitle}
-          subtitle={t.base64.conversionSubtitle}
+          desc={t.base64.conversionSubtitle}
         >
           <Toggle
             on={doEncode}
@@ -72,6 +72,8 @@ const Base64: NextPage = () => {
         <SectionHeader title={t.common.inputTitle} label="input">
           <div className="flex">
             <PasteButton onClick={(text) => setInput(text)} />
+            <Spacer x={6} />
+            <FileInput onFileRead={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>

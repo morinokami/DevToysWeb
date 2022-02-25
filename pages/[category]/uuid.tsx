@@ -56,7 +56,7 @@ const Uuid: NextPage = () => {
         <Configuration
           icon={IconVersion}
           title={t.uuid.uuidVersionTitle}
-          subtitle={t.uuid.uuidVersionSubtitle}
+          desc={t.uuid.uuidVersionSubtitle}
         >
           <div className="w-28">
             <Select
