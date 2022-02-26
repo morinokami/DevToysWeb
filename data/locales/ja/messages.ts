@@ -107,6 +107,10 @@ export const t = {
       { name: "16 進数", value: 16 },
     ],
   },
+  search: {
+    searchResultTitle: "「{{0}}」の検索結果",
+    searchPlaceholder: "タイプしてツールを検索する...",
+  },
   settings: {
     title: "設定",
     languageTitle: "言語",

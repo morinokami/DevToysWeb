@@ -108,6 +108,10 @@ export const t = {
       { name: "Hexadecimal", value: 16 },
     ],
   },
+  search: {
+    searchResultTitle: 'Search results for "{{0}}"',
+    searchPlaceholder: "Type to search for tools...",
+  },
   settings: {
     title: "Settings",
     languageTitle: "Language",

@@ -4,6 +4,7 @@ import { Nav } from "../../data/locales/types";
 import { VSpacerS } from "../Spacer";
 import Divider from "./Divider";
 import NavCategory from "./NavCategory";
+import SearchInput from "./SearchInput";
 
 interface NavProps {
   nav: Nav;
@@ -12,8 +13,13 @@ interface NavProps {
 
 const _Nav: React.VFC<NavProps> = ({ nav }) => {
   const home = nav[0];
+
   return (
     <ul>
+      <li>
+        <SearchInput />
+        <VSpacerS />
+      </li>
       <li>
         <VSpacerS />
         <NavCategory category={home} />
