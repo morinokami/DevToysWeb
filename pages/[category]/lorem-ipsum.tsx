@@ -20,21 +20,21 @@ const Lorem: NextPage = () => {
   const { typeOptions } = t.loremIpsum;
 
   const [genType, setGenType] = useState(typeOptions[2]);
-  const [length, setLength] = useState(1);
+  const [length, setLength] = useState<number | null>(1);
   const [output, setOutput] = useState("");
 
   useEffect(() => {
     const lorem = new LoremIpsum();
     switch (genType.value) {
       case "words":
-        setOutput(lorem.generateWords(length));
+        setOutput(lorem.generateWords(length ?? undefined));
         break;
       case "sentences":
-        setOutput(lorem.generateSentences(length));
+        setOutput(lorem.generateSentences(length ?? undefined));
         break;
       case "paragraphs":
         const generated = lorem
-          .generateParagraphs(length)
+          .generateParagraphs(length ?? 0)
           .replace(/\n/g, "\n\n");
         setOutput(generated);
         break;
