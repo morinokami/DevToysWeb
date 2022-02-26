@@ -45,7 +45,12 @@ Therefore, I'm currently planning to follow the original project in the future d
   * 🚧 PNG / JPEG Compressor
   * 🚧 Image Converter
 
-## Translation
+## Translation Process
+
+1. Create a directory for the new locale in `data/locales` and copy all files in `data/locales/en` to it.
+2. Update the value of the `localePath` variable in `nav.ts` and translate the strings in `messages.ts` and `nav.ts`.
+3. Add a case for the new locale in `hooks/useLocale.ts`.
+4. Add a value for the new locale to `languageOptions` variable in `pages/settings`.tsx
 
 ## Development
 
