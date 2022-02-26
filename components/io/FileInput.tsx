@@ -21,7 +21,7 @@ const FileInput: React.VFC<FileInputProps> = ({ onFileRead, accept }) => {
   const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const reader = new FileReader();
-      reader.onload = (e: ProgressEvent<FileReader>) => {
+      reader.onload = (e) => {
         const result = e.target?.result;
         if (result && typeof result === "string") {
           onFileRead(result);

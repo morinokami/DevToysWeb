@@ -1,22 +1,29 @@
 import { useDropzone } from "react-dropzone";
 
-interface DragAndDropProps {}
+interface DragAndDropProps {
+  onDrop: (files: File[]) => void;
+}
 
-const DragAndDrop: React.VFC<DragAndDropProps> = ({}) => {
+const DragAndDrop: React.FC<DragAndDropProps> = ({ onDrop, children }) => {
   const { getRootProps, getInputProps, acceptedFiles } = useDropzone({
     noClick: true,
     noKeyboard: true,
   });
 
-  // TODO: if length > 1, do nothing
-  //       else read file
-  acceptedFiles.forEach((file) => console.log(file));
+  if (acceptedFiles.length > 0) {
+    onDrop(acceptedFiles);
+  }
 
   return (
-    <div className="rounded border-2 border-dashed border-dark-10">
-      <div {...getRootProps({ className: "dropzone" })}>
+    <div className="">
+      <div
+        {...getRootProps({
+          className:
+            "dropzone flex justify-center rounded border-2 border-dashed border-dark-10 p-4",
+        })}
+      >
         <input {...getInputProps()} />
-        <p>Drag &amp; drop any file here</p>
+        {children}
       </div>
     </div>
   );

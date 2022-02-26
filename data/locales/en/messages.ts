@@ -34,6 +34,7 @@ export const t = {
       { name: "SHA384", value: "sha384" },
       { name: "SHA512", value: "sha512" },
     ],
+    dragAndDropTitle: "Drag & drop any file here",
   },
   gzip: {
     title: "GZip Compress / Decompress",
