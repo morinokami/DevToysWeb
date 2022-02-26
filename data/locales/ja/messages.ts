@@ -22,7 +22,18 @@ export const t = {
     decodeText: "デコード",
   },
   checksum: {
-    title: "チェックサム",
+    title: "チェックサム生成",
+    uppercaseTitle: "大文字の使用",
+    uppercaseDesc: "出力を大文字に変換する",
+    hashingAlgorithmTitle: "ハッシュアルゴリズム",
+    hachingAlgorithmDesc: "使用するハッシュアルゴリズムを選択してください",
+    hashingAlgorithmOptions: [
+      { name: "MD5", value: "md5" },
+      { name: "SHA1", value: "sha1" },
+      { name: "SHA256", value: "sha256" },
+      { name: "SHA384", value: "sha384" },
+      { name: "SHA512", value: "sha512" },
+    ],
   },
   gzip: {
     title: "GZip 圧縮 / 展開",

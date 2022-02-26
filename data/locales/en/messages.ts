@@ -22,7 +22,18 @@ export const t = {
     decodeText: "Decode",
   },
   checksum: {
-    title: "Checksum",
+    title: "Checksum Generator",
+    uppercaseTitle: "Uppercase",
+    uppercaseDesc: "Convert the output to uppercase",
+    hashingAlgorithmTitle: "Hashing Algorithm",
+    hachingAlgorithmDesc: "Select which hashing algorithm you want to use",
+    hashingAlgorithmOptions: [
+      { name: "MD5", value: "md5" },
+      { name: "SHA1", value: "sha1" },
+      { name: "SHA256", value: "sha256" },
+      { name: "SHA384", value: "sha384" },
+      { name: "SHA512", value: "sha512" },
+    ],
   },
   gzip: {
     title: "GZip Compress / Decompress",

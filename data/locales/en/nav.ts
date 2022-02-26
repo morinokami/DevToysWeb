@@ -1,6 +1,7 @@
 import {
   IconAllTools,
   IconBase64,
+  IconChecksum,
   IconConverters,
   IconEncodersDecoders,
   IconFormatters,
@@ -145,13 +146,13 @@ export const nav: Nav = [
         icon: IconLoremIpsum,
         desc: "Generate Lorem Ipsum placeholder text",
       },
-      // TODO: Do it later
-      // {
-      //   title: "Checksum",
-      //   longTitle: "Checksum",
-      //   href: `${localePath}/generators/checksum`,
-      //   desc: "Generate an hash with CheckSum based on a file",
-      // },
+      {
+        title: "Checksum",
+        longTitle: "Checksum Generator",
+        href: `${localePath}/generators/checksum`,
+        icon: IconChecksum,
+        desc: "Generate an hash with CheckSum based on a file",
+      },
     ],
   },
   {
