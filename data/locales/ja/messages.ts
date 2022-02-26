@@ -107,10 +107,6 @@ export const t = {
   settings: {
     title: "設定",
     languageTitle: "言語",
-    languageOptions: [
-      { name: "English", value: "en" },
-      { name: "日本語", value: "ja" },
-    ],
     themeTitle: "アプリのテーマ",
     themeSubtitle: "アプリで使用するテーマを選択してください",
     themeOptions: [

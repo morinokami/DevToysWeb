@@ -9,12 +9,17 @@ import { IconBeerMini } from "../data/icon";
 import { useLocale } from "../hooks/useLocale";
 import MainLayout from "../layouts/MainLayout";
 
+const languageOptions = [
+  { name: "English", value: "en" },
+  { name: "日本語", value: "ja" },
+];
+
 const Settings: NextPage = () => {
   const { t, locale } = useLocale();
   const { theme, setTheme } = useTheme();
   const router = useRouter();
 
-  const { languageOptions, themeOptions } = t.settings;
+  const { themeOptions } = t.settings;
   const language = languageOptions.find((l) => l.value === locale);
   const currentTheme = themeOptions.find((t) => t.value === theme);
 
