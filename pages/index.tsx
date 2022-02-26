@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 
 import { IconSettings } from "../data/icon";
 import { useLocale } from "../hooks/useLocale";

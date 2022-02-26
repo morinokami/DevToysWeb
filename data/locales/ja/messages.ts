@@ -9,6 +9,8 @@ export const t = {
     pasteTitle: "貼り付け",
     clearTitle: "クリア",
     openFiletitle: "ファイルを開く",
+    notFoundTitle: "見つかりませんでした",
+    notFoundDesc: "あなたが探しているページは存在しません。",
   },
   base64: {
     title: "Base 64 エンコーダ / デコーダ",
