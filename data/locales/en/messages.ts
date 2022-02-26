@@ -12,7 +12,6 @@ export const t = {
     openFiletitle: "Load a file",
     notFoundTitle: "Not found",
     notFoundDesc: "The page you are looking for does not exist.",
-    searchResultTitle: 'Search results for "{{0}}"',
   },
   base64: {
     title: "Base 64 Encoder / Decoder",
@@ -108,6 +107,10 @@ export const t = {
       { name: "Decimal", value: 10 },
       { name: "Hexadecimal", value: 16 },
     ],
+  },
+  search: {
+    searchResultTitle: 'Search results for "{{0}}"',
+    searchPlaceholder: "Type to search for tools...",
   },
   settings: {
     title: "Settings",

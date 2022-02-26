@@ -12,7 +12,6 @@ export const t = {
     openFiletitle: "ファイルを開く",
     notFoundTitle: "見つかりませんでした",
     notFoundDesc: "あなたが探しているページは存在しません。",
-    searchResultTitle: "「{{0}}」の検索結果",
   },
   base64: {
     title: "Base 64 エンコーダ / デコーダ",
@@ -107,6 +106,10 @@ export const t = {
       { name: "10 進数", value: 10 },
       { name: "16 進数", value: 16 },
     ],
+  },
+  search: {
+    searchResultTitle: "「{{0}}」の検索結果",
+    searchPlaceholder: "タイプしてツールを検索する...",
   },
   settings: {
     title: "設定",

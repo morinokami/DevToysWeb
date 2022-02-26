@@ -17,10 +17,10 @@ const SidebarLayout: React.FC<SidebarLayoutProps> = ({
   const { nav } = useLocale();
   return (
     <div className="flex grow">
-      <div className="fixed inset-0 z-10 hidden w-64 overflow-y-auto bg-light-30 pt-12 dark:bg-dark-50 lg:block">
+      <div className="fixed inset-0 z-10 hidden w-72 overflow-y-auto bg-light-30 pt-12 dark:bg-dark-50 lg:block">
         <Nav nav={nav} setNavIsOpen={setNavIsOpen} />
       </div>
-      <div className="w-full grow p-4 lg:p-8 lg:pl-72">{children}</div>
+      <div className="w-full grow p-4 lg:p-8 lg:pl-80">{children}</div>
       <Dialog
         as="div"
         open={navIsOpen}
@@ -29,7 +29,7 @@ const SidebarLayout: React.FC<SidebarLayoutProps> = ({
         className="fixed inset-0 z-50 overflow-y-auto lg:hidden"
       >
         <Dialog.Overlay className="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-dark-50/80" />
-        <div className="fixed inset-0 w-64 overflow-y-auto bg-light-30 px-4 pt-2 dark:bg-dark-50 lg:block">
+        <div className="fixed inset-0 w-72 overflow-y-auto bg-light-30 px-4 pt-2 dark:bg-dark-50 lg:block">
           <Nav nav={nav} setNavIsOpen={setNavIsOpen} />
         </div>
       </Dialog>

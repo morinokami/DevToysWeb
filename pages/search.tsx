@@ -31,7 +31,7 @@ const Search: NextPage = () => {
 
   return (
     <MainLayout
-      title={pupa(t.common.searchResultTitle, [search])}
+      title={pupa(t.search.searchResultTitle, [search])}
       cardLayout={true}
     >
       <CardLayout navItems={navItems} />
