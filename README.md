@@ -60,4 +60,10 @@ First, install the packages using the following command:
 npm install
 ```
 
+Run the development server:
+
+```
+npm run dev
+```
+
 Open http://localhost:3000 in your favorite browser and start developing!
