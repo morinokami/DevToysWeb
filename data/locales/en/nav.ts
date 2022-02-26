@@ -161,21 +161,3 @@ export const nav: Nav = [
     desc: "Customize DevToysWeb look & feel",
   },
 ];
-
-export const getTitle = (pathWithoutLocale: string): string => {
-  if (pathWithoutLocale === "/settings") {
-    const settings = nav[nav.length - 1];
-    return settings.title;
-  }
-  const category = nav
-    .slice(1)
-    .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
-  if (category) {
-    return (
-      category.items?.find(
-        ({ href }) => href === `${localePath}${pathWithoutLocale}`
-      )?.longTitle ?? ""
-    );
-  }
-  return "";
-};

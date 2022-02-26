@@ -1,7 +1,5 @@
 import { FormatOptions } from "sql-formatter";
 
-import { getTitle } from "./nav";
-
 export const t = {
   common: {
     configTitle: "設定",
@@ -13,7 +11,7 @@ export const t = {
     openFiletitle: "ファイルを開く",
   },
   base64: {
-    title: getTitle("/encoders-decoders/base64"),
+    title: "Base 64 エンコーダ / デコーダ",
     conversionTitle: "変換",
     conversionSubtitle: "使用する変換方法を選択してください",
     encodeDesc: "入力をエンコードする",
@@ -21,17 +19,17 @@ export const t = {
     decodeText: "デコード",
   },
   checksum: {
-    title: getTitle("/generators/checksum"),
+    title: "チェックサム",
   },
   gzip: {
-    title: getTitle("/encoders-decoders/gzip"),
+    title: "GZip 圧縮 / 展開",
     compressTitle: "GZip 圧縮/展開",
     compressDesc: "入力を圧縮するか、展開するか選択してください",
     compressText: "圧縮",
     decompressText: "展開",
   },
   hash: {
-    title: getTitle("/generators/hash"),
+    title: "ハッシュ生成",
     uppercaseTitle: "大文字の使用",
     uppercaseDesc: "出力を大文字に変換する",
     md5Title: "MD5",
@@ -40,7 +38,7 @@ export const t = {
     sha512Title: "SHA512",
   },
   html: {
-    title: getTitle("/encoders-decoders/html"),
+    title: "HTML エンコーダ / デコーダ",
     conversionTitle: "変換",
     conversionSubtitle: "使用する変換方法を選択してください",
     encodeDesc: "入力をエンコードする",
@@ -48,7 +46,7 @@ export const t = {
     decodeText: "デコード",
   },
   json: {
-    title: getTitle("/formatters/json"),
+    title: "JSON フォーマッタ",
     indentTitle: "インデント",
     indentOptions: [
       { name: "2 スペース", value: "  " },
@@ -58,7 +56,7 @@ export const t = {
     ],
   },
   jsonYaml: {
-    title: getTitle("/converters/json-yaml"),
+    title: "JSON <> YAML 変換",
     conversionTitle: "変換",
     conversionSubtitle: "使用する変換方法を選択してください",
     conversionOptions: [
@@ -72,13 +70,13 @@ export const t = {
     ],
   },
   jwtDecoder: {
-    title: getTitle("/encoders-decoders/jwt-decoder"),
+    title: "JWT デコーダ",
     jwtTokenTitle: "JWT トークン",
     headerTitle: "ヘッダー",
     payloadTitle: "ペイロード",
   },
   loremIpsum: {
-    title: getTitle("/generators/lorem-ipsum"),
+    title: "Lorem Ipsum 生成",
     typeTitle: "種別",
     typeSubtitle: "Lorem Ipsum の単語、文、または段落を生成する",
     lengthTitle: "長さ",
@@ -90,7 +88,7 @@ export const t = {
     ],
   },
   numberBase: {
-    title: getTitle("/converters/number-base"),
+    title: "基数変換",
     formatNumberTitle: "数字のフォーマット",
     formatNumberDesc: "数字のフォーマット",
     inputTypeTitle: "入力タイプ",
@@ -107,7 +105,7 @@ export const t = {
     ],
   },
   settings: {
-    title: getTitle("/settings"),
+    title: "設定",
     languageTitle: "言語",
     languageOptions: [
       { name: "English", value: "en" },
@@ -121,7 +119,7 @@ export const t = {
     ],
   },
   sql: {
-    title: getTitle("/formatters/sql"),
+    title: "SQL フォーマッタ",
     languageTitle: "言語",
     languageOptions: [
       { name: "Db2", value: "db2" },
@@ -142,7 +140,7 @@ export const t = {
     ],
   },
   url: {
-    title: getTitle("/encoders-decoders/url"),
+    title: "URL エンコーダ / デコーダ",
     conversionTitle: "変換",
     conversionSubtitle: "使用する変換方法を選択してください",
     encodeDesc: "入力をエンコードする",
@@ -150,7 +148,7 @@ export const t = {
     decodeText: "デコード",
   },
   uuid: {
-    title: getTitle("/generators/uuid"),
+    title: "UUID 生成",
     hyphenateTitle: "ハイフン",
     hyphenateDesc: "出力にハイフンを付ける",
     uppercaseTitle: "大文字",
@@ -165,7 +163,7 @@ export const t = {
     ],
   },
   xml: {
-    title: getTitle("/formatters/xml"),
+    title: "XML フォーマッタ",
     indentTitle: "インデント",
     indentOptions: [
       { name: "2 スペース", value: "  " },

@@ -1,7 +1,5 @@
 import { FormatOptions } from "sql-formatter";
 
-import { getTitle } from "./nav";
-
 export const t = {
   common: {
     configTitle: "Configuration",
@@ -13,7 +11,7 @@ export const t = {
     openFiletitle: "Load a file",
   },
   base64: {
-    title: getTitle("/encoders-decoders/base64"),
+    title: "Base 64 Encoder / Decoder",
     conversionTitle: "Conversion",
     conversionSubtitle: "Select which conversion mode you want to use",
     encodeDesc: "Encode the input",
@@ -21,10 +19,10 @@ export const t = {
     decodeText: "Decode",
   },
   checksum: {
-    title: getTitle("/generators/checksum"),
+    title: "Checksum",
   },
   gzip: {
-    title: getTitle("/encoders-decoders/gzip"),
+    title: "GZip Compress / Decompress",
     compressTitle: "GZip Compress/Decompress",
     compressDesc:
       "Select whether the input should be compressed or decompressed",
@@ -32,7 +30,7 @@ export const t = {
     decompressText: "Decompress",
   },
   hash: {
-    title: getTitle("/generators/hash"),
+    title: "Hash Generator",
     uppercaseTitle: "Uppercase",
     uppercaseDesc: "Convert the output to uppercase",
     md5Title: "MD5",
@@ -41,7 +39,7 @@ export const t = {
     sha512Title: "SHA512",
   },
   html: {
-    title: getTitle("/encoders-decoders/html"),
+    title: "HTML Encoder / Decoder",
     conversionTitle: "Conversion",
     conversionSubtitle: "Select which conversion mode you want to use",
     encodeDesc: "Encode the input",
@@ -49,7 +47,7 @@ export const t = {
     decodeText: "Decode",
   },
   json: {
-    title: getTitle("/formatters/json"),
+    title: "JSON Formatter",
     indentTitle: "Indentation",
     indentOptions: [
       { name: "2 spaces", value: "  " },
@@ -59,7 +57,7 @@ export const t = {
     ],
   },
   jsonYaml: {
-    title: getTitle("/converters/json-yaml"),
+    title: "JSON <> YAML Converter",
     conversionTitle: "Conversion",
     conversionSubtitle: "Select which conversion mode you want to use",
     conversionOptions: [
@@ -73,13 +71,13 @@ export const t = {
     ],
   },
   jwtDecoder: {
-    title: getTitle("/encoders-decoders/jwt-decoder"),
+    title: "JWT Decoder",
     jwtTokenTitle: "JWT Token",
     headerTitle: "Header",
     payloadTitle: "Payload",
   },
   loremIpsum: {
-    title: getTitle("/generators/lorem-ipsum"),
+    title: "Lorem Ipsum Generator",
     typeTitle: "Type",
     typeSubtitle: "Generate words, sentences or paragraphs of Lorem Ipsum",
     lengthTitle: "Length",
@@ -91,7 +89,7 @@ export const t = {
     ],
   },
   numberBase: {
-    title: getTitle("/converters/number-base"),
+    title: "Number Base Converter",
     formatNumberTitle: "Format number",
     formatNumberDesc: "Format the result",
     inputTypeTitle: "Input type",
@@ -108,7 +106,7 @@ export const t = {
     ],
   },
   settings: {
-    title: getTitle("/settings"),
+    title: "Settings",
     languageTitle: "Language",
     languageOptions: [
       { name: "English", value: "en" },
@@ -122,7 +120,7 @@ export const t = {
     ],
   },
   sql: {
-    title: getTitle("/formatters/sql"),
+    title: "SQL Formatter",
     languageTitle: "Language",
     languageOptions: [
       { name: "Db2", value: "db2" },
@@ -143,7 +141,7 @@ export const t = {
     ],
   },
   url: {
-    title: getTitle("/encoders-decoders/url"),
+    title: "URL Encoder / Decoder",
     conversionTitle: "Conversion",
     conversionSubtitle: "Select which conversion mode you want to use",
     encodeDesc: "Encode the input",
@@ -151,7 +149,7 @@ export const t = {
     decodeText: "Decode",
   },
   uuid: {
-    title: getTitle("/generators/uuid"),
+    title: "UUID Generator",
     hyphenateTitle: "Hyphens",
     hyphenateDesc: "Add hyphens to the output",
     uppercaseTitle: "Uppercase",
@@ -166,7 +164,7 @@ export const t = {
     ],
   },
   xml: {
-    title: getTitle("/formatters/xml"),
+    title: "XML Formatter",
     indentTitle: "Indentation",
     indentOptions: [
       { name: "2 spaces", value: "  " },

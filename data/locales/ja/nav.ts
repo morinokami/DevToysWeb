@@ -160,21 +160,3 @@ export const nav: Nav = [
     desc: "DevToysWeb の見た目や使い勝手をカスタマイズする",
   },
 ];
-
-export const getTitle = (pathWithoutLocale: string): string => {
-  if (pathWithoutLocale === "/settings") {
-    const settings = nav[nav.length - 1];
-    return settings.title;
-  }
-  const category = nav
-    .slice(1)
-    .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
-  if (category) {
-    return (
-      category.items?.find(
-        ({ href }) => href === `${localePath}${pathWithoutLocale}`
-      )?.longTitle ?? ""
-    );
-  }
-  return "";
-};
