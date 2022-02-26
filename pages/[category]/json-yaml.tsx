@@ -24,6 +24,8 @@ const JsonYaml: NextPage = () => {
     conversion.value === "json-to-yaml"
       ? toYaml(input, indent.value)
       : toJson(input, indent.value);
+  const inputLanguage = conversion.value === "json-to-yaml" ? "json" : "yaml";
+  const outputLanguage = conversion.value === "json-to-yaml" ? "yaml" : "json";
 
   return (
     <MainLayout title={t.jsonYaml.title}>
@@ -58,8 +60,8 @@ const JsonYaml: NextPage = () => {
           input={input}
           setInput={setInput}
           output={output}
-          inputLanguage="json"
-          outputLanguage="yaml"
+          inputLanguage={inputLanguage}
+          outputLanguage={outputLanguage}
         />
       </SectionMain>
     </MainLayout>
