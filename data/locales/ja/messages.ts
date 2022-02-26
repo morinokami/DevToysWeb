@@ -12,6 +12,7 @@ export const t = {
     openFiletitle: "ファイルを開く",
     notFoundTitle: "見つかりませんでした",
     notFoundDesc: "あなたが探しているページは存在しません。",
+    searchResultTitle: "「{{0}}」の検索結果",
   },
   base64: {
     title: "Base 64 エンコーダ / デコーダ",
