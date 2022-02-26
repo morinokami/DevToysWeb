@@ -2,6 +2,7 @@ import { FormatOptions } from "sql-formatter";
 
 export const t = {
   common: {
+    allToolsTitle: "すべてのツール",
     configTitle: "設定",
     inputTitle: "入力",
     outputTitle: "出力",
