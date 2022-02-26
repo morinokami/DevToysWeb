@@ -32,6 +32,9 @@ const Hash: NextPage = () => {
     ) => CryptoJS.lib.WordArray,
     uppercase: boolean
   ) => {
+    if (input.length === 0) {
+      return "";
+    }
     return uppercase
       ? hasher(input).toString().toUpperCase()
       : hasher(input).toString();
