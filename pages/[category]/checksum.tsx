@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { CopyButton } from "../../components/button";
 import { Input, Select, Toggle } from "../../components/io";
+import DragAndDrop from "../../components/io/dragAndDrop";
 import {
   Configuration,
   SectionConfiguration,
@@ -49,7 +50,7 @@ const Checksum: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerM />
-      <div>TODO: D&amp;D</div>
+      <DragAndDrop />
 
       <VSpacerM />
       <SectionMain>
