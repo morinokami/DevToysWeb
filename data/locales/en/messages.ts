@@ -9,6 +9,8 @@ export const t = {
     pasteTitle: "Paste",
     clearTitle: "Clear",
     openFiletitle: "Load a file",
+    notFoundTitle: "Not found",
+    notFoundDesc: "The page you are looking for does not exist.",
   },
   base64: {
     title: "Base 64 Encoder / Decoder",
