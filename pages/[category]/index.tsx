@@ -16,7 +16,7 @@ const Category: NextPage = () => {
   const navItems = category?.items ?? [];
 
   return navItems.length > 0 ? (
-    <MainLayout title={title}>
+    <MainLayout title={title} cardLayout={true}>
       <CardLayout navItems={navItems} />
     </MainLayout>
   ) : (
