@@ -73,15 +73,13 @@ const Lorem: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerM />
-      <SectionMain>
+      <SectionMain className="flex grow flex-col">
         <SectionHeader title={t.common.outputTitle} label="output">
-          <div className="flex">
-            <CopyButton text={output} />
-            <Spacer x={6} />
-            <ClearButton onClick={() => setOutput("")} />
-          </div>
+          <CopyButton text={output} />
+          <Spacer x={6} />
+          <ClearButton onClick={() => setOutput("")} />
         </SectionHeader>
-        <TextArea id="output" value={output} rows={20} />
+        <TextArea id="output" value={output} />
       </SectionMain>
     </MainLayout>
   );

@@ -30,15 +30,13 @@ const JwtDecoder: NextPage = () => {
     <MainLayout title={t.jwtDecoder.title}>
       <SectionMain>
         <SectionHeader title={t.jwtDecoder.jwtTokenTitle} label="jwt-token">
-          <div className="flex">
-            <PasteButton onClick={setInput} />
-            <Spacer x={6} />
-            <FileInputButton onFileRead={setInput} />
-            <Spacer x={6} />
-            <ClearButton onClick={() => setInput("")} />
-          </div>
+          <PasteButton onClick={setInput} />
+          <Spacer x={6} />
+          <FileInputButton onFileRead={setInput} />
+          <Spacer x={6} />
+          <ClearButton onClick={() => setInput("")} />
         </SectionHeader>
-        <TextArea id="jwt-token" value={input} onChange={setInput} rows={5} />
+        <TextArea id="jwt-token" value={input} onChange={setInput} />
       </SectionMain>
 
       <VSpacerM />
