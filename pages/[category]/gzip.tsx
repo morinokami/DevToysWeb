@@ -21,7 +21,8 @@ const GZip: NextPage = () => {
   const [input, setInput] = useState("");
   const [doCompress, setDoCompress] = useState(true);
 
-  const output = doCompress ? compress(input) : decompress(input);
+  const output =
+    doCompress && input.length > 0 ? compress(input) : decompress(input);
 
   return (
     <MainLayout title={t.gzip.title}>
