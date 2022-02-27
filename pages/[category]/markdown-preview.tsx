@@ -2,15 +2,14 @@ import { marked } from "marked";
 import { NextPage } from "next";
 import { useState } from "react";
 
-import { Select } from "../../components/io";
-import MarkdownPreview from "../../components/MarkdownPreview";
+import { MarkdownPreview, Select } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
   SectionMain,
 } from "../../components/section";
 import { VSpacerM } from "../../components/Spacer";
-import { IconBeerMini } from "../../data/icon";
+import { IconTheme } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
@@ -26,9 +25,9 @@ const MakrdownPreview: NextPage = () => {
     <MainLayout title={t.markdownPreview.title}>
       <SectionConfiguration title={t.common.configTitle}>
         <Configuration
-          icon={IconBeerMini}
+          icon={IconTheme}
           title={t.markdownPreview.themeTitle}
-          subtitle={t.markdownPreview.themeSubtitle}
+          desc={t.markdownPreview.themeSubtitle}
         >
           <div className="w-24">
             <Select

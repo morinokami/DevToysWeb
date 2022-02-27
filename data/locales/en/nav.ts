@@ -12,9 +12,11 @@ import {
   IconJson,
   IconJWT,
   IconLoremIpsum,
+  IconMarkdownPreview,
   IconNumberBase,
   IconSettings,
   IconSql,
+  IconText,
   IconUrl,
   IconUuid,
   IconXml,
@@ -158,11 +160,13 @@ export const nav: Nav = [
   {
     title: "Text",
     href: `${localePath}/text`,
+    icon: IconText,
     items: [
       {
         title: "Markdown Preview",
         longTitle: "Markdown Preview",
         href: `${localePath}/text/markdown-preview`,
+        icon: IconMarkdownPreview,
         desc: "Preview a Markdown document with a GitHub-like render",
       },
     ],

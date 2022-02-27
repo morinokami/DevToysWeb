@@ -114,12 +114,12 @@ export const t = {
     ],
   },
   markdownPreview: {
-    title: getTitle("/text/markdown-preview"),
+    title: "Markdown プレビュー",
     themeTitle: "Theme",
     themeSubtitle: "Select which theme to use to preview the Markdown",
     themeOptions: [
-      { name: "Light", value: "light" },
-      { name: "Dark", value: "dark" },
+      { name: "ライト", value: "light" },
+      { name: "ダーク", value: "dark" },
     ],
   },
   numberBase: {

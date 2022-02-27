@@ -115,7 +115,7 @@ export const t = {
     ],
   },
   markdownPreview: {
-    title: getTitle("/text/markdown-preview"),
+    title: "Markdown Preview",
     themeTitle: "Theme",
     themeSubtitle: "Select which theme to use to preview the Markdown",
     themeOptions: [
