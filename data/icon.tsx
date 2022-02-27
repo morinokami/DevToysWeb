@@ -23,10 +23,12 @@ import {
   VscCode,
   VscCopy,
   VscDatabase,
+  VscEdit,
   VscFile,
   VscFileBinary,
   VscHome,
   VscJson,
+  VscListOrdered,
   VscNewFile,
   VscNote,
   VscPaintcan,
@@ -35,6 +37,7 @@ import {
   VscSettingsGear,
   VscSymbolNumeric,
   VscTextSize,
+  VscWordWrap,
 } from "react-icons/vsc";
 
 const ICON_SIZE_SMALL = "14";
@@ -68,6 +71,9 @@ export const IconVersion = generateIconMedium(VscSettings);
 export const IconType = generateIconMedium(VscNote);
 export const IconI18n = generateIconMedium(MdLanguage);
 export const IconTheme = generateIconMedium(VscPaintcan);
+export const IconWrap = generateIconMedium(VscWordWrap);
+export const IconLineNumber = generateIconMedium(VscListOrdered);
+export const IconHightlight = generateIconMedium(VscEdit);
 
 // Sidebar Icons
 
