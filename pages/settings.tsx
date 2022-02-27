@@ -13,6 +13,7 @@ import {
   IconTheme,
   IconWrap,
 } from "../data/icon";
+import { editorSettings } from "../data/localStorageKeys";
 import { useLocale } from "../hooks/useLocale";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import MainLayout from "../layouts/MainLayout";
@@ -31,12 +32,21 @@ const Settings: NextPage = () => {
   const language = languageOptions.find((l) => l.value === locale);
   const currentTheme = themeOptions.find((t) => t.value === theme);
 
-  const [wrapWord, setWrapWord] = useLocalStorage("wrapWord", false);
-  const [lineNumber, setLineNumber] = useLocalStorage("lineNumber", true);
-  const [highlight, setHighlight] = useLocalStorage("highlight", true);
+  const [wrapWord, setWrapWord] = useLocalStorage(
+    editorSettings.wrapWord.key,
+    editorSettings.wrapWord.default
+  );
+  const [lineNumber, setLineNumber] = useLocalStorage(
+    editorSettings.lineNumber.key,
+    editorSettings.lineNumber.default
+  );
+  const [highlight, setHighlight] = useLocalStorage(
+    editorSettings.highlightCurrentLine.key,
+    editorSettings.highlightCurrentLine.default
+  );
   const [renderWhiteSpace, setRenderWhiteSpace] = useLocalStorage(
-    "renderWhiteSpace",
-    false
+    editorSettings.renderWhiteSpace.key,
+    editorSettings.renderWhiteSpace.default
   );
 
   return (
