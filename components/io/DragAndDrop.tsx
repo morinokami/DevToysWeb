@@ -15,17 +15,17 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({ onDrop, children }) => {
   }
 
   return (
-    <div className="">
+    <>
       <div
         {...getRootProps({
           className:
-            "dropzone flex justify-center rounded border-2 border-dashed border-dark-10 p-4",
+            "dropzone flex cursor-default flex-col items-center rounded border-2 border-dashed border-dark-10 p-6 text-sm",
         })}
       >
         <input {...getInputProps()} />
         {children}
       </div>
-    </div>
+    </>
   );
 };
 

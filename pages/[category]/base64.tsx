@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import { FileInput, TextArea, Toggle } from "../../components/io";
+import { FileInputButton, TextArea, Toggle } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
@@ -73,7 +73,7 @@ const Base64: NextPage = () => {
           <div className="flex">
             <PasteButton onClick={(text) => setInput(text)} />
             <Spacer x={6} />
-            <FileInput onFileRead={setInput} />
+            <FileInputButton onFileRead={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>

@@ -4,12 +4,15 @@ import { IconUpload } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import { Button } from "../button";
 
-interface FileInputProps {
+interface FileInputButtonProps {
   onFileRead: (value: string) => void;
   accept?: string;
 }
 
-const FileInput: React.VFC<FileInputProps> = ({ onFileRead, accept }) => {
+const FileInputButton: React.VFC<FileInputButtonProps> = ({
+  onFileRead,
+  accept,
+}) => {
   const { t } = useLocale();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -19,7 +22,7 @@ const FileInput: React.VFC<FileInputProps> = ({ onFileRead, accept }) => {
   };
 
   const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
+    if (e.target.files?.length === 1) {
       const reader = new FileReader();
       reader.onload = (e) => {
         const result = e.target?.result;
@@ -50,4 +53,4 @@ const FileInput: React.VFC<FileInputProps> = ({ onFileRead, accept }) => {
   );
 };
 
-export default FileInput;
+export default FileInputButton;

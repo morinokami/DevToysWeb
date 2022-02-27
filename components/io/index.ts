@@ -1,5 +1,5 @@
 export { default as CodeEditor } from "./CodeEditor";
-export { default as FileInput } from "./FileInput";
+export { default as FileInputButton } from "./FileInputButton";
 export { default as Input } from "./Input";
 export { default as NumberInput } from "./NumberInput";
 export { default as Select } from "./Select";

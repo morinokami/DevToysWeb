@@ -4,18 +4,20 @@ import { useState } from "react";
 import { CopyButton } from "../../components/button";
 import { Input, Select, Toggle } from "../../components/io";
 import DragAndDrop from "../../components/io/DragAndDrop";
+import FileInputText from "../../components/io/FileInputText";
 import {
   Configuration,
   SectionConfiguration,
   SectionHeader,
   SectionMain,
 } from "../../components/section";
-import { VSpacerM } from "../../components/Spacer";
+import { VSpacerM, VSpacerS } from "../../components/Spacer";
 import { IconCase, IconConversion } from "../../data/icon";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { generateChecksum } from "../../lib/generate";
 
+// TODO: incomplete
 const Checksum: NextPage = () => {
   const { t } = useLocale();
   const { hashingAlgorithmOptions } = t.checksum;
@@ -37,6 +39,20 @@ const Checksum: NextPage = () => {
       reader.readAsArrayBuffer(file);
     }
   };
+
+  // const onFileInputChange = (files: FileList) => {
+  //   if (files.length === 1) {
+  //     const file = files[0];
+  //     const reader = new FileReader();
+  //     reader.onload = (e) => {
+  //       const result = e.target?.result;
+  //       if (result && result instanceof ArrayBuffer) {
+  //         setOutput(generateChecksum(result, algorithm.value, uppercase));
+  //       }
+  //     };
+  //     reader.readAsArrayBuffer(file);
+  //   }
+  // };
 
   return (
     <MainLayout title={t.checksum.title}>
@@ -66,6 +82,13 @@ const Checksum: NextPage = () => {
       <VSpacerM />
       <DragAndDrop onDrop={onDrop}>
         <p>{t.checksum.dragAndDropTitle}</p>
+        {/* <VSpacerS />
+        <p>{t.common.orText}</p>
+        <VSpacerS />
+        <FileInputText
+          text={t.common.browseFilesText}
+          onFileRead={onFileInputChange}
+        /> */}
       </DragAndDrop>
 
       <VSpacerM />

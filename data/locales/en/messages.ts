@@ -12,6 +12,8 @@ export const t = {
     openFiletitle: "Load a file",
     notFoundTitle: "Not found",
     notFoundDesc: "The page you are looking for does not exist.",
+    orText: "or",
+    browseFilesText: "Browse files",
   },
   base64: {
     title: "Base 64 Encoder / Decoder",
