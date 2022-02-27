@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { Select } from "../components/io";
 import { Configuration, SectionMain } from "../components/section";
 import { VSpacerS } from "../components/Spacer";
-import { IconBeerMini } from "../data/icon";
+import { IconI18n, IconTheme } from "../data/icon";
 import { useLocale } from "../hooks/useLocale";
 import MainLayout from "../layouts/MainLayout";
 
@@ -26,7 +26,7 @@ const Settings: NextPage = () => {
   return (
     <MainLayout title={t.settings.title}>
       <SectionMain>
-        <Configuration icon={IconBeerMini} title={t.settings.languageTitle}>
+        <Configuration icon={IconI18n} title={t.settings.languageTitle}>
           <div className="w-36">
             {language && (
               <Select
@@ -43,7 +43,7 @@ const Settings: NextPage = () => {
       <VSpacerS />
       <SectionMain>
         <Configuration
-          icon={IconBeerMini}
+          icon={IconTheme}
           title={t.settings.themeTitle}
           desc={t.settings.themeSubtitle}
         >

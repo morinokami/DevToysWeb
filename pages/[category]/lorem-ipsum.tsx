@@ -11,7 +11,7 @@ import {
   SectionMain,
 } from "../../components/section";
 import Spacer, { VSpacerM } from "../../components/Spacer";
-import { IconBeerMini } from "../../data/icon";
+import { IconNumberBase, IconType } from "../../data/icon";
 import { optionValues } from "../../data/optionValues";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
@@ -46,7 +46,7 @@ const Lorem: NextPage = () => {
     <MainLayout title={t.loremIpsum.title}>
       <SectionConfiguration title={t.common.configTitle}>
         <Configuration
-          icon={IconBeerMini}
+          icon={IconType}
           title={t.loremIpsum.typeTitle}
           desc={t.loremIpsum.typeSubtitle}
         >
@@ -59,7 +59,7 @@ const Lorem: NextPage = () => {
           </div>
         </Configuration>
         <Configuration
-          icon={IconBeerMini}
+          icon={IconNumberBase}
           title={t.loremIpsum.lengthTitle}
           desc={t.loremIpsum.lengthSubtitle}
         >

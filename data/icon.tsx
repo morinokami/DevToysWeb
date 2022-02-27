@@ -1,10 +1,11 @@
 import { IconContext } from "react-icons";
 import { BsFileZip, BsTextIndentLeft } from "react-icons/bs";
-import { FaBeer, FaHtml5 } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
 import {
   MdContentPaste,
   MdFingerprint,
   MdHorizontalRule,
+  MdLanguage,
   MdOutlineLink,
   MdPrecisionManufacturing,
   MdShortText,
@@ -27,6 +28,8 @@ import {
   VscHome,
   VscJson,
   VscNewFile,
+  VscNote,
+  VscPaintcan,
   VscSearch,
   VscSettings,
   VscSettingsGear,
@@ -41,23 +44,6 @@ const ICON_SIZE_LARGE = "54";
 export interface IconProps {
   large?: boolean;
 }
-
-// TODO: Delete
-export const IconBeerMini: React.VFC = () => {
-  return (
-    <IconContext.Provider value={{ size: ICON_SIZE_SMALL }}>
-      <FaBeer />
-    </IconContext.Provider>
-  );
-};
-// TODO: Delete
-export const IconBeer: React.VFC = () => {
-  return (
-    <IconContext.Provider value={{ size: "54" }}>
-      <FaBeer />
-    </IconContext.Provider>
-  );
-};
 
 const generateIconMedium = (Icon: React.VFC) => {
   const IconMedium = () => {
@@ -79,6 +65,9 @@ export const IconLanguage = generateIconMedium(VscCode);
 export const IconHyphen = generateIconMedium(MdHorizontalRule);
 export const IconConversion = generateIconMedium(VscArrowSwap);
 export const IconVersion = generateIconMedium(VscSettings);
+export const IconType = generateIconMedium(VscNote);
+export const IconI18n = generateIconMedium(MdLanguage);
+export const IconTheme = generateIconMedium(VscPaintcan);
 
 // Sidebar Icons
 
