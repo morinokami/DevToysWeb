@@ -1,17 +1,22 @@
 import {
   IconAllTools,
+  IconBase64,
+  IconChecksum,
   IconConverters,
   IconEncodersDecoders,
   IconFormatters,
+  IconGenerators,
   IconGZip,
   IconHash,
   IconHtml,
   IconJson,
   IconJWT,
+  IconLoremIpsum,
   IconNumberBase,
   IconSettings,
   IconSql,
   IconUrl,
+  IconUuid,
   IconXml,
 } from "../../icon";
 import { Nav } from "../types";
@@ -33,6 +38,7 @@ export const nav: Nav = [
         title: "JSON <> YAML",
         longTitle: "JSON <> YAML 変換",
         href: `${localePath}/converters/json-yaml`,
+        icon: IconConverters,
         desc: "JSON と YAML を相互に変換する",
       },
       {
@@ -54,20 +60,21 @@ export const nav: Nav = [
         longTitle: "HTML エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/html`,
         icon: IconHtml,
-        desc: "Encode or decode all the applicable characters to their corresponding HTML entities",
+        desc: "文字を対応する HTML エンティティにエンコード、デコードする",
       },
       {
         title: "URL",
         longTitle: "URL エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/url`,
         icon: IconUrl,
-        desc: "Encode or decode all the applicable characters to their corresponding URL entities",
+        desc: "文字を対応する URL エンティティにエンコード、デコードする",
       },
       {
         title: "Base 64",
         longTitle: "Base 64 エンコーダ / デコーダ",
         href: `${localePath}/encoders-decoders/base64`,
-        desc: "Base64 のデータをエンコード、デコードする",
+        icon: IconBase64,
+        desc: "Base64 データをエンコード、デコードする",
       },
       {
         title: "GZip",
@@ -116,6 +123,7 @@ export const nav: Nav = [
   {
     title: "生成",
     href: `${localePath}/generators`,
+    icon: IconGenerators,
     items: [
       {
         title: "ハッシュ",
@@ -128,18 +136,21 @@ export const nav: Nav = [
         title: "UUID",
         longTitle: "UUID 生成",
         href: `${localePath}/generators/uuid`,
+        icon: IconUuid,
         desc: "バージョン 1、4 の UUID を生成する",
       },
       {
         title: "Lorem Ipsum",
         longTitle: "Lorem Ipsum 生成",
         href: `${localePath}/generators/lorem-ipsum`,
+        icon: IconLoremIpsum,
         desc: "Lorem Ipsum テキストを生成する",
       },
       {
         title: "チェックサム",
-        longTitle: "チェックサム",
+        longTitle: "チェックサム生成",
         href: `${localePath}/generators/checksum`,
+        icon: IconChecksum,
         desc: "Generate an hash with CheckSum based on a file",
       },
     ],
@@ -160,24 +171,6 @@ export const nav: Nav = [
     title: "設定",
     href: `${localePath}/settings`,
     icon: IconSettings,
-    desc: "Customize DevToysWeb look & feel",
+    desc: "DevToysWeb の見た目や使い勝手をカスタマイズする",
   },
 ];
-
-export const getTitle = (pathWithoutLocale: string): string => {
-  if (pathWithoutLocale === "/settings") {
-    const settings = nav[nav.length - 1];
-    return settings.title;
-  }
-  const category = nav
-    .slice(1)
-    .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
-  if (category) {
-    return (
-      category.items?.find(
-        ({ href }) => href === `${localePath}${pathWithoutLocale}`
-      )?.longTitle ?? ""
-    );
-  }
-  return "";
-};

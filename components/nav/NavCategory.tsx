@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-import { IconBeerMini, IconChevronDown, IconChevronUp } from "../../data/icon";
+import { IconChevronDown, IconChevronUp } from "../../data/icon";
 import { NavCategory } from "../../data/locales/types";
 import SelectionIndicator from "../SelectionIndicator";
 import Spacer, { VSpacerS } from "../Spacer";
@@ -27,8 +27,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
         <SelectionIndicator
           selected={`${localePath}${path}` === category.href}
         />
-        {/* TODO: update */}
-        {category.icon ? <category.icon /> : <IconBeerMini />}
+        <category.icon />
         <Spacer x={14} />
         <div className="grow translate-y-px text-sm">{category.title}</div>
         {category.items && (
@@ -58,8 +57,7 @@ const NavCategory: React.VFC<NavCategoryProps> = ({ category }) => {
                   <SelectionIndicator
                     selected={`${localePath}${path}` === item.href}
                   />
-                  {/* TODO: update */}
-                  {item.icon ? <item.icon /> : <IconBeerMini />}
+                  <item.icon />
                   <Spacer x={14} />
                   <div className="grow translate-y-px text-sm">
                     {item.title}

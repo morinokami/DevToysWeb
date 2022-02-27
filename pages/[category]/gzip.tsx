@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 import { ClearButton, CopyButton, PasteButton } from "../../components/button";
-import { FileInput, TextArea, Toggle } from "../../components/io";
+import { FileInputButton, TextArea, Toggle } from "../../components/io";
 import {
   Configuration,
   SectionConfiguration,
@@ -21,7 +21,8 @@ const GZip: NextPage = () => {
   const [input, setInput] = useState("");
   const [doCompress, setDoCompress] = useState(true);
 
-  const output = doCompress ? compress(input) : decompress(input);
+  const output =
+    doCompress && input.length > 0 ? compress(input) : decompress(input);
 
   return (
     <MainLayout title={t.gzip.title}>
@@ -47,7 +48,7 @@ const GZip: NextPage = () => {
           <div className="flex">
             <PasteButton onClick={(text) => setInput(text)} />
             <Spacer x={6} />
-            <FileInput onFileRead={setInput} />
+            <FileInputButton onFileRead={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>

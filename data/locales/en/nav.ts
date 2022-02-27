@@ -1,17 +1,22 @@
 import {
   IconAllTools,
+  IconBase64,
+  IconChecksum,
   IconConverters,
   IconEncodersDecoders,
   IconFormatters,
+  IconGenerators,
   IconGZip,
   IconHash,
   IconHtml,
   IconJson,
   IconJWT,
+  IconLoremIpsum,
   IconNumberBase,
   IconSettings,
   IconSql,
   IconUrl,
+  IconUuid,
   IconXml,
 } from "../../icon";
 import { Nav } from "../types";
@@ -68,6 +73,7 @@ export const nav: Nav = [
         title: "Base 64",
         longTitle: "Base 64 Encoder / Decoder",
         href: `${localePath}/encoders-decoders/base64`,
+        icon: IconBase64,
         desc: "Encode and decode Base64 data",
       },
       {
@@ -117,6 +123,7 @@ export const nav: Nav = [
   {
     title: "Generators",
     href: `${localePath}/generators`,
+    icon: IconGenerators,
     items: [
       {
         title: "Hash",
@@ -129,18 +136,21 @@ export const nav: Nav = [
         title: "UUID",
         longTitle: "UUID Generator",
         href: `${localePath}/generators/uuid`,
+        icon: IconUuid,
         desc: "Generate UUIDs version 1 and 4",
       },
       {
         title: "Lorem Ipsum",
         longTitle: "Lorem Ipsum Generator",
         href: `${localePath}/generators/lorem-ipsum`,
+        icon: IconLoremIpsum,
         desc: "Generate Lorem Ipsum placeholder text",
       },
       {
         title: "Checksum",
-        longTitle: "Checksum",
+        longTitle: "Checksum Generator",
         href: `${localePath}/generators/checksum`,
+        icon: IconChecksum,
         desc: "Generate an hash with CheckSum based on a file",
       },
     ],
@@ -164,21 +174,3 @@ export const nav: Nav = [
     desc: "Customize DevToysWeb look & feel",
   },
 ];
-
-export const getTitle = (pathWithoutLocale: string): string => {
-  if (pathWithoutLocale === "/settings") {
-    const settings = nav[nav.length - 1];
-    return settings.title;
-  }
-  const category = nav
-    .slice(1)
-    .find(({ href }) => `${localePath}${pathWithoutLocale}`.startsWith(href));
-  if (category) {
-    return (
-      category.items?.find(
-        ({ href }) => href === `${localePath}${pathWithoutLocale}`
-      )?.longTitle ?? ""
-    );
-  }
-  return "";
-};

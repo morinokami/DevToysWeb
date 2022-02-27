@@ -1,34 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DevToysWeb
 
-## Getting Started
+This is yet another version of [DevToys](https://github.com/veler/DevToys). It is built with [Next.js](https://nextjs.org/) and you can access it from the following URL:
 
-First, run the development server:
+https://devtoys.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
+It is being developed with the following goals in mind:
+
+* It should work on any OS by running on the web.
+  * At the same time, it should work in a completely offline environment as a PWA (although this has not been implemented yet).
+* It should have almost the same functionality and appearance as the original.
+  * Support for dark mode and i18n is also important.
+
+Therefore, I'm currently planning to follow the original project in the future development.
+
+## Preview
+
+## Development Status
+
+* Converters
+  * ✅ JSON <> YAML
+  * ✅ Number Base
+* Encoders / Decoders
+  * ✅ HTML
+  * ✅ URL
+  * ✅ Base64
+  * ✅ GZip
+  * ✅ JWT Decoder
+* Formatters
+  * ✅ JSON
+  * ✅ SQL
+  * ✅ XML
+* Generators
+  * ✅ Hash (MD5, SHA1, SHA256, SHA512)
+  * ✅ UUID 1 and 4
+  * ✅ Lorem Ipsum
+  * 🚧 Checksum
+* Text
+  * 🚧 Inspector & Case Converter
+  * 🚧 Regex Tester
+  * 🚧 Text Comparer
+  * 🚧 Markdown Preview
+* Graphic
+  * 🚧 Color Blindness Simulator
+  * 🚧 PNG / JPEG Compressor
+  * 🚧 Image Converter
+
+## Translation Process
+
+1. Create a directory for the new locale in `data/locales` and copy all files in `data/locales/en` to it.
+2. Update the value of the `localePath` variable in `nav.ts` and translate the strings in `messages.ts` and `nav.ts`.
+3. Add a case for the new locale in `hooks/useLocale.ts`.
+4. Add a value for the new locale to `languageOptions` variable in `pages/settings`.tsx
+
+## Development
+
+First, install the packages using the following command:
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Open http://localhost:3000 in your favorite browser and start developing!

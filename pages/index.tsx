@@ -22,11 +22,9 @@ const Home: NextPage = () => {
   });
 
   return (
-    <div>
-      <MainLayout>
-        <CardLayout navItems={navItems} />
-      </MainLayout>
-    </div>
+    <MainLayout cardLayout={true}>
+      <CardLayout navItems={navItems} />
+    </MainLayout>
   );
 };
 

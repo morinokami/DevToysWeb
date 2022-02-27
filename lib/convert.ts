@@ -12,7 +12,7 @@ export const toYaml = (value: string, indent: number) => {
 
 export const toJson = (value: string, indent: number) => {
   try {
-    return JSON.stringify(yaml.load(value), null, indent);
+    return JSON.stringify(yaml.load(value), null, indent) ?? "";
   } catch {
     return "";
   }
