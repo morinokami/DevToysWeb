@@ -123,8 +123,9 @@ export const t = {
     ],
   },
   search: {
-    searchResultTitle: 'Search results for "{{0}}"',
-    searchPlaceholder: "Type to search for tools...",
+    resultTitle: 'Search results for "{{0}}"',
+    noResultTitle: "No results found",
+    inputPlaceholder: "Type to search for tools...",
   },
   settings: {
     title: "Settings",

@@ -19,7 +19,7 @@ const SearchInput: React.VFC<SearchInputProps> = ({}) => {
         type="text"
         className="grow rounded border border-light-40 border-b-gray-400 bg-light-10 px-3 pt-[0.45rem] pb-[0.35rem] text-sm focus:border-b-blue-30 focus:outline-none dark:border-x-0 dark:border-t-0 dark:border-b-2 dark:border-gray-500 dark:bg-dark-30 focus:dark:border-blue-30 focus:dark:bg-dark-50"
         value={input}
-        placeholder={t.search.searchPlaceholder}
+        placeholder={t.search.inputPlaceholder}
         onChange={(e) => setInput(e.target.value)}
         onKeyPress={(e) => {
           if (e.key === "Enter") {

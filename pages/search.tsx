@@ -29,11 +29,13 @@ const Search: NextPage = () => {
     navItems.sort((a, b) => a.title.localeCompare(b.title));
   }
 
+  const title =
+    navItems.length > 0
+      ? pupa(t.search.resultTitle, [search])
+      : t.search.noResultTitle;
+
   return (
-    <MainLayout
-      title={pupa(t.search.searchResultTitle, [search])}
-      cardLayout={true}
-    >
+    <MainLayout title={title} cardLayout={true}>
       <CardLayout navItems={navItems} />
     </MainLayout>
   );

@@ -122,8 +122,9 @@ export const t = {
     ],
   },
   search: {
-    searchResultTitle: "「{{0}}」の検索結果",
-    searchPlaceholder: "タイプしてツールを検索する...",
+    resultTitle: "「{{0}}」の検索結果",
+    noResultTitle: "見つかりませんでした",
+    inputPlaceholder: "ツールを検索する...",
   },
   settings: {
     title: "設定",
