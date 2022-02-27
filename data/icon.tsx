@@ -26,6 +26,7 @@ import {
   VscFileBinary,
   VscHome,
   VscJson,
+  VscNewFile,
   VscSettings,
   VscSettingsGear,
   VscSymbolNumeric,
@@ -124,3 +125,4 @@ export const IconGenerators = generateIcon(MdPrecisionManufacturing);
 export const IconHash = generateIcon(MdFingerprint);
 export const IconUuid = generateIcon(MdWater);
 export const IconLoremIpsum = generateIcon(VscTextSize);
+export const IconChecksum = generateIcon(VscNewFile);

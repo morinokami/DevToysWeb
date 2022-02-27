@@ -12,6 +12,8 @@ export const t = {
     openFiletitle: "Load a file",
     notFoundTitle: "Not found",
     notFoundDesc: "The page you are looking for does not exist.",
+    orText: "or",
+    browseFilesText: "Browse files",
   },
   base64: {
     title: "Base 64 Encoder / Decoder",
@@ -22,7 +24,19 @@ export const t = {
     decodeText: "Decode",
   },
   checksum: {
-    title: "Checksum",
+    title: "Checksum Generator",
+    uppercaseTitle: "Uppercase",
+    uppercaseDesc: "Convert the output to uppercase",
+    hashingAlgorithmTitle: "Hashing Algorithm",
+    hachingAlgorithmDesc: "Select which hashing algorithm you want to use",
+    hashingAlgorithmOptions: [
+      { name: "MD5", value: "md5" },
+      { name: "SHA1", value: "sha1" },
+      { name: "SHA256", value: "sha256" },
+      { name: "SHA384", value: "sha384" },
+      { name: "SHA512", value: "sha512" },
+    ],
+    dragAndDropTitle: "Drag & drop any file here",
   },
   gzip: {
     title: "GZip Compress / Decompress",

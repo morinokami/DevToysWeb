@@ -1,6 +1,7 @@
 import {
   IconAllTools,
   IconBase64,
+  IconChecksum,
   IconConverters,
   IconEncodersDecoders,
   IconFormatters,
@@ -145,12 +146,13 @@ export const nav: Nav = [
         icon: IconLoremIpsum,
         desc: "Lorem Ipsum テキストを生成する",
       },
-      // {
-      //   title: "チェックサム",
-      //   longTitle: "チェックサム",
-      //   href: `${localePath}/generators/checksum`,
-      //   desc: "Generate an hash with CheckSum based on a file",
-      // },
+      {
+        title: "チェックサム",
+        longTitle: "チェックサム生成",
+        href: `${localePath}/generators/checksum`,
+        icon: IconChecksum,
+        desc: "Generate an hash with CheckSum based on a file",
+      },
     ],
   },
   {
