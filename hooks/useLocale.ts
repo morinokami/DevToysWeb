@@ -7,5 +7,12 @@ export const useLocale = () => {
   const router = useRouter();
   const { locale } = router;
 
-  return { ...(locale === "en" ? en : ja), locale };
+  switch (locale) {
+    case "en":
+      return { ...en, locale };
+    case "ja":
+      return { ...ja, locale };
+    default:
+      return { ...en, locale: "en" };
+  }
 };

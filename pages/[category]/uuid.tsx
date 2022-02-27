@@ -22,10 +22,14 @@ const Uuid: NextPage = () => {
   const [hyphenate, setHyphenate] = useState(true);
   const [uppercase, setUppercase] = useState(false);
   const [version, setVersion] = useState(versionOptions[1]);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState<number | null>(1);
   const [uuids, setUuids] = useState<string[]>([]);
 
   const generate = () => {
+    if (count === null) {
+      return;
+    }
+
     const generated = [];
     for (let i = 0; i < count; i++) {
       const uuid = generateUuid(version.value, hyphenate, uppercase);

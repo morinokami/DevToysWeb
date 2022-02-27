@@ -5,8 +5,7 @@ export type Nav = NavCategory[];
 export type NavCategory = {
   title: string;
   href: string;
-  // TODO: update
-  icon?: React.VFC;
+  icon: React.VFC;
   items?: NavItem[];
   desc?: string;
 };
@@ -15,7 +14,6 @@ export type NavItem = {
   title: string;
   longTitle: string;
   href: string;
-  // TODO: update
-  icon?: React.VFC<IconProps>;
+  icon: React.VFC<IconProps>;
   desc: string;
 };

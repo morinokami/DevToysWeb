@@ -9,6 +9,7 @@ import {
 } from "../../components/section";
 import { VSpacerM } from "../../components/Spacer";
 import { IconConversion, IconIndentation } from "../../data/icon";
+import { optionValues } from "../../data/optionValues";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { toJson, toYaml } from "../../lib/convert";
@@ -21,9 +22,17 @@ const JsonYaml: NextPage = () => {
   const [indent, setIndent] = useState(t.jsonYaml.indentOptions[0]);
 
   const output =
-    conversion.value === "json-to-yaml"
+    conversion.value === optionValues.jsonYaml.conversion.jsonToYaml
       ? toYaml(input, indent.value)
       : toJson(input, indent.value);
+  const inputLanguage =
+    conversion.value === optionValues.jsonYaml.conversion.jsonToYaml
+      ? "json"
+      : "yaml";
+  const outputLanguage =
+    conversion.value === optionValues.jsonYaml.conversion.jsonToYaml
+      ? "yaml"
+      : "json";
 
   return (
     <MainLayout title={t.jsonYaml.title}>
@@ -33,7 +42,7 @@ const JsonYaml: NextPage = () => {
           title={t.jsonYaml.conversionTitle}
           desc={t.jsonYaml.conversionSubtitle}
         >
-          <div className="w-36">
+          <div className="w-40">
             <Select
               options={t.jsonYaml.conversionOptions}
               value={conversion}
@@ -42,7 +51,7 @@ const JsonYaml: NextPage = () => {
           </div>
         </Configuration>
         <Configuration icon={IconIndentation} title={t.jsonYaml.indentTitle}>
-          <div className="w-28">
+          <div className="w-32">
             <Select
               options={t.jsonYaml.indentOptions}
               value={indent}
@@ -58,8 +67,8 @@ const JsonYaml: NextPage = () => {
           input={input}
           setInput={setInput}
           output={output}
-          inputLanguage="json"
-          outputLanguage="yaml"
+          inputLanguage={inputLanguage}
+          outputLanguage={outputLanguage}
         />
       </SectionMain>
     </MainLayout>

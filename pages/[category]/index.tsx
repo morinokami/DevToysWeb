@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useLocale } from "../../hooks/useLocale";
 import CardLayout from "../../layouts/CardLayout";
 import MainLayout from "../../layouts/MainLayout";
+import NotFound from "../404";
 
 const Category: NextPage = () => {
   const { nav } = useLocale();
@@ -14,10 +15,12 @@ const Category: NextPage = () => {
   const title = category?.title;
   const navItems = category?.items ?? [];
 
-  return (
-    <MainLayout title={title}>
+  return navItems.length > 0 ? (
+    <MainLayout title={title} cardLayout={true}>
       <CardLayout navItems={navItems} />
     </MainLayout>
+  ) : (
+    <NotFound />
   );
 };
 

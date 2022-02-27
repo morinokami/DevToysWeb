@@ -5,7 +5,7 @@ import { t } from "../../data/locales/en";
 import { ClearButton, CopyButton, PasteButton } from "../button";
 import { SectionHeader } from "../section";
 import Spacer, { VSpacerS } from "../Spacer";
-import { FileInput } from ".";
+import { FileInputButton } from ".";
 import CodeEditor, { LANGUAGE } from "./CodeEditor";
 
 interface SplitEditorProps {
@@ -44,7 +44,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           <div className="flex">
             <PasteButton onClick={setInput} />
             <Spacer x={6} />
-            <FileInput onFileRead={setInput} />
+            <FileInputButton onFileRead={setInput} />
             <Spacer x={6} />
             <ClearButton onClick={() => setInput("")} />
           </div>
