@@ -20,7 +20,7 @@ export const t = {
   base64: {
     title: "Base 64 エンコーダ / デコーダ",
     conversionTitle: "変換",
-    conversionSubtitle: "使用する変換方法を選択してください",
+    conversionSubtitle: "使用する変換方法を選択する",
     encodeDesc: "入力をエンコードする",
     encodeText: "エンコード",
     decodeText: "デコード",
@@ -30,7 +30,7 @@ export const t = {
     uppercaseTitle: "大文字の使用",
     uppercaseDesc: "出力を大文字に変換する",
     hashingAlgorithmTitle: "ハッシュアルゴリズム",
-    hachingAlgorithmDesc: "使用するハッシュアルゴリズムを選択してください",
+    hachingAlgorithmDesc: "使用するハッシュアルゴリズムを選択する",
     hashingAlgorithmOptions: [
       { name: "MD5", value: optionValues.checksum.hashingAlgorithm.md5 },
       { name: "SHA1", value: optionValues.checksum.hashingAlgorithm.sha1 },
@@ -43,7 +43,7 @@ export const t = {
   gzip: {
     title: "GZip 圧縮 / 展開",
     compressTitle: "GZip 圧縮/展開",
-    compressDesc: "入力を圧縮するか、展開するか選択してください",
+    compressDesc: "入力を圧縮するか、展開するか選択する",
     compressText: "圧縮",
     decompressText: "展開",
   },
@@ -59,7 +59,7 @@ export const t = {
   html: {
     title: "HTML エンコーダ / デコーダ",
     conversionTitle: "変換",
-    conversionSubtitle: "使用する変換方法を選択してください",
+    conversionSubtitle: "使用する変換方法を選択する",
     encodeDesc: "入力をエンコードする",
     encodeText: "エンコード",
     decodeText: "デコード",
@@ -77,7 +77,7 @@ export const t = {
   jsonYaml: {
     title: "JSON <> YAML 変換",
     conversionTitle: "変換",
-    conversionSubtitle: "使用する変換方法を選択してください",
+    conversionSubtitle: "使用する変換方法を選択する",
     conversionOptions: [
       {
         name: "JSON から YAML",
@@ -117,7 +117,7 @@ export const t = {
     formatNumberTitle: "数字のフォーマット",
     formatNumberDesc: "数字のフォーマット",
     inputTypeTitle: "入力タイプ",
-    inputTypeSubtitle: "使用する入力タイプを選択してください",
+    inputTypeSubtitle: "使用する入力タイプを選択する",
     hexTitle: "16 進数",
     decimalTitle: "10 進数",
     octalTitle: "8 進数",
@@ -138,19 +138,18 @@ export const t = {
     title: "設定",
     languageTitle: "言語",
     themeTitle: "アプリのテーマ",
-    themeSubtitle: "アプリで使用するテーマを選択してください",
+    themeSubtitle: "アプリで使用するテーマを選択する",
     themeOptions: [
       { name: "ライト", value: optionValues.settings.theme.light },
       { name: "ダーク", value: optionValues.settings.theme.dark },
     ],
-    textEditorTitle: "Text editor",
-    wrapWordTitle: "Wrap word",
-    lineNumbersTitle: "Line numbers",
-    lineNumbersDesc: "Display line numbers in the text editor",
-    highlightCurrentLineTitle: "Highlight current line",
-    highlightCurrentLineDesc:
-      "Change the background color of the current line so it's more visible",
-    renderWhiteSpaceTitle: "Render white space",
+    textEditorTitle: "テキストエディタ",
+    wrapWordTitle: "折り返し",
+    lineNumbersTitle: "行番号",
+    lineNumbersDesc: "テキストエディタに行番号を表示する",
+    highlightCurrentLineTitle: "選択中の行のハイライト",
+    highlightCurrentLineDesc: "選択中の行の背景色を変更して見やすくする",
+    renderWhiteSpaceTitle: "空白の表示",
   },
   sql: {
     title: "SQL フォーマッタ",
@@ -176,7 +175,7 @@ export const t = {
   url: {
     title: "URL エンコーダ / デコーダ",
     conversionTitle: "変換",
-    conversionSubtitle: "使用する変換方法を選択してください",
+    conversionSubtitle: "使用する変換方法を選択する",
     encodeDesc: "入力をエンコードする",
     encodeText: "エンコード",
     decodeText: "デコード",
@@ -188,7 +187,7 @@ export const t = {
     uppercaseTitle: "大文字",
     uppercaseDesc: "出力を大文字に変換する",
     uuidVersionTitle: "UUID のバージョン",
-    uuidVersionSubtitle: "生成する UUID のバージョンを選択してください",
+    uuidVersionSubtitle: "生成する UUID のバージョンを選択する",
     generateTitle: "生成",
     generateButtonText: "UUID を生成する",
     versionOptions: [
