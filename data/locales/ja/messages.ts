@@ -1,5 +1,7 @@
 import { FormatOptions } from "sql-formatter";
 
+import { optionValues } from "../../optionValues";
+
 export const t = {
   common: {
     allToolsTitle: "すべてのツール",
@@ -30,11 +32,11 @@ export const t = {
     hashingAlgorithmTitle: "ハッシュアルゴリズム",
     hachingAlgorithmDesc: "使用するハッシュアルゴリズムを選択してください",
     hashingAlgorithmOptions: [
-      { name: "MD5", value: "md5" },
-      { name: "SHA1", value: "sha1" },
-      { name: "SHA256", value: "sha256" },
-      { name: "SHA384", value: "sha384" },
-      { name: "SHA512", value: "sha512" },
+      { name: "MD5", value: optionValues.checksum.hashingAlgorithm.md5 },
+      { name: "SHA1", value: optionValues.checksum.hashingAlgorithm.sha1 },
+      { name: "SHA256", value: optionValues.checksum.hashingAlgorithm.sha256 },
+      { name: "SHA384", value: optionValues.checksum.hashingAlgorithm.sha384 },
+      { name: "SHA512", value: optionValues.checksum.hashingAlgorithm.sha512 },
     ],
     dragAndDropTitle: "ここにファイルをドラッグ & ドロップする",
   },
@@ -66,10 +68,10 @@ export const t = {
     title: "JSON フォーマッタ",
     indentTitle: "インデント",
     indentOptions: [
-      { name: "2 スペース", value: "  " },
-      { name: "4 スペース", value: "    " },
-      { name: "1 タブ", value: "\t" },
-      { name: "ミニファイ", value: undefined },
+      { name: "2 スペース", value: optionValues.json.indent.twoSpaces },
+      { name: "4 スペース", value: optionValues.json.indent.fourSpaces },
+      { name: "1 タブ", value: optionValues.json.indent.oneTab },
+      { name: "ミニファイ", value: optionValues.json.indent.minify },
     ],
   },
   jsonYaml: {
@@ -77,13 +79,19 @@ export const t = {
     conversionTitle: "変換",
     conversionSubtitle: "使用する変換方法を選択してください",
     conversionOptions: [
-      { name: "JSON から YAML", value: "json-to-yaml" },
-      { name: "YAML から JSON", value: "yaml-to-json" },
+      {
+        name: "JSON から YAML",
+        value: optionValues.jsonYaml.conversion.jsonToYaml,
+      },
+      {
+        name: "YAML から JSON",
+        value: optionValues.jsonYaml.conversion.yamlToJson,
+      },
     ],
     indentTitle: "インデント",
     indentOptions: [
-      { name: "2 スペース", value: 2 },
-      { name: "4 スペース", value: 4 },
+      { name: "2 スペース", value: optionValues.jsonYaml.indent.twoSpaces },
+      { name: "4 スペース", value: optionValues.jsonYaml.indent.fourSpaces },
     ],
   },
   jwtDecoder: {
@@ -99,9 +107,9 @@ export const t = {
     lengthTitle: "長さ",
     lengthSubtitle: "生成する単語、文、または段落の数",
     typeOptions: [
-      { name: "単語", value: "words" },
-      { name: "文", value: "sentences" },
-      { name: "段落", value: "paragraphs" },
+      { name: "単語", value: optionValues.loremIpsum.type.words },
+      { name: "文", value: optionValues.loremIpsum.type.sentences },
+      { name: "段落", value: optionValues.loremIpsum.type.paragraphs },
     ],
   },
   numberBase: {
@@ -115,10 +123,10 @@ export const t = {
     octalTitle: "8 進数",
     binaryTitle: "2 進数",
     baseOptions: [
-      { name: "8 進数", value: 8 },
-      { name: "2 進数", value: 2 },
-      { name: "10 進数", value: 10 },
-      { name: "16 進数", value: 16 },
+      { name: "8 進数", value: optionValues.numberBase.base.octal },
+      { name: "2 進数", value: optionValues.numberBase.base.binary },
+      { name: "10 進数", value: optionValues.numberBase.base.decimal },
+      { name: "16 進数", value: optionValues.numberBase.base.hex },
     ],
   },
   search: {
@@ -132,29 +140,29 @@ export const t = {
     themeTitle: "アプリのテーマ",
     themeSubtitle: "アプリで使用するテーマを選択してください",
     themeOptions: [
-      { name: "ライト", value: "light" },
-      { name: "ダーク", value: "dark" },
+      { name: "ライト", value: optionValues.settings.theme.light },
+      { name: "ダーク", value: optionValues.settings.theme.dark },
     ],
   },
   sql: {
     title: "SQL フォーマッタ",
     languageTitle: "言語",
     languageOptions: [
-      { name: "Db2", value: "db2" },
-      { name: "MariaDB", value: "mariadb" },
-      { name: "MySQL", value: "mysql" },
-      { name: "N1QL", value: "n1ql" },
-      { name: "PL/SQL", value: "plsql" },
-      { name: "PostgreSQL", value: "postgresql" },
-      { name: "AmazonRedshift", value: "redshift" },
-      { name: "Spark SQL", value: "spark" },
-      { name: "Standard SQL", value: "sql" },
-      { name: "Transact-SQL", value: "tsql" },
+      { name: "Db2", value: optionValues.sql.language.db2 },
+      { name: "MariaDB", value: optionValues.sql.language.mariadb },
+      { name: "MySQL", value: optionValues.sql.language.mysql },
+      { name: "N1QL", value: optionValues.sql.language.n1ql },
+      { name: "PL/SQL", value: optionValues.sql.language.plsql },
+      { name: "PostgreSQL", value: optionValues.sql.language.postgresql },
+      { name: "AmazonRedshift", value: optionValues.sql.language.redshift },
+      { name: "Spark SQL", value: optionValues.sql.language.spark },
+      { name: "Standard SQL", value: optionValues.sql.language.standard },
+      { name: "Transact-SQL", value: optionValues.sql.language.tsql },
     ] as { name: string; value: FormatOptions["language"] }[],
     indentTitle: "インデント",
     indentOptions: [
-      { name: "2 スペース", value: "  " },
-      { name: "4 スペース", value: "    " },
+      { name: "2 スペース", value: optionValues.sql.indent.twoSpaces },
+      { name: "4 スペース", value: optionValues.sql.indent.fourSpaces },
     ],
   },
   url: {
@@ -176,16 +184,16 @@ export const t = {
     generateTitle: "生成",
     generateButtonText: "UUID を生成する",
     versionOptions: [
-      { name: "1", value: 1 },
-      { name: "4 (GUID)", value: 4 },
+      { name: "1", value: optionValues.uuid.version.v1 },
+      { name: "4 (GUID)", value: optionValues.uuid.version.v4 },
     ],
   },
   xml: {
     title: "XML フォーマッタ",
     indentTitle: "インデント",
     indentOptions: [
-      { name: "2 スペース", value: "  " },
-      { name: "4 スペース", value: "    " },
+      { name: "2 スペース", value: optionValues.xml.indent.twoSpaces },
+      { name: "4 スペース", value: optionValues.xml.indent.fourSpaces },
     ],
   },
 };

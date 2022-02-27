@@ -1,5 +1,7 @@
 import { FormatOptions } from "sql-formatter";
 
+import { optionValues } from "../../optionValues";
+
 export const t = {
   common: {
     allToolsTitle: "All tools",
@@ -30,11 +32,11 @@ export const t = {
     hashingAlgorithmTitle: "Hashing Algorithm",
     hachingAlgorithmDesc: "Select which hashing algorithm you want to use",
     hashingAlgorithmOptions: [
-      { name: "MD5", value: "md5" },
-      { name: "SHA1", value: "sha1" },
-      { name: "SHA256", value: "sha256" },
-      { name: "SHA384", value: "sha384" },
-      { name: "SHA512", value: "sha512" },
+      { name: "MD5", value: optionValues.checksum.hashingAlgorithm.md5 },
+      { name: "SHA1", value: optionValues.checksum.hashingAlgorithm.sha1 },
+      { name: "SHA256", value: optionValues.checksum.hashingAlgorithm.sha256 },
+      { name: "SHA384", value: optionValues.checksum.hashingAlgorithm.sha384 },
+      { name: "SHA512", value: optionValues.checksum.hashingAlgorithm.sha512 },
     ],
     dragAndDropTitle: "Drag & drop any file here",
   },
@@ -67,10 +69,10 @@ export const t = {
     title: "JSON Formatter",
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: "  " },
-      { name: "4 spaces", value: "    " },
-      { name: "1 tab", value: "\t" },
-      { name: "minified", value: undefined },
+      { name: "2 spaces", value: optionValues.json.indent.twoSpaces },
+      { name: "4 spaces", value: optionValues.json.indent.fourSpaces },
+      { name: "1 tab", value: optionValues.json.indent.oneTab },
+      { name: "minified", value: optionValues.json.indent.minify },
     ],
   },
   jsonYaml: {
@@ -78,13 +80,19 @@ export const t = {
     conversionTitle: "Conversion",
     conversionSubtitle: "Select which conversion mode you want to use",
     conversionOptions: [
-      { name: "JSON to YAML", value: "json-to-yaml" },
-      { name: "YAML to JSON", value: "yaml-to-json" },
+      {
+        name: "JSON to YAML",
+        value: optionValues.jsonYaml.conversion.jsonToYaml,
+      },
+      {
+        name: "YAML to JSON",
+        value: optionValues.jsonYaml.conversion.yamlToJson,
+      },
     ],
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: 2 },
-      { name: "4 spaces", value: 4 },
+      { name: "2 spaces", value: optionValues.jsonYaml.indent.twoSpaces },
+      { name: "4 spaces", value: optionValues.jsonYaml.indent.fourSpaces },
     ],
   },
   jwtDecoder: {
@@ -100,9 +108,9 @@ export const t = {
     lengthTitle: "Length",
     lengthSubtitle: "Number of words, sentences or paragraphs to generate",
     typeOptions: [
-      { name: "Words", value: "words" },
-      { name: "Sentences", value: "sentences" },
-      { name: "Paragraphs", value: "paragraphs" },
+      { name: "Words", value: optionValues.loremIpsum.type.words },
+      { name: "Sentences", value: optionValues.loremIpsum.type.sentences },
+      { name: "Paragraphs", value: optionValues.loremIpsum.type.paragraphs },
     ],
   },
   numberBase: {
@@ -116,10 +124,10 @@ export const t = {
     octalTitle: "Octal",
     binaryTitle: "Binary",
     baseOptions: [
-      { name: "Octal", value: 8 },
-      { name: "Binary", value: 2 },
-      { name: "Decimal", value: 10 },
-      { name: "Hexadecimal", value: 16 },
+      { name: "Octal", value: optionValues.numberBase.base.octal },
+      { name: "Binary", value: optionValues.numberBase.base.binary },
+      { name: "Decimal", value: optionValues.numberBase.base.decimal },
+      { name: "Hexadecimal", value: optionValues.numberBase.base.hex },
     ],
   },
   search: {
@@ -133,29 +141,29 @@ export const t = {
     themeTitle: "App Theme",
     themeSubtitle: "Select which app theme to display",
     themeOptions: [
-      { name: "Light", value: "light" },
-      { name: "Dark", value: "dark" },
+      { name: "Light", value: optionValues.settings.theme.light },
+      { name: "Dark", value: optionValues.settings.theme.dark },
     ],
   },
   sql: {
     title: "SQL Formatter",
     languageTitle: "Language",
     languageOptions: [
-      { name: "Db2", value: "db2" },
-      { name: "MariaDB", value: "mariadb" },
-      { name: "MySQL", value: "mysql" },
-      { name: "N1QL", value: "n1ql" },
-      { name: "PL/SQL", value: "plsql" },
-      { name: "PostgreSQL", value: "postgresql" },
-      { name: "AmazonRedshift", value: "redshift" },
-      { name: "Spark SQL", value: "spark" },
-      { name: "Standard SQL", value: "sql" },
-      { name: "Transact-SQL", value: "tsql" },
+      { name: "Db2", value: optionValues.sql.language.db2 },
+      { name: "MariaDB", value: optionValues.sql.language.mariadb },
+      { name: "MySQL", value: optionValues.sql.language.mysql },
+      { name: "N1QL", value: optionValues.sql.language.n1ql },
+      { name: "PL/SQL", value: optionValues.sql.language.plsql },
+      { name: "PostgreSQL", value: optionValues.sql.language.postgresql },
+      { name: "AmazonRedshift", value: optionValues.sql.language.redshift },
+      { name: "Spark SQL", value: optionValues.sql.language.spark },
+      { name: "Standard SQL", value: optionValues.sql.language.standard },
+      { name: "Transact-SQL", value: optionValues.sql.language.tsql },
     ] as { name: string; value: FormatOptions["language"] }[],
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: "  " },
-      { name: "4 spaces", value: "    " },
+      { name: "2 spaces", value: optionValues.sql.indent.twoSpaces },
+      { name: "4 spaces", value: optionValues.sql.indent.fourSpaces },
     ],
   },
   url: {
@@ -177,16 +185,16 @@ export const t = {
     generateTitle: "Generate",
     generateButtonText: "Generate UUID(s)",
     versionOptions: [
-      { name: "1", value: 1 },
-      { name: "4 (GUID)", value: 4 },
+      { name: "1", value: optionValues.uuid.version.v1 },
+      { name: "4 (GUID)", value: optionValues.uuid.version.v4 },
     ],
   },
   xml: {
     title: "XML Formatter",
     indentTitle: "Indentation",
     indentOptions: [
-      { name: "2 spaces", value: "  " },
-      { name: "4 spaces", value: "    " },
+      { name: "2 spaces", value: optionValues.xml.indent.twoSpaces },
+      { name: "4 spaces", value: optionValues.xml.indent.fourSpaces },
     ],
   },
 };

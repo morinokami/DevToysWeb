@@ -12,6 +12,7 @@ import {
 } from "../../components/section";
 import Spacer, { VSpacerM } from "../../components/Spacer";
 import { IconBeerMini } from "../../data/icon";
+import { optionValues } from "../../data/optionValues";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
@@ -26,13 +27,13 @@ const Lorem: NextPage = () => {
   useEffect(() => {
     const lorem = new LoremIpsum();
     switch (genType.value) {
-      case "words":
+      case optionValues.loremIpsum.type.words:
         setOutput(lorem.generateWords(length ?? undefined));
         break;
-      case "sentences":
+      case optionValues.loremIpsum.type.sentences:
         setOutput(lorem.generateSentences(length ?? undefined));
         break;
-      case "paragraphs":
+      case optionValues.loremIpsum.type.paragraphs:
         const generated = lorem
           .generateParagraphs(length ?? 0)
           .replace(/\n/g, "\n\n");

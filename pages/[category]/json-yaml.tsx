@@ -9,6 +9,7 @@ import {
 } from "../../components/section";
 import { VSpacerM } from "../../components/Spacer";
 import { IconConversion, IconIndentation } from "../../data/icon";
+import { optionValues } from "../../data/optionValues";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 import { toJson, toYaml } from "../../lib/convert";
@@ -21,11 +22,17 @@ const JsonYaml: NextPage = () => {
   const [indent, setIndent] = useState(t.jsonYaml.indentOptions[0]);
 
   const output =
-    conversion.value === "json-to-yaml"
+    conversion.value === optionValues.jsonYaml.conversion.jsonToYaml
       ? toYaml(input, indent.value)
       : toJson(input, indent.value);
-  const inputLanguage = conversion.value === "json-to-yaml" ? "json" : "yaml";
-  const outputLanguage = conversion.value === "json-to-yaml" ? "yaml" : "json";
+  const inputLanguage =
+    conversion.value === optionValues.jsonYaml.conversion.jsonToYaml
+      ? "json"
+      : "yaml";
+  const outputLanguage =
+    conversion.value === optionValues.jsonYaml.conversion.jsonToYaml
+      ? "yaml"
+      : "json";
 
   return (
     <MainLayout title={t.jsonYaml.title}>
