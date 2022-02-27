@@ -9,6 +9,9 @@ interface CardLayoutProps {
 const CardLayout: React.VFC<CardLayoutProps> = ({ navItems }) => {
   return (
     <>
+      <div className="md:hidden">
+        <VSpacerL />
+      </div>
       <div className="sm:grid sm:grid-cols-3 sm:gap-y-4 md:flex md:flex-wrap md:justify-start xs:grid-cols-2">
         {navItems.map((navItem) => {
           return (

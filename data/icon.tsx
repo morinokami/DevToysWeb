@@ -3,7 +3,6 @@ import { BsFileZip, BsTextIndentLeft } from "react-icons/bs";
 import { FaBeer, FaHtml5 } from "react-icons/fa";
 import {
   MdContentPaste,
-  MdDelete,
   MdFingerprint,
   MdHorizontalRule,
   MdOutlineLink,
@@ -19,6 +18,7 @@ import {
   VscCaseSensitive,
   VscChevronDown,
   VscChevronUp,
+  VscClose,
   VscCode,
   VscCopy,
   VscDatabase,
@@ -27,6 +27,7 @@ import {
   VscHome,
   VscJson,
   VscNewFile,
+  VscSearch,
   VscSettings,
   VscSettingsGear,
   VscSymbolNumeric,
@@ -70,7 +71,7 @@ const generateIconMedium = (Icon: React.VFC) => {
 };
 export const IconCopy = generateIconMedium(VscCopy);
 export const IconPaste = generateIconMedium(MdContentPaste);
-export const IconDelete = generateIconMedium(MdDelete);
+export const IconDelete = generateIconMedium(VscClose);
 export const IconUpload = generateIconMedium(VscFile);
 export const IconCase = generateIconMedium(VscCaseSensitive);
 export const IconIndentation = generateIconMedium(MdSpaceBar);
@@ -97,6 +98,8 @@ export const IconChevronUp = generateIcon(VscChevronUp);
 export const IconChevronDown = generateIcon(VscChevronDown);
 export const IconAllTools = generateIcon(VscHome);
 export const IconSettings = generateIcon(VscSettingsGear);
+export const IconSearch = generateIcon(VscSearch);
+export const IconClearSearch = generateIcon(VscClose);
 
 // Converters
 
