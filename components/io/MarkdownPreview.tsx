@@ -20,25 +20,23 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
   theme,
 }) => {
   return (
-    <ReflexContainer orientation="vertical">
-      <ReflexElement minSize={200}>
-        <div className="flex h-full flex-col">
-          <SectionHeader title="Markdown">
-            <div className="flex">
-              <PasteButton onClick={setInput} />
-              <Spacer x={6} />
-              <ClearButton onClick={() => setInput("")} />
-            </div>
-          </SectionHeader>
-          <VSpacerS />
-          <div className="grow">
-            <CodeEditor
-              height="98%"
-              value={input}
-              onChange={(value) => setInput(value ?? "")}
-              language="markdown"
-            />
+    <ReflexContainer className="max-w-full" orientation="vertical">
+      <ReflexElement className="flex h-full flex-col" minSize={200}>
+        <SectionHeader title="Markdown">
+          <div className="flex">
+            <PasteButton onClick={setInput} />
+            <Spacer x={6} />
+            <ClearButton onClick={() => setInput("")} />
           </div>
+        </SectionHeader>
+        <VSpacerS />
+        <div className="grow">
+          <CodeEditor
+            height="98%"
+            value={input}
+            onChange={(value) => setInput(value ?? "")}
+            language="markdown"
+          />
         </div>
       </ReflexElement>
       <ReflexSplitter
@@ -46,20 +44,17 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
       />
       {/* TODO: Fix overflow */}
       {/* TODO: Apply theme */}
-      <ReflexElement minSize={200}>
-        <div className="flex h-full flex-col">
-          <SectionHeader title={t.common.previewTitle}>
-            <div className="flex">
-              <CopyButton text={output} />
-            </div>
-          </SectionHeader>
-          <VSpacerS />
-          <div
-            className={`markdown-body relative p-2`}
-            style={{ height: "90%" }}
-            dangerouslySetInnerHTML={{ __html: output }}
-          />
-        </div>
+      <ReflexElement className="flex h-full flex-col" minSize={200}>
+        <SectionHeader title={t.common.previewTitle}>
+          <div className="flex">
+            <CopyButton text={output} />
+          </div>
+        </SectionHeader>
+        <VSpacerS />
+        <div
+          className="markdown-body grow p-2"
+          dangerouslySetInnerHTML={{ __html: output }}
+        />
       </ReflexElement>
     </ReflexContainer>
   );
