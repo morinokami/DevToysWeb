@@ -37,7 +37,7 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
 
   return (
     <ReflexContainer className="max-w-full" orientation="vertical">
-      <ReflexElement className="flex h-full flex-col" minSize={200}>
+      <ReflexElement className="flex h-full flex-col" minSize={300}>
         <SectionHeader title="Markdown">
           <div className="flex">
             <PasteButton onClick={setInput} />
@@ -69,7 +69,7 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
           height: "98%",
         }}
       />
-      <ReflexElement className="flex h-full flex-col" minSize={200}>
+      <ReflexElement className="flex h-full flex-col" minSize={300}>
         <SectionHeader title={t.common.previewTitle}>
           <div className="flex">
             <CopyButton text={output} />
