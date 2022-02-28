@@ -1,4 +1,4 @@
-import Editor, { loader } from "@monaco-editor/react";
+import Editor, { EditorProps, loader } from "@monaco-editor/react";
 import { useTheme } from "next-themes";
 
 import { editorSettings } from "../../data/localStorageKeys";
@@ -12,6 +12,7 @@ interface CodeEditorProps {
   height: string;
   value: string;
   language: LANGUAGE;
+  onMount?: EditorProps["onMount"];
   onChange?: (value: string | undefined) => void;
   readOnly?: boolean;
 }
@@ -20,6 +21,7 @@ const CodeEditor: React.VFC<CodeEditorProps> = ({
   height,
   value,
   language,
+  onMount,
   onChange,
   readOnly,
 }) => {
@@ -49,6 +51,7 @@ const CodeEditor: React.VFC<CodeEditorProps> = ({
       defaultLanguage={language}
       defaultValue=""
       value={value}
+      onMount={onMount}
       onChange={onChange}
       language={language}
       theme={theme === "dark" ? "vs-dark" : "light"}
