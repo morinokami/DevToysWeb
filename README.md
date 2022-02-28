@@ -39,7 +39,7 @@ Therefore, I'm currently planning to follow the original project in the future d
   * 🚧 Inspector & Case Converter
   * 🚧 Regex Tester
   * 🚧 Text Comparer
-  * 🚧 Markdown Preview
+  * ✅ Markdown Preview
 * Graphic
   * 🚧 Color Blindness Simulator
   * 🚧 PNG / JPEG Compressor
