@@ -13,7 +13,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       <h2 className="text-sm">
         <label htmlFor={label}>{title}</label>
       </h2>
-      {children}
+      <div className="flex">{children}</div>
     </div>
   );
 };

@@ -154,6 +154,14 @@ export const t = {
       { name: "Light", value: optionValues.settings.theme.light },
       { name: "Dark", value: optionValues.settings.theme.dark },
     ],
+    textEditorTitle: "Text editor",
+    wrapWordTitle: "Wrap word",
+    lineNumbersTitle: "Line numbers",
+    lineNumbersDesc: "Display line numbers in the text editor",
+    highlightCurrentLineTitle: "Highlight current line",
+    highlightCurrentLineDesc:
+      "Change the background color of the current line so it's more visible",
+    renderWhiteSpaceTitle: "Render white space",
   },
   sql: {
     title: "SQL Formatter",

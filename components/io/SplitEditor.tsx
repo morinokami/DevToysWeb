@@ -41,13 +41,11 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
     >
       <ReflexElement className="flex h-full flex-col" minSize={300}>
         <SectionHeader title={t.common.inputTitle}>
-          <div className="flex">
-            <PasteButton onClick={setInput} />
-            <Spacer x={6} />
-            <FileInputButton onFileRead={setInput} />
-            <Spacer x={6} />
-            <ClearButton onClick={() => setInput("")} />
-          </div>
+          <PasteButton onClick={setInput} />
+          <Spacer x={6} />
+          <FileInputButton onFileRead={setInput} />
+          <Spacer x={6} />
+          <ClearButton onClick={() => setInput("")} />
         </SectionHeader>
         <VSpacerS />
         <div className="grow">

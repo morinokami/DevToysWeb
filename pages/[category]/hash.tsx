@@ -59,15 +59,13 @@ const Hash: NextPage = () => {
       <VSpacerL />
       <SectionMain>
         <SectionHeader title={t.common.inputTitle} label="input">
-          <div className="flex">
-            <PasteButton onClick={setInput} />
-            <Spacer x={6} />
-            <FileInputButton onFileRead={setInput} />
-            <Spacer x={6} />
-            <ClearButton onClick={() => setInput("")} />
-          </div>
+          <PasteButton onClick={setInput} />
+          <Spacer x={6} />
+          <FileInputButton onFileRead={setInput} />
+          <Spacer x={6} />
+          <ClearButton onClick={() => setInput("")} />
         </SectionHeader>
-        <TextArea id="input" value={input} onChange={setInput} rows={5} />
+        <TextArea id="input" value={input} onChange={setInput} />
       </SectionMain>
 
       <VSpacerM />
