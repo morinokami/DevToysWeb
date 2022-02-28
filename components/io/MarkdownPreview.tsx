@@ -53,7 +53,7 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
             onMount={(editor) => {
               if (editor) {
                 // TODO: better way to do this?
-                setEditorHeight(editor.getContentHeight() + 14);
+                setEditorHeight(editor.getContentHeight() + 15);
               }
             }}
             onChange={(value) => setInput(value ?? "")}
@@ -77,10 +77,10 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
         </SectionHeader>
         <VSpacerS />
         <div
-          className={`markdown-body-${theme} p-2`}
+          className={`markdown-body-${theme} border border-light-40 p-2 dark:border-none`}
           style={{
             // TODO: better way to do this?
-            height: editorHeight - 14,
+            height: editorHeight - 13,
             overflow: "auto",
           }}
           dangerouslySetInnerHTML={{ __html: output }}
