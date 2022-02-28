@@ -115,8 +115,8 @@ export const t = {
   },
   markdownPreview: {
     title: "Markdown プレビュー",
-    themeTitle: "Theme",
-    themeSubtitle: "Select which theme to use to preview the Markdown",
+    themeTitle: "テーマ",
+    themeSubtitle: "Markdown のプレビューに使用するテーマを選択する",
     themeOptions: [
       { name: "ライト", value: "light" },
       { name: "ダーク", value: "dark" },

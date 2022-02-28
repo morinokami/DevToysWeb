@@ -158,16 +158,16 @@ export const nav: Nav = [
     ],
   },
   {
-    title: "Text",
+    title: "テキスト",
     href: `${localePath}/text`,
     icon: IconText,
     items: [
       {
-        title: "Markdown Preview",
-        longTitle: "Markdown Preview",
+        title: "Markdown プレビュー",
+        longTitle: "Markdown プレビュー",
         href: `${localePath}/text/markdown-preview`,
         icon: IconMarkdownPreview,
-        desc: "Preview a Markdown document with a GitHub-like render",
+        desc: "GitHub ライクなテーマで Markdown をプレビューする",
       },
     ],
   },
