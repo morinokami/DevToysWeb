@@ -12,6 +12,7 @@ export const t = {
     pasteTitle: "貼り付け",
     clearTitle: "クリア",
     openFiletitle: "ファイルを開く",
+    previewTitle: "プレビュー",
     notFoundTitle: "見つかりませんでした",
     notFoundDesc: "あなたが探しているページは存在しません。",
     orText: "または",
@@ -110,6 +111,15 @@ export const t = {
       { name: "単語", value: optionValues.loremIpsum.type.words },
       { name: "文", value: optionValues.loremIpsum.type.sentences },
       { name: "段落", value: optionValues.loremIpsum.type.paragraphs },
+    ],
+  },
+  markdownPreview: {
+    title: "Markdown プレビュー",
+    themeTitle: "テーマ",
+    themeSubtitle: "Markdown のプレビューに使用するテーマを選択する",
+    themeOptions: [
+      { name: "ライト", value: "light" },
+      { name: "ダーク", value: "dark" },
     ],
   },
   numberBase: {

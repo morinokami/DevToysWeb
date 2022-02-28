@@ -12,6 +12,7 @@ export const t = {
     pasteTitle: "Paste",
     clearTitle: "Clear",
     openFiletitle: "Load a file",
+    previewTitle: "Preview",
     notFoundTitle: "Not found",
     notFoundDesc: "The page you are looking for does not exist.",
     orText: "or",
@@ -111,6 +112,15 @@ export const t = {
       { name: "Words", value: optionValues.loremIpsum.type.words },
       { name: "Sentences", value: optionValues.loremIpsum.type.sentences },
       { name: "Paragraphs", value: optionValues.loremIpsum.type.paragraphs },
+    ],
+  },
+  markdownPreview: {
+    title: "Markdown Preview",
+    themeTitle: "Theme",
+    themeSubtitle: "Select which theme to use to preview the Markdown",
+    themeOptions: [
+      { name: "Light", value: "light" },
+      { name: "Dark", value: "dark" },
     ],
   },
   numberBase: {

@@ -29,6 +29,7 @@ import {
   VscHome,
   VscJson,
   VscListOrdered,
+  VscMarkdown,
   VscNewFile,
   VscNote,
   VscPaintcan,
@@ -124,3 +125,8 @@ export const IconHash = generateIcon(MdFingerprint);
 export const IconUuid = generateIcon(MdWater);
 export const IconLoremIpsum = generateIcon(VscTextSize);
 export const IconChecksum = generateIcon(VscNewFile);
+
+// Text
+
+export const IconText = generateIcon(VscCaseSensitive);
+export const IconMarkdownPreview = generateIcon(VscMarkdown);
