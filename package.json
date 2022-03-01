@@ -19,6 +19,7 @@
     "@headlessui/react": "^1.4.3",
     "@monaco-editor/react": "^4.3.1",
     "byte-base64": "^1.1.0",
+    "change-case": "^4.1.2",
     "crypto-js": "^4.1.1",
     "html-escaper": "^3.0.3",
     "jwt-decode": "^3.1.2",

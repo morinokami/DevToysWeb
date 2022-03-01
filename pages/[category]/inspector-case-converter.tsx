@@ -1,3 +1,4 @@
+import * as changeCase from "change-case";
 import { NextPage } from "next";
 import { useState } from "react";
 
@@ -12,6 +13,9 @@ const InspectorCaseConverter: NextPage = () => {
   const { t } = useLocale();
 
   const [input, setInput] = useState("");
+  // const [mode, setMode]
+
+  const output = changeCase.camelCase(input);
 
   return (
     <MainLayout title={t.inspectorCaseConverter.title}>
@@ -31,7 +35,7 @@ const InspectorCaseConverter: NextPage = () => {
           <Spacer x={6} />
           <ClearButton onClick={() => setInput("")} />
         </SectionHeader>
-        <TextArea id="input" value={input} onChange={setInput} />
+        <TextArea id="input" value={output} onChange={setInput} />
       </SectionMain>
     </MainLayout>
   );
