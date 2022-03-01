@@ -10,6 +10,7 @@ import {
   MdPrecisionManufacturing,
   MdShortText,
   MdSpaceBar,
+  MdTextFields,
   MdTransform,
   MdWater,
 } from "react-icons/md";
@@ -33,6 +34,7 @@ import {
   VscNewFile,
   VscNote,
   VscPaintcan,
+  VscRegex,
   VscSearch,
   VscSettings,
   VscSettingsGear,
@@ -129,4 +131,6 @@ export const IconChecksum = generateIcon(VscNewFile);
 // Text
 
 export const IconText = generateIcon(VscCaseSensitive);
+export const IconInspectorCaseConverter = generateIcon(MdTextFields);
+export const IconRegexTester = generateIcon(VscRegex);
 export const IconMarkdownPreview = generateIcon(VscMarkdown);

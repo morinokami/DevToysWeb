@@ -9,6 +9,7 @@ import {
   IconGZip,
   IconHash,
   IconHtml,
+  IconInspectorCaseConverter,
   IconJson,
   IconJWT,
   IconLoremIpsum,
@@ -162,6 +163,13 @@ export const nav: Nav = [
     href: `${localePath}/text`,
     icon: IconText,
     items: [
+      {
+        title: "Inspector & Case Converter",
+        longTitle: "Text Case Converter and Inspector",
+        href: `${localePath}/text/inspector-case-converter`,
+        icon: IconInspectorCaseConverter,
+        desc: "Analyze text and convert it to a different case",
+      },
       {
         title: "Markdown プレビュー",
         longTitle: "Markdown プレビュー",

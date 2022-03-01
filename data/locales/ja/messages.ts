@@ -65,6 +65,11 @@ export const t = {
     encodeText: "エンコード",
     decodeText: "デコード",
   },
+  inspectorCaseConverter: {
+    title: "Text Case Converter and Inspector",
+    convertTitle: "Convert",
+    stringTitle: "String",
+  },
   json: {
     title: "JSON フォーマッタ",
     indentTitle: "インデント",

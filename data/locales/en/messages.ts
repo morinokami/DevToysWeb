@@ -66,6 +66,11 @@ export const t = {
     encodeText: "Encode",
     decodeText: "Decode",
   },
+  inspectorCaseConverter: {
+    title: "Text Case Converter and Inspector",
+    convertTitle: "Convert",
+    stringTitle: "String",
+  },
   json: {
     title: "JSON Formatter",
     indentTitle: "Indentation",
