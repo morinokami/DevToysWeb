@@ -1,13 +1,18 @@
 interface TextButtonProps {
   text: string;
   onClick: () => void;
+  className?: string;
 }
 
-const TextButton: React.VFC<TextButtonProps> = ({ text, onClick }) => {
+const TextButton: React.VFC<TextButtonProps> = ({
+  text,
+  onClick,
+  className = "rounded border border-light-40 bg-light-20 hover:bg-light-10 dark:border-none dark:bg-dark-30 hover:dark:bg-dark-20",
+}) => {
   return (
     // TODO: Update color
     <button
-      className="rounded bg-blue-30 py-2 px-3 text-white hover:bg-blue-20 dark:text-black"
+      className={`rounded py-2 px-3 ${className ?? ""}`}
       onClick={onClick}
     >
       <div className="flex items-center">

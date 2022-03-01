@@ -68,6 +68,9 @@ export const t = {
   inspectorCaseConverter: {
     title: "Text Case Converter and Inspector",
     convertTitle: "Convert",
+    originalTextTitle: "Original text",
+    sentenceCaseTitle: "Sentence case",
+    lowerCaseTitle: "lower case",
     stringTitle: "String",
   },
   json: {

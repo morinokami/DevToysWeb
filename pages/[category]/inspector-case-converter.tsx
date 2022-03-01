@@ -2,7 +2,7 @@ import * as changeCase from "change-case";
 import { NextPage } from "next";
 import { useState } from "react";
 
-import { ClearButton, PasteButton } from "../../components/button";
+import { ClearButton, PasteButton, TextButton } from "../../components/button";
 import { FileInputButton, TextArea } from "../../components/io";
 import { SectionHeader, SectionMain } from "../../components/section";
 import Spacer, { VSpacerM } from "../../components/Spacer";
@@ -13,29 +13,81 @@ const InspectorCaseConverter: NextPage = () => {
   const { t } = useLocale();
 
   const [input, setInput] = useState("");
-  // const [mode, setMode]
+  const [mode, setMode] = useState("original");
 
-  const output = changeCase.camelCase(input);
+  let output = "";
+  switch (mode) {
+    case "sentence-case":
+      output = changeCase.sentenceCase(input);
+      break;
+    case "lower-case":
+      output = changeCase.capitalCase(input);
+      break;
+    default:
+      output = input;
+      break;
+  }
+
+  const characters = output.split("").length;
+  const words = output.split(" ").length;
+  const lines = output.split("\n").length;
+  const sentences = output.split(/[.!?]/).length;
+  const paragraphs = output.split("\n\n").length;
+  const bytes = new TextEncoder().encode(output).length;
 
   return (
     <MainLayout title={t.inspectorCaseConverter.title}>
       <SectionMain>
         <SectionHeader title={t.inspectorCaseConverter.convertTitle} />
+        <div className="flex">
+          <TextButton
+            text={t.inspectorCaseConverter.originalTextTitle}
+            onClick={() => setMode("original")}
+          />
+          <Spacer x={4} />
+          <TextButton
+            text={t.inspectorCaseConverter.sentenceCaseTitle}
+            onClick={() => setMode("sentence-case")}
+          />
+          <Spacer x={4} />
+          <TextButton
+            text={t.inspectorCaseConverter.lowerCaseTitle}
+            onClick={() => setMode("lower-case")}
+          />
+        </div>
       </SectionMain>
 
       <VSpacerM />
-      <SectionMain className="flex grow flex-col">
-        <SectionHeader
-          title={t.inspectorCaseConverter.stringTitle}
-          label="string"
-        >
-          <PasteButton onClick={setInput} />
-          <Spacer x={6} />
-          <FileInputButton onFileRead={setInput} />
-          <Spacer x={6} />
-          <ClearButton onClick={() => setInput("")} />
-        </SectionHeader>
-        <TextArea id="input" value={output} onChange={setInput} />
+      <SectionMain className="flex grow">
+        <SectionMain className="flex grow flex-col">
+          <SectionHeader
+            title={t.inspectorCaseConverter.stringTitle}
+            label="string"
+          >
+            <PasteButton onClick={setInput} />
+            <Spacer x={6} />
+            <FileInputButton onFileRead={setInput} />
+            <Spacer x={6} />
+            <ClearButton onClick={() => setInput("")} />
+          </SectionHeader>
+          <TextArea
+            id="input"
+            value={output}
+            onChange={(input) => {
+              setMode("original");
+              setInput(input);
+            }}
+          />
+        </SectionMain>
+        <Spacer x={10} />
+        <div className="w-64">
+          <div>Characters: {characters}</div>
+          <div>Words: {words}</div>
+          <div>Lines: {lines}</div>
+          <div>Sentences: {sentences}</div>
+          <div>Paragraphs: {paragraphs}</div>
+          <div>Bytes: {bytes}</div>
+        </div>
       </SectionMain>
     </MainLayout>
   );
