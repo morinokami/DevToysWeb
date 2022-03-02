@@ -80,13 +80,68 @@ const InspectorCaseConverter: NextPage = () => {
           />
         </SectionMain>
         <Spacer x={10} />
-        <div className="w-64">
-          <div>Characters: {characters}</div>
-          <div>Words: {words}</div>
-          <div>Lines: {lines}</div>
-          <div>Sentences: {sentences}</div>
-          <div>Paragraphs: {paragraphs}</div>
-          <div>Bytes: {bytes}</div>
+        <div className="flex w-64 flex-col">
+          <VSpacerM />
+          <SectionHeader title={t.inspectorCaseConverter.selectionTitle} />
+          <table className="w-full text-sm">
+            <tbody>
+              <tr>
+                <td>{t.inspectorCaseConverter.lineTitle}</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>{t.inspectorCaseConverter.columnTitle}</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>{t.inspectorCaseConverter.positionTitle}</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <VSpacerM />
+          <SectionHeader title={t.inspectorCaseConverter.statisticsTitle} />
+          <table className="w-full text-sm">
+            <tbody>
+              <tr>
+                <td>{t.inspectorCaseConverter.charactersTitle}</td>
+                <td>{characters}</td>
+              </tr>
+              <tr>
+                <td>{t.inspectorCaseConverter.wordsTitle}</td>
+                <td>{words}</td>
+              </tr>
+              <tr>
+                <td>{t.inspectorCaseConverter.linesTitle}</td>
+                <td>{lines}</td>
+              </tr>
+              <tr>
+                <td>{t.inspectorCaseConverter.sentencesTitle}</td>
+                <td>{sentences}</td>
+              </tr>
+              <tr>
+                <td>{t.inspectorCaseConverter.paragraphsTitle}</td>
+                <td>{paragraphs}</td>
+              </tr>
+              <tr>
+                <td>{t.inspectorCaseConverter.bytesTitle}</td>
+                <td>{bytes}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <VSpacerM />
+          <SectionHeader
+            title={t.inspectorCaseConverter.wordDistributionTitle}
+          />
+          <TextArea value="hoge" />
+
+          <VSpacerM />
+          <SectionHeader
+            title={t.inspectorCaseConverter.characterDistributionTitle}
+          />
+          <TextArea value="hoge" />
         </div>
       </SectionMain>
     </MainLayout>

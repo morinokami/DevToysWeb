@@ -164,11 +164,11 @@ export const nav: Nav = [
     icon: IconText,
     items: [
       {
-        title: "Inspector & Case Converter",
-        longTitle: "Text Case Converter and Inspector",
+        title: "検査とケース変換",
+        longTitle: "テキストのケース変換と検査",
         href: `${localePath}/text/inspector-case-converter`,
         icon: IconInspectorCaseConverter,
-        desc: "Analyze text and convert it to a different case",
+        desc: "テキストを分析し異なるケースへと変換する",
       },
       {
         title: "Markdown プレビュー",
