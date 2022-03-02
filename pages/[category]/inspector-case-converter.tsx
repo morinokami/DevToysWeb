@@ -9,18 +9,20 @@ import Spacer, { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
+type Case = "original" | "sentence" | "lower";
+
 const InspectorCaseConverter: NextPage = () => {
   const { t } = useLocale();
 
   const [input, setInput] = useState("");
-  const [mode, setMode] = useState("original");
+  const [mode, setMode] = useState<Case>("original");
 
   let output = "";
   switch (mode) {
-    case "sentence-case":
+    case "sentence":
       output = changeCase.sentenceCase(input);
       break;
-    case "lower-case":
+    case "lower":
       output = changeCase.capitalCase(input);
       break;
     default:
@@ -47,12 +49,12 @@ const InspectorCaseConverter: NextPage = () => {
           <Spacer x={4} />
           <TextButton
             text={t.inspectorCaseConverter.sentenceCaseTitle}
-            onClick={() => setMode("sentence-case")}
+            onClick={() => setMode("sentence")}
           />
           <Spacer x={4} />
           <TextButton
             text={t.inspectorCaseConverter.lowerCaseTitle}
-            onClick={() => setMode("lower-case")}
+            onClick={() => setMode("lower")}
           />
         </div>
       </SectionMain>
