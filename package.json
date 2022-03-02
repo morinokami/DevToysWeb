@@ -24,6 +24,7 @@
     "html-escaper": "^3.0.3",
     "jwt-decode": "^3.1.2",
     "lorem-ipsum": "^2.0.4",
+    "lower-case": "^2.0.2",
     "marked": "^4.0.12",
     "monaco-editor": "^0.32.1",
     "next": "12.1.0",
@@ -36,6 +37,8 @@
     "react-icons": "^4.3.1",
     "react-reflex": "^4.0.6",
     "sql-formatter": "^4.0.2",
+    "title-case": "^3.0.3",
+    "upper-case": "^2.0.2",
     "uuid": "^8.3.2",
     "xml-formatter": "^2.6.1"
   },

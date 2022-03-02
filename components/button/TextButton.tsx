@@ -11,10 +11,7 @@ const TextButton: React.VFC<TextButtonProps> = ({
 }) => {
   return (
     // TODO: Update color
-    <button
-      className={`rounded py-2 px-3 ${className ?? ""}`}
-      onClick={onClick}
-    >
+    <button className={` py-2 px-3 ${className}`} onClick={onClick}>
       <div className="flex items-center">
         <div className="translate-y-px text-sm">{text}</div>
       </div>

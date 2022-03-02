@@ -72,6 +72,7 @@ export const t = {
     originalTextTitle: "Original text",
     sentenceCaseTitle: "Sentence case",
     lowerCaseTitle: "lower case",
+    upperCaseTitle: "UPPER CASE",
     titleCaseTitle: "Title Case",
     camelCaseTitle: "camelCase",
     pascalCaseTitle: "PascalCase",

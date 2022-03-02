@@ -1,6 +1,9 @@
 import * as changeCase from "change-case";
+import { lowerCase } from "lower-case";
 import { NextPage } from "next";
 import { useState } from "react";
+import { titleCase } from "title-case";
+import { upperCase } from "upper-case";
 
 import { ClearButton, PasteButton, TextButton } from "../../components/button";
 import { FileInputButton, TextArea } from "../../components/io";
@@ -9,7 +12,34 @@ import Spacer, { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
-type Case = "original" | "sentence" | "lower";
+type Case =
+  | "original"
+  | "sentence"
+  | "lower"
+  | "upper"
+  | "title"
+  | "camel"
+  | "pascal"
+  | "snake"
+  | "constant"
+  | "kebab"
+  // TODO: COBOL
+  | "train";
+// TODO: Alternate
+// TODO: Inverse
+
+const CaseButton: React.FC<{ text: string; onClick: () => void }> = ({
+  text,
+  onClick,
+}) => {
+  return (
+    <TextButton
+      text={text}
+      onClick={onClick}
+      className="mr-1 mb-1 rounded border border-light-40 bg-light-20 hover:bg-light-10 dark:border-none dark:bg-dark-30 hover:dark:bg-dark-20"
+    />
+  );
+};
 
 const InspectorCaseConverter: NextPage = () => {
   const { t } = useLocale();
@@ -23,7 +53,31 @@ const InspectorCaseConverter: NextPage = () => {
       output = changeCase.sentenceCase(input);
       break;
     case "lower":
-      output = changeCase.capitalCase(input);
+      output = lowerCase(input);
+      break;
+    case "upper":
+      output = upperCase(input);
+      break;
+    case "title":
+      output = titleCase(input);
+      break;
+    case "camel":
+      output = changeCase.camelCase(input);
+      break;
+    case "pascal":
+      output = changeCase.pascalCase(input);
+      break;
+    case "snake":
+      output = changeCase.snakeCase(input);
+      break;
+    case "constant":
+      output = changeCase.constantCase(input);
+      break;
+    case "kebab":
+      output = changeCase.paramCase(input);
+      break;
+    case "train":
+      output = changeCase.headerCase(input);
       break;
     default:
       output = input;
@@ -41,20 +95,50 @@ const InspectorCaseConverter: NextPage = () => {
     <MainLayout title={t.inspectorCaseConverter.title}>
       <SectionMain>
         <SectionHeader title={t.inspectorCaseConverter.convertTitle} />
-        <div className="flex">
-          <TextButton
+        <div className="flex flex-wrap">
+          <CaseButton
             text={t.inspectorCaseConverter.originalTextTitle}
             onClick={() => setMode("original")}
           />
-          <Spacer x={4} />
-          <TextButton
+          <CaseButton
             text={t.inspectorCaseConverter.sentenceCaseTitle}
             onClick={() => setMode("sentence")}
           />
-          <Spacer x={4} />
-          <TextButton
+          <CaseButton
             text={t.inspectorCaseConverter.lowerCaseTitle}
             onClick={() => setMode("lower")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.upperCaseTitle}
+            onClick={() => setMode("upper")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.titleCaseTitle}
+            onClick={() => setMode("title")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.camelCaseTitle}
+            onClick={() => setMode("camel")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.pascalCaseTitle}
+            onClick={() => setMode("pascal")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.snakeCaseTitle}
+            onClick={() => setMode("snake")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.constantCaseTitle}
+            onClick={() => setMode("constant")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.kebabCaseTitle}
+            onClick={() => setMode("kebab")}
+          />
+          <CaseButton
+            text={t.inspectorCaseConverter.trainCaseTitle}
+            onClick={() => setMode("train")}
           />
         </div>
       </SectionMain>
