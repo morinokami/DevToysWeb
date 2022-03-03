@@ -33,6 +33,7 @@ import {
   VscNewFile,
   VscNote,
   VscPaintcan,
+  VscRegex,
   VscSearch,
   VscSettings,
   VscSettingsGear,
@@ -129,4 +130,5 @@ export const IconChecksum = generateIcon(VscNewFile);
 // Text
 
 export const IconText = generateIcon(VscCaseSensitive);
+export const IconRegexTester = generateIcon(VscRegex);
 export const IconMarkdownPreview = generateIcon(VscMarkdown);

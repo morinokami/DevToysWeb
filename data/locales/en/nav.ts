@@ -14,6 +14,7 @@ import {
   IconLoremIpsum,
   IconMarkdownPreview,
   IconNumberBase,
+  IconRegexTester,
   IconSettings,
   IconSql,
   IconText,
@@ -162,6 +163,13 @@ export const nav: Nav = [
     href: `${localePath}/text`,
     icon: IconText,
     items: [
+      {
+        title: "Regex Tester",
+        longTitle: "Regex Tester",
+        href: `${localePath}/text/regex-tester`,
+        icon: IconRegexTester,
+        desc: "Validate and test regular expressions",
+      },
       {
         title: "Markdown Preview",
         longTitle: "Markdown Preview",

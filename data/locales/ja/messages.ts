@@ -139,6 +139,11 @@ export const t = {
       { name: "16 進数", value: optionValues.numberBase.base.hex },
     ],
   },
+  regexTester: {
+    title: "Regex Tester",
+    regularExpressionTitle: "正規表現",
+    textTitle: "テキスト",
+  },
   search: {
     resultTitle: "「{{0}}」の検索結果",
     noResultTitle: "見つかりませんでした",

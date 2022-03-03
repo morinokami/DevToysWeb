@@ -140,6 +140,11 @@ export const t = {
       { name: "Hexadecimal", value: optionValues.numberBase.base.hex },
     ],
   },
+  regexTester: {
+    title: "Regex Tester",
+    regularExpressionTitle: "Regular expression",
+    textTitle: "Text",
+  },
   search: {
     resultTitle: 'Search results for "{{0}}"',
     noResultTitle: "No results found",
