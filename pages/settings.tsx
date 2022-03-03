@@ -2,11 +2,20 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 
-import { Select } from "../components/io";
-import { Configuration, SectionMain } from "../components/section";
-import { VSpacerS } from "../components/Spacer";
-import { IconI18n, IconTheme } from "../data/icon";
+import { Select, Toggle } from "../components/io";
+import { Configuration, SectionConfiguration } from "../components/section";
+import { VSpacerM } from "../components/Spacer";
+import {
+  IconHightlight,
+  IconI18n,
+  IconIndentation,
+  IconLineNumber,
+  IconTheme,
+  IconWrap,
+} from "../data/icon";
+import { editorSettings } from "../data/localStorageKeys";
 import { useLocale } from "../hooks/useLocale";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import MainLayout from "../layouts/MainLayout";
 
 const languageOptions = [
@@ -23,9 +32,26 @@ const Settings: NextPage = () => {
   const language = languageOptions.find((l) => l.value === locale);
   const currentTheme = themeOptions.find((t) => t.value === theme);
 
+  const [wrapWord, setWrapWord] = useLocalStorage(
+    editorSettings.wrapWord.key,
+    editorSettings.wrapWord.default
+  );
+  const [lineNumber, setLineNumber] = useLocalStorage(
+    editorSettings.lineNumber.key,
+    editorSettings.lineNumber.default
+  );
+  const [highlight, setHighlight] = useLocalStorage(
+    editorSettings.highlightCurrentLine.key,
+    editorSettings.highlightCurrentLine.default
+  );
+  const [renderWhiteSpace, setRenderWhiteSpace] = useLocalStorage(
+    editorSettings.renderWhiteSpace.key,
+    editorSettings.renderWhiteSpace.default
+  );
+
   return (
     <MainLayout title={t.settings.title}>
-      <SectionMain>
+      <SectionConfiguration>
         <Configuration icon={IconI18n} title={t.settings.languageTitle}>
           <div className="w-36">
             {language && (
@@ -39,15 +65,12 @@ const Settings: NextPage = () => {
             )}
           </div>
         </Configuration>
-      </SectionMain>
-      <VSpacerS />
-      <SectionMain>
         <Configuration
           icon={IconTheme}
           title={t.settings.themeTitle}
           desc={t.settings.themeSubtitle}
         >
-          <div className="w-36">
+          <div className="w-24">
             <Select
               options={themeOptions}
               value={currentTheme || themeOptions[0]}
@@ -57,7 +80,50 @@ const Settings: NextPage = () => {
             />
           </div>
         </Configuration>
-      </SectionMain>
+      </SectionConfiguration>
+
+      <VSpacerM />
+      <SectionConfiguration title={t.settings.textEditorTitle}>
+        <Configuration icon={IconWrap} title={t.settings.wrapWordTitle}>
+          <Toggle
+            on={wrapWord}
+            onChange={setWrapWord}
+            desc={t.settings.wrapWordTitle}
+          />
+        </Configuration>
+        <Configuration
+          icon={IconLineNumber}
+          title={t.settings.lineNumbersTitle}
+          desc={t.settings.lineNumbersDesc}
+        >
+          <Toggle
+            on={lineNumber}
+            onChange={setLineNumber}
+            desc={t.settings.lineNumbersDesc}
+          />
+        </Configuration>
+        <Configuration
+          icon={IconHightlight}
+          title={t.settings.highlightCurrentLineTitle}
+          desc={t.settings.highlightCurrentLineDesc}
+        >
+          <Toggle
+            on={highlight}
+            onChange={setHighlight}
+            desc={t.settings.highlightCurrentLineDesc}
+          />
+        </Configuration>
+        <Configuration
+          icon={IconIndentation}
+          title={t.settings.renderWhiteSpaceTitle}
+        >
+          <Toggle
+            on={renderWhiteSpace}
+            onChange={setRenderWhiteSpace}
+            desc={t.settings.renderWhiteSpaceTitle}
+          />
+        </Configuration>
+      </SectionConfiguration>
     </MainLayout>
   );
 };

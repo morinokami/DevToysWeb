@@ -1,5 +1,7 @@
 # DevToysWeb
 
+![DevToysWeb](./screenshot.png)
+
 This is yet another version of [DevToys](https://github.com/veler/DevToys). It is built with [Next.js](https://nextjs.org/) and you can access it from the following URL:
 
 https://devtoys.vercel.app
@@ -12,8 +14,6 @@ It is being developed with the following goals in mind:
   * Support for dark mode and i18n is also important.
 
 Therefore, I'm currently planning to follow the original project in the future development.
-
-## Preview
 
 ## Development Status
 
@@ -39,13 +39,13 @@ Therefore, I'm currently planning to follow the original project in the future d
   * 🚧 Inspector & Case Converter
   * 🚧 Regex Tester
   * 🚧 Text Comparer
-  * 🚧 Markdown Preview
+  * ✅ Markdown Preview
 * Graphic
   * 🚧 Color Blindness Simulator
   * 🚧 PNG / JPEG Compressor
   * 🚧 Image Converter
 
-## Translation Process
+## Translation
 
 1. Create a directory for the new locale in `data/locales` and copy all files in `data/locales/en` to it.
 2. Update the value of the `localePath` variable in `nav.ts` and translate the strings in `messages.ts` and `nav.ts`.

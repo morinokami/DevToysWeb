@@ -42,21 +42,19 @@ const Html: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerL />
-      <SectionMain>
+      <SectionMain className="flex grow flex-col">
         <SectionHeader title={t.common.inputTitle} label="input">
-          <div className="flex">
-            <PasteButton onClick={setInput} />
-            <Spacer x={6} />
-            <FileInputButton onFileRead={setInput} accept=".htm,.html" />
-            <Spacer x={6} />
-            <ClearButton onClick={() => setInput("")} />
-          </div>
+          <PasteButton onClick={setInput} />
+          <Spacer x={6} />
+          <FileInputButton onFileRead={setInput} accept=".htm,.html" />
+          <Spacer x={6} />
+          <ClearButton onClick={() => setInput("")} />
         </SectionHeader>
         <TextArea id="input" value={input} onChange={setInput} />
       </SectionMain>
 
       <VSpacerM />
-      <SectionMain>
+      <SectionMain className="flex grow flex-col">
         <SectionHeader title={t.common.outputTitle} label="output">
           <CopyButton text={output} />
         </SectionHeader>

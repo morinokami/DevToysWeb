@@ -12,6 +12,7 @@ export const t = {
     pasteTitle: "Paste",
     clearTitle: "Clear",
     openFiletitle: "Load a file",
+    previewTitle: "Preview",
     notFoundTitle: "Not found",
     notFoundDesc: "The page you are looking for does not exist.",
     orText: "or",
@@ -113,6 +114,15 @@ export const t = {
       { name: "Paragraphs", value: optionValues.loremIpsum.type.paragraphs },
     ],
   },
+  markdownPreview: {
+    title: "Markdown Preview",
+    themeTitle: "Theme",
+    themeSubtitle: "Select which theme to use to preview the Markdown",
+    themeOptions: [
+      { name: "Light", value: "light" },
+      { name: "Dark", value: "dark" },
+    ],
+  },
   numberBase: {
     title: "Number Base Converter",
     formatNumberTitle: "Format number",
@@ -144,6 +154,14 @@ export const t = {
       { name: "Light", value: optionValues.settings.theme.light },
       { name: "Dark", value: optionValues.settings.theme.dark },
     ],
+    textEditorTitle: "Text editor",
+    wrapWordTitle: "Wrap word",
+    lineNumbersTitle: "Line numbers",
+    lineNumbersDesc: "Display line numbers in the text editor",
+    highlightCurrentLineTitle: "Highlight current line",
+    highlightCurrentLineDesc:
+      "Change the background color of the current line so it's more visible",
+    renderWhiteSpaceTitle: "Render white space",
   },
   sql: {
     title: "SQL Formatter",

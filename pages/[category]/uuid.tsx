@@ -85,13 +85,11 @@ const Uuid: NextPage = () => {
       </SectionMain>
 
       <VSpacerL />
-      <SectionMain>
+      <SectionMain className="flex grow flex-col">
         <SectionHeader title={t.common.outputTitle} label="output">
-          <div className="flex">
-            <CopyButton text={output} />
-            <Spacer x={6} />
-            <ClearButton onClick={() => setUuids([])} />
-          </div>
+          <CopyButton text={output} />
+          <Spacer x={6} />
+          <ClearButton onClick={() => setUuids([])} />
         </SectionHeader>
         <TextArea id="output" value={output} />
       </SectionMain>

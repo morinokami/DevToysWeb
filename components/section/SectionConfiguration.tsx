@@ -5,7 +5,7 @@ import SectionContainer from "./SectionContainer";
 import SectionHeader from "./SectionHeader";
 
 interface SectionConfigurationProps {
-  title: string;
+  title?: string;
 }
 
 const SectionConfiguration: React.FC<SectionConfigurationProps> = ({
@@ -14,7 +14,7 @@ const SectionConfiguration: React.FC<SectionConfigurationProps> = ({
 }) => {
   return (
     <SectionContainer>
-      <SectionHeader title={title} />
+      {title ? <SectionHeader title={title} /> : null}
       {React.Children.map(children, (child) => {
         return (
           <>
