@@ -1,5 +1,6 @@
 import { NextPage } from "next";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ContentEditable from "react-contenteditable";
 
 import { ClearButton, PasteButton } from "../../components/button";
 import { FileInputButton, Input } from "../../components/io";
@@ -8,13 +9,34 @@ import Spacer, { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
+const removeTags = (html: string) => {
+  html = html.replace(/<br>/g, "$br$");
+  html = html.replace(/(?:\r\n|\r|\n)/g, "$br$");
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  html = tmp.textContent || tmp.innerText;
+  html = html.replace(/\$br\$/g, "<br>");
+  return html;
+};
+
 const RegexTester: NextPage = () => {
   const { t } = useLocale();
 
   const [regex, setRegex] = useState("");
   const [input, setInput] = useState("");
 
-  const highlighted = input;
+  let regexObj: RegExp | null = null;
+  try {
+    regexObj = new RegExp(regex, "g");
+  } catch {
+    regexObj = null;
+  }
+  const highlighted =
+    regex.length > 0 && regexObj
+      ? input.replaceAll(regexObj, '<span style="color:red">$&</span>')
+      : input;
+
+  // TODO: Cursor position
 
   return (
     <MainLayout title={t.regexTester.title}>
@@ -37,8 +59,13 @@ const RegexTester: NextPage = () => {
           <Spacer x={6} />
           <ClearButton onClick={() => setInput("")} />
         </SectionHeader>
-        {/* TODO */}
-        <div contentEditable>{highlighted}</div>
+        <ContentEditable
+          className="min-h-[150px] w-full grow rounded border border-light-40 border-b-gray-400 bg-light-10 px-3 pt-[0.45rem] pb-[0.35rem] text-sm focus:border-b-blue-30 focus:outline-none dark:border-x-0 dark:border-t-0 dark:border-b-2 dark:border-gray-500 dark:bg-dark-30 focus:dark:border-blue-30 focus:dark:bg-dark-50"
+          html={highlighted}
+          onChange={(e) => {
+            setInput(removeTags(e.target.value));
+          }}
+        />
       </SectionMain>
     </MainLayout>
   );
