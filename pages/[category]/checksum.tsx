@@ -26,7 +26,7 @@ const Checksum: NextPage = () => {
   const [algorithm, setAlgorithm] = useState(hashingAlgorithmOptions[0]);
   const [output, setOutput] = useState("");
 
-  const onDrop = (files: File[]) => {
+  const handleDrop = (files: File[]) => {
     if (files.length === 1) {
       const file = files[0];
       const reader = new FileReader();
@@ -80,7 +80,7 @@ const Checksum: NextPage = () => {
       </SectionConfiguration>
 
       <VSpacerM />
-      <DragAndDrop onDrop={onDrop}>
+      <DragAndDrop onDrop={handleDrop}>
         <p>{t.checksum.dragAndDropTitle}</p>
         {/* <VSpacerS />
         <p>{t.common.orText}</p>

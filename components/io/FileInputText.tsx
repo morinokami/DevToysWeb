@@ -13,11 +13,11 @@ const FileInputText: React.VFC<FileInputTextProps> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onClick = () => {
+  const handleClick = () => {
     inputRef.current?.click();
   };
 
-  const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       onFileRead(e.target.files);
     }
@@ -29,13 +29,13 @@ const FileInputText: React.VFC<FileInputTextProps> = ({
       <input
         ref={inputRef}
         type="file"
-        onChange={onFileInputChange}
+        onChange={handleFileInputChange}
         hidden
         {...(accept ? { accept } : {})}
       />
       <div
         className="cursor-pointer rounded py-2 px-3 text-blue-30 underline hover:bg-light-30 dark:hover:bg-dark-30"
-        onClick={onClick}
+        onClick={handleClick}
       >
         {text}
       </div>
