@@ -15,6 +15,14 @@ const Document = () => {
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#FFFFFF" />
+        <meta
+          name="description"
+          content="A Swiss Army knife for developers on the web."
+        />
+        <meta
+          name="google-site-verification"
+          content="7D2gloJEMo9JwDabCmxncxI30g2DOQDVvBtdfbPn3ws"
+        />
         <link
           rel="preload"
           href="/fonts/ibm-plex-sans-var.woff2"
