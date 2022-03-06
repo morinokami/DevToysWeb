@@ -84,6 +84,12 @@ const InspectorCaseConverter: NextPage = () => {
       break;
   }
 
+  const [cursorPosition, setCursorPosition] = useState({
+    line: 0,
+    column: 0,
+    position: 0,
+  });
+
   const characters = output.split("").length;
   const words = output.split(" ").length;
   const lines = output.split("\n").length;
@@ -163,6 +169,9 @@ const InspectorCaseConverter: NextPage = () => {
               setMode("original");
               setInput(input);
             }}
+            onCursorMove={(cursorPosition) => {
+              setCursorPosition(cursorPosition);
+            }}
           />
         </SectionMain>
         <Spacer x={10} />
@@ -173,15 +182,15 @@ const InspectorCaseConverter: NextPage = () => {
             <tbody>
               <tr>
                 <td>{t.inspectorCaseConverter.lineTitle}</td>
-                <td>0</td>
+                <td className="text-right">{cursorPosition.line}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.columnTitle}</td>
-                <td>0</td>
+                <td className="text-right">{cursorPosition.column}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.positionTitle}</td>
-                <td>0</td>
+                <td className="text-right">{cursorPosition.position}</td>
               </tr>
             </tbody>
           </table>
@@ -192,27 +201,27 @@ const InspectorCaseConverter: NextPage = () => {
             <tbody>
               <tr>
                 <td>{t.inspectorCaseConverter.charactersTitle}</td>
-                <td>{characters}</td>
+                <td className="text-right">{characters}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.wordsTitle}</td>
-                <td>{words}</td>
+                <td className="text-right">{words}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.linesTitle}</td>
-                <td>{lines}</td>
+                <td className="text-right">{lines}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.sentencesTitle}</td>
-                <td>{sentences}</td>
+                <td className="text-right">{sentences}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.paragraphsTitle}</td>
-                <td>{paragraphs}</td>
+                <td className="text-right">{paragraphs}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.bytesTitle}</td>
-                <td>{bytes}</td>
+                <td className="text-right">{bytes}</td>
               </tr>
             </tbody>
           </table>
