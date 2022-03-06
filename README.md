@@ -9,7 +9,7 @@ https://devtoys.vercel.app
 It is being developed with the following goals in mind:
 
 * It should work on any OS by running on the web.
-  * At the same time, it should work in a completely offline environment as a PWA (although this has not been implemented yet).
+  * At the same time, it should work in a completely offline environment as a PWA.
 * It should have almost the same functionality and appearance as the original.
   * Support for dark mode and i18n is also important.
 

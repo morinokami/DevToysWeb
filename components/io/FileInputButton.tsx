@@ -17,11 +17,11 @@ const FileInputButton: React.VFC<FileInputButtonProps> = ({
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onClick = () => {
+  const handleClick = () => {
     inputRef.current?.click();
   };
 
-  const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.length === 1) {
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -40,14 +40,14 @@ const FileInputButton: React.VFC<FileInputButtonProps> = ({
       <input
         ref={inputRef}
         type="file"
-        onChange={onFileInputChange}
+        onChange={handleFileInputChange}
         hidden
         {...(accept ? { accept } : {})}
       />
       <Button
         icon={IconUpload}
         title={t.common.openFiletitle}
-        onClick={onClick}
+        onClick={handleClick}
       />
     </>
   );
