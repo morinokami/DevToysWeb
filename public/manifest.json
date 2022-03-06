@@ -3,8 +3,7 @@
   "short_name": "DevToysWeb",
   "description": "A Swiss Army knife for developers on the web.",
   "display": "standalone",
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#242424",
   "start_url": "/",
   "icons": [
     {

@@ -14,7 +14,16 @@ const Document = () => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#FFFFFF" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="white"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#242424"
+        />
         <meta
           name="description"
           content="A Swiss Army knife for developers on the web."
