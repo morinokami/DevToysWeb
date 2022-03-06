@@ -1,6 +1,18 @@
 # https://github.com/suren-atoyan/monaco-react/issues/12
 public/vs
 
+# https://github.com/shadowwalker/next-pwa/blob/master/.gitignore
+**/public/precache.*.*.js
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/fallback-*.js
+**/public/precache.*.*.js.map
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+**/public/fallback-*.js
+
 # dependencies
 /node_modules
 /.pnp
