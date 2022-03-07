@@ -91,10 +91,10 @@ const InspectorCaseConverter: NextPage = () => {
   });
 
   const characters = output.split("").length;
-  const words = output.split(" ").length;
+  const words = output.trim().split(/\s+/).length;
   const lines = output.split("\n").length;
-  const sentences = output.split(/[.!?]/).length;
-  const paragraphs = output.split("\n\n").length;
+  const sentences = output.split(/[.?!][\s|$]*/).length - 1;
+  const paragraphs = output.split(/\n+/).length;
   const bytes = new TextEncoder().encode(output).length;
 
   return (
