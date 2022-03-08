@@ -160,7 +160,16 @@ const InspectorCaseConverter: NextPage = () => {
             <Spacer x={6} />
             <FileInputButton onFileRead={setInput} />
             <Spacer x={6} />
-            <ClearButton onClick={() => setInput("")} />
+            <ClearButton
+              onClick={() => {
+                setInput("");
+                setCursorPosition({
+                  line: 0,
+                  column: 0,
+                  position: 0,
+                });
+              }}
+            />
           </SectionHeader>
           <TextArea
             id="input"

@@ -29,20 +29,16 @@ const TextArea: React.VFC<TextAreaProps> = ({
       }}
       onKeyUp={(e) => {
         if (onCursorMove) {
-          onCursorMove({
-            line: 0,
-            column: 0,
-            position: e.currentTarget.selectionStart,
-          });
+          onCursorMove(
+            getCursorPosition(value, e.currentTarget.selectionStart)
+          );
         }
       }}
       onMouseUp={(e) => {
         if (onCursorMove) {
-          onCursorMove({
-            line: 0,
-            column: 0,
-            position: e.currentTarget.selectionStart,
-          });
+          onCursorMove(
+            getCursorPosition(value, e.currentTarget.selectionStart)
+          );
         }
       }}
       readOnly={!onChange}
@@ -52,3 +48,23 @@ const TextArea: React.VFC<TextAreaProps> = ({
 };
 
 export default TextArea;
+
+const getCursorPosition = (text: string, selection: number): CursorPosition => {
+  const lines = text.split("\n");
+  const position = selection;
+  for (let i = 0; i < lines.length; i++) {
+    if (selection <= lines[i].length) {
+      return {
+        line: i,
+        column: selection,
+        position,
+      };
+    }
+    selection -= lines[i].length + 1;
+  }
+  return {
+    line: lines.length - 1,
+    column: lines[lines.length - 1].length,
+    position,
+  };
+};
