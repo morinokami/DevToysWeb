@@ -12,6 +12,37 @@ import Spacer, { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
 
+// TODO: Support languages other than English
+
+const countChars = (str: string) => {
+  const chars = Array.from(str);
+  const counts = chars.reduce<Record<string, number>>((acc, char) => {
+    if (/\s/.test(char)) {
+      return acc;
+    }
+    acc[char] = (acc[char] ?? 0) + 1;
+    return acc;
+  }, {});
+  return counts;
+};
+
+const countWords = (str: string) => {
+  const words = str.split(/\s+/);
+  const counts = words.reduce<Record<string, number>>((acc, word) => {
+    if (word.length === 0) {
+      return acc;
+    }
+    acc[word] = (acc[word] ?? 0) + 1;
+    return acc;
+  }, {});
+  return counts;
+};
+
+const sortObject = (obj: Record<string, number>) => {
+  const entries = Object.entries(obj);
+  return entries.sort((a, b) => b[1] - a[1]);
+};
+
 type Case =
   | "original"
   | "sentence"
@@ -96,6 +127,9 @@ const InspectorCaseConverter: NextPage = () => {
   const sentences = output.split(/[.?!][\s|$]*/).length - 1;
   const paragraphs = output.split(/\n+/).length;
   const bytes = new TextEncoder().encode(output).length;
+
+  const charCounts = sortObject(countChars(output));
+  const wordCounts = sortObject(countWords(output));
 
   return (
     <MainLayout title={t.inspectorCaseConverter.title}>
@@ -239,13 +273,21 @@ const InspectorCaseConverter: NextPage = () => {
           <SectionHeader
             title={t.inspectorCaseConverter.wordDistributionTitle}
           />
-          <TextArea value="hoge" />
+          <TextArea
+            value={wordCounts
+              .map((count) => `${count[0]}: ${count[1]}`)
+              .join("\n")}
+          />
 
           <VSpacerM />
           <SectionHeader
             title={t.inspectorCaseConverter.characterDistributionTitle}
           />
-          <TextArea value="hoge" />
+          <TextArea
+            value={charCounts
+              .map((count) => `${count[0]}: ${count[1]}`)
+              .join("\n")}
+          />
         </div>
       </SectionMain>
     </MainLayout>
