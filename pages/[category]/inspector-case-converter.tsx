@@ -90,7 +90,7 @@ const InspectorCaseConverter: NextPage = () => {
     position: 0,
   });
 
-  const characters = output.split("").length;
+  const characters = Array.from(output).length;
   const words = output.trim().split(/\s+/).length;
   const lines = output.split("\n").length;
   const sentences = output.split(/[.?!][\s|$]*/).length - 1;
