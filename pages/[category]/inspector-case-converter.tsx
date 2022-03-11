@@ -11,6 +11,7 @@ import { SectionHeader, SectionMain } from "../../components/section";
 import Spacer, { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
+import { Case, convertCase } from "../../lib/text";
 
 // TODO: Support languages other than English
 
@@ -43,22 +44,6 @@ const sortObject = (obj: Record<string, number>) => {
   return entries.sort((a, b) => b[1] - a[1]);
 };
 
-type Case =
-  | "original"
-  | "sentence"
-  | "lower"
-  | "upper"
-  | "title"
-  | "camel"
-  | "pascal"
-  | "snake"
-  | "constant"
-  | "kebab"
-  // TODO: COBOL
-  | "train";
-// TODO: Alternate
-// TODO: Inverse
-
 const CaseButton: React.FC<{ text: string; onClick: () => void }> = ({
   text,
   onClick,
@@ -78,42 +63,7 @@ const InspectorCaseConverter: NextPage = () => {
   const [input, setInput] = useState("");
   const [mode, setMode] = useState<Case>("original");
 
-  let output = "";
-  switch (mode) {
-    case "sentence":
-      output = changeCase.sentenceCase(input);
-      break;
-    case "lower":
-      output = lowerCase(input);
-      break;
-    case "upper":
-      output = upperCase(input);
-      break;
-    case "title":
-      output = titleCase(input);
-      break;
-    case "camel":
-      output = changeCase.camelCase(input);
-      break;
-    case "pascal":
-      output = changeCase.pascalCase(input);
-      break;
-    case "snake":
-      output = changeCase.snakeCase(input);
-      break;
-    case "constant":
-      output = changeCase.constantCase(input);
-      break;
-    case "kebab":
-      output = changeCase.paramCase(input);
-      break;
-    case "train":
-      output = changeCase.headerCase(input);
-      break;
-    default:
-      output = input;
-      break;
-  }
+  const output = convertCase(input, mode);
 
   const [cursorPosition, setCursorPosition] = useState({
     line: 0,
@@ -225,7 +175,7 @@ const InspectorCaseConverter: NextPage = () => {
             <tbody>
               <tr>
                 <td>{t.inspectorCaseConverter.lineTitle}</td>
-                <td className="text-right">{cursorPosition.line}</td>
+                <td className="text-right">{cursorPosition.line + 1}</td>
               </tr>
               <tr>
                 <td>{t.inspectorCaseConverter.columnTitle}</td>
