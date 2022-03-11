@@ -13,6 +13,8 @@ public/vs
 **/public/worker-*.js.map
 **/public/fallback-*.js
 
+public/sitemap.xml
+
 # dependencies
 /node_modules
 /.pnp
