@@ -50,3 +50,47 @@ export const convertCase = (value: string, caseType: Case) => {
     })
     .join("\n");
 };
+
+export const countChars = (value: string) => {
+  const chars = Array.from(value);
+  const counts = chars.reduce<Record<string, number>>((acc, char) => {
+    if (/\s/.test(char)) {
+      return acc;
+    }
+    acc[char] = (acc[char] ?? 0) + 1;
+    return acc;
+  }, {});
+
+  return counts;
+};
+
+export const countWords = (value: string) => {
+  const words = value.split(/\s+/);
+  const counts = words.reduce<Record<string, number>>((acc, word) => {
+    if (word.length === 0) {
+      return acc;
+    }
+    acc[word] = (acc[word] ?? 0) + 1;
+    return acc;
+  }, {});
+
+  return counts;
+};
+
+export const calculateStats = (value: string) => {
+  const characters = Array.from(value).length;
+  const words = value.trim().split(/\s+/).length;
+  const lines = value.split("\n").length;
+  const sentences = value.split(/[.?!][\s|$]*/).length - 1;
+  const paragraphs = value.split(/\n+/).length;
+  const bytes = new TextEncoder().encode(value).length;
+
+  return {
+    characters,
+    words,
+    lines,
+    sentences,
+    paragraphs,
+    bytes,
+  };
+};

@@ -1,9 +1,5 @@
-import * as changeCase from "change-case";
-import { lowerCase } from "lower-case";
 import { NextPage } from "next";
 import { useState } from "react";
-import { titleCase } from "title-case";
-import { upperCase } from "upper-case";
 
 import { ClearButton, PasteButton, TextButton } from "../../components/button";
 import { FileInputButton, TextArea } from "../../components/io";
@@ -11,33 +7,15 @@ import { SectionHeader, SectionMain } from "../../components/section";
 import Spacer, { VSpacerM } from "../../components/Spacer";
 import { useLocale } from "../../hooks/useLocale";
 import MainLayout from "../../layouts/MainLayout";
-import { Case, convertCase } from "../../lib/text";
+import {
+  calculateStats,
+  Case,
+  convertCase,
+  countChars,
+  countWords,
+} from "../../lib/text";
 
 // TODO: Support languages other than English
-
-const countChars = (str: string) => {
-  const chars = Array.from(str);
-  const counts = chars.reduce<Record<string, number>>((acc, char) => {
-    if (/\s/.test(char)) {
-      return acc;
-    }
-    acc[char] = (acc[char] ?? 0) + 1;
-    return acc;
-  }, {});
-  return counts;
-};
-
-const countWords = (str: string) => {
-  const words = str.split(/\s+/);
-  const counts = words.reduce<Record<string, number>>((acc, word) => {
-    if (word.length === 0) {
-      return acc;
-    }
-    acc[word] = (acc[word] ?? 0) + 1;
-    return acc;
-  }, {});
-  return counts;
-};
 
 const sortObject = (obj: Record<string, number>) => {
   const entries = Object.entries(obj);
@@ -71,12 +49,8 @@ const InspectorCaseConverter: NextPage = () => {
     position: 0,
   });
 
-  const characters = Array.from(output).length;
-  const words = output.trim().split(/\s+/).length;
-  const lines = output.split("\n").length;
-  const sentences = output.split(/[.?!][\s|$]*/).length - 1;
-  const paragraphs = output.split(/\n+/).length;
-  const bytes = new TextEncoder().encode(output).length;
+  const { characters, words, lines, sentences, paragraphs, bytes } =
+    calculateStats(output);
 
   const charCounts = sortObject(countChars(output));
   const wordCounts = sortObject(countWords(output));
