@@ -76,7 +76,11 @@ const Uuid: NextPage = () => {
       <SectionMain>
         <SectionHeader title={t.uuid.generateTitle} />
         <div className="flex items-center">
-          <TextButton text={t.uuid.generateButtonText} onClick={generate} />
+          <TextButton
+            className="bg-blue-30 text-white hover:bg-blue-20 dark:text-black"
+            text={t.uuid.generateButtonText}
+            onClick={generate}
+          />
           <Spacer x={12} />
           x
           <Spacer x={12} />

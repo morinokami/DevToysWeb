@@ -24,6 +24,7 @@ const paths = [
   "/generators/lorem-ipsum",
   "/generators/checksum",
   "/text",
+  "/text/inspector-case-converter",
   "/text/markdown-preview",
   "/settings",
 ];
