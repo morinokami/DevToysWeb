@@ -36,7 +36,7 @@ Therefore, I'm currently planning to follow the original project in the future d
   * ✅ Lorem Ipsum
   * 🚧 Checksum
 * Text
-  * 🚧 Inspector & Case Converter
+  * ✅ Inspector & Case Converter
   * 🚧 Regex Tester
   * 🚧 Text Comparer
   * ✅ Markdown Preview
