@@ -27,7 +27,7 @@
     "lorem-ipsum": "^2.0.4",
     "lower-case": "^2.0.2",
     "marked": "^4.0.12",
-    "monaco-editor": "^0.32.1",
+    "monaco-editor": "^0.33.0",
     "next": "12.1.0",
     "next-pwa": "^5.4.5",
     "next-themes": "^0.1.1",
