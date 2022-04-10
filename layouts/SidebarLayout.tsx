@@ -1,5 +1,5 @@
 import { Dialog } from "@headlessui/react";
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
 import { Nav } from "../components/nav";
 import { useLocale } from "../hooks/useLocale";
@@ -9,7 +9,7 @@ interface SidebarLayoutProps {
   setNavIsOpen: (isNavOpen: boolean) => void;
 }
 
-const SidebarLayout: React.FC<SidebarLayoutProps> = ({
+const SidebarLayout: React.FC<PropsWithChildren<SidebarLayoutProps>> = ({
   navIsOpen,
   setNavIsOpen,
   children,

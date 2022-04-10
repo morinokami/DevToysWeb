@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PropsWithChildren } from "react";
 
 interface NavRowProps {
   href: string;
@@ -6,7 +7,7 @@ interface NavRowProps {
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const NavRow: React.FC<NavRowProps> = ({
+const NavRow: React.FC<PropsWithChildren<NavRowProps>> = ({
   href,
   selected,
   onClick,

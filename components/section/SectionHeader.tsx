@@ -1,9 +1,11 @@
+import { PropsWithChildren } from "react";
+
 interface SectionHeaderProps {
   title: string;
   label?: string;
 }
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({
+const SectionHeader: React.FC<PropsWithChildren<SectionHeaderProps>> = ({
   title,
   label,
   children,

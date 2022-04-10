@@ -35,10 +35,13 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
   const sm = width && width < 768;
 
   return width ? (
+    // TODO: Remove ts-ignores
+    // @ts-ignore
     <ReflexContainer
       className="max-w-full"
       orientation={sm ? "horizontal" : "vertical"}
     >
+      {/* @ts-ignore */}
       <ReflexElement className="flex h-full flex-col" minSize={300}>
         <SectionHeader title={t.common.inputTitle}>
           <PasteButton onClick={setInput} />
@@ -67,6 +70,7 @@ const SplitEditor: React.VFC<SplitEditorProps> = ({
           }}
         />
       )}
+      {/* @ts-ignore */}
       <ReflexElement className="flex h-full flex-col" minSize={300}>
         <SectionHeader title={t.common.outputTitle}>
           <CopyButton text={output} />

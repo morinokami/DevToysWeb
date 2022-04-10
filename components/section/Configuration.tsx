@@ -1,10 +1,12 @@
+import { PropsWithChildren } from "react";
+
 interface ConfigurationProps {
   icon: React.VFC;
   title: string;
   desc?: string;
 }
 
-const Configuration: React.FC<ConfigurationProps> = ({
+const Configuration: React.FC<PropsWithChildren<ConfigurationProps>> = ({
   icon: Icon,
   title,
   desc,
