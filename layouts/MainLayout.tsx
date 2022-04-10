@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { PropsWithChildren } from "react";
 
 import { VSpacerL } from "../components/Spacer";
 import { useLocale } from "../hooks/useLocale";
@@ -19,7 +20,7 @@ interface MainLayoutProps {
   cardLayout?: boolean;
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({
+const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = ({
   title,
   cardLayout,
   children,

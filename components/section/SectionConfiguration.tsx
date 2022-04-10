@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
 import { VSpacerS } from "../Spacer";
 import SectionContainer from "./SectionContainer";
@@ -8,10 +8,9 @@ interface SectionConfigurationProps {
   title?: string;
 }
 
-const SectionConfiguration: React.FC<SectionConfigurationProps> = ({
-  title,
-  children,
-}) => {
+const SectionConfiguration: React.FC<
+  PropsWithChildren<SectionConfigurationProps>
+> = ({ title, children }) => {
   return (
     <SectionContainer>
       {title ? <SectionHeader title={title} /> : null}

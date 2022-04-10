@@ -1,3 +1,5 @@
+import { PropsWithChildren } from "react";
+
 import Spacer from "../Spacer";
 
 interface InputProps {
@@ -6,7 +8,12 @@ interface InputProps {
   onChange?: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ value, id, onChange, children }) => {
+const Input: React.FC<PropsWithChildren<InputProps>> = ({
+  value,
+  id,
+  onChange,
+  children,
+}) => {
   return (
     <div className="flex items-center">
       <input

@@ -1,10 +1,14 @@
+import { PropsWithChildren } from "react";
 import { useDropzone } from "react-dropzone";
 
 interface DragAndDropProps {
   onDrop: (files: File[]) => void;
 }
 
-const DragAndDrop: React.FC<DragAndDropProps> = ({ onDrop, children }) => {
+const DragAndDrop: React.FC<PropsWithChildren<DragAndDropProps>> = ({
+  onDrop,
+  children,
+}) => {
   const { getRootProps, getInputProps, acceptedFiles } = useDropzone({
     noClick: true,
     noKeyboard: true,

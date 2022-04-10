@@ -36,7 +36,10 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
   }, []);
 
   return (
+    // TODO: Remove ts-ignores
+    // @ts-ignore
     <ReflexContainer className="max-w-full" orientation="vertical">
+      {/* @ts-ignore */}
       <ReflexElement className="flex h-full flex-col" minSize={300}>
         <SectionHeader title="Markdown">
           <div className="flex">
@@ -69,6 +72,7 @@ const MarkdownPreview: React.VFC<MarkdownPreviewProps> = ({
           height: "98%",
         }}
       />
+      {/* @ts-ignore */}
       <ReflexElement className="flex h-full flex-col" minSize={300}>
         <SectionHeader title={t.common.previewTitle}>
           <div className="flex">
