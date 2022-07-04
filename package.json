@@ -35,7 +35,7 @@
     "pupa": "^3.1.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-dropzone": "^12.0.4",
+    "react-dropzone": "^14.2.2",
     "react-icons": "^4.3.1",
     "react-reflex": "^4.0.6",
     "sql-formatter": "^4.0.2",
