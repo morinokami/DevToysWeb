@@ -38,7 +38,7 @@
     "react-dropzone": "^12.0.4",
     "react-icons": "^4.3.1",
     "react-reflex": "^4.0.6",
-    "sql-formatter": "^4.0.2",
+    "sql-formatter": "^10.5.0",
     "title-case": "^3.0.3",
     "upper-case": "^2.0.2",
     "uuid": "^8.3.2",
