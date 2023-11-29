@@ -17,7 +17,7 @@
     "pre-commit": "npx lint-staged"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.3",
+    "@headlessui/react": "^1.6.0",
     "@monaco-editor/react": "^4.3.1",
     "byte-base64": "^1.1.0",
     "change-case": "^4.1.2",
@@ -28,7 +28,7 @@
     "lower-case": "^2.0.2",
     "marked": "^4.0.12",
     "monaco-editor": "^0.33.0",
-    "next": "12.1.5",
+    "next": "12.2",
     "next-pwa": "^5.4.5",
     "next-themes": "^0.1.1",
     "pako": "^2.0.4",
